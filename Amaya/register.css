@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("./assets/login/b10.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  table{
+    margin-left: auto; 
+    margin-right: auto;
+    width:900px;
+    height:250px;
+    background-color: rgba(189, 252, 200, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+
+  .container {
+    padding: 16px;
+    margin-left:75px;
+   
+  }
+  
+  .container-right {
+    margin-top:130px;
+    padding: 16px;
+    
+   
+  }
+  
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 15px;
+  }
+  
+  label{
+    color: #070707;
+  }
+
+  .registerbtn {
+    background-color: #42cc18;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  /* lower link */
+  a {
+    color: dodgerblue;
+  }
+  
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 70%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        
+      }
+      
+      input[type=text]:focus, input[type=password]:focus {
+        
+        outline: none;
+      }
+
+  .grey {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+
+div.latter{
+    margin-left: 250px;
+}
+
+/* Style for the select element */
+select {
+    width: 70%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  select:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  

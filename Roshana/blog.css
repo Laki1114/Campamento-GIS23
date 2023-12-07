@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Add a gray background color with some padding */
+  body {
+    font-family: sans-serif;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 1px;
+    font-size: 40px;
+    text-align: center;
+    background:#BFCC7C;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#003D25;
+  }
+  
+
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .pic{
+    background-color: #aaa;
+    width: 100%;
+    padding: 0px;
+    text-align:center;
+   
+  }
+  /*blog post sec pic*/
+  .pic1{
+    
+    width: 100%;
+    padding: 20px;
+  }
+  /* Adjust the width of the leftcolumn to accommodate two cards in one row */
+.leftcolumn {
+  float: left;
+  width: 75%; /* Set it to 50% for two cards in one row */
+  border-radius: 20px;
+}
+  
+
+ /* Style the card-row for better spacing */
+ .card-row {
+  display: flex; /* Use flexbox to place cards side by side */
+  justify-content: space-between; /* Add space between cards */
+  margin-bottom: 20px; /* Add margin at the bottom of the card-row */
+  border-radius: 20px;
+  
+  min-height: 500px;
+  background: #003D25;
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+
+} 
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style individual cards within the card-row */
+.card2 {
+  flex: 1; /* Make each card take equal space within the card-row */
+  background-color: #003D25;
+  padding: 20px;
+  color :white;
+  border-radius: 20px;
+}
+
+.card2 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+.btn {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 7px 9px;
+  text-align: center;
+  font-size: 12px;
+  margin: 1px 1px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #003D25;
+  color: white;
+}
+
+/*===================here starts pagination===================*/
+.pagination {
+  display: inline-block;
+  margin: 0 32%;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #003D25;
+  color: white;
+}
+.text-center {
+  text-align: center;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+

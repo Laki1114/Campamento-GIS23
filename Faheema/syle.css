@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+  }
+   
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url(5.jpg);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .shopping-cart {
+    width: 800px;
+    height: 543px;
+    margin: 80px auto;
+    background: #ffffff;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;
+   
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #f8f9fa;
+    font-size: 21px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    background-color: #1e2e1e;
+  }
+   
+  .item {
+    padding: 20px 30px;
+    height: 90px;
+    display: flex;
+  }
+   
+  .item:nth-child(3) {
+    border-top:  1px solid #99a084;
+    border-bottom:  1px solid #99a084;
+  }
+
+  .buttons {
+    position: relative;
+    padding-top: 10px;
+    margin-right: 60px;
+  }
+.delete-btn {
+  display: inline-block;
+  Cursor: pointer;
+}
+.delete-btn {
+  width: 26px;
+  height: 26px;
+  background: url('dlt.svg');
+}
+ 
+  .image {
+    margin-right: 70px;
+  }
+   
+
+  .description {
+    padding-top: 1px;
+    margin-right: 60px;
+    width: 170px;
+  }
+   
+  .description span {
+    display: block;
+    font-size: 14px;
+    color: #43484D;
+    font-weight: 400;
+  }
+   
+  .description span:first-child {
+    margin-bottom: 5px;
+  }
+  .description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #090a0b;
+  }
+  .quantity {
+    padding-top: 10px;
+    margin-right: 80px;
+  }
+  .quantity input {
+   
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #080a0b;
+    font-weight: 300;
+    background-color:#f0f0d7 ;
+  }
+  
+  .bt-back{
+    background-color: #080b09; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 8px 10px;
+    cursor: pointer;
+    }
+  .below {
+    padding: 20px 30px;
+    height: 120px;
+    display: flex;
+    border-bottom: 1px solid #E1E8EE;
+    font-weight: 400;
+    background-color: #f0f0ee;
+  }
+  .total {
+    padding-top: 5px;
+    width: 250px;
+    text-align: center;
+    font-size:20px;
+  }
+  .total span {
+    display: block;
+    font-size: 21px;
+    color: #43484D;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 400;
+  }
+   
+  .total span:first-child {
+    margin-bottom: 7px;
+  }
+  .total span:last-child {
+    font-weight: 300;
+    margin-top: 7px;
+    color: #090a0b;
+  }
+  .sum {
+    width: 1px;
+    padding-top: 1px;
+    font-size: 10px;
+    color: #0b0c0c;
+    font-weight: 400;
+    font-family:'Times New Roman', Times, serif;
+  }
+  .sum span {
+    display: block;
+    font-size: 13px;
+    color: #43484D;
+    font-weight: 400;
+  }
+   
+  .sum span:first-child {
+    margin-bottom: 7px;
+    margin-top: 7px;
+  }
+  .sum span:last-child {
+    font-weight: 300;
+    margin-top: 7px;
+    color: #090a0b;
+  }
+  button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  .minus-btn img {
+    margin-bottom: 2px;
+  }
+  .plus-btn img {
+    margin-top: 2px;
+  }
+   
+  button:focus,
+  input:focus {
+    outline:0;
+  }
+  .total-price {
+    width: 83px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 18px;
+    color: #0b0c0c;
+    font-weight: 400;
+  }
+  @media (max-width: 800px) {
+    .shopping-cart {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    .item {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .image img {
+      width: 50%;
+    }
+    .image,
+    .quantity,
+    .description {
+      width: 100%;
+      text-align: center;
+      margin: 6px 0;
+    }
+    .buttons {
+      margin-right: 20px;
+    }
+  }
+
+  .pur{
+    padding: 5px 20px;
+    height: 90px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bt-pur{
+  background-color: #375737d5; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ 
+  }

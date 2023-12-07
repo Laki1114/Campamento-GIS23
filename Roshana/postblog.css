@@ -1,0 +1,105 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5f0a6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Center the content on the page */
+  h2 {
+    text-align: center;
+    padding: 20px 0;
+    color: #333;
+  }
+  
+  /* Style the form container */
+  .container {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style input fields and labels */
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Style the textareas differently */
+  textarea {
+    height: 150px;
+  }
+  
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* Add hover effect to the Submit button */
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add spacing between form elements */
+  form > * {
+    margin-bottom: 20px;
+  }
+  
+
+  /*==================file upload path=================*/
+
+  /* Style the file upload input */
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Style the file input label */
+  label[for="image"] {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  
+  .file-upload-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .file-upload-button:hover {
+    background-color: #45a049;
+  }
+  
