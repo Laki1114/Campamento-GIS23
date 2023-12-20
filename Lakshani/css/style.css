@@ -7,7 +7,7 @@
    --red:#c0392b;
    --orange:#f39c12;
    --black:#333;
-   --white:#eef0b9d4;
+   --white:#BFCC7C;
    --light-color:#666;
    --light-white:#fffefe;
    --light-bg:#d6d4cb;
@@ -87,7 +87,7 @@ section{
 
 .header  {
    overflow: visible;
-   background-color: #eef0b9;
+   background-color: #BFCC7C;
    position: fixed; /* Set the navbar to fixed position */
    top: 0; /* Position the navbar at the top of the page */
    width: 100%;}
@@ -114,7 +114,8 @@ section{
       margin-top: 0rem;
       padding:1rem 2rem;
       cursor: pointer;
-      color:#eef0b9;
+      color:#BFCC7C;
+      ;
       font-size: 1.5rem;
       border-radius: .5rem;
       background-color: #3E8A62;

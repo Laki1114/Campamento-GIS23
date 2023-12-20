@@ -14,90 +14,9 @@
     <!-- =============== Navigation ================ -->
     <div class="container">
         <div class="navigation">
-            <ul>
-                <li>
-                    <a href="home.php">
-                        <span class="icon">
-                            <ion-icon name="logo-apple"></ion-icon>
-                        </span>
-                        <span  class="as"><img src="images/logo.png" alt="" width="150" height="70"></span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="home.php">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Home</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="admin.php">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="admincustomer.php">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Manage User</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="adminad.php">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Advertisement</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="adminmessege.php">
-                        <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                        </span>
-                        <span class="title">Messages</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="adminhelp.php">
-                        <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
-                        </span>
-                        <span class="title">Help</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="adminprofile.php">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Profile</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="title">Sign Out</span>
-                    </a>
-                </li>
-            </ul>
+            
+        <?php include 'adminsidebar.php'; ?>
+                
         </div>
 
         <!-- ========================= Main ==================== -->
@@ -240,6 +159,56 @@
                                 <td>Due</td>
                                 <td><span class="status inProgress">In Progress</span></td>
                             </tr>
+
+                            <tr>
+                                <td>Advertisement</td>
+                                <td>$110</td>
+                                <td>Due</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Advertisement</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status return">Return</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Advertisement</td>
+                                <td>$620</td>
+                                <td>Due</td>
+                                <td><span class="status inProgress">In Progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Advertisement</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status return">Return</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Advertisement</td>
+                                <td>$620</td>
+                                <td>Due</td>
+                                <td><span class="status inProgress">In Progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Advertisement</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status return">Return</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Advertisement</td>
+                                <td>$620</td>
+                                <td>Due</td>
+                                <td><span class="status inProgress">In Progress</span></td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -322,6 +291,8 @@
                                 <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
                             </td>
                         </tr>
+
+                        
                     </table>
                 </div>
             </div>
