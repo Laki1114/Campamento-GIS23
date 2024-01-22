@@ -3,13 +3,13 @@
 
 
 :root{
-   --purple:#327028;
+   --green:#327028;
    --red:#c0392b;
    --orange:#f39c12;
    --black:#333;
-   --white:#BFCC7C;
+   --yellow:#BFCC7C;
    --light-color:#666;
-   --light-white:#fffefe;
+   --white:#fffefe;
    --light-bg:#d6d4cb;
    --border:.1rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
@@ -25,8 +25,8 @@
 }
 
 *::selection{
-   background-color: var(--purple);
-   color:var(--white);
+   background-color: var(--green);
+   color:var(--yellow);
 }
 
 *::-webkit-scrollbar{
@@ -39,7 +39,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-   background-color: var(--purple);
+   background-color: var(--green);
 }
 
 html{
@@ -58,11 +58,11 @@ section{
    margin-top: 1rem;
    padding:1rem 3rem;
    cursor: pointer;
-   color:var(--white);
+   color:var(--yellow);
    font-size: 1.8rem;
    border-radius: .5rem;
    text-transform: capitalize;
-   background-color: #3E8A62;
+   background-color: var(--green);
 }
 
 .btn:hover{
@@ -70,7 +70,7 @@ section{
 }
 
 .white-btn:hover{
-   background-color: var(--white);
+   background-color: var(--yellow);
    color:var(--black);
 }
 
@@ -87,7 +87,7 @@ section{
 
 .header  {
    overflow: visible;
-   background-color: #BFCC7C;
+   background-color: var(--yellow);
    position: fixed; /* Set the navbar to fixed position */
    top: 0; /* Position the navbar at the top of the page */
    width: 100%;}
@@ -114,11 +114,10 @@ section{
       margin-top: 0rem;
       padding:1rem 2rem;
       cursor: pointer;
-      color:#BFCC7C;
-      ;
+      color:var(--yellow);
       font-size: 1.5rem;
       border-radius: .5rem;
-      background-color: #3E8A62;
+      background-color: #327028;
    
    
 }
@@ -139,7 +138,7 @@ section{
 }
 
 .header .flex .navbar a:hover{
-   color:var(--purple);
+   color:var(--green);
    text-decoration: underline;
 }
  
@@ -170,13 +169,13 @@ section{
 
 .home .content h3{
    font-size: 5.5rem;
-   color:var(--white);
+   color:var(--yellow);
    text-transform: uppercase;
 }
 
 .home .content p{
    font-size:1.8rem;
-   color:var(--light-white);
+   color:var(--white);
    padding:1rem 0;
    line-height: 1.5;
 }
@@ -234,13 +233,13 @@ section{
 .home-contact .content h3{
    font-size: 3rem;
    text-transform: uppercase;
-   color:var(--white);
+   color:var(--yellow);
 }
 
 .home-contact .content p{
    padding:1rem 0;
    line-height: 1.5;
-   color:var(--light-white);
+   color:var(--white);
    font-size: 1.7rem;
 }
 
@@ -251,7 +250,7 @@ section{
 
 
 .footer{
-   background-color: #f4ebb3;
+   background-color: var(--yellow);
 }
 
 .footer .box-container{
@@ -279,11 +278,11 @@ section{
 
 .footer .box-container .box p i,
 .footer .box-container .box a i{
-   color:var(--purple);
+   color:var(--green);
    padding-right: .5rem;
 }
 
 .footer .box-container .box a:hover{
-   color:var(--purple);
+   color:var(--green);
    text-decoration: underline;
 }

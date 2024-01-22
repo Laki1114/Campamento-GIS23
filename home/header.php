@@ -1,5 +1,7 @@
+
 <header class="header">
-   
+
+
 
    
       <div class="flex">
@@ -14,10 +16,6 @@
          </nav>
 
          <p class="logregbtn"><a href="../Roshana/login.html" >LOGIN</a> | <a href="register.php" >REGISTER</a> </p>
-
-
-
-
 
          <div class="flex2">
             <a href="home.php" ><img src="images/search.png" alt="" width="25" height="25"></a>
