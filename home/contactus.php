@@ -36,7 +36,7 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
-  background-color: #003D25;
+  background-color: #327028;
   color: white;
   padding: 12px 20px;
   border: none;
