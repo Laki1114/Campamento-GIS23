@@ -31,6 +31,7 @@ body{
   width: 100%;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  
  }
 
  .imaged img{
@@ -38,6 +39,7 @@ body{
   height : 208px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  background color:#BFCC7C;
  }
 
 .title{
