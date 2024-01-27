@@ -13,7 +13,7 @@ body {
 }
 
 h2 {
-    color:#003D25;
+    color:#327028;
     font-size :40px;
 }
 
@@ -41,16 +41,17 @@ input[type=submit] {
   padding: 12px 20px;
   border: none;
   cursor: pointer;
+  border-radius :10px;
 }
 
 input[type=submit]:hover {
-  background-color: #BFCC7C;
+  background-color: #333;
 }
 
 /* Style the container/contact section */
 .container {
   border-radius: 5px;
-  background-color: #BFCC7C;
+  background-color: #d6d4cb;
   padding: 10px;
 }
 

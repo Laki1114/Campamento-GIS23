@@ -10,7 +10,7 @@
 <script src="https://unpkg.com/feather-icons"></script>
 <style>
 body {
-  background-color: #BFCC7C
+  background-color: #d6d4cb
 }
 
 .container {
@@ -20,6 +20,7 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  
 }
 
 .links-container {
@@ -27,6 +28,8 @@ body {
   flex-direction: column;
   jusify-content: center;
   align-items: center;
+  border color : #BFCC7C;
+  
   
 }
 
@@ -34,14 +37,16 @@ body {
   width: 90%;
   height:50px;
   text:middle;
+  color:#fffefe;
 }
 
 .w3-theme-l1 {
-  background-color: #003D25 !important;
+  background-color: #327028 !important;
 }
 
 .w3-theme-l1:hover {
-  background-color: #1D553F !important;
+  background-color: #333 !important;
+ 
 }
 
 .margin-top-2 {
