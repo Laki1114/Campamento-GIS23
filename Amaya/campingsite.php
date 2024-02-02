@@ -39,7 +39,7 @@
         <div class="col-6">
             <div class="content">
                 <br><br><br><br>
-                <h1 class="heading">"Choose Your<br> Choice<br>As Your Wish."<br></h1>
+                <h1 class="heading">"Chooseffff Your<br> Choice<br>As Your Wish."<br></h1>
 
                 <div class="clearfix">
 
