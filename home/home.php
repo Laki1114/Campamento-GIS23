@@ -9,9 +9,8 @@
    
    
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/comment.css">
-   <link rel="stylesheet" href="css/drp.css">
+   <link rel="stylesheet" href="../css/homestyle.css">
+   
    
 </head>
 <body>
@@ -20,7 +19,7 @@
 
 
 
-<section class="home" style="background-image: url('images/home.png'); ">
+<section class="home" style="background-image: url('../resource/home.png'); ">
 
    <div class="content" >
   
@@ -38,7 +37,7 @@
    <div class="flex">
 
       <div class="image">
-         <img src="images/about1.jpg" alt="">
+         <img src="../resource/about1.jpg" alt="">
       </div>
 
       <div class="content">
@@ -79,7 +78,7 @@ We eagerly await the opportunity to welcome you to Campamento and make your camp
       </div>
 
       <div class="image">
-         <img src="images/about2.jpg" alt="">
+         <img src="../resource/about2.jpg" alt="">
       </div>
 
    </div>

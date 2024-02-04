@@ -65,7 +65,7 @@ h1{
 
 <div class="image">
 <a href="../Amaya/campingsite.php">
-   <img src="images/camp.png" ></a>
+   <img src="../resource/camp.png" ></a>
 </div>
 <div class="title">
  <h1>Camping Sites</h1>
@@ -78,7 +78,7 @@ h1{
 
 <div class="image">
    <a href="../Amaya/index.php">
-   <img src="images/glamp.png" ></a>
+   <img src="../resource/glamp.png" ></a>
 </div>
 <div class="title">
  <h1>Glamping Sites</h1>
@@ -91,7 +91,7 @@ h1{
 
 <div class="image">
    <a href="../Faheema/Guide/guide.php">
-   <img src="images/guide.png" ></a>
+   <img src="../resource/guide.png" ></a>
 </div>
 <div class="title">
  <h1>Guide</h1>
@@ -104,7 +104,7 @@ h1{
 
 <div class="image">
    <a href="../Amaya/tspage.php">
-   <img src="images/tsup.png" ></a>
+   <img src="../resource/tsup.png" ></a>
 </div>
 <div class="title">
  <h1>Tools</h1>
@@ -117,7 +117,7 @@ h1{
 
 <div class="imaged">
 <a href="../Faheema/driver/driver_.php">
-   <img src="images/driver.png"  ></a>
+   <img src="../resource/driver.png"  ></a>
 </div>
 <div class="title">
  <h1>Driver</h1>

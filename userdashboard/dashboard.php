@@ -5,65 +5,13 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/dashboard.css">
-<link />/rel="stylesheet" href="css/grid.css">
-
-<style>
-
-hr {
-        color: #000; /* Line color (black in this example) */
-        border: none; /* Remove the default border */
-        height: 2px; /* Line thickness */
-        background-color: #000; /* Line color (for browsers that don't support 'color') */
-        margin: 10px 0; /* Margin above and below the line */
-    }
-
-    * {
-  box-sizing: border-box;
-}
+<link rel="stylesheet" href="../css/homestyle.css">
+<link rel="stylesheet" href="../css/userdashboard.css">
 
 
-/* Create 3 equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  position: relative;
-  font-family: Arial;
-}
-.column2 {
-  float: left;
-  width: 25%;
-  padding: 10px;
-  position: relative;
-  font-family: Arial;
-}
-
-.row {
-  position: relative;
-  font-family: Arial;
-}
-
- img {
-  margin-top: 12px;
-  flex:1 1 40rem;
- }
-
-.text-block {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: transparent;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-</style>
 </head>
 
-<body style="background-color: #f1f1f1;">
+<body style="background-color: ;">
 
 <!-- Navigation Bar -->
 
@@ -84,10 +32,10 @@ hr {
          
 
          <div class="flex2">
-            <a href="searchpage.php" ><img src="images/search.png" alt="" width="25" height="25"></a>
-            <a href="../Roshana/profileUser.php">  <img src="images/profile.png" alt="" width="25" height="25"> </a>
-            <a href="cart.php">  <img src="images/cart.png" alt="" width="25" height="25"> </a>
-            <a href="notification.php" ><img src="images/bell.png" alt="" width="25" height="25"></a>
+            <a href="searchpage.php" ><img src="../resource/search.png" alt="" width="25" height="25"></a>
+            <a href="../Roshana/profileUser.php">  <img src="../resource/profile.png" alt="" width="25" height="25"> </a>
+            <a href="cart.php">  <img src="../resource/cart.png" alt="" width="25" height="25"> </a>
+            <a href="notification.php" ><img src="../resource/bell.png" alt="" width="25" height="25"></a>
          </div>
          
          
@@ -148,7 +96,7 @@ hr {
   
   <div class="row"> 
   <div class="column" >
-  <img src="images/home.png" style="width:100%">
+  <img src="../resource/home.png" style="width:100%">
   <div class="text-block">
     <h2>Nature</h2>
   </div>
@@ -157,13 +105,13 @@ hr {
    
   <div class="column2"> 
   <div class="row" >
-  <img src="images/home.png" style="width:100%">
+  <img src="../resource/home.png" style="width:100%">
   <div class="text-block">
     <h2>Nature</h2>
   </div>
 </div>
   <div class="row" >
-  <img src="images/home.png" style="width:100%">
+  <img src="../resource/home.png" style="width:100%">
   <div class="text-block">
     <h2>Nature</h2>
   </div>
@@ -171,13 +119,13 @@ hr {
 
   <div class="column2"> 
   <div class="row" >
-  <img src="images/home.png" style="width:100%">
+  <img src="../resource/home.png" style="width:100%">
   <div class="text-block">
     <h2>Nature</h2>
   </div>
 </div>
   <div class="row" >
-  <img src="images/home.png" style="width:100%">
+  <img src="../resource/home.png" style="width:100%">
   <div class="text-block">
     <h2>Nature</h2>
   </div>

@@ -35,7 +35,7 @@ body{
 
  .imaged img{
   width: 100%;
-  height : 170px;
+  height : 250px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
  }
@@ -86,21 +86,20 @@ button:hover{
 <div class="main">
 
 <div class="w3-container">
-    <h1>Glamping sites</h1>
+    <h1>Divers</h1>
     <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
   </div>
 
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/home.png">
+   <img src="../resource/customer02.jpg">
 </div>
 <div class="title">
- <h1>glamping sites</h1>
+ <h1>David</h1>
 </div>
 <div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
+ <p>Details here...</p>
 </div>
 </div>
 
@@ -108,14 +107,13 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/home.png">
+   <img src="../resource/customer02.jpg">
 </div>
 <div class="title">
- <h1>glamping sites</h1>
+ <h1>David</h1>
 </div>
 <div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
+ <p>Details here...</p>
 </div>
 </div>
 
@@ -123,14 +121,13 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/home.png">
+   <img src="../resource/customer02.jpg">
 </div>
 <div class="title">
- <h1>glamping sites</h1>
+ <h1>David</h1>
 </div>
 <div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
+ <p>Details here...</p>
 </div>
 </div>
 
@@ -138,22 +135,21 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/home.png">
+   <img src="../resource/customer02.jpg">
 </div>
 <div class="title">
- <h1>glamping sites</h1>
+ <h1>David</h1>
 </div>
 <div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
+ <p>Details here...</p>
 </div>
 </div>
 <!--cards -->
 
 
-
-<a href="../Amaya/index.php"><button class="button" > See More....</button></a>
-
+<a href="../Faheema/driver/driver.php">
+<button class="button" > See More....</button>
+</a>
 
 </div>
 </body>

@@ -15,10 +15,10 @@
          
 
          <div class="flex2">
-            <a href="searchpage.php" ><img src="images/search.png" alt="" width="25" height="25"></a>
-            <a href="profileUser.php">  <img src="images/profile.png" alt="" width="25" height="25"> </a>
-            <a href="cart.php">  <img src="images/cart.png" alt="" width="25" height="25"> </a>
-            <a href="notification.php" ><img src="images/bell.png" alt="" width="25" height="25"></a>
+            <a href="searchpage.php" ><img src="../resource/search.png" alt="" width="25" height="25"></a>
+            <a href="profileUser.php">  <img src="../resource/profile.png" alt="" width="25" height="25"> </a>
+            <a href="cart.php">  <img src="../resource/cart.png" alt="" width="25" height="25"> </a>
+            <a href="notification.php" ><img src="../resource/bell.png" alt="" width="25" height="25"></a>
          </div>
          
          

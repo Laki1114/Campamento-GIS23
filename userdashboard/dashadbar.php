@@ -89,7 +89,7 @@ q {font-style: italic;}
 </div>
 
 <div class="mySlides">
-  <q>Grab your camping assesaries</q> 
+  <q>Grab your camping assesariesssss</q> 
   <p class="author">- Offer time limit</p>
 </div>
 

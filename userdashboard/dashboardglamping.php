@@ -35,7 +35,7 @@ body{
 
  .imaged img{
   width: 100%;
-  height : 250px;
+  height : 170px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
  }
@@ -86,20 +86,21 @@ button:hover{
 <div class="main">
 
 <div class="w3-container">
-    <h1>Divers</h1>
+    <h1>Glamping sites</h1>
     <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
   </div>
 
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/customer02.jpg">
+   <img src="../resource/home.png">
 </div>
 <div class="title">
- <h1>David</h1>
+ <h1>glamping sites</h1>
 </div>
 <div class="des">
- <p>Details here...</p>
+ <p>You can Add Desccription Here...</p>
+<button>Book Now...</button><button>Read More...</button>
 </div>
 </div>
 
@@ -107,13 +108,14 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/customer02.jpg">
+   <img src="../resource/home.png">
 </div>
 <div class="title">
- <h1>David</h1>
+ <h1>glamping sites</h1>
 </div>
 <div class="des">
- <p>Details here...</p>
+ <p>You can Add Desccription Here...</p>
+<button>Book Now...</button><button>Read More...</button>
 </div>
 </div>
 
@@ -121,13 +123,14 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/customer02.jpg">
+   <img src="../resource/home.png">
 </div>
 <div class="title">
- <h1>David</h1>
+ <h1>glamping sites</h1>
 </div>
 <div class="des">
- <p>Details here...</p>
+ <p>You can Add Desccription Here...</p>
+<button>Book Now...</button><button>Read More...</button>
 </div>
 </div>
 
@@ -135,21 +138,22 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/customer02.jpg">
+   <img src="../resource/home.png">
 </div>
 <div class="title">
- <h1>David</h1>
+ <h1>glamping sites</h1>
 </div>
 <div class="des">
- <p>Details here...</p>
+ <p>You can Add Desccription Here...</p>
+<button>Book Now...</button><button>Read More...</button>
 </div>
 </div>
 <!--cards -->
 
 
-<a href="../Faheema/driver/driver.php">
-<button class="button" > See More....</button>
-</a>
+
+<a href="../Amaya/index.php"><button class="button" > See More....</button></a>
+
 
 </div>
 </body>

@@ -1,0 +1,48 @@
+hr {
+    color: #000; /* Line color (black in this example) */
+    border: none; /* Remove the default border */
+    height: 2px; /* Line thickness */
+    background-color: #000; /* Line color (for browsers that don't support 'color') */
+    margin: 10px 0; /* Margin above and below the line */
+}
+
+* {
+box-sizing: border-box;
+}
+
+
+/* Create 3 equal columns that floats next to each other */
+.column {
+float: left;
+width: 50%;
+padding: 10px;
+position: relative;
+font-family: Arial;
+}
+.column2 {
+float: left;
+width: 25%;
+padding: 10px;
+position: relative;
+font-family: Arial;
+}
+
+.row {
+position: relative;
+font-family: Arial;
+}
+
+img {
+margin-top: 12px;
+flex:1 1 40rem;
+}
+
+.text-block {
+position: absolute;
+bottom: 20px;
+right: 20px;
+background-color: transparent;
+color: white;
+padding-left: 20px;
+padding-right: 20px;
+}
