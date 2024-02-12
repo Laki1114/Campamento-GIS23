@@ -99,11 +99,19 @@ a:hover {
   color: black;
 }
 
+.checked {
+  color: #FDCC0D;
+}
+
+.star-container {
+  text-align: center;
+}
 
 
 
 
 </style>
+
 <body>
 
 
@@ -117,6 +125,15 @@ a:hover {
 <div class="title">
  <h1>Galoya Glamping Site</h1>
 </div>
+
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
+
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
  <a href="book_now.php" class="button">Book Now</a>
@@ -132,6 +149,13 @@ a:hover {
 <div class="title">
  <h1>Yala glamping site</h1>
 </div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
  <a href="book_now.php" class="button">Book Now</a>
@@ -146,6 +170,13 @@ a:hover {
 </div>
 <div class="title">
  <h1>Leopard Nest - Yala</h1>
+</div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
 </div>
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
@@ -163,6 +194,13 @@ a:hover {
 <div class="title">
  <h1>Knuckels glamping </h1>
 </div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
  <a href="book_now.php" class="button">Book Now</a>
@@ -179,6 +217,13 @@ a:hover {
 <div class="title">
  <h1>Tribe Yala</h1>
 </div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
  <a href="book_now.php" class="button">Book Now</a>
@@ -192,7 +237,14 @@ a:hover {
    <img src="images/galoya.jpg">
 </div>
 <div class="title">
- <h1>Galoya Glamping Site</h1>
+ <h1>oya Glamping Site</h1>
+</div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
 </div>
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
@@ -207,6 +259,13 @@ a:hover {
 </div>
 <div class="title">
  <h1>Leopard Nest - Yala</h1>
+</div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
 </div>
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
@@ -223,6 +282,13 @@ a:hover {
 </div>
 <div class="title">
  <h1>Yala glamping site</h1>
+</div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
 </div>
 <div class="des">
  <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>

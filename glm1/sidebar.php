@@ -70,7 +70,7 @@ body {
 
 .navigation ul li:hover,
 .navigation ul li.hovered {
-  background-color: var(--yellow);
+  background-color: #BFCC7C;
 }
 
 .navigation ul li:nth-child(1) {
@@ -113,7 +113,7 @@ body {
   line-height:50px;
   text-align: start;
   white-space: nowrap;
-  background-color: var(--yellow) ;
+  background-color: #BFCC7C;
 }
 
 .navigation ul li a .as img{

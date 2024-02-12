@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> glm1 </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- ======= Styles ====== -->
     <style>
@@ -78,6 +79,7 @@ body {
     position: relative;
     width: 400px;
     margin: 0 10px;
+    margin-right: 350px;
   }
   
   .search label {
@@ -148,9 +150,7 @@ body {
                     </label>
                 </div>
 
-                <div class="user">
-                    <img src="images/customer01.jpg" alt="">
-                </div>
+                
             </div>
 
            <!------sites---->
