@@ -246,7 +246,7 @@ a:hover {
                 </div>
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                    <img src="../resource/customer01.jpg" alt="">
                 </div>
             </div>
 
@@ -254,7 +254,7 @@ a:hover {
            <div class="grid">
 
 <div class="imaged">
-   <img src="images/beach1.jpeg">
+   <img src="../resource/beach1.jpeg">
 </div>
 <div class="title">
  <h1>Jungle beach camp - Ahungalla</h1>

@@ -7,7 +7,7 @@
 
 		if($result ){
 			echo "<script> alert('Records Deleted successfully!!')</script>";
-			header("location:../Lakshani/dashboard.php");
+			header("location:../userdashboard/dashboard.php");
 		}
 		else {
 			echo "<script>alert('Error: Could not able to execute the query.')</script>";

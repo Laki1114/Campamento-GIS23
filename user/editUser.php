@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)){
 <head>
   <meta charset="UTF-8">
     <link rel="stylesheet" href="editUser.css">
-    <link rel="stylesheet" href="passwordvalid.css">
+    <link rel="stylesheet" href="../login/passwordvalid.css">
     <title></title>
 </head>
 <body>

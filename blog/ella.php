@@ -45,32 +45,32 @@
 <div class="container-gallery">
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-    <img src="./assets/ella/1.jpg" style="width:100%">
+    <img src="../resourse/assets/ella/1.jpg" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-    <img src="./assets/ella/2.jpg" style="width:100%">
+    <img src="../resourse/assets/ella/2.jpg" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-    <img src="./assets/ella/3.jpg" style="width:100%">
+    <img src="../resourse/assets/ella/3.jpg" style="width:100%">
   </div>
     
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-    <img src="./assets/ella/4.jpg" style="width:100%">
+    <img src="../resourse/assets/ella/4.jpg" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">5 / 6</div>
-    <img src="./assets/ella/5.jpg" style="width:100%">
+    <img src="../resourse/assets/ella/5.jpg" style="width:100%">
   </div>
     
   <div class="mySlides">
     <div class="numbertext">6 / 6</div>
-    <img src="./assets/ella/6.jpg" style="width:100%">
+    <img src="../resourse/assets/ella/6.jpg" style="width:100%">
   </div>
     
   <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -82,22 +82,22 @@
 
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="./assets/ella/1.jpg" style="width:100%;height:60px;" onclick="currentSlide(1)" alt="1pic">
+      <img class="demo cursor" src="../resourse/assets/ella/1.jpg" style="width:100%;height:60px;" onclick="currentSlide(1)" alt="1pic">
     </div>
     <div class="column">
-      <img class="demo cursor" src="./assets/ella/2.jpg" style="width:100%;height:60px;" onclick="currentSlide(2)" alt="2pic">
+      <img class="demo cursor" src="../resourse/assets/ella/2.jpg" style="width:100%;height:60px;" onclick="currentSlide(2)" alt="2pic">
     </div>
     <div class="column">
-      <img class="demo cursor" src="./assets/ella/3.jpg" style="width:100%;height:60px;" onclick="currentSlide(3)" alt="3pic">
+      <img class="demo cursor" src="../resourse/assets/ella/3.jpg" style="width:100%;height:60px;" onclick="currentSlide(3)" alt="3pic">
     </div>
     <div class="column">
-      <img class="demo cursor" src="./assets/ella/4.jpg" style="width:100%;height:60px;" onclick="currentSlide(4)" alt="4pic">
+      <img class="demo cursor" src="../resourse/assets/ella/4.jpg" style="width:100%;height:60px;" onclick="currentSlide(4)" alt="4pic">
     </div>
     <div class="column">
-      <img class="demo cursor" src="./assets/ella/5.jpg" style="width:100%;height:60px;" onclick="currentSlide(5)" alt="5pic">
+      <img class="demo cursor" src="../resourse/assets/ella/5.jpg" style="width:100%;height:60px;" onclick="currentSlide(5)" alt="5pic">
     </div>    
     <div class="column">
-      <img class="demo cursor" src="./assets/ella/6.jpg" style="width:100%;height:60px;" onclick="currentSlide(6)" alt="6pic">
+      <img class="demo cursor" src="../resourse/assets/ella/6.jpg" style="width:100%;height:60px;" onclick="currentSlide(6)" alt="6pic">
     </div>
   </div>
   

@@ -32,30 +32,30 @@ while ($row = mysqli_fetch_assoc($result)){
     <link rel="stylesheet" href="profileUser.css">
     <link rel="stylesheet" href="view.css">
     
-    <link rel="stylesheet" href="../Lakshani/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <header class="header">
 
    
 <div class="flex">
-<a href="home.php"><img src="../Lakshani/images/logo.png" alt="" width="130" height="60"></a>
+<a href="home.php"><img src="../resourse/logo.png" alt="" width="130" height="60"></a>
 
    <nav class="navbar">
-      <a href="../Lakshani/home.php">Home</a>
-      <a href="../Lakshani/home.php">About Us</a>
-      <a href="../Lakshani/home.php">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="../Lakshani/contactus.php">Contact Us</a>
+      <a href="../home/home.php">Home</a>
+      <a href="../home/home.php">About Us</a>
+      <a href="../home/home.php">Services</a>
+      <a href="../blog/blog.html">Blog</a>
+      <a href="../home/contactus.php">Contact Us</a>
    </nav>
 
    
 
    <div class="flex2">
-      <a href="../Lakshani/home.php" ><img src="../Lakshani/images/search.png" alt="" width="25" height="25"></a>
-      <a href="profileUser.php">  <img src="../Lakshani/images/profile.png" alt="" width="25" height="25"> </a>
-      <a href="../Faheema/cart.php">  <img src="../Lakshani/images/cart.png" alt="" width="25" height="25"> </a>
-      <a href="../Lakshani/notification.php" ><img src="../Lakshani/images/bell.png" alt="" width="25" height="25"></a>
+      <a href="../home/home.php" ><img src="../resourse/search.png" alt="" width="25" height="25"></a>
+      <a href="profileUser.php">  <img src="../resourse/images/profile.png" alt="" width="25" height="25"> </a>
+      <a href="../Faheema/cart.php">  <img src="../resourse/images/cart.png" alt="" width="25" height="25"> </a>
+      <a href="../home/notification.php" ><img src="../resourse/images/bell.png" alt="" width="25" height="25"></a>
    </div>
    
    
@@ -69,9 +69,9 @@ while ($row = mysqli_fetch_assoc($result)){
 <div class="container">
     <div class="profile">
       <div class="container-image">
-    <img src="./assets/profile/photo.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
+    <img src="../resourse/assets/profile/photo.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
     <button class="btn">
-      <img src="./assets/profile/edit.png" width="30px" height="30px"></button>
+      <img src="../resourse/assets/profile/edit.png" width="30px" height="30px"></button>
   </div>
   </div>
   
@@ -186,7 +186,7 @@ while ($row = mysqli_fetch_assoc($result)){
   </tbody>
 </table>
 <?php
-require("dataBlog.php");
+require("../blog/dataBlog.php");
 
 
 
@@ -202,49 +202,7 @@ require("dataBlog.php");
   </script>
 
   <div >
-  <section class="footer">
-
-<div class="box-container">
-
-   <div class="box">
-      <h3>quick links</h3>
-      
-         <a href="home.php">Home</a>
-         <a href="home.php">About Us</a>
-         <a href="home.php">Services</a>
-         <a href="contactus.php">Contact Us</a>
-         
-
-   </div>
-
-   <div class="box">
-      <br><br><br><br>
-         <a href="../Lakshani/home.php">Camping Sites</a>
-         <a href="../Lakshani/home.php">Glamping Sites</a>
-         <a href="../Lakshani/home.php">Rent Tools</a>
-         <a href="../Lakshani/contactus.php">Hire a Guide</a>
-
-   </div>
-
-   <div class="box">
-      <h3>extra links</h3>
-      <a href="../Lakshani/login.php">login</a>
-      <a href="../Lakshani/register.php">register</a>
-      <a href="../Lakshani/cart.php">cart</a>
-      <a href="../Lakshani/search.php">search</a>
-   </div>
-
-   <div class="box">
-      <h3>contact info</h3>
-      <p> <img src="../Lakshani/images/call.png" alt="" width="20" height="20"> +123-456-7890 </p>
-      <p> <img src="../Lakshani/images/call.png" alt="" width="20" height="20"> +111-222-3333 </p>
-      <p> <img src="../Lakshani/images/email.png" alt="" width="20" height="20"> campamento@gmail.com </p>
-      <p> <img src="../Lakshani/images/location.png" alt="" width="20" height="20"> Colombo, Sri Lanka - 81290 </p>
-   </div>
-
-</div>
-
-</section>
+  <?php include '../home/footer.php'; ?>
         </div>
 </body>
 </html>

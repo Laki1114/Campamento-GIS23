@@ -42,7 +42,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     $IdentityNo = $row["blogID"];
     echo "<td>".$row["blogID"]."</td> <td>".$row["shortTitle"]."</td> <td>".$row["postDate"]."</td>";
-    echo "<td><button class='button button1'><a href='./edit.php?id=$IdentityNo'>Edit</a></button></td>";
+    echo "<td><button class='button button1'><a href='./editBlog.php?id=$IdentityNo'>Edit</a></button></td>";
     echo "<td><button class='button button1' onclick='delete_data($IdentityNo)'>Delete</button></td>";
 
     echo "</tr>";
