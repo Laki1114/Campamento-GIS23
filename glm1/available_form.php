@@ -39,7 +39,7 @@ body {
   width: 1000px;
   background-color: #fff;
   border-radius: 20px;
-  margin-top: 170px;
+  margin-top: 120px;
 }
 /*detail part--*/
 .tb{
@@ -57,6 +57,9 @@ table {
     border-radius: 20px;
   
 }
+th{
+  color: #222;
+}
 
 th, td {
   text-align: left;
@@ -73,16 +76,52 @@ tr:nth-child(even) {
  text-align: center;
  padding: 20px;
  padding-bottom: 5px;
- color: rgb(105,105,105);
+ color: #003D25;
 }
+.status {
+    display: flex;
+  }
 
+  .number {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
 
+  .number button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #003D25;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    overflow: hidden;
+  }
+  .text{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 25px;
+    color: #555;
+   
+  
+  }
 
 
 </style>
 </head>
 
 <body>
+
+<div class="status">
+  <div class="number">
+    <button>2</button>
+  </div>
+  <div class="text">
+    Check Availability
+  </div>
+</div>
     
 <div class="container">
 <div class="title">

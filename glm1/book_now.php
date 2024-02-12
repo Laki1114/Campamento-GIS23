@@ -54,6 +54,7 @@ body {
  text-align: center;
  padding: 10px;
  
+ 
 }
 
 
@@ -103,6 +104,37 @@ body {
   position: absolute; 
 }
 
+.status {
+    display: flex;
+  }
+
+  .number {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+
+  .number button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #003D25;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    overflow: hidden;
+  }
+  .text{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 25px;
+    color: #555;
+  
+  }
+
+
+
 
 
 
@@ -118,6 +150,15 @@ body {
 
 </head>
 <body>
+<div class="status">
+  <div class="number">
+    <button>1</button>
+  </div>
+  <div class="text">
+    Search
+  </div>
+</div>
+
     <div class="container">
         <form class="form-group">
             <div id="form">
