@@ -150,6 +150,7 @@ body {
 
 </head>
 <body>
+  
 <div class="status">
   <div class="number">
     <button>1</button>
