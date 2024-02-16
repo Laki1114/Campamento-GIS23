@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> glm_side_bar </title>
-    <link rel="stylesheet" href="glm_css_files/sidebar.css">
+    <title> glm_dashboard_side_bar </title>
+    <link rel="stylesheet" href="glm_css_files/DB_sidebar.css">
 
-
-
+ 
 
 </head>
 
@@ -28,67 +27,64 @@
                 </li>
 
                 <li>
-                    <a href="home.php">
+                    <a href="glm_dashboard.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Home</span>
+                        <span class="title">Dashboard</span>
                     </a>
                 </li>
+                <br><br>
 
                 <li>
-                    <a href="add_site_form.php">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Add a new glamping site</span>
+                        <span class="title">Customer</span>
                     </a>
                 </li>
+                <br><br>
 
                 <li>
-                    <a href="trending_sites.php">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Trending sites</span>
+                        <span class="title">Schedule</span>
                     </a>
                 </li>
+                <br><br>
 
                 <li>
-                    <a href="wild_glamping.php">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Wild glamping Sites</span>
+                        <span class="title">Activity</span>
                     </a>
                 </li>
+                <br><br>
                 
                 <li>
-                    <a href="luxury_tents.php">
+                    <a href="">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Luxury Tents</span>
+                        <span class="title">Earnings</span>
+                    </a>
+                </li>
+                <br><br>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="beach_glamping.php">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Beach Glamping Sites</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="treehouse.php">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Treehouses</span>
-                    </a>
-                </li>
+                
 
                 
 </body>

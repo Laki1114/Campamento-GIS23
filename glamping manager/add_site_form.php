@@ -7,78 +7,8 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<style>
-      /* =========== Google Fonts ============ */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+    <link rel="stylesheet" href="glm_css_files/add_site_form.css">
 
-/* =============== Globals ============== */
-* {
-  font-family: "Ubuntu", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --green: #003D25;
-  --white: #fff;
-  --yellow: #BFCC7C;
-  --gray: #f5f5f5;
-  --black1: #222;
-  --black2: #999;
-}
-
-body {
-  min-height: 75vh;
-  overflow-x: hidden;
-  background: var(--yellow);
-}
-/*---global end--*/
-.container {
-  position: relative;
-  width: 800px;
-  background-color: #fff;
-  border-radius: 20px;
-}
-#form{
-    
-    height:600px;
-    width:800px;
-    margin-left: 0px;
-    margin-top: 80px;
-    opacity:0.7;
-    border-radius: 20px;
-}
-.title{
- 
- text-align: center;
- padding: 10px;
- 
-}
-#first-group{
-    border:none;
-    width:500px;
-    margin-top: 20px;
-    margin-left:50px;
-    position: absolute;
-
-}
-#second-group{
-  border:none;
-    width:500px;
-    margin-top: 20px;
-    margin-left:50px;
-    position: absolute;
-}
-#forth-group{
-  margin-top: 20px;
-  margin-left:300px;
-  position: absolute; 
-}
-
-
-
-</style>
 
 
 
