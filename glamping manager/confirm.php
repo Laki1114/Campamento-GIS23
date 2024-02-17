@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resort booking form</title>
+    <title>Confirm Page</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
     <button>3</button>
   </div>
   <div class="text">
-    Confirmation & Payment
+    Confirmation
   </div>
 </div>
 
@@ -26,12 +26,12 @@
              <h1>Summary</h1>
         </div>
        <div class="text">
-       Site Name:<br>
-       Room Type:<br>
-       Check-In Date:<br>
-       Check-Out Date:<br>
-       No. of Rooms:<br>
-       Price:<br><br>
+       Site Name: <span style="color: #999;">Galoya Glamping Site</span><br>
+       Room Type: <span style="color: #999;">Double</span><br>
+       Check-In Date: <span style="color: #999;">22/10/2024</span><br>
+       Check-Out Date: <span style="color: #999;">24/10/2024</span><br>
+       No. of Rooms: <span style="color: #999;">02</span><br>
+       Price: <span style="color: #999;">Rs.15000.00</span><br><br>
        </div>
        
        <div class="but">
@@ -79,11 +79,8 @@
 
  </div>
 
- <div class="container2">
- <div class="title">
-             <h3>Payment Method</h3>
-        </div>
- </div>
+ 
+
 
 <script>
   
@@ -106,6 +103,12 @@
       modal.style.display = "none";
     }
   }
+
+ 
+   
+
+
+
 </script>
 </body>
 </html>

@@ -17,14 +17,14 @@
 <div class="card">
 
 <div class="image">
-   <img src="images/camp.png">
+   <img src="../resource/camp.png">
 </div>
 <div class="title">
  <h1>Camping Sites</h1>
 </div>
 <div class="des">
  <p>Here u can found camping site......</p>
- <a href="../Amaya/campingsite.php">
+ <a href="../glamping manager/trending_sites.php">
  <button>Read More...</button></a>
 </div>
 </div>
@@ -34,14 +34,14 @@
 <div class="card">
 
 <div class="image">
-   <img src="images/glamp.png">
+   <img src="../resource/glamp.png">
 </div>
 <div class="title">
  <h1>Glamping Sites</h1>
 </div>
 <div class="des">
  <p>You can Add Desccription Here...</p>
- <a href="../Amaya/index.php">
+ <a href="../glamping manager/trending_sites.php">
 <button>Read More...</button></a>
 </div>
 </div>
@@ -51,7 +51,7 @@
 <div class="card">
 
 <div class="image">
-   <img src="images/guide.png">
+   <img src="../resource/guide.png">
 </div>
 <div class="title">
  <h1>Guide</h1>
@@ -68,14 +68,14 @@
 <div class="card">
 
 <div class="image">
-   <img src="images/tsup.png">
+   <img src="../resource/tsup.png">
 </div>
 <div class="title">
  <h1>Tools</h1>
 </div>
 <div class="des">
  <p>You can Add Desccription Here...</p>
- <a href="../Amaya/tspage.php">
+ <a href="..//tspage.php">
 <button>Read More...</button></a>
 </div>
 </div>
@@ -85,7 +85,7 @@
 <div class="card">
 
 <div class="imaged">
-   <img src="images/driver.png">
+   <img src="../resource/driver.png">
 </div>
 <div class="title">
  <h1>Driver</h1>

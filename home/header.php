@@ -12,7 +12,7 @@
             <a href="home.php">Home</a>
             <a href="home.php#C4">About Us</a>
             <a href="home.php#">Services</a>
-            <a href="../Roshana/blog.html">blog</a>
+            <a href="../blog/blog.html">blog</a>
             <a href="contactus.php">Contact Us</a>
          </nav>
          
@@ -21,12 +21,12 @@
 
         <div>
         
-        <button>LOGIN</button> &nbsp|&nbsp
+        <button ><a href="../login/login.php" style= "color:#BFCC7C;">LOGIN</a></button> &nbsp|&nbsp
          <div class="dropdown">
          
         <button>REGISTER</button>
         <div class="content">
-        <a href="../Roshana/registerUser.html" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a User</a>
+        <a href="../user/registerUser.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a User</a>
         <a href="../Amaya/index.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Glamping Manager</a>
         <a href="../Amaya/registerSupplier.html" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Tool Supplier</a>
         <a href="../Faheema/Guide/signup.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Guide</a>

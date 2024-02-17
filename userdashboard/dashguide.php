@@ -107,7 +107,7 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/customer02.jpg">
+   <img src="../resource/customer03.jpg">
 </div>
 <div class="title">
  <h1>David</h1>
@@ -121,7 +121,7 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/customer02.jpg">
+   <img src="../resource/customer01.jpg">
 </div>
 <div class="title">
  <h1>David</h1>
@@ -135,7 +135,7 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/customer02.jpg">
+   <img src="../resource/customer03.jpg">
 </div>
 <div class="title">
  <h1>David</h1>

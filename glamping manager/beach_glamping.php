@@ -43,7 +43,7 @@
            <div class="grid">
 
 <div class="imaged">
-   <img src="images/beach1.jpeg">
+   <img src="../resource/beach1.jpeg">
 </div>
 <div class="title">
  <h1>Jungle beach camp - Ahungalla</h1> 
@@ -65,7 +65,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/kumana1.jpg">
+   <img src="../resource/kumana1.jpg">
 </div>
 <div class="title">
  <h1>Kumana glamping </h1>
@@ -87,7 +87,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/knuckels.jpg">
+   <img src="../resource/knuckels.jpg">
 </div>
 <div class="title">
  <h1>Knuckels glamping </h1>
@@ -108,7 +108,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/knuckels.jpg">
+   <img src="../resource/knuckels.jpg">
 </div>
 <div class="title">
  <h1>Knuckels glamping </h1>
@@ -129,7 +129,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/knuckels.jpg">
+   <img src="../resource/knuckels.jpg">
 </div>
 <div class="title">
  <h1>Knuckels glamping </h1>
@@ -150,7 +150,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/knuckels.jpg">
+   <img src="../resource/knuckels.jpg">
 </div>
 <div class="title">
  <h1>Knuckels glamping </h1>

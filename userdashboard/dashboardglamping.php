@@ -93,7 +93,7 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/home.png">
+   <img src="../resource/tree2.jpg">
 </div>
 <div class="title">
  <h1>glamping sites</h1>
@@ -108,7 +108,7 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/home.png">
+   <img src="../resource/tree3.jpg">
 </div>
 <div class="title">
  <h1>glamping sites</h1>
@@ -123,7 +123,7 @@ button:hover{
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/home.png">
+   <img src="../resource/tree1.jpg">
 </div>
 <div class="title">
  <h1>glamping sites</h1>
@@ -152,7 +152,7 @@ button:hover{
 
 
 
-<a href="../Amaya/index.php"><button class="button" > See More....</button></a>
+<a href="../glamping manager/trending_sites.php"><button class="button" > See More....</button></a>
 
 
 </div>
