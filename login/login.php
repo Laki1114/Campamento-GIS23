@@ -29,9 +29,13 @@
         </div>
 
         <br><br>
-        <h3>New Here?</h3> <br>
+        <center>
+        <span >New Here?<a href="../home/register.php">Sign up</a></span>
+        </center>
+        <br><br>
+      
 
-        <center><button type="button" class="signbtn">Signup</button></center>
+       
 
   </form>
 </div>
