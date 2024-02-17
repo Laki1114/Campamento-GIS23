@@ -18,7 +18,7 @@
   </div>
   <div class="row">
     <div class="column">
-      <img src="images/home.png" style="width:100%">
+      <img src="../resource/knuckels.jpg" style="width:100%">
     </div>
     <div class="column">
       <form action="/action_page.php">

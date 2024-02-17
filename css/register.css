@@ -37,9 +37,9 @@
     position: absolute;
     border-radius: 10px;
  
-    margin: 50px 430px;
+    margin: 150px 550px;
     
-    max-width: 700px;
+    width: 400px;
     padding: 16px;
     background-color: #BFCC7C;
   }
@@ -58,36 +58,7 @@
     
   }
 
-  /* Full-width input fields */
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border-radius: 5px;
-    border: none;
-    background: white;
 
-  }
-  
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  select {
-    width: 70%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border-radius: 5px;
-    border: none;
-    background: white;
-  }
-  
-  select:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  /* Set a style for the submit button */
 
 
   input[type=submit] {
@@ -121,8 +92,4 @@
   button:hover {
     background-color: #333;
   }
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-
+ 

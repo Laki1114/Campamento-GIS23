@@ -23,10 +23,10 @@
     
 <br><br>
      <div >
-        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="button" class="cancelbtn"><a href="../home/home.php" style="color:#B7CC7C;">Cancel</a></button>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-        <button type="button" class="nextbtn" href="otp.php">Next</button>
+        <button type="button" class="nextbtn" ><a href="otp.php" style="color:#B7CC7C;">Next</a></button>
         </div>
 
         

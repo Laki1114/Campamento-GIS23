@@ -25,7 +25,7 @@
   
       <h3>Explore, Unwind, Connect...</h3>
       <p>Welcome to the CAMPAMENTO.</p>
-      <a href="dashboard.php" class="white-btn">Discover More</a>
+      <a href="../userdashboard/dashboard.php" class="white-btn">Discover More</a>
       <a href="register.php" class="white-btn">Register</a>
    </div>
 
@@ -74,7 +74,7 @@ Discover the magic of the great outdoors, reconnect with nature, and unwind at C
 Whether you seek thrilling adventures or peaceful solitude, you'll find it all here amidst the natural wonder of camping. 
 We eagerly await the opportunity to welcome you to Campamento and make your camping dreams a reality.
          </p>
-         <a href="dashboard.php" class="btn">Discover More</a>
+         <a href="../userdashboard/dashboard.php" class="btn">Discover More</a>
       </div>
 
       <div class="image">

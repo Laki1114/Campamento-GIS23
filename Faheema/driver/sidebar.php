@@ -3,7 +3,7 @@
 <title>Admin sidebar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="admin.css">
 
 <body>
 
@@ -11,7 +11,7 @@
 <div class="navigation">
             <ul>
                 <li>
-                    <a href="../home/home.php">
+                    <a href="home.php">
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
@@ -20,7 +20,7 @@
                 </li>
 
                 <li>
-                    <a href="../home/home.php">
+                    <a href="home.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -34,7 +34,7 @@
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Dashboard</span>
+                        <span class="title">Manage Account </span>
                     </a>
                 </li>
 
@@ -43,7 +43,7 @@
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Manage User</span>
+                        <span class="title">Bookings</span>
                     </a>
                 </li>
 
@@ -52,7 +52,7 @@
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Advertisement</span>
+                        <span class="title">Cancellations</span>
                     </a>
                 </li>
 
@@ -61,7 +61,7 @@
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
-                        <span class="title">Messages</span>
+                        <span class="title">Feedback</span>
                     </a>
                 </li>
 
@@ -75,14 +75,6 @@
                 </li>
 
 
-                <li>
-                    <a href="adminprofile.php">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Profile</span>
-                    </a>
-                </li>
 
                 <li>
                     <a href="#">
