@@ -26,12 +26,12 @@
              <h1>Summary</h1>
         </div>
        <div class="text">
-       Site Name:<br>
-       Room Type:<br>
-       Check-In Date:<br>
-       Check-Out Date:<br>
-       No. of Rooms:<br>
-       Price:<br><br>
+       Site Name: <span style="color: #999;">Galoya Glamping Site</span><br>
+       Room Type: <span style="color: #999;">Double</span><br>
+       Check-In Date: <span style="color: #999;">22/10/2024</span><br>
+       Check-Out Date: <span style="color: #999;">24/10/2024</span><br>
+       No. of Rooms: <span style="color: #999;">02</span><br>
+       Price: <span style="color: #999;">Rs.15000.00</span><br><br>
        </div>
        
        <div class="but">
