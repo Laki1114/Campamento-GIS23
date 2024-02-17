@@ -152,7 +152,7 @@ button:hover{
 
 
 
-<a href="../Amaya/index.php"><button class="button" > See More....</button></a>
+<a href="../glamping manager/trending_sites.php"><button class="button" > See More....</button></a>
 
 
 </div>

@@ -24,7 +24,7 @@
 </div>
 <div class="des">
  <p>Here u can found camping site......</p>
- <a href="../glamping manager/glm_dashboard.php">
+ <a href="../glamping manager/trending_sites.php">
  <button>Read More...</button></a>
 </div>
 </div>
@@ -41,7 +41,7 @@
 </div>
 <div class="des">
  <p>You can Add Desccription Here...</p>
- <a href="../glamping manager/glm_dashboard.php">
+ <a href="../glamping manager/trending_sites.php">
 <button>Read More...</button></a>
 </div>
 </div>
