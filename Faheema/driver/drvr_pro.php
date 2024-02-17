@@ -1,273 +1,298 @@
-<!DOCTYPE html>
-<html>
+<?php
+      require '../../Roshana/linklinkz.php';
+      session_start(); ?>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="../../Lakshani/css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Admin Profile </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="admin.css">
+<style>
+      .btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  /* Blue */
+  .info {
+    border-color: #52f321;
+    color: rgb(7, 83, 68);
+  }
+  
+  .info:hover {
+    background: #11b044;
+    color: white;
+  }
+
+
+h1,h2 {
+    text-align:center;
+    line-height:30px;
+}
+
+table {
+  margin-top: 0px;
+  width: 100%; 
+  border: none;height
+}
+
+.move-content{
+  margin-left:40px;
+}
+
+/* =========================wrapping profile pic and table=====================*/
+.containerr {
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align elements */
+  margin-left: 70px;
+  margin-top:0px;
+
+}
+
+.profile {
+  flex: 1; /* Let the profile picture take 1/4 of the available space */
+  text-align: center;
+}
+
+.profile-info {
+  flex: 1; 
+  /* Let the profile information take 3/4 of the available space */
+}
+</style>
+
 </head>
+
 <body>
-<header class="header">
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+        <?php include 'sidebar.php'; ?>
+        </div>
 
-   
-<div class="flex">
-<a href="../../Lakshani/home.php"><img src="../../Lakshani/images/logo.png" alt="" width="130" height="60"></a>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
 
-   <nav class="navbar">
-      <a href="../../Lakshani/home.php">Home</a>
-      <a href="../../Lakshani/home.php">About Us</a>
-      <a href="../../Lakshani/home.php">Services</a>
-      <a href="../../Roshana/blog.html">Blog</a>
-      <a href="../../Lakshani/contactus.php">Contact Us</a>
-   </nav>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
 
-   
+                <div class="user">
+                    <img src="images/customer01.jpg" alt="">
+                </div>
+            </div>
 
-   <div class="flex2">
-      <a href="../../Lakshani/home.php" ><img src="../../Lakshani/images/search.png" alt="" width="25" height="25"></a>
-      <a href="drvr_pro.php">  <img src="../../Lakshani/images/profile.png" alt="" width="25" height="25"> </a>
-      <a href="../../Faheema/cart.php">  <img src="../../Lakshani/images/cart.png" alt="" width="25" height="25"> </a>
-      <a href="../../Lakshani/notification.php" ><img src="../../Lakshani/images/bell.png" alt="" width="25" height="25"></a>
-   </div>
-   
-   
-</div>
-
-
-</header><br><br><br><br><br><br><br>
-<div class="bgn"> <?php
-        require 'config.php';
-        $query  = "SELECT * FROM driver WHERE d_id= 2;";
-        $result = mysqli_query($con, $query);
-        if (mysqli_num_rows($result) > 0) {
-            while ($Row = mysqli_fetch_assoc($result)) {
+            <!-- ======================= Cards ================== -->
+            <div >
+            <?php    
+ 
+      $email = $_SESSION['email'] ;
+        $query  = mysqli_query($linkz, "SELECT * FROM driver WHERE email= '$email' ");
+       
+        $row = mysqli_fetch_array($query);
+       
         ?>
-<h2><center>Welcome Anthony</center></h2>
-<h3><center>User ID - D<?php echo $Row['d_id']; ?></center></h3>
-
-<div class="container">
-    <div class="profile">
-      <div class="container-image">
-    <img src="drvr 1.jpg" alt="profile pic" class="profile-picture" >
-    <button class="btn">
-      <img src="./assets/profile/edit.png" width="30px" height="30px"></button>
-  </div>
-  </div>
+        <br>
+                <h1>User ID - D<?php echo $row['d_id']; ?></h1>
+                <br>
+                <div class="containerr" >
+                    <div class="profile">
+                    <div class="container-image">
+                    <img src="images/customer02.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
+                    </div>
+                    </div>
+                </div>
+            <br>
   
-          <div class="profile-info">
-            <table>
-
-              <tr>
-                <td><b>First Name</b> : Tom</td>
-                <td><b>NIC No.</b> :  <?php echo $Row['nic']; ?></td>
-              </tr>
-              <tr>
-                <td><b>Last name </b>:  Anthony</td>
-                <td><b>Email </b>:  <?php echo $Row['email']; ?></td>
-              </tr>
-              <tr>
-                <td><b>Gender</b> :  <?php echo $Row['gender']; ?></td>
-                <td><b>Phone no</b> :  <?php echo $Row['phone']; ?></td>
-              </tr>
-              <tr>
-                <td><b>Address</b> :  <?php echo $Row['address']; ?></td>
-                <td><b>Location </b>: <?php echo $Row['location']; ?></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><button class="btn info"><a href="editgui.php">Edit Your Data</a></button></td>
-              </tr>
-              <?php
-            }
-        }
-        ?>
-            </table>
-           
-          </div>
+                <div class="profile-info">
+                    <table>
+                    <tr>
+                        <td>First Name : <?php echo $row['firstname']; ?></td>
+                        <td>NIC no : <?php echo $row['nic']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Last name :<?php echo $row['lastname']; ?></td>
+                        <td>Email : <?php echo $row['email']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Gender : <?php echo $row['gender']; ?></td>
+                        <td>Phone no : <?php echo $row['phone']; ?></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn info">Edit Your Data</button></td>
+                    </tr>
+                    </table>
+                
+                </div>
   
-</div></div>
-<div class="down">
-<hr style="width: 100%; height: 2px;">
-<div class="move-content">
-<h2>Bookings</h2>
-[GU - Hiring a Guide]
-</div>
-<!--Here starts the purchase table-->
+            </div>
 
-<table class="purchases">
-  
-  <tr class="no-hover">
-    <th>Booking ID</th>
-    <th>Date</th>
-   <th></th>
-   <th>Cancel</th>
-  </tr>
-  <tr>
-    <td>D12</td>
-    <td>2023/10/03</td>
-     <td><button class="button button1">View</button></td>
-     <td> <a href='#' onclick='example()'><button class="button button2">Cancel</button></a>
-      <div id="example">
-        <div>
-          <p>Confirm your cancellation?</p>
-          <button class="button button2">Yes</button>
-         <a href='#' onclick='example()'> <button class="button button1">No</button></a>
+             
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Admin Details</h2>
+                        <a href="admindetails.php" class="btn">View All</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Admin ID</td>
+                                <td>Name</td>
+                                <td>Email</td>
+                                <td>Telephone</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>A001</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A002</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A003</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A004</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A005</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A004</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A005</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A004</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>A005</td>
+                                <td>John</td>
+                                <td>john123@gmail.com</td>
+                                <td>0719747670</span></td>
+                            </tr>
+
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ================= New Customers ================ -->
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Recent Admins</h2>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Sri Lanka | 12:00 </span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        
+
+                        
+                    </table>
+                </div>
+            </div>
         </div>
-        <script>
-          function example() {
-            el = document.getElementById("example");
-            el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-          }
-        </script>
-      </div></td>
-  </tr>
-  <tr>
-    <td>D51</td>
-    <td>2023/09/12</td>
-     <td><button class="button button1">View</button></td>
-     <td> <a href='#' onclick='example()'><button class="button button2">Cancel</button></a>
-      <div id="example">
-        <div>
-          <p>Confirm your cancellation?</p>
-          <button class="button button2">Yes</button>
-         <a href='#' onclick='example()'> <button class="button button1">No</button></a>
-        </div>
-        <script>
-          function example() {
-            el = document.getElementById("example");
-            el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-          }
-        </script>
-      </div></td>
-  </tr>
-  <tr>
-    <td>D56</td>
-    <td>2023/09/01</td>
-     <td><button class="button button1">View</button></td>
-     <td> <a href='#' onclick='example()'><button class="button button2">Cancel</button></a>
-      <div id="example">
-        <div>
-          <p>Confirm your cancellation?</p>
-          <button class="button button2">Yes</button>
-         <a href='#' onclick='example()'> <button class="button button1">No</button></a>
-        </div>
-        <script>
-          function example() {
-            el = document.getElementById("example");
-            el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-          }
-        </script>
-      </div></td>
-  </tr>
+    </div>
 
 
-</table>
 
-<br><br>
-<p><h2><div class="move-content">Your Cancellations</div></h2></p><p></p>
-<!--cancellation table-->
-
-  <table class="purchases table-container">
-  <thead>
-  <tr class="no-hover">
-    <th>Booking ID</th>
-    <th>Date</th>
-   <th></th>
-  </tr>
-</thead>
-
-
-<tbody>
-  <tr>
-    <td>D59</td>
-    <td>2023/10/03</td>
-     <td>YOU CANCELLED</td>
-  </tr>
-  <tr>
-    <td>D45</td>
-    <td>2023/09/12</td>
-     <td>YOU CANCELLED</td>
-  </tr>
-  <tr>
-
-  
-  </tbody>
-</table>
-
-<br><br>
-<p><h2><div class="move-content">Customer Cancellations</div></h2></p><p></p>
-<!--cancellation table-->
-
-  <table class="purchases table-container">
-  <thead>
-  <tr class="no-hover">
-    <th>Booking ID</th>
-    <th>Date</th>
-   <th></th>
-  </tr>
-</thead>
-
-
-<tbody>
-  <tr>
-    <td>D59</td>
-    <td>2023/10/03</td>
-     <td>YOU CANCELLED</td>
-  </tr>
-  <tr>
-    <td>D24</td>
-    <td>2023/09/12</td>
-     <td>YOU CANCELLED</td>
-  </tr>
-  <tr>
-
-  
-  </tbody>
-</table>
-
-<br><br>
-<p><h2><div class="move-content">Qualifications<button class="edit">edit</button></div></h2></p><p></p>
-<ul>
-                <li>Light vehicle license</li>
-                <li>Certified</li>
-                <li>3 Years of experience</li>
-           
-            </ul>
-
-
-<p><h2><div class="move-content">Experience<button class="exp">+image</button> <button class="edit">edit</button></div></h2></p><p></p>
-<div class="experience">
-
-  <p>Text about experience</p>
-  <br>
-  <div class="experience-grid">
-      <div class="experience-item">
-          <img src="ex 1.jpg" alt="Experience 1">
-      </div>
-      <div class="experience-item">
-          <img src="ex 2.jpg" alt="Experience 2">
-      </div>
-      <div class="experience-item">
-          <img src="ex 3.jpg" alt="Experience 3">
-     </div>
-  </div>
-</div>
-</div>
-<br><br>
-Delete Account: <a href='#' onclick='example()'> <button class="btn info"> Delete</button></a>
-<div id="example">
-        <div>
-          <p>Are you sure?</p>
-          <a href='delete.php'>button class="button button2">Yes</button></a>
-         <a href='#' onclick='example()'> <button class="button button1">No</button></a>
-        </div>
-        <script>
-          function example() {
-            el = document.getElementById("example");
-            el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-          }
-        </script>
+    <!-- ====== ionicons ======= -->
 </body>
+
 </html>
