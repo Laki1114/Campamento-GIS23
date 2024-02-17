@@ -13,20 +13,20 @@
 
   
     <br><br>
-  <h1>Recovery Account</h1> <br><br><br>
+  <h1>Recovery Account</h1> <br>
 
-    <label for="email"><b>Email Address</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <label for="uname"><b>OTP</b></label>
+    <input type="text" placeholder="Enter OTP" name="uname" required>
 
    
 
     
 <br><br>
      <div >
-        <button type="button" class="cancelbtn">Cancel</button>
+     &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-        <button type="button" class="nextbtn" href="otp.php">Next</button>
+        <button type="button" class="nextbtn">Submit</button>
         </div>
 
         
