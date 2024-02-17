@@ -64,7 +64,7 @@ h1{
 <div class="card">
 
 <div class="image">
-<a href="../Amaya/campingsite.php">
+<a href="../glamping manager/glm_dashboard.php">
    <img src="../resource/camp.png" ></a>
 </div>
 <div class="title">
@@ -77,7 +77,7 @@ h1{
 <div class="card">
 
 <div class="image">
-   <a href="../Amaya/index.php">
+   <a href="../glamping manager/glm_dashboard.php">
    <img src="../resource/glamp.png" ></a>
 </div>
 <div class="title">

@@ -15,34 +15,10 @@
 
 <!-- Navigation Bar -->
 
-<header class="header">
 
-   
-      <div class="flex">
-      <a href="home.php"><img src="images/logo.png" alt="" width="130" height="60"></a>
 
-         <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="home.php">About Us</a>
-            <a href="home.php">Services</a>
-            <a href="../Roshana/blog.html">blog</a>
-            <a href="contactus.php">Contact Us</a>
-         </nav>
-
-         
-
-         <div class="flex2">
-            <a href="searchpage.php" ><img src="../resource/search.png" alt="" width="25" height="25"></a>
-            <a href="../Roshana/profileUser.php">  <img src="../resource/profile.png" alt="" width="25" height="25"> </a>
-            <a href="cart.php">  <img src="../resource/cart.png" alt="" width="25" height="25"> </a>
-            <a href="notification.php" ><img src="../resource/bell.png" alt="" width="25" height="25"></a>
-         </div>
-         
-         
-      </div>
-  
-
-</header>
+<?php include '../home/headerIn.php'; ?>
+      
 
 
 <!-- Header -->
@@ -96,18 +72,18 @@
   
   <div class="row"> 
   <div class="column" >
-  <img src="../resource/home.png" style="width:100%">
+  <img src="../resource/madolsima.jpg" style="width:100%">
   <div class="text-block">
-    <h2>Nature</h2>
+    <h2>Madolsima</h2>
   </div>
 </div>
   
    
   <div class="column2"> 
   <div class="row" >
-  <img src="../resource/home.png" style="width:100%">
+  <img src="../resource/narangala.jpg" style="width:100%">
   <div class="text-block">
-    <h2>Nature</h2>
+    <h2>Narangala</h2>
   </div>
 </div>
   <div class="row" >
@@ -119,9 +95,9 @@
 
   <div class="column2"> 
   <div class="row" >
-  <img src="../resource/home.png" style="width:100%">
+  <img src="../resource/namunukula.jpg" style="width:100%">
   <div class="text-block">
-    <h2>Nature</h2>
+    <h2>Namunukula</h2>
   </div>
 </div>
   <div class="row" >
@@ -133,7 +109,7 @@
   
   </div> 
   
-    <a href="../Amaya/campingsite.php"><button class="button" > See More....</button></a>
+    <a href="..//campingsite.php"><button class="button" > See More....</button></a>
   </div>
   </section>
 <hr>

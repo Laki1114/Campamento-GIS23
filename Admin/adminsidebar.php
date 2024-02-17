@@ -11,7 +11,7 @@
 <div class="navigation">
             <ul>
                 <li>
-                    <a href="home.php">
+                    <a href="../home/home.php">
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
@@ -20,7 +20,7 @@
                 </li>
 
                 <li>
-                    <a href="home.php">
+                    <a href="../home/home.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>

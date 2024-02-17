@@ -52,94 +52,97 @@
                             <tr>
                                 <td>User ID</td>
                                 <td>Name</td>
-                                <td>User type</td>
+                                <td>NIC NO</td>
+                                <td>Gender</td>
+                                <td>Telephone No </td>
                                 <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
+                                
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
                                 <td>U001</td>
-                                <td>$1200</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
                             <td>U002</td>
-                                <td>$1200</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>U003</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>U004</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>U005</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>U006</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>U007</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>U008</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
+
+
+                            
                         </tbody>
                     </table>
                 </div>
@@ -157,96 +160,99 @@
                     <table>
                         <thead>
                             <tr>
-                                <td>User ID</td>
+                                <td>GM ID</td>
                                 <td>Name</td>
-                                <td>User type</td>
+                                <td>NIC NO</td>
+                                <td>Gender</td>
+                                <td>Telephone No </td>
                                 <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
+                                
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td>U001</td>
-                                <td>$1200</td>
+                                <td>GM001</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>U002</td>
-                                <td>$1200</td>
+                            <td>GM002</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>GM003</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>GM004</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>GM005</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>GM006</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>GM007</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>GM008</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
+
+
+                            
                         </tbody>
                     </table>
                 </div>
@@ -261,202 +267,99 @@
                     <table>
                         <thead>
                             <tr>
-                                <td>User ID</td>
+                                <td>Guide ID</td>
                                 <td>Name</td>
-                                <td>User type</td>
+                                <td>NIC NO</td>
+                                <td>Gender</td>
+                                <td>Telephone No </td>
                                 <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
+                                
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td>U001</td>
-                                <td>$1200</td>
+                                <td>G001</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>U002</td>
-                                <td>$1200</td>
+                            <td>G002</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>G003</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>G004</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>G005</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>G006</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>G007</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>G008</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-
-
-            <div class="details2">
-                <div class="admincustomer">
-                    <div class="cusdet">
-                        <h2>Tool Supplier Details</h2>
-                    </div>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>User ID</td>
-                                <td>Name</td>
-                                <td>User type</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>U001</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
-                            <tr>
-                            <td>U002</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
 
-                            <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
-
-                            <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
-
-                            <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
-
-                            <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
-
-                            <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
-
-                            <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -476,96 +379,99 @@
                     <table>
                         <thead>
                             <tr>
-                                <td>User ID</td>
+                                <td>Driver ID</td>
                                 <td>Name</td>
-                                <td>User type</td>
+                                <td>NIC NO</td>
+                                <td>Gender</td>
+                                <td>Telephone No </td>
                                 <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
-                                <td>E-mail</td>
+                                
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td>U001</td>
-                                <td>$1200</td>
+                                <td>D001</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>U002</td>
-                                <td>$1200</td>
+                            <td>D002</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>D003</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>D004</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>D005</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>D006</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>D007</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
 
                             <tr>
-                            <td>Advertisement</td>
-                                <td>$1200</td>
+                            <td>D008</td>
+                                <td>Amrith</td>
                                 <td>Paid</td>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>Paid</td>
+                                <td>200081800123</td>
+                                <td>Male</td>
+                                <td>0414495986</td>
+                                <td>lkj@gmail.com</td>
                             </tr>
+
+
+                            
                         </tbody>
                     </table>
                 </div>

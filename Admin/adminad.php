@@ -168,19 +168,6 @@
 
 
 
-<div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
-  <h4>David | 12:00</h4>
-  <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
-  <p>Camping is one of the captivating ways to get in touch 
-    with outdoor surroundings. Get top recommendations on 
-    best camping essentials for a camping trip. </p>
-    <p>See more....</p>
-  <span class="time-right">
-  <button class="btn" > Post </button> 
-  <button class="btn active" > Reject </button>
-  </span>
-</div>
 
                 </div>
                 </div>
