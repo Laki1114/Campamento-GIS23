@@ -14,7 +14,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/galoya.jpg">
+   <img src="../resource/galoya.jpg">
 </div>
 <div class="title">
  <h1>Galoya Glamping Site</h1>
@@ -38,7 +38,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/yala.jpg">
+   <img src="../resource/yala.jpg">
 </div>
 <div class="title">
  <h1>Yala glamping site</h1>
@@ -60,7 +60,7 @@
 <div class="grid">
 
 <div class="imaged">
-<img src="images/wild1.jpeg">
+<img src="../resource/wild1.jpeg">
 </div>
 <div class="title">
  <h1>Leopard Nest - Yala</h1>
@@ -83,7 +83,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/knuckels.jpg">
+   <img src="../resource/knuckels.jpg">
 </div>
 <div class="title">
  <h1>Knuckels glamping </h1>
@@ -106,7 +106,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/tree1.jpg">
+   <img src="../resource/tree1.jpg">
 </div>
 <div class="title">
  <h1>Tribe Yala</h1>
@@ -128,7 +128,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/galoya.jpg">
+   <img src="../resource/galoya.jpg">
 </div>
 <div class="title">
  <h1>oya Glamping Site</h1>
@@ -149,7 +149,7 @@
 <div class="grid">
 
 <div class="imaged">
-<img src="images/wild1.jpeg">
+<img src="../resource/wild1.jpeg">
 </div>
 <div class="title">
  <h1>Leopard Nest - Yala</h1>
@@ -172,7 +172,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/yala.jpg">
+   <img src="../resource/yala.jpg">
 </div>
 <div class="title">
  <h1>Yala glamping site</h1>

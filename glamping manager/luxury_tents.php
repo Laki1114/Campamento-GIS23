@@ -45,7 +45,7 @@
            <div class="grid">
 
 <div class="imaged">
-   <img src="images/galoya.jpg">
+   <img src="../resource/galoya.jpg">
 </div>
 <div class="title">
  <h1>Galoya glamping site</h1>
@@ -68,7 +68,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/knuckels.jpg">
+   <img src="../resource/knuckels.jpg">
 </div>
 <div class="title">
  <h1>Knuckels Glamping Tents</h1>
@@ -91,7 +91,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/lux1.jpg">
+   <img src="../resource/lux1.jpg">
 </div>
 <div class="title">
  <h1>Kottawatta Village</h1>
@@ -113,7 +113,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/lux2.jpeg">
+   <img src="../resource/lux2.jpeg">
 </div>
 <div class="title">
  <h1>Flameback Eco Lodge </h1>
@@ -135,7 +135,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/lux3.jpg">
+   <img src="../resource/lux3.jpg">
 </div>
 <div class="title">
  <h1>Kodev Kalpitiya </h1>
@@ -157,7 +157,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/lux4.jpg">
+   <img src="../resource/lux4.jpg">
 </div>
 <div class="title">
  <h1>River glamping by Gaga Bees </h1>

@@ -45,7 +45,7 @@
            <div class="grid">
 
 <div class="imaged">
-   <img src="images/tree1.jpg">
+   <img src="../resource/tree1.jpg">
 </div>
 <div class="title">
  <h1>Tribe Yala</h1>
@@ -67,7 +67,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/tree2.jpg">
+   <img src="../resource/tree2.jpg">
 </div>
 <div class="title">
  <h1>Wasgamuwa Treehouse </h1>
@@ -89,7 +89,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/tree3.jpg">
+   <img src="../resource/tree3.jpg">
 </div>
 <div class="title">
  <h1>Back of beyond - Pidurangala</h1>
@@ -110,7 +110,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/tree4.jpg">
+   <img src="../resource/tree4.jpg">
 </div>
 <div class="title">
  <h1>Ark Treehouse - Sinharaja</h1>
@@ -131,7 +131,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/tree5.png">
+   <img src="../resource/tree5.png">
 </div>
 <div class="title">
  <h1>Treehouse Suit- Saraii village </h1>
@@ -152,7 +152,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="images/tree6.jpg">
+   <img src="../resource/tree6.jpg">
 </div>
 <div class="title">
  <h1> Huma Terra Green Lodge</h1>
