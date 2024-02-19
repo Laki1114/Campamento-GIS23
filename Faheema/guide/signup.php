@@ -33,7 +33,7 @@ if(isset($_POST['registerbttn'])){
   move_uploaded_file($_FILES["exp"]["tmp_name"], $targetFile2);
  
  
-  $password = md5($ps);
+ // $password = md5($ps);
 
   $i="insert into guide(firstname, lastname, gender, phone, address, picture, experience, nic, email, password, location, license, qualification)values ('$f','$l','$g','$p','$a','$targetFile1','$e', '$n','$ema','$password','$lo','$targetFile2', '$q')";
   if(mysqli_query($con, $i)){
