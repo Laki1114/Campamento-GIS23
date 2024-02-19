@@ -1,21 +1,25 @@
 <?php
-include('config.php');
+      require '../../Roshana/linklinkz.php';
+      session_start();
+$email = $_SESSION['email'] ;
+$query  = mysqli_query($linkz, "SELECT * FROM driver WHERE email= '$email' ");
 
+$row = mysqli_fetch_array($query);
 if(isset($_POST['edit'])){
 
-   $update_fname = mysqli_real_escape_string($con, $_POST['firstName']);
-   $update_lname = mysqli_real_escape_string($con, $_POST['lastName']);
-   $update_gender = mysqli_real_escape_string($con, $_POST['gender']);
-   $update_phone = mysqli_real_escape_string($con, $_POST['phoneNo']);
-   $update_nic = mysqli_real_escape_string($con, $_POST['nicNo']);
-   $update_email = mysqli_real_escape_string($con, $_POST['email']);
+   $update_fname = mysqli_real_escape_string($linkz, $_POST['firstName']);
+   $update_lname = mysqli_real_escape_string($linkz, $_POST['lastName']);
+   //$update_gender = mysqli_real_escape_string($linkz, $_POST['gender']);
+   $update_phone = mysqli_real_escape_string($linkz, $_POST['phoneNo']);
+   $update_nic = mysqli_real_escape_string($linkz, $_POST['nicNo']);
+  // $update_email = mysqli_real_escape_string($linkz, $_POST['email']);
 
-   mysqli_query($con, "UPDATE `guide` SET firstname = '$update_fname', gender = '$update_gender',phone = '$update_phone', nic = '$update_nic',email = '$update_email' WHERE id = '8'") or die('query failed');
+   mysqli_query($linkz, "UPDATE `driver` SET firstname = '$update_fname',phone = '$update_phone', nic = '$update_nic', WHERE email = '$email'") or die('query failed');
 
    $old_pass = $_POST['old_pass'];
-   $update_pass = mysqli_real_escape_string($con, md5($_POST['psw']));
-   $new_pass = mysqli_real_escape_string($con, md5($_POST['psw-repeat']));
-   $confirm_pass = mysqli_real_escape_string($con, md5($_POST['psw-repeat']));
+   $update_pass = mysqli_real_escape_string($linkz, md5($_POST['psw']));
+   $new_pass = mysqli_real_escape_string($linkz, md5($_POST['psw-repeat']));
+   $confirm_pass = mysqli_real_escape_string($linkz, md5($_POST['psw-repeat']));
 
    if(!empty($update_pass) || !empty($new_pass) || !empty($confirm_pass)){
     if($update_pass != $old_pass){
@@ -23,7 +27,7 @@ if(isset($_POST['edit'])){
     }elseif($new_pass != $confirm_pass){
        $message[] = 'confirm password not matched!';
     }else{
-       mysqli_query($db, "UPDATE `guide` SET password = '$confirm_pass' WHERE id = '7'") or die('query failed');
+       mysqli_query($db, "UPDATE `driver` SET password = '$confirm_pass' WHERE email = '$email'") or die('query failed');
        $message[] = 'password updated successfully!';
     }
  }
@@ -32,63 +36,87 @@ if(isset($_POST['edit'])){
 
 
 ?>
-<!DOCTYPE html>
+
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="editgui.css">
-    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Admin Profile </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="admin.css">
+
+
 </head>
+
 <body>
 <?php
-      $select = mysqli_query($con, "SELECT * FROM `guide` WHERE id = '7'") or die('query failed');
+      $select = mysqli_query($linkz, "SELECT * FROM `driver` WHERE email = '$email'") or die('query failed');
       if(mysqli_num_rows($select) > 0){
          $fetch = mysqli_fetch_assoc($select);
 
       }
    ?>
-    <form method="post" enctype="multipart/form-data">
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+        <?php include 'sidebar.php'; ?>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+            
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div >
+            <form method="post" enctype="multipart/form-data">
         <fieldset>
          <legend></legend>
     <table>
+
+   
         <td>
-    <div class="container">
+
+    <div class="containe">
     <h1>Edit your Details Here</h1>
     <p>Please update the details where necessary.</p>
     <hr>
 
     <label for="firstName"><b>First Name </b></label><br>
-    <input type="text" value="" name="firstName"  required><br>
+    <input type="text" value="<?php echo $fetch['firstname']; ?>" name="firstName" required><br>
 
     <label for="lastName"><b>Last Name </b></label><br>
-    <input type="text" value="" name="lastName"  required><br>
-
-
-    <label for="gender"><b>Gender</b></label><br>
-    <select id="gender" value=""name="gender" required>
-      <option value="" disabled selected>Select Gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select><br>
+    <input type="text" value="<?php echo $fetch['lastname']; ?>" name="lastName"  required><br>
 
     <label for="phoneNo"><b>Phone No </b></label><br>
-    <input type="text" value="" name="phoneNo" required><br>
-    <label for="phoneNo"><b>NIC No </b></label><br>
-    <input type="text" value="" name="nicNo"  required><br>
+    <input type="text" value="<?php echo $fetch['phone']; ?>" name="phoneNo" required><br>
 
-    <label for="email"><b>Email</b></label><br>
-    <input type="text" email="" name="email"  required><br>
+    <label for="phoneNo"><b>NIC No </b></label><br>
+    <input type="text" value="<?php echo $fetch['nic']; ?>" name="nicNo"  required><br>
+
 </td>
+
 </div>
+<div class="container-right">
 <td class="table-right">
+
+
     <h4>Change password</h4><br>
     <input type="hidden" name="old_pass" value="">
     <label for="psw"><b>Current Password</b></label><br>
-    <input type="password" placeholder="Enter Password" name="psw" required><br>
+    <input type="password" placeholder="Enter Password" name="psw" ><br>
                 
     <label for="psw-repeat"><b>New Password</b></label><br>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat"  required><br>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat"  ><br>
     <label for="psw-repeat"><b>Confirm Password</b></label><br>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" ><br>
 
 
         <button type="submit" name="edit" class="registerbtn"><b>Update</b></button>
@@ -97,5 +125,17 @@ if(isset($_POST['edit'])){
 </table>
 </fieldset>
 </form>
-</body>
+  
+            </div>
+            </body>
 </html>
+             
+
+
+
+
+                        
+
+
+
+  
