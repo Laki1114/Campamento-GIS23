@@ -2,7 +2,7 @@
       require '../../Roshana/linklinkz.php';
       session_start();
         if(!isset($_SESSION['email'])){
-            header('location: login.php');
+            header('location: ./login/login.php');
         }
 ?> 
 <html lang="en">
