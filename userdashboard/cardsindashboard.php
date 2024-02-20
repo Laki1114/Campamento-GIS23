@@ -64,7 +64,7 @@ h1{
 <div class="card">
 
 <div class="image">
-<a href="../glamping manager/trending_sites.php">
+<a href="../camping sites/camping_sites.php">
    <img src="../resource/camp.png" ></a>
 </div>
 <div class="title">
