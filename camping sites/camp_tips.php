@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camp Tips</title>
-    <link rel="stylesheet" href="glm_css_files/camp_tips.css">
+    <link rel="stylesheet" href="camping_css_files/camp_tips.css">
 </head>
 <body>
     <!------sidebar---->

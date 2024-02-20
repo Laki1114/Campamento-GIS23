@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camping Sites</title>
-
-    <link rel="stylesheet" href="glm_css_files/camping_sites.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="camping_css_files/camping_sites.css">
 </head>
 <body>
      <!------sidebar---->
@@ -36,10 +36,10 @@
            <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/galoya.jpg">
+   <img src="../resource/madolsima.jpg">
 </div>
 <div class="title">
- <h1>Galoya glamping site</h1>
+ <h1>Madolsima Camping site</h1>
 </div>
 <div class="star-container">
   <span class="fa fa-star checked"></span>
@@ -59,10 +59,10 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/knuckels.jpg">
+   <img src="../resource/namunukula.jpg">
 </div>
 <div class="title">
- <h1>Knuckels Glamping Tents</h1>
+ <h1>Namunukula Camping Site</h1>
 </div>
 <div class="star-container">
   <span class="fa fa-star checked"></span>
@@ -82,10 +82,10 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/lux1.jpg">
+   <img src="../resource/bible rock.jpg">
 </div>
 <div class="title">
- <h1>Kottawatta Village</h1>
+ <h1>Bible Rock Camping site</h1>
 </div>
 <div class="star-container">
   <span class="fa fa-star checked"></span>
@@ -104,32 +104,10 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/lux2.jpeg">
+   <img src="../resource/wangedigala.jpg">
 </div>
 <div class="title">
- <h1>Flameback Eco Lodge </h1>
-</div>
-<div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-</div>
-
-<div class="des">
- <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
- 
-</div>
-</div>
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/lux3.jpg">
-</div>
-<div class="title">
- <h1>Kodev Kalpitiya </h1>
+ <h1>Wangedigala Camping Site </h1>
 </div>
 <div class="star-container">
   <span class="fa fa-star checked"></span>
@@ -148,10 +126,32 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/lux4.jpg">
+   <img src="../resource/yahangala.JPG">
 </div>
 <div class="title">
- <h1>River glamping by Gaga Bees </h1>
+ <h1>Yahangala Camping Site</h1>
+</div>
+<div class="star-container">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
+
+<div class="des">
+ <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
+ 
+</div>
+</div>
+
+<div class="grid">
+
+<div class="imaged">
+   <img src="../resource/haritha kanda.jpg">
+</div>
+<div class="title">
+ <h1>Haritha Kanda Camping Sites </h1>
 </div>
 <div class="star-container">
   <span class="fa fa-star checked"></span>

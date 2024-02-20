@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> glm_dashboard_side_bar </title>
-    <link rel="stylesheet" href="glm_css_files/camp_sidebar.css">
+    <link rel="stylesheet" href="camping_css_files/camp_sidebar.css">
 
  
 
