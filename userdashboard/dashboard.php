@@ -109,7 +109,7 @@
   
   </div> 
   
-    <a href="..//campingsite.php"><button class="button" > See More....</button></a>
+    <a href="../camping sites/camping_sites.php"><button class="button" > See More....</button></a>
   </div>
   </section>
 <hr>
