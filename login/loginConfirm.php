@@ -19,7 +19,7 @@ if($result->num_rows > 0)
 		if($_POST['email'] == $row["Email"] && $_POST['psw'] == $row["Password"] )
 		{
 			$_SESSION['email'] = $email;
-			header("Location:../Lakshani/adminHome.php");
+			header("Location:../admin/admin.php");
 		}
 		
 	}
@@ -39,7 +39,7 @@ if($result->num_rows > 0)
 		if($_POST['email'] == $row["Email"] && $_POST['psw'] == $row["Password"] )
 		{
 			$_SESSION['email'] = $email;
-			header("Location:profileUser.php");
+			header("Location:../user/profileUser.php");
 		}
 		
 	}
@@ -60,7 +60,7 @@ if($result->num_rows > 0)
 		if($_POST['email'] == $row["Email"] && $_POST['psw'] == $row["Password"] )
 		{
 			$_SESSION['email'] = $email;
-			header("Location:../Amaya/glpro.php");
+			header("Location:../glamping manager/glm_dashboard.php");
 		}
 		
 	}

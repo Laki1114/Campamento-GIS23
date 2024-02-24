@@ -27,6 +27,7 @@
       <p>Welcome to the CAMPAMENTO.</p>
       <a href="../userdashboard/dashboard.php" class="white-btn">Discover More</a>
       <a href="register.php" class="white-btn">Register</a>
+      
    </div>
 
 </section>

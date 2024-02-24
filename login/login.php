@@ -8,7 +8,7 @@
 
 
 <div class="bg-img">
-  <form action="/action_page.php" class="container">
+  <form action="loginConfirm.php" class="container" method="post">
     <h1>Login to your Account</h1> <br>
 
     <label for="email"><b>Username</b></label>

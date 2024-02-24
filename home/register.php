@@ -3,27 +3,27 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/register.css">
+
+
 </head>
 <body>
 
 
 <div class="bg-img">
   
-  <form action="/action_page.php" class="container">
+  <form  class="container">
   
-
-<a href="../user/registerUser.php"> 
-    <input type="submit" value="Register as a User" ><br><br><br>
-    </a>
-    <input type="submit" value="Register as a Glamping Manager"> <br><br><br>
+  <button onclick="document.location='../user/registerUser.php'">HTML Tutorial</button>
+  <button type="button" class="block" onclick="../user/registerUser.php">Block Button</button><br><br>
+    <input herf="../user/registerUser.php" type="submit" href="../user/registerUser.php" value="Register as a User" ><br><br><br>
+    
+    <input type="submit" href="../user/registerUser.php" value="Register as a Glamping Manager"> <br><br><br>
     <input type="submit" value="Register as a Tool Supplier"><br><br><br>
     <input type="submit" value="Register as a Guide"> <br><br><br>
     <input type="submit" value="Register as a Driver"><br><br><br>
 
-
-       
-      
-
+    
+    
        
 
   </form>
