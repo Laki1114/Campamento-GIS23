@@ -24,7 +24,7 @@
      </label>
 <br><br><br>
      <div >
-        <button type="button" class="cancelbtn"><a href="../home/home.php" style="color:#B7CC7C;">Cancel</a></button>
+        <button type="button" class="cancelbtn" onclick="document.location='../home/home.php'"> Cancel</button>
         <span class="psw">Forgot <a href="fogotpw.php">password?</a></span>
         </div>
 

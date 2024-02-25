@@ -16,7 +16,7 @@
   
   .bg-img {
     /* The image used */
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../resource/login.jpg");
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../resource/img.jpg");
    
   
     min-height: 720px;
@@ -53,6 +53,7 @@
   table{
     margin-left: auto; 
     margin-right: auto;
+   
     width:600px;
     height:250px;
     
