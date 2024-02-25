@@ -80,38 +80,10 @@ body, html {
 }
 
 
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  color: white;
-  background-color: #327028 ;
-  cursor: pointer;
-  border-radius:10px;
-}
-
-.btn:hover {
-  background-color: #ddd;
-  color:black;
-}
-
-.btn.active {
-  background-color: red;
-  color: white;
-}
-
-.btn.active:hover {
-  background-color: black;
-  color: #;
-}
-
-
-
-#All {background-color: white;}
-#New {background-color: white;}
-#Posted {background-color: white;}
-#Rejected {background-color: white;}
+#All {background-color: #BFCC7C;}
+#New {background-color: #BFCC7C;}
+#Posted {background-color: #BFCC7C;}
+#Rejected {background-color: #BFCC7C;}
 </style>
 </head>
 <body>
