@@ -111,7 +111,7 @@ body, html {
                 </div>
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                    <img src="../resource/customer01.jpg" alt="">
                 </div>
             </div>
 
@@ -136,7 +136,7 @@ body, html {
 
 <div id="All" class="tabcontent">
  <div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
   <h5>David | 12:00 | 24/02/2024</h5>
   <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
   <p>Camping is one of the captivating ways to get in touch 
@@ -152,7 +152,7 @@ body, html {
 
 <div id="New" class="tabcontent">
   <div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
   <h5>David | 12:00 | 24/02/2024</h5>
   <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
   <p>Camping is one of the captivating ways to get in touch 
@@ -168,7 +168,7 @@ body, html {
 
 <div id="Posted" class="tabcontent">
   <div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
   <h5>David | 12:00 | 24/02/2024</h5>
   <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
   <p>Camping is one of the captivating ways to get in touch 
@@ -184,7 +184,7 @@ body, html {
 
 <div id="Rejected" class="tabcontent">
   <div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
   <h5>David | 12:00 | 24/02/2024</h5>
   <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
   <p>Camping is one of the captivating ways to get in touch 

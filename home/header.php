@@ -10,10 +10,10 @@
 
          <nav class="navbar">
             <a href="home.php">Home</a>
-            <a href="home.php#C4">About Us</a>
-            <a href="home.php#">Services</a>
+            <a href="home.php#about">About Us</a>
+            <a href="home.php#service">Services</a>
             <a href="../blog/blog.html">blog</a>
-            <a href="contactus.php">Contact Us</a>
+            <a href="home.php#contact">Contact Us</a>
          </nav>
          
 

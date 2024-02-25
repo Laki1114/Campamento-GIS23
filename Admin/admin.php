@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                    <img src="../resource/customer01.jpg" alt="">
                 </div>
             </div>
 

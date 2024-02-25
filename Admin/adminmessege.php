@@ -148,7 +148,7 @@
                 </div>
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                    <img src="../resource/customer01.jpg" alt="">
                 </div>
             </div>
 
@@ -244,25 +244,25 @@
                     
 
 <div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
   <p>Hello. </p>
   <span class="time-right">11:00</span>
 </div>
 
 <div class="contain darker">
-  <img src="images/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
+  <img src="../resource/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
   <p>Hey! </p>
   <span class="time-left">11:01</span>
 </div>
 
 <div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
   <p>Can I ask something?</p>
   <span class="time-right">11:02</span>
 </div>
 
 <div class="contain darker">
-  <img src="images/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
+  <img src="../resource/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
   <p>Yeah, sure.</p>
   <span class="time-left">11:05</span>
 </div>

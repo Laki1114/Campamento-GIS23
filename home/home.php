@@ -10,7 +10,7 @@
    
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/homestyle.css">
-   
+   <link rel="stylesheet" href="../css/contactus.css">
    
 </head>
 <body>
@@ -33,7 +33,7 @@
 </section>
 
 <br><br><br>
-<section class="about" id="#C4">
+<section class="about" id="about">
 
    <div class="flex">
 
@@ -86,26 +86,45 @@ We eagerly await the opportunity to welcome you to Campamento and make your camp
 
 </section>
 
-<section>
+<section id="service">
 <?php include 'cards.php'; ?>
 </section>
 
 
-<section class="home-contact">
 
-   <div class="content">
-      <h3>have any questions?</h3>
-      <p>
-      Our friendly and knowledgeable staff are ready to assist you with any inquiries you may have. 
-      Whether you're interested in reservations, specific camping site details, activities, 
-      or anything else related to your camping experience at Campamento, don't hesitate to get in touch. 
-      We're here to help you plan your perfect outdoor adventure.
-      </p>
-      <a href="contactus.php" class="white-btn">contact us</a>
+
+<section class="about" id="contact">
+
+   <div class="flex">
+
+      <div class="image">
+         <img src="../resource/contact.jpg" alt="">
+      </div>
+
+      <div class="content">
+         <h3>Contact Us</h3>
+         <p?>leave us a message:</p>
+
+         <form action="/action_page.php">
+        <label for="name">Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+          <option value="srilanka">Sri Lanka</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+      </div>
+
    </div>
 
 </section>
-
+<br><br>
 
 <?php include 'footer.php'; ?>
 

@@ -103,7 +103,7 @@ table {
                 <div class="containerr" >
                     <div class="profile">
                     <div class="container-image">
-                    <img src="images/customer02.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
+                    <img src="../resource/customer02.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
                     </div>
                     </div>
                 </div>
