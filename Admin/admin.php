@@ -125,91 +125,11 @@
                                 <td><span class="status return">Return</span></td>
                             </tr>
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
+                            
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
+                        
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-
-                        </tbody>
+                           </tbody>
                     </table>
                 </div>
 
@@ -225,7 +145,7 @@
                                 <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00 </span></h4>
+                            <h4>U001 - Amit <br> <span>Sri Lanka | 12:00 | 24/02/2024</span></h4>
                             </td>
                         </tr>
 
@@ -234,7 +154,7 @@
                                 <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            <h4>U002 - David <br> <span>Sri Lanka | 12:00 | 24/02/2024</span></h4>
                             </td>
                         </tr>
 
@@ -243,54 +163,10 @@
                                 <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
+                                <h4>GM005 - John <br> <span>Sri Lanka | 12:00 | 24/02/2024</span></h4>
                             </td>
                         </tr>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
 
                         
                     </table>
@@ -298,7 +174,6 @@
             </div>
         </div>
     </div>
-
 
 
     <!-- ====== ionicons ======= -->

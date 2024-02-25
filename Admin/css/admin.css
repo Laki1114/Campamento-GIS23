@@ -297,7 +297,7 @@ body {
 .details .recentOrders {
   position: relative;
   display: grid;
-  min-height: 500px;
+  
   background: var(--white);
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
@@ -389,7 +389,7 @@ body {
 .recentCustomers {
   position: relative;
   display: grid;
-  min-height: 500px;
+  
   padding: 20px;
   background: var(--white);
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
@@ -655,3 +655,20 @@ body {
   color: var(--white);
 }
 
+
+.btnnav {
+  border: 2px solid #327028;
+  background-color: #BFCC7C;
+  color: #327028;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.btnnav:hover {
+  
+  background-color: #327028;
+  color: #BFCC7C;
+  
+}

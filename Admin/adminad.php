@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Admin Manage Advertisement </title>
-    <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/admin.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
 
-    <style>
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  
+}
 
+/* Style tab links */
+.tablink {
+  background-color: #bfcc7c;
+  
+  float: left;
+  outline: 2px;
+  cursor: pointer;
+  width: 15%;
+ color: #327028;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 14px;
+  border: 2px solid #327028;
+}
+
+.tablink:hover {
+  background-color: white;
+  
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
 
 .contain {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   margin: 10px 0;
 }
@@ -58,6 +88,7 @@
   color: white;
   background-color: #327028 ;
   cursor: pointer;
+  border-radius:10px;
 }
 
 .btn:hover {
@@ -72,14 +103,19 @@
 
 .btn.active:hover {
   background-color: black;
-  color: white;
+  color: #;
 }
 
 
-</style>
 
+#All {background-color: white;}
+#New {background-color: white;}
+#Posted {background-color: white;}
+#Rejected {background-color: white;}
+</style>
 </head>
 <body>
+
 
 <div class="container">
             <div class="navigation">
@@ -107,10 +143,8 @@
                 </div>
             </div>
 
-           
 
-                
-               
+
 
 <div class="details2">
 <div class="recentOrders">
@@ -120,11 +154,18 @@
                     </div>
                     
 
+<button class="tablink" onclick="openPage('All', this, 'white')">All</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="tablink" onclick="openPage('New', this, 'white')" id="defaultOpen">New</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="tablink" onclick="openPage('Posted', this, 'white')">Posted</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="tablink" onclick="openPage('Rejected', this, 'white')">Rejected</button>
 
-
-<div class="contain">
+<div id="All" class="tabcontent">
+ <div class="contain">
   <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
-  <h4>David | 12:00</h4>
+  <h5>David | 12:00 | 24/02/2024</h5>
   <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
   <p>Camping is one of the captivating ways to get in touch 
     with outdoor surroundings. Get top recommendations on 
@@ -135,26 +176,12 @@
   <button class="btn active" > Reject</button>
 </span>
 </div>
-
-
-
-<div class="contain">
-  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
-  <h4>David | 12:00</h4>
-  <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
-  <p>Camping is one of the captivating ways to get in touch 
-    with outdoor surroundings. Get top recommendations on 
-    best camping essentials for a camping trip. </p>
-    <p>See more....</p>
-  <span class="time-right">
-  <button class="btn" > Post </button> 
-  <button class="btn active" > Reject </button>
-  </span>
 </div>
 
-<div class="contain">
+<div id="New" class="tabcontent">
+  <div class="contain">
   <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
-  <h4>David | 12:00</h4>
+  <h5>David | 12:00 | 24/02/2024</h5>
   <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
   <p>Camping is one of the captivating ways to get in touch 
     with outdoor surroundings. Get top recommendations on 
@@ -162,18 +189,63 @@
     <p>See more....</p>
   <span class="time-right">
     <button class="btn" > Post </button> 
-  <button class="btn active" > Reject </button>
+  <button class="btn active" > Reject</button>
 </span>
 </div>
+</div>
 
+<div id="Posted" class="tabcontent">
+  <div class="contain">
+  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <h5>David | 12:00 | 24/02/2024</h5>
+  <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
+  <p>Camping is one of the captivating ways to get in touch 
+    with outdoor surroundings. Get top recommendations on 
+    best camping essentials for a camping trip. </p>
+    <p>See more....</p>
+  <span class="time-right">
+    <button class="btn" > Post </button> 
+  <button class="btn active" > Reject</button>
+</span>
+</div>
+</div>
 
+<div id="Rejected" class="tabcontent">
+  <div class="contain">
+  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
+  <h5>David | 12:00 | 24/02/2024</h5>
+  <h3>THE BEST CAMPING ASSESORIES ULTIMATE CHECKLIST</h3>
+  <p>Camping is one of the captivating ways to get in touch 
+    with outdoor surroundings. Get top recommendations on 
+    best camping essentials for a camping trip. </p>
+    <p>See more....</p>
+  <span class="time-right">
+    <button class="btn" > Post </button> 
+  <button class="btn active" > Reject</button>
+</span>
+</div>
+</div>
+</div></div>
+</div>
 
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
 
-                </div>
-                </div>
-            </div>
-        
-
-
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
 </body>
-</html>
+</html> 

@@ -39,12 +39,19 @@
                 </div>
             </div>
 
-
+            <button class="btnnav"><a href="#ud">User Details</a></button>
+            <button class="btnnav" ><a href="#gmd">Glamping Site Manager Details</a></button>
+            <button class="btnnav" ><a href="#gd">Guide Details</a></button>
+            <button class="btnnav" ><a href="#dd">Driver Details</a></button>
+            <button class="btnnav" ><a href="#td">Tool Supplier Details</a></button>
+            
+            
+            
             <!-- ================ Order Details List ================= -->
             <div class="details2">
                 <div class="admincustomer">
                     <div class="cusdet">
-                        <h2>User Details</h2>
+                        <h2 id="ud" >User Details</h2>
                     </div>
 
                     <table>
@@ -64,7 +71,6 @@
                             <tr>
                                 <td>U001</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -74,7 +80,6 @@
                             <tr>
                             <td>U002</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -84,7 +89,6 @@
                             <tr>
                             <td>U003</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -94,53 +98,14 @@
                             <tr>
                             <td>U004</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
                                 <td>lkj@gmail.com</td>
                             </tr>
 
-                            <tr>
-                            <td>U005</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>U006</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>U007</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>U008</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
+                            
+                            
 
                             
                         </tbody>
@@ -154,7 +119,7 @@
             <div class="details2">
                 <div class="admincustomer">
                     <div class="cusdet">
-                        <h2>Glamping Site Manager Details</h2>
+                        <h2 id="gmd" >Glamping Site Manager Details</h2>
                     </div>
 
                     <table>
@@ -174,7 +139,7 @@
                             <tr>
                                 <td>GM001</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                              
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -184,7 +149,7 @@
                             <tr>
                             <td>GM002</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                                
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -194,7 +159,7 @@
                             <tr>
                             <td>GM003</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                              
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -204,52 +169,13 @@
                             <tr>
                             <td>GM004</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                              
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
                                 <td>lkj@gmail.com</td>
                             </tr>
 
-                            <tr>
-                            <td>GM005</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>GM006</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>GM007</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>GM008</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
 
 
                             
@@ -261,7 +187,7 @@
             <div class="details2">
                 <div class="admincustomer">
                     <div class="cusdet">
-                        <h2>Guide Details</h2>
+                        <h2 id="gd" >Guide Details</h2>
                     </div>
 
                     <table>
@@ -281,7 +207,7 @@
                             <tr>
                                 <td>G001</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                                
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -291,7 +217,7 @@
                             <tr>
                             <td>G002</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                                
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -301,7 +227,7 @@
                             <tr>
                             <td>G003</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                                
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -311,54 +237,12 @@
                             <tr>
                             <td>G004</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                                
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
                                 <td>lkj@gmail.com</td>
                             </tr>
-
-                            <tr>
-                            <td>G005</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>G006</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>G007</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>G008</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-
                             
                         </tbody>
                     </table>
@@ -373,7 +257,7 @@
             <div class="details2">
                 <div class="admincustomer">
                     <div class="cusdet">
-                        <h2>Driver Details</h2>
+                        <h2 id="dd" >Driver Details</h2>
                     </div>
 
                     <table>
@@ -393,7 +277,7 @@
                             <tr>
                                 <td>D001</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                               
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -403,7 +287,7 @@
                             <tr>
                             <td>D002</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                               
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -413,7 +297,7 @@
                             <tr>
                             <td>D003</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                              
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
@@ -423,53 +307,14 @@
                             <tr>
                             <td>D004</td>
                                 <td>Amrith</td>
-                                <td>Paid</td>
+                                
                                 <td>200081800123</td>
                                 <td>Male</td>
                                 <td>0414495986</td>
                                 <td>lkj@gmail.com</td>
                             </tr>
 
-                            <tr>
-                            <td>D005</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>D006</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>D007</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
-                            <tr>
-                            <td>D008</td>
-                                <td>Amrith</td>
-                                <td>Paid</td>
-                                <td>200081800123</td>
-                                <td>Male</td>
-                                <td>0414495986</td>
-                                <td>lkj@gmail.com</td>
-                            </tr>
-
+                            
 
                             
                         </tbody>
