@@ -1,5 +1,5 @@
 <?php
-require 'linklinkz.php';
+require '../database/linklinkz.php';
 
 session_start();
 
