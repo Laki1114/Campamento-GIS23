@@ -211,15 +211,15 @@ table {
        <br>
        <div class="experience-grid">
       <div class="experience-item">
-          <img src="ex 1.jpg" alt="Experience 1">
+          <img src="../resource/ex 1.jpg" alt="Experience 1">
           <button class="edit-button" onclick="editImage(1)">Edit</button>
       </div>
       <div class="experience-item">
-          <img src="ex 2.jpg" alt="Experience 2">
+          <img src="../resource/ex 2.jpg" alt="Experience 2">
           <button class="edit-button" onclick="editImage(2)">Edit</button>
       </div>
       <div class="experience-item">
-          <img src="ex 3.jpg" alt="Experience 3">
+          <img src="../resource/ex 3.jpg" alt="Experience 3">
           <button class="edit-button" onclick="editImage(3)">Edit</button>
      </div>
   </div>
