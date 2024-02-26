@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Admin Profile </title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../css/Driver/admin.css">
 <style>
       .btn {
     border: 2px solid black;

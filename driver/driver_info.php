@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="dr_css/trending_sites.css">
+    <link rel="stylesheet" href="../css/Driver/trending_sites.css">
    
 </head>
 
