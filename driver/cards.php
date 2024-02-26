@@ -1,16 +1,16 @@
-<?php include 'config.php'; ?>
+<?php include '../database/linklinkz.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
  <title>Cards</title>
- <link rel="stylesheet" href="dr_css/cards.css">
+ <link rel="stylesheet" href="../css/Driver/cards.css">
 </head>
 
 <body>
 
 <?php
 $sql = "SELECT * FROM driver";
-$result = $con->query($sql);
+$result = $linkz->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {

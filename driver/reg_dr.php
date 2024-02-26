@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../database/linklinkz.php';
  
 if(isset($_POST['regbtn'])){
 	$f=$_POST['firstname'];
@@ -40,7 +40,7 @@ if(isset($_POST['regbtn'])){
   //$password = md5($ps);
 
   $i="insert into driver(firstname, lastname, gender, phone, address,veh_des, vehicle, picture, experience, nic, email, password, location, license, qualification)values ('$f','$l','$g','$p','$a','$v','$targetFile2','$targetFile1','$e', '$n','$ema','$ps','$lo','$targetFile3', '$q')";
-  if(mysqli_query($con, $i)){
+  if(mysqli_query($linkz, $i)){
 	$msg = "Account created";
 	header("Location: ../home?warning=" . urlencode($msg));
 	exit();

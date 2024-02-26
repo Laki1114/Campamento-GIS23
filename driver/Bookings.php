@@ -1,5 +1,5 @@
 <?php
-      require 'config.php';
+      require '../database/linklinkz.php';
 
         if(!isset($_SESSION['email'])){
             header('location: ../login/login.php');

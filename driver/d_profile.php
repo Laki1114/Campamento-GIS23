@@ -1,5 +1,5 @@
 <?php 
-      require 'config.php';
+      require '../database/linklinkz.php';
   
         if(!isset($_SESSION['email'])){
             header('location: ../login/login.php');
@@ -161,7 +161,7 @@ table {
             <?php    
  
  $email = $_SESSION['email'] ;
- $query  = mysqli_query($con, "SELECT * FROM driver WHERE email= '$email' ");
+ $query  = mysqli_query($linkz, "SELECT * FROM driver WHERE email= '$email' ");
 
  $row = mysqli_fetch_array($query);
 
