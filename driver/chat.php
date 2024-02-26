@@ -1,5 +1,12 @@
+<?php
+      require '../database/linklinkz.php';
 
+        if(!isset($_SESSION['email'])){
+            header('location: ../login/login.php');
+        }
+?>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,7 +15,7 @@
     <title>Messege </title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="../css/Driver/admin.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
 
 
@@ -131,7 +138,7 @@
 
 <div class="container">
         <div class="navigation">
-        <?php include 'dr_db.php'; ?>
+        <?php include 'driver_sb.php'; ?>
         </div>
 
 
@@ -143,7 +150,7 @@
 
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Search here">
+                        <input type="text" id="gfg" placeholder="Search here">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
@@ -163,6 +170,7 @@
                     </div>
 
                     <table>
+                        <tbody id="geeks">
                         <tr>
                             <td width="60px">
                                 <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
@@ -234,7 +242,18 @@
                                 <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
                             </td>
                         </tr>
+                        </tbody>
                     </table>
+                    <script>
+        $(document).ready(function () {
+            $("#gfg").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#geeks tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
                 </div>
 
                 <div class="recentOrders">
