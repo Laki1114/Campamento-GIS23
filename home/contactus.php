@@ -21,20 +21,36 @@
       <img src="../resource/knuckels.jpg" style="width:100%">
     </div>
     <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
+
+    <?php 
+                            $Messege = "";
+                            if(isset($_GET['error']))
+                            {
+                                $Messege = " Please Fill in the Blanks ";
+                                echo '<div class="alert alert-danger">'.$Messege.'</div>';
+                            }
+
+                            if(isset($_GET['success']))
+                            {
+                                $Messege = " Your Message Has Been Sent ";
+                                echo '<div class="alert alert-success">'.$Messege.'</div>';
+                            }
+                        
+                        ?>
+
+
+
+    <form action="contact.php">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name.." required>
+        
+        <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Your E-mail.." name="email" required>
+
+        <label for="subject">Messege</label>
+        <textarea id="subject" name="subject" placeholder="Your Messege" style="height:100px" required></textarea>
+        
+        <input type="submit" name="submit" value="Submit">
       </form>
     </div>
   </div>
