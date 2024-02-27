@@ -1,0 +1,250 @@
+
+body{
+  font-family: 'Trebuchet MS', sans-serif;
+ background-color: #a4a082;
+}
+  .btn {
+    border: 2px solid rgb(183, 183, 140);
+    background-color: rgb(128, 128, 89);
+    color: black;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  /* Blue */
+  .info {
+    border-color: #d8d998;
+    color: rgb(7, 83, 68);
+  }
+  .info a{
+    color:#f2f2f2;
+  }
+  .info:hover {
+    background: #07170c;
+    color: white;
+  }
+
+
+table {
+  margin-top: 0px;
+  width: 100%; 
+  border: none;
+}
+
+.move-content{
+  margin-left:40px;
+}
+
+/* =========================wrapping profile pic and table=====================*/
+.container {
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center; /* Vertically center-align elements */
+  margin-left: 70px;
+  margin-top:0px;
+
+
+}
+.bgn{
+  background-color: #a4a082;
+}
+.profile {
+  flex: 1; /* Let the profile picture take 1/4 of the available space */
+  text-align: center;
+}
+
+.profile-info {
+ 
+  flex: 3; /* Let the profile information take 3/4 of the available space */
+}
+
+.down{
+  background-color: #c5c7aa;
+}
+/* =========================edit button on pic=====================*/
+.exp{
+  margin-left:20px;
+  background-color:#5e5e5e;
+  cursor: pointer;
+}
+.exp:hover {
+  background-color:#979797;
+}
+.edit{
+  margin-left:10px;
+  background-color:#5e5e5e;
+  cursor: pointer;
+}
+.edit:hover {
+  background-color:#979797;
+}
+.container-image {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  border:white;
+  margin-bottom: 40px;
+}
+
+.container-image img {
+  width: 100%;
+  height: auto;
+}
+
+.container-image .btn {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  transform: translate(-90%, -90%);
+  -ms-transform: translate(-90%, -90%);
+  width: 30px; 
+  height: 30px; 
+  background: url(edit.jpg) no-repeat;
+  background-size: cover; 
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+ 
+}
+
+.container-image .btn:hover {
+  background-color: white;
+}
+
+/*here starts the styling for purchses table*/
+table.purchases {
+  border-collapse: collapse;
+  width: 100%;
+ margin-left:40px;
+ margin-right:40px;
+}
+
+table.purchases th,
+table.purchases td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table.purchases tr.no-hover:hover {
+  background-color: transparent !important;
+}
+
+table.purchases tr:hover {
+  background-color: #d5d49dc0;
+}
+
+table.purchases .button1 {
+  background-color: #82c777c3;
+  border: none;
+  color: rgb(10, 9, 9);
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+table.purchases .button2 {
+  background-color: #b71f1fc3;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px;
+  cursor: pointer;
+  font-size: 12px;
+}
+/*trying to put scroll bar*/
+.table-container{
+  max-height: 100px; 
+ 
+}
+
+table.purchases thead {
+  position: sticky;
+  top: 0;
+  }
+
+
+table.purchases tbody {
+  
+  overflow-y: scroll; 
+  overflow-x: hidden; 
+}
+#example {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+#example div {
+  width: 350px;
+  height: 80px;
+  margin: 100px auto;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid #666666;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  border: 3px solid #cccccc;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.experience p{
+  margin-left:40px;
+  font-size: 20px;
+}
+
+.experience-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.experience-item {
+  flex: 0 1 calc(33.333% - 40px);
+  box-sizing: border-box;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.experience-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.experience-item h3 {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.experience-item p {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #555;
+}
+/*see to the scroll bar scene */

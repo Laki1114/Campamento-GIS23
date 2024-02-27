@@ -99,7 +99,7 @@ if($result->num_rows > 0)
 		if($_POST['email'] == $row["email"] && $_POST['psw'] == $row["password"] )
 		{
 			$_SESSION['email'] = $email;
-			header("Location:../Faheema/drvr_pro.php");
+			header("Location:../driver/dr_db.php");
 		}
 		
 	}
