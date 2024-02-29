@@ -46,7 +46,7 @@
    <img src="../resource/beach1.jpeg">
 </div>
 <div class="title">
- <h1>Jungle beach camp - akurana</h1> 
+ <h1>Jungle beach camp - Ahungalla</h1> 
 </div>
 <div class="star-container">
   <span class="fa fa-star checked"></span>

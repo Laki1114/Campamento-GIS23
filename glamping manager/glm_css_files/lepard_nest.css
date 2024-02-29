@@ -1,0 +1,127 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #003D25;
+  --white: #fff;
+  --yellow: #BFCC7C;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 75vh;
+  overflow-x: hidden;
+  background: #d6d4cb;
+}
+
+.topic{
+  font-size: 35px;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: #003D25;
+}
+/* Create two equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 60%;
+  padding: 10px;
+ border-radius: 10px;
+  
+  
+}
+.column1 h2{
+  font-size: 30px;
+  color: #333;
+}
+.column1 p{
+  font-size: 20px;
+  color: #000;
+  font-family: 'Times New Roman', Times, serif;
+  
+  margin-right: 1cm;
+  margin-left: 1cm;
+}
+.column1 h3{
+  font-size: 20px;
+  color: #003D25;
+  margin-left: 0.5cm;
+ 
+}
+.column2 {
+  float: left;
+  width: 35%;
+  border-radius: 10px;
+}
+.column2 img {
+  max-width: 100%; /* Ensure the image doesn't exceed the column width */
+  height: 50px; /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional: Add border radius to the image */
+ 
+}
+.column2 h2{
+  font-size: 30px;
+  color: #333;
+  margin-left: 1cm;
+}
+
+.container {
+	max-width: 640px;
+	margin: 30px auto;
+	background: #BFCC7C;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+
+.comment {
+	display: block;
+	transition: all 1s;
+}
+
+.commentClicked {
+	min-height: 0px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	padding: 5px 10px
+}
+
+textarea {
+	width: 100%;
+	border: none;
+	background: #BFCC7C;
+	padding: 5px 10px;
+	height: 50%;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: 2px solid #FFF;
+	transition: all 0.5s;
+	margin-top: 15px;
+}
+
+button.primaryContained {
+	background: #003D25;
+	color: #fff;
+	padding: 10px 10px;
+	border: none;
+	margin-top: 0px;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+	transition: 1s all;
+	font-size: 10px;
+	border-radius: 5px;
+}
+
+button.primaryContained:hover {
+	background: #BFCC7C;
+}

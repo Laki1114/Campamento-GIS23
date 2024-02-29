@@ -44,7 +44,7 @@
 <div class="grid">
 
 <div class="imaged">
-<img src="../resource/wild1.jpeg">
+<a href="lepard_nest.php"><img src="../resource/wild1.jpeg"></a>
 </div>
 <div class="title">
  <h1>Leopard Nest - Yala</h1>
@@ -66,7 +66,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/wild2.jpg">
+<a href=""> <img src="../resource/wild2.jpg"></a>
 </div>
 <div class="title">
  <h1>Thamarawila Wilpattu</h1>
@@ -88,7 +88,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/wild4.jpg">
+   <a href=""><img src="../resource/wild4.jpg"></a>
 </div>
 <div class="title">
  <h1>Makulu Safari - Udawalawa</h1>
@@ -110,7 +110,7 @@
 <div class="grid">
 
 <div class="imaged">
-<img src="../resource/kumana1.jpg">
+<a href=""><img src="../resource/kumana1.jpg"></a>
 </div>
 <div class="title">
  <h1>Kumana Wild Glamping</h1>
@@ -134,7 +134,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/wild5.jpg">
+<a href=""><img src="../resource/wild5.jpg"></a>
 </div>
 <div class="title">
  <h1>Eco-Wild glamping - Bambarakanda </h1>
@@ -155,7 +155,7 @@
 <div class="grid">
 
 <div class="imaged">
-   <img src="../resource/wild3.jpeg">
+<a href=""> <img src="../resource/wild3.jpeg"></a>
 </div>
 <div class="title">
  <h1>Rainforest Eco lodge - Sinharaja</h1>

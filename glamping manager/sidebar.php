@@ -36,14 +36,7 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="add_site_form.php">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Add a new glamping site</span>
-                    </a>
-                </li>
+               
 
                 <li>
                     <a href="trending_sites.php">

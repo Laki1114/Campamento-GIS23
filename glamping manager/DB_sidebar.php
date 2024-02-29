@@ -27,6 +27,16 @@
                 </li>
 
                 <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <br>
+
+                <li>
                     <a href="glm_dashboard.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
@@ -34,53 +44,52 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-                <br><br>
+                <br>
 
                 <li>
-                    <a href="">
+                    <a href="add_site_form.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Customer</span>
+                        <span class="title">Add a glamping site</span>
                     </a>
                 </li>
-                <br><br>
-
-                <li>
-                    <a href="">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Schedule</span>
-                    </a>
-                </li>
-                <br><br>
+                <br>
 
                 <li>
                     <a href="">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Activity</span>
+                        <span class="title">Schedule</span>
                     </a>
                 </li>
-                <br><br>
+                <br>
                 
                 <li>
                     <a href="">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Earnings</span>
+                        <span class="title">Chat</span>
                     </a>
                 </li>
-                <br><br>
+                <br>
                 <li>
                     <a href="">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Settings</span>
+                        <span class="title">Feedback</span>
+                    </a>
+                </li>
+                <br>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
                     </a>
                 </li>
 
