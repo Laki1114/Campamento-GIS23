@@ -22,33 +22,19 @@
     </div>
     <div class="column">
 
-    <?php 
-                            $Messege = "";
-                            if(isset($_GET['error']))
-                            {
-                                $Messege = " Please Fill in the Blanks ";
-                                echo '<div class="alert alert-danger">'.$Messege.'</div>';
-                            }
-
-                            if(isset($_GET['success']))
-                            {
-                                $Messege = " Your Message Has Been Sent ";
-                                echo '<div class="alert alert-success">'.$Messege.'</div>';
-                            }
-                        
-                        ?>
+    
 
 
 
-    <form action="contact.php">
+    <form action="submit_contact.php">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name.." required>
         
         <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Your E-mail.." name="email" required>
+    <input type="email" id="email" placeholder="Your E-mail.." name="email" required>
 
-        <label for="subject">Messege</label>
-        <textarea id="subject" name="subject" placeholder="Your Messege" style="height:100px" required></textarea>
+        <label for="messege">Messege</label>
+        <textarea id="messege" name="messege" placeholder="Your Messege" style="height:100px" required></textarea>
         
         <input type="submit" name="submit" value="Submit">
       </form>

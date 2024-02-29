@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/buddh/OneDrive/Desktop",
-      "program": "c:/Users/buddh/OneDrive/Desktop/build/Debug/outDebug",
+      "cwd": "c:/Users/buddh/AppData/Local/Microsoft/Windows/INetCache/IE/95ETC5HL",
+      "program": "c:/Users/buddh/AppData/Local/Microsoft/Windows/INetCache/IE/95ETC5HL/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
