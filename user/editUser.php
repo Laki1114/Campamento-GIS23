@@ -1,135 +1,97 @@
-<?php
-
-require("linklinkz.php");
-
-
-$UID = $_GET['id'];
-$sql = "SELECT * FROM user WHERE UserId = '$UID'";
-$result = mysqli_query($linkz,$sql);
-
-while ($row = mysqli_fetch_assoc($result)){
-  $userID=$row["UserId"];
-  $firstName=$row["FirstName"];
-  $lastName=$row["LastName"];
-  $gender=$row["Gender"];
-  $phoneNo=$row["PhoneNo"];
-  $nicNo=$row["NICNo"];
-  $email=$row["Email"];
-  $psw=$row["Password"];
-}
-?>
-
-
-
 <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-    <link rel="stylesheet" href="editUser.css">
-    <link rel="stylesheet" href="../login/passwordvalid.css">
-    <title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/registerUser.css">
 </head>
 <body>
 
-<form method="post" action="./updateUser.php?id=<?php echo $userID;?>" >	
-    <table>
-        <tr> 
-            <td>
-                <!--start left panel-->
-               
-                    <div class="container">
-                      <h1>Edit Your Data Here</h1>
-                      <p>Please fill in this form to Edit your account details.</p>
-                      <hr>
-                  
-                      <label for="firstName"><b>First Name </b></label><br>
-                      <input type="text" placeholder="First Name" name="firstName" id="firstName" value="<?php  echo $firstName ?>" required><br>
-                  
-                      <label for="lastName"><b>Last Name </b></label><br>
-                      <input type="text" placeholder="Last Name" name="lastName" id="lastName"  value="<?php  echo $lastName ?>" required><br>
 
-            
-                      <label for="gender"><b>Gender</b></label><br>
-                      <select id="gender" name="gender" required>
-                        
-                        <option  <?php if($gender == "male") echo "SELECTED"; ?> >Male</option>
-                        <option  <?php if($gender == "female") echo "SELECTED"; ?> >Female</option>
-                        <option  <?php if($gender == "other") echo "SELECTED"; ?>>Other</option>
-                      </select><br>
-                  
-                      <label for="phoneNo"><b>Phone No </b></label><br>
-                      <input type="text" placeholder="Phone No" name="phoneNo" id="phoneNo"  value="<?php  echo $phoneNo ?>" required><br>
-                    </div>
-                      
-            </td>
-
-            <!--start right panel-->
-
-            <td width="450px">
-                
-                <div class="container-right">
-                    <label for="NICNo"><b>NIC No </b></label><br>
-                    <input type="text" placeholder="NIC No" name="nicNo" id="nicNo"  value="<?php  echo $nicNo ?>" required><br>
-
-                    <label for="email"><b>Email</b></label><br>
-                    <input type="text" placeholder="Enter Email" name="email" id="email" value="<?php  echo $email ?>"  required><br>
-                
-                   </div> 
-                  
-            </td>
-            
-        </tr>
-         <!--second row-->
-        <tr><td colspan="2"><hr/></td><td></td></tr>
-        <!--third row-->
-        <tr>
-            
-            <td>
-                
-                <div class="container">
-                <h2>Change password</h2><br>
-            <label for="psw"><b>Current Password</b></label><br>
-            <input type="password" placeholder="Enter Password" name="psw" id="psw" ><br>
-                    
-            <label for="newPsw"><b>New Password</b></label><br>
-            <input type="password" id="newPsw" name="newPsw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" ><br>
-
-                
-                   
-                    <label for="psw-repeat"><b>Repeat Password</b></label><br>
-                    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" >
-                </div>
-            
-          
-            </td>
-            <td>
-                
-            <div id="message">
-              <h3>Password must contain the following:</h3>
-              <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-              <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-              <p id="number" class="invalid">A <b>number</b></p>
-              <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-            </div>
-        </div>
-        </td>
-          <!--fourth row-->
-        </tr>
-        <tr><td colspan="2">
-            <hr>
-            
-                  
-                   <div class="latter">
-                    <button type="submit" class="registerbtn"><b>Update</b></button>
-                </div>
-                  </div>
-        </td>
-
-        <td></td>
-    </tr>
+<div class="bg-img">
+  
+  <form class="container" name="user" method="post" action="./updateUser.php?id=<?php echo $userID;?>">
+  <h1>Edit Your Data Here</h1> <br>
     
-</form>
+    <p>Please fill in this form to Edit your account details.</p><br>
+  <table>
+        <tr> 
+            <td width="300px">
+    
 
-</table>
+    <label for="firstName"><b>First Name </b></label><br>
+    <input type="text" placeholder="First Name" name="firstName" id="firstName" value="<?php  echo $firstName ?>" required><br>
+                  
+    <label for="lastName"><b>Last Name </b></label><br>
+    <input type="text" placeholder="Last Name" name="lastName" id="lastName" value="<?php  echo $lastName ?>" required><br>
+
+    <label for="gender"><b>Gender</b></label><br>
+     <select id="gender" name="gender" required>
+     <option value="" disabled selected>Select Gender</option>
+     <option  <?php if($gender == "male") echo "SELECTED"; ?> >Male</option>
+    <option  <?php if($gender == "female") echo "SELECTED"; ?> >Female</option>
+      <option  <?php if($gender == "other") echo "SELECTED"; ?>>Other</option>
+    </select><br>
+    
+
+     
+      </td>
+
+<!--start right panel-->
+
+<td width="300px">
+
+<label for="phoneNo"><b>Phone No </b></label><br>
+      <input type="text" placeholder="Phone No" name="phoneNo" id="phoneNo" value="<?php  echo $phoneNo ?>" required><br>
+
+
+<label for="phoneNo"><b>NIC No </b></label><br>
+ <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo $nicNo ?>" required><br>
+
+  <label for="email"><b>Email</b></label><br>
+   <input type="text" placeholder="Enter Email" name="email" id="email" value="<?php  echo $email ?>"  required><br>
+   </table> 
+   <hr>   
+   
+   <br>
+   <table>
+   <h1>Change Password</h1> <br>
+    <td width="300px">
+   <label for="psw"><b>Current Password</b></label><br>
+   <input type="password" placeholder="Password" id="psw" name="psw" ><br>
+   
+   <label for="newPsw"><b>Password</b></label><br>
+   <input type="password" placeholder="Password" id="newPsw" name="newPsw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" ><br>
+            
+    <label for="psw-repeat"><b>Repeat Password</b></label><br>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" ><br>
+    </td>
+
+    
+    
+<td>
+            <div id="message">
+              <p>Password must contain the following:</p>
+              <li id="letter" class="invalid">A <b>lowercase</b> letter</li>
+              <li id="capital" class="invalid">A <b>capital (uppercase)</b> letter</li>
+              <li id="number" class="invalid">A <b>number</b></li>
+              <li id="length" class="invalid">Minimum <b>8 characters</b></li>
+            </div>
+            <br>
+            </td>
+            </table>       
+     
+
+    <input type="submit" value="Update"> <br>
+
+
+      
+
+       
+
+  </form>
+
+  
+</div>
 
 <script>
     var myInput = document.getElementById("newPsw");
@@ -190,4 +152,6 @@ while ($row = mysqli_fetch_assoc($result)){
       }
     }
     </script>
-    </body></html>               
+
+</body>
+</html>

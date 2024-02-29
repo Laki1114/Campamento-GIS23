@@ -10,7 +10,7 @@
    
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/homestyle.css">
-   
+   <link rel="stylesheet" href="../css/contactus.css">
    
 </head>
 <body>
@@ -27,12 +27,13 @@
       <p>Welcome to the CAMPAMENTO.</p>
       <a href="../userdashboard/dashboard.php" class="white-btn">Discover More</a>
       <a href="register.php" class="white-btn">Register</a>
+      
    </div>
 
 </section>
 
 <br><br><br>
-<section class="about" id="#C4">
+<section class="about" id="about">
 
    <div class="flex">
 
@@ -85,26 +86,62 @@ We eagerly await the opportunity to welcome you to Campamento and make your camp
 
 </section>
 
-<section>
+<section id="service">
 <?php include 'cards.php'; ?>
 </section>
 
 
-<section class="home-contact">
 
-   <div class="content">
-      <h3>have any questions?</h3>
-      <p>
-      Our friendly and knowledgeable staff are ready to assist you with any inquiries you may have. 
-      Whether you're interested in reservations, specific camping site details, activities, 
-      or anything else related to your camping experience at Campamento, don't hesitate to get in touch. 
-      We're here to help you plan your perfect outdoor adventure.
-      </p>
-      <a href="contactus.php" class="white-btn">contact us</a>
+
+<section class="about" id="contact">
+
+   <div class="flex">
+
+      <div class="image">
+         <img src="../resource/contact.jpg" alt="">
+      </div>
+
+      <div class="content">
+         <h3>Contact Us</h3>
+         <p?>leave us a message:</p>
+
+
+         <?php 
+                            $Messege = "";
+                            if(isset($_GET['error']))
+                            {
+                                $Messege = " Please Fill in the Blanks ";
+                                echo '<div class="alert alert-danger">'.$Messege.'</div>';
+                            }
+
+                            if(isset($_GET['success']))
+                            {
+                                $Messege = " Your Message Has Been Sent ";
+                                echo '<div class="alert alert-success">'.$Messege.'</div>';
+                            }
+                        
+                        ?>
+
+
+
+         <form action="contact.php">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..">
+        
+        <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Your E-mail.." name="email" required>
+
+        <label for="subject">Messege</label>
+        <textarea id="subject" name="subject" placeholder="Your Messege" style="height:100px"></textarea>
+        
+        <input type="submit" value="Submit">
+      </form>
+      </div>
+
    </div>
 
 </section>
-
+<br><br>
 
 <?php include 'footer.php'; ?>
 

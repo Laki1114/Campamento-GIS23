@@ -3,7 +3,7 @@
 <title>Admin sidebar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="../css/Admincss/admin.css">
 
 <body>
 
@@ -15,7 +15,7 @@
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
-                        <span  class="as"><img src="images/logo.png" alt="" width="150" height="70"></span>
+                        <span  class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>
                     </a>
                 </li>
 

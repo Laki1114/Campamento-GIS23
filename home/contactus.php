@@ -21,20 +21,22 @@
       <img src="../resource/knuckels.jpg" style="width:100%">
     </div>
     <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
+
+    
+
+
+
+    <form action="submit_contact.php">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name.." required>
+        
+        <label for="email"><b>Email</b></label>
+    <input type="email" id="email" placeholder="Your E-mail.." name="email" required>
+
+        <label for="messege">Messege</label>
+        <textarea id="messege" name="messege" placeholder="Your Messege" style="height:100px" required></textarea>
+        
+        <input type="submit" name="submit" value="Submit">
       </form>
     </div>
   </div>

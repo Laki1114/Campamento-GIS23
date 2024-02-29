@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Help </title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/Admincss/admin.css">
 
     <style>
 
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                    <img src="../resource/customer01.jpg" alt="">
                 </div>
             </div>
 

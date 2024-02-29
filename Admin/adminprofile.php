@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Admin Profile </title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/Admincss/admin.css">
 <style>
       .btn {
     border: 2px solid black;
@@ -32,6 +32,7 @@
 h2,h3 {
     text-align:center;
     line-height:30px;
+    color:#327028;
 }
 
 table {
@@ -92,188 +93,77 @@ table {
                 </div>
             </div>
 
-            <!-- ======================= Cards ================== -->
-            <div >
-                <h2>Welcome John!</h2>
-                <h3>User ID - U102</h3>
+            
+            <div ><br>
+                <h2><b>Welcome John!</b></h2>
+                <h3><b>Admin ID - A102</b></h3>
+
+                <table>
+                <td>
                 <div class="containerr" >
                     <div class="profile">
                     <div class="container-image">
-                    <img src="images/customer02.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
+                    <img src="../resource/customer02.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
                     </div>
                     </div>
                 </div>
             
-  
+                </td><td>
                 <div class="profile-info">
-                    <table>
-                    <tr>
-                        <td>First Name : John</td>
-                        <td>NIC no : 200036785469</td>
-                    </tr>
-                    <tr>
-                        <td>Last name : Fernando</td>
-                        <td>Email : johnfernando12@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>Gender : Male</td>
-                        <td>Phone no : 0715428778</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><button class="btn info">Edit Your Data</button></td>
-                    </tr>
-                    </table>
-                
+                <br><br>
+                    
+                        <p>First Name : John</p> <br>
+                        <p>NIC no : 200036785469</p><br>
+                    
+                        <p>Last name : Fernando</p><br>
+                        <p>Email : johnfernando12@gmail.com</p>
+                        <br>
+                        <p>Gender : Male</p><br>
+                        <p>Phone no : 0715428778</p><br><br>
+                   
+                        <button class="btnnav">Edit Your Data</button>
+                    
+                        <br><br>
                 </div>
-  
+                </td>
+                </table>
             </div>
 
-             
 
-            <!-- ================ Order Details List ================= -->
-            <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Admin Details</h2>
-                        <a href="admindetails.php" class="btn">View All</a>
+            <div class="details2">
+                <div class="admincustomer">
+                    <div class="cusdet">
+                        <h2 >Recent Activities</h2>
                     </div>
 
                     <table>
                         <thead>
-                            <tr>
-                                <td>Admin ID</td>
-                                <td>Name</td>
-                                <td>Email</td>
-                                <td>Telephone</td>
+                        <tr>
+                                <td>Activity</td>
+                                <td>Revenue</td>
+                                <td>Payment</td>
+                                <td>Status</td>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>A001</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
+                        <tr>
+                                <td>Advertisement</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td><button class="btn active" > Remove</button></td>
                             </tr>
 
-                            <tr>
-                                <td>A002</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>A003</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>A004</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>A005</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>A004</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>A005</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>A004</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>A005</td>
-                                <td>John</td>
-                                <td>john123@gmail.com</td>
-                                <td>0719747670</span></td>
-                            </tr>
+                            
+                            
 
                             
                         </tbody>
                     </table>
                 </div>
+            </div></div>
 
-                <!-- ================= New Customers ================ -->
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <h2>Recent Admins</h2>
-                    </div>
-
-                    <table>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00 </span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        
-
-                        
-                    </table>
                 </div>
             </div>
         </div>

@@ -1,4 +1,12 @@
+<?php
+      require '../database/linklinkz.php';
+
+        if(!isset($_SESSION['email'])){
+            header('location: ../login/login.php');
+        }
+?>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messege </title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="../css/Admincss/admin.css">
-
+    <link rel="stylesheet" href="../css/Driver/admin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
 
 
@@ -130,7 +138,7 @@
 
 <div class="container">
         <div class="navigation">
-        <?php include 'adminsidebar.php'; ?>
+        <?php include 'driver_sb.php'; ?>
         </div>
 
 
@@ -142,13 +150,13 @@
 
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Search here">
+                        <input type="text" id="gfg" placeholder="Search here">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
 
                 <div class="user">
-                    <img src="../resource/customer01.jpg" alt="">
+                    <img src="images/customer01.jpg" alt="">
                 </div>
             </div>
 
@@ -162,6 +170,7 @@
                     </div>
 
                     <table>
+                        <tbody id="geeks">
                         <tr>
                             <td width="60px">
                                 <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
@@ -233,7 +242,18 @@
                                 <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
                             </td>
                         </tr>
+                        </tbody>
                     </table>
+                    <script>
+        $(document).ready(function () {
+            $("#gfg").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#geeks tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
                 </div>
 
                 <div class="recentOrders">
@@ -244,25 +264,25 @@
                     
 
 <div class="contain">
-  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
   <p>Hello. </p>
   <span class="time-right">11:00</span>
 </div>
 
 <div class="contain darker">
-  <img src="../resource/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
+  <img src="images/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
   <p>Hey! </p>
   <span class="time-left">11:01</span>
 </div>
 
 <div class="contain">
-  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
+  <img src="images/customer01.jpg" alt="Avatar" style="width:100%;">
   <p>Can I ask something?</p>
   <span class="time-right">11:02</span>
 </div>
 
 <div class="contain darker">
-  <img src="../resource/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
+  <img src="images/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
   <p>Yeah, sure.</p>
   <span class="time-left">11:05</span>
 </div>

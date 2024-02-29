@@ -51,37 +51,6 @@
             </div>
 
            <!------sites---->
- <div id="cards">
- <div id="drivers-container">
-            
-            </div>
-                     <script>
-    $(document).ready(function() {
-        function updateDrivers() {
-            $.ajax({
-                url: 'cards.php',
-                type: 'GET',
-                success: function(data) {
-                    $('#drivers-container').html(data);
-                }
-            });
-        }
-
-        // Call updateDrivers initially and set an interval to update every X seconds
-        updateDrivers();
-        setInterval(updateDrivers, 5000); // Update every 5 seconds (adjust as needed)
-    });
-    </script>
-        </div>
-        <script>
-        $(document).ready(function () {
-            $("#gfg").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#geeks tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
+ 
 </body>
 </html>    
