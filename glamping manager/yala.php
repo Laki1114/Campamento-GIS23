@@ -49,10 +49,11 @@
   
 
 </div>
-
+<br><br>
 <div id="commentsection">
             <?php
-            include("../comment/comment.php");
+            include("comment.php");
+            
             ?>
         </div>
 
