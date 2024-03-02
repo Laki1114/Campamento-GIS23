@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yala</title>
     <link rel="stylesheet" href="glm_css_files/yala.css">
+    <link rel="stylesheet" href="../comment/comment.css">
     
     
 </head>
@@ -23,7 +24,7 @@
     <p>Jeep Safaris with Leopard Nest is not just a normal jeep safari. It gives you a memorable ride through the jungle avoiding the roads that other jeeps are taking. Our well experienced naturalists / camp manager will accompany you during each ride to make sure that you get the maximum out of the half day or full day you spend in the national park. We are located just 6 kms away from the main entrance of Yala National Park and 22kms away from Bundala National Park.</p><br>
     <h3>-Nature Trails</h3><br>
     <p>Surrounded by thick forest with a pathway access to Nimalawa Lake, Leopard Nest has got the capacity to offer variety of wildlife experiences just steps away from the campsite. We provide comprehensive guided nature trails to see the beauty of wildlife. You will explore many species of birds, land monitors, black napped hare, wild boar, deer, palm Squirrels, giant squirrels and butterflies.</p><br>
-    <h3>-Lake Foishing Tours</h3><br>
+    <h3>-Lake Fishing Tours</h3><br>
     <p>Go fishing in local style at a Lake closer to Leopard Nest. This is a 2 hours fishing experience in a scenic lake with all fishing gears. Test your skills with the locals and enjoy local refreshments tea and sweet meats.</p><br>
     <h3>-Cooking Demonstration at the glamp site</h3><br>
     <p>Whilst enjoying the pleasure of wildlife, you may get a chance to participate to a cooking demonstration in the campsite with our chef. Making a fish curry or vegetable in Sri Lankan style will be very much interesting. Don’t miss this opportunity during your stay at the campsite.</p><br>
@@ -34,20 +35,26 @@
 
 
 
-  <div class="column2" >
-     <img src="../resource/wild1.jpeg"><br><br>
-  </div>
+  <div class="column2">
+        
+        <div class="gallery-container">
+            <img src="../resource/wild1.jpeg" alt="Image 1" class="gallery-image">
+            <img src="../resource/yala2.jpg" alt="Image 2" class="gallery-image" style="width: 390px">
+            <img src="../resource/yala4.jpg" alt="Image 3" class="gallery-image" style="width: 390px">
+            <img src="../resource/yala3.jpg" alt="Image 3" class="gallery-image" style="width: 390px">
+            
+        </div>
+    </div>
 
-  <div class="column2" >
-     <img src="../resource/yala2.jpg"><br><br>
-  </div>
-  <div class="column2" >
-     <img src="../resource/yala3.jpg"><br><br>
-  </div>
+  
 
 </div>
 
-
+<div id="commentsection">
+            <?php
+            include("../comment/comment.php");
+            ?>
+        </div>
 
 </body>
 </html>
