@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 
     // Redirect back to the page after adding comment
-    header("Location: comment.php");
+    header("Location: yala.php");
     exit();
 }
 
