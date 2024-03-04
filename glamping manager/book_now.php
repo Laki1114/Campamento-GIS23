@@ -70,46 +70,22 @@
                </div>
 
              <div id="third-group">
+
              <div class="mini-title">
-                     <h6>Glamping Site Type</h6>
+                     <h6>Are you a Sri Lankan or Foreigner?</h6>
               </div>
-                    <div id="content">
-                        <select id="input-group" >
-                            
-                            <option value="">Tent</option>
-                            <option value="">Tree House</option>
-                            <option value="">Camper Van</option>
-                            <option value="">Dome</option>
-                            <option value="">Pods and Cabins</option>
-                            <option value="">Yurt</option>
-                        </select>
-                    </div>
+            
              </div>
              
              <div id="forth-group">
-                 <div class="mini-title">
-                     <h6>No. of Guests</h6>
-                 </div>
-                 <div id="content">
-                        <select id="input-group" >
-                            
-                            <option value="">1 Person</option>
-                            <option value="">2 Person</option>
-                            <option value="">3 Person</option>
-                            <option value="">4 Person</option>
-                        </select>
-                      </div>
-                      
+                 
+             <input type="radio" id="srilankan" name="srilankan" value="True">
+              <label for="srilankan">Sri Lankan</label><br>
+              <input type="radio" id="foreigner" name="foreigner" value="False">
+              <label for="foreigner">Foreigner</label><br>       
              </div>
 
-             <div id="fifth-group">
-                 <div class="mini-title">
-                     <h6>Whatsapp Number</h6>
-                 </div>
-                 <div id="content">
-                 <input type="tel" id="phone" placeholder=" 07x-xxxxxxx">
-                 </div>
-             </div>
+             
 
              <div id="sixth-group">
              <div class="buttonn">

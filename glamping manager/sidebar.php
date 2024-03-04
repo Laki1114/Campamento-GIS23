@@ -28,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a href="home.php">
+                    <a href="../home/">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>

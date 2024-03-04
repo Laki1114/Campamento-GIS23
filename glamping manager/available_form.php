@@ -24,56 +24,70 @@
     
 <div class="container">
 <div class="title">
-        <h1>Available Sites</h1>
+        <h1>Select the type that you want!</h1>
     </div>
 
     <div class="tb">
     <table>
   <tr>
-  <th>Site Name</th>
-  <th>Room Type</th>
-  <th>Available</th>
+  <th>Available Type</th>
+  <th>Type of Meal</th>
+  <th></th>
   <th>Price</th>
   </tr>
   <tr>
-  <td>Galoya glamping site</td>
+  <td>Luxury Tent</td>
+  <td>Half Board</td>
   <td>Single</td>
-  <td>2 Rooms</td>
   <td>$100</td>
   </tr>
 
   <tr>
-  <td>Knuckels glamping site</td>
+  <td></td>
+  <td></td>
   <td>Double</td>
-  <td>1 Room</td>
   <td>$200</td>
   </tr>
   
   <tr>
-  <td>Knuckels glamping site</td>
-  <td>Single</td>
-  <td>3 Room</td>
+  <td></td>
+  <td>Full Board</td>
+  <td>single</td>
   <td>$100</td>
   </tr>
 
   <tr>
-  <td>Galoya glamping site</td>
-  <td>Single</td>
-  <td>1 Room</td>
+  <td></td>
+  <td></td>
+  <td>Double</td>
   <td>$150</td>
   </tr>
 
   <tr>
-  <td>Knuckels glamping site</td>
-  <td>Double</td>
-  <td>1 Room</td>
+  <td>Family Tent</td>
+  <td>Half Board</td>
+  <td>Triple</td>
   <td>$200</td>
   </tr>
 
   <tr>
-  <td>Galoya glamping site</td>
-  <td>Single</td>
-  <td>1 Room</td>
+  <td></td>
+  <td></td>
+  <td>Quadruple</td>
+  <td>$150</td>
+  </tr>
+
+  <tr>
+  <td></td>
+  <td>Full Board</td>
+  <td>Triple</td>
+  <td>$200</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td></td>
+  <td>Quadruple</td>
   <td>$150</td>
   </tr>
 </table>
