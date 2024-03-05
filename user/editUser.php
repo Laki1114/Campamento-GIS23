@@ -12,63 +12,70 @@
   <form class="container" name="user" method="post" action="./updateUser.php?id=<?php echo $userID;?>">
   <h1>Edit Your Data Here</h1> <br>
     
-    <p>Please fill in this form to Edit your account details.</p><br>
+    <p>Please fill in this form to Edit your account details.</p>
   <table>
         <tr> 
             <td width="300px">
-    
-
+ 
     <label for="firstName"><b>First Name </b></label><br>
     <input type="text" placeholder="First Name" name="firstName" id="firstName" value="<?php  echo $firstName ?>" required><br>
-                  
-    <label for="lastName"><b>Last Name </b></label><br>
-    <input type="text" placeholder="Last Name" name="lastName" id="lastName" value="<?php  echo $lastName ?>" required><br>
-
-    <label for="gender"><b>Gender</b></label><br>
-     <select id="gender" name="gender" required>
-     <option value="" disabled selected>Select Gender</option>
-     <option  <?php if($gender == "male") echo "SELECTED"; ?> >Male</option>
-    <option  <?php if($gender == "female") echo "SELECTED"; ?> >Female</option>
-      <option  <?php if($gender == "other") echo "SELECTED"; ?>>Other</option>
-    </select><br>
+             
     
+    <label for="phoneNo"><b>Phone No </b></label><br>
+      <input type="text" placeholder="Phone No" name="phoneNo" id="phoneNo" value="<?php  echo $phoneNo ?>" required>
 
-     
       </td>
 
 <!--start right panel-->
 
 <td width="300px">
 
-<label for="phoneNo"><b>Phone No </b></label><br>
-      <input type="text" placeholder="Phone No" name="phoneNo" id="phoneNo" value="<?php  echo $phoneNo ?>" required><br>
+<label for="lastName"><b>Last Name </b></label><br>
+    <input type="text" placeholder="Last Name" name="lastName" id="lastName" value="<?php  echo $lastName ?>" required><br>
 
+<label for="nicNo"><b>NIC No </b></label><br>
+ <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo $nicNo ?>" required>
 
-<label for="phoneNo"><b>NIC No </b></label><br>
- <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo $nicNo ?>" required><br>
+</td>
 
-  <label for="email"><b>Email</b></label><br>
+   <td width="300px">
+    
+   <label for="email"><b>Email</b></label><br>
    <input type="text" placeholder="Enter Email" name="email" id="email" value="<?php  echo $email ?>"  required><br>
+
+
+  
+    <label for="gender"><b>Gender</b></label><br>
+     <select id="gender" name="gender" required>
+     <option value="" disabled selected>Select Gender</option>
+     <option  <?php if($gender == "male") echo "SELECTED"; ?> >Male</option>
+    <option  <?php if($gender == "female") echo "SELECTED"; ?> >Female</option>
+      <option  <?php if($gender == "other") echo "SELECTED"; ?>>Other</option>
+    </select>
+    
+
+     
+      </td>
    </table> 
    <hr>   
-   
    <br>
-   <table>
+   <table >
    <h1>Change Password</h1> <br>
-    <td width="300px">
+    <td width="300px" >
    <label for="psw"><b>Current Password</b></label><br>
    <input type="password" placeholder="Password" id="psw" name="psw" ><br>
    
    <label for="newPsw"><b>Password</b></label><br>
    <input type="password" placeholder="Password" id="newPsw" name="newPsw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" ><br>
-            
+  </td>  
+  <td>
     <label for="psw-repeat"><b>Repeat Password</b></label><br>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" ><br>
     </td>
 
+    </table> 
     
-    
-<td>
+
             <div id="message">
               <p>Password must contain the following:</p>
               <li id="letter" class="invalid">A <b>lowercase</b> letter</li>
@@ -76,9 +83,8 @@
               <li id="number" class="invalid">A <b>number</b></li>
               <li id="length" class="invalid">Minimum <b>8 characters</b></li>
             </div>
-            <br>
-            </td>
-            </table>       
+            
+                 
      
 
     <input type="submit" value="Update"> <br>

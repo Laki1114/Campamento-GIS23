@@ -106,14 +106,14 @@ INSERT INTO `driver` (`firstname`, `lastname`, `gender`, `phone`, `address`, `ve
 --
 
 CREATE TABLE `glamping_manager` (
-  `bname` varchar(20) NOT NULL,
+ `GM_ID` int(12) NOT NULL,
+  `Name` varchar(20) NOT NULL,
   `number` varchar(30) NOT NULL,
-  `name` varchar(20) NOT NULL,
   `nic` int(12) NOT NULL,
   `phone` int(11) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `password` varchar(15) NOT NULL,
-  `gm_id` int(12) NOT NULL
+  `password` varchar(15) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
