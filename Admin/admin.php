@@ -132,7 +132,7 @@
                     <table>
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                                <div class="imgBx"><img src="../resource/customer02.jpg" alt=""></div>
                             </td>
                             <td>
                             <h4>U001 - Amit <br> <span>Sri Lanka | 12:00 | 24/02/2024</span></h4>
@@ -141,7 +141,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                                <div class="imgBx"><img src="../resource/customer01.jpg" alt=""></div>
                             </td>
                             <td>
                             <h4>U002 - David <br> <span>Sri Lanka | 12:00 | 24/02/2024</span></h4>
@@ -150,7 +150,7 @@
 
                         <tr>
                             <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                                <div class="imgBx"><img src="../resource/customer02.jpg" alt=""></div>
                             </td>
                             <td>
                                 <h4>GM005 - John <br> <span>Sri Lanka | 12:00 | 24/02/2024</span></h4>
