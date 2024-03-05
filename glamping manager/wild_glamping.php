@@ -44,7 +44,7 @@
 <div class="grid">
 
 <div class="imaged">
-<a href="lepard_nest.php"><img src="../resource/wild1.jpeg"></a>
+<a href="yala.php"><img src="../resource/wild1.jpeg"></a>
 </div>
 <div class="title">
  <h1>Leopard Nest - Yala</h1>
