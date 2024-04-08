@@ -46,7 +46,7 @@ if($result->num_rows > 0)
 	}
 }
 
-$sql = "SELECT * FROM glampmanager WHERE Email = '$email'";
+$sql = "SELECT * FROM glamping_manager WHERE Email = '$email'";
 $result=mysqli_query($linkz,$sql);
 
 

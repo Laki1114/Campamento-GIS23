@@ -107,12 +107,13 @@ INSERT INTO `driver` (`firstname`, `lastname`, `gender`, `phone`, `address`, `ve
 
 CREATE TABLE `glamping_manager` (
  `GM_ID` int(12) NOT NULL,
-  `Name` varchar(20) NOT NULL,
-  `number` varchar(30) NOT NULL,
+  `name` varchar(20) NOT NULL,
   `nic` int(12) NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phoneNo` int(11) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `password` varchar(15) NOT NULL
+  `password` varchar(15) NOT NULL,
+  `bName` varchar(20) NOT NULL,
+  `brNumber` varchar(30) NOT NULL,
   
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -129,8 +130,8 @@ INSERT INTO `glamping_manager` (`bname`, `number`, `name`, `nic`, `phone`, `emai
 -- Table structure for table `glampmanager`
 --
 
-CREATE TABLE `glampmanager` (
-  `GlampManagerId` int(11) NOT NULL,
+CREATE TABLE `glamping_manager` (
+  `GM_ID` int(11) NOT NULL,
   `FirstName` varchar(10) NOT NULL,
   `LastName` varchar(10) NOT NULL,
   `Gender` varchar(10) NOT NULL,
@@ -138,9 +139,13 @@ CREATE TABLE `glampmanager` (
   `NICNo` varchar(15) NOT NULL,
   `Email` varchar(25) NOT NULL,
   `Password` varchar(25) NOT NULL
+  `BName` varchar(20) NOT NULL,
+  `BRNumber` varchar(30) NOT NULL,
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+INSERT INTO `glamping_manager` (`GM_ID`, `FirstName`, `LastName`, `Gender`, `PhoneNo`, `NICNo`, `Email`, `Password`, `BName`, `BRNumber`) VALUES
+(GM001, 'Amritha', 'Liyanage', 'Male', '0704576895','200154963987', 'abc@gmail.com', 'Abc@2001', 'AmayaGlamping', 'Ed218909');
+ --------------------------------------------------------
 
 --
 -- Table structure for table `guide`
