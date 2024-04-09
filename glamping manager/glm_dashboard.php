@@ -53,7 +53,7 @@
         <div class="grid">
 
             <div class="title">
-                <h1>Campaign Overview</h1>
+                <h1>Year Summary</h1>
             </div>
         <!--line chart-->
         <div id="myPlot" style="width:100%;max-width:700px"></div>
@@ -91,7 +91,7 @@ Plotly.newPlot("myPlot", data, layout, config);
 
         <div class="container1">
             <div class="title">
-                <h1>Revenue Stat</h1>
+                <h1></h1>
             </div>
    <!--pie chart--->         
  <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
