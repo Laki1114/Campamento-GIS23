@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Chat Room</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="navigation">
+        <?php include 'adminsidebar.php'; ?>
+        </div>
+
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="../resource/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="details3">
+                
+
+                <!-- ================= chat ================ -->
+                <div class="chat">
+                    <div class="cardHeader">
+                        <h2>Chats</h2>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Sri Lanka | 12:00 </span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>David</h2>
+                        
+                    </div>
+                    
+
+<div class="contain">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
+  <p>Hello. </p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div class="contain darker">
+  <img src="../resource/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
+  <p>Hey! </p>
+  <span class="time-left">11:01</span>
+</div>
+
+<div class="contain">
+  <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
+  <p>Can I ask something?</p>
+  <span class="time-right">11:02</span>
+</div>
+
+<div class="contain darker">
+  <img src="../resource/customer02.jpg" alt="Avatar" class="right" style="width:100%;">
+  <p>Yeah, sure.</p>
+  <span class="time-left">11:05</span>
+</div>
+
+
+                    
+                </div>
+            </div>
+        
+
+    <div id="chat-box"></div>
+    <input type="text" id="message" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
