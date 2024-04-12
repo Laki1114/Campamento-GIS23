@@ -49,40 +49,15 @@
             </div>
 
             <div class="container">
-                <!--bar chart--->
+                <!-- Bar chart -->
                 <canvas id="myBarChart" style="width:100%;max-width:600px"></canvas>
 
-                <script>
-                    const ctx = document.getElementById('myBarChart');
+                <script src="glm_js_files/barchart.js"></script>
+            </div>
 
-                    new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-                            datasets: [{
-                                label: 'Bookings',
-                                data: [25, 22, 16, 35, 20, 13, 15, 23, 21, 14, 16, 26],
-                                backgroundColor: '#003D25',
-                                borderColor: '#003D25',
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                            }
-                        }
-                    });
-                </script>
-            </div>
-            <div class="container2">
-              
-            </div>
+            
         </div>
+        
     </div>
 </body>
 
