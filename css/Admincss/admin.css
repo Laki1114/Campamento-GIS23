@@ -33,7 +33,7 @@ body {
 
 /* =============== Navigation ================ */
 .navigation {
-  position: fixed;
+  position:relative;
   width: 270px;
   height: 100%;
   background: var(--green);
