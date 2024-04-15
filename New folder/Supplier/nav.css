@@ -1,0 +1,57 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    color: rgb(4, 4, 4);
+    background-color: rgb(230, 232, 116); /* Changed background color to black */
+    height: 50px; /* Adjusted height of the navigation bar */
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a, .dropbtn {
+    display: inline-block;
+    color: rgb(9, 9, 9); /* Changed text color to white */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(50, 116, 64);
+  }
+  
+  li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color: rgb(253, 247, 247);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black; /* Changed dropdown text color to black */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #7a7676;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  li.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content when hovering over the dropdown trigger */
+  }
+  
