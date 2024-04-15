@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST)) {
-    require_once __DIR__ . "/glm_lib/DataSource.php";
+    require_once __DIR__ . "/glm_lib_files/DataSource.php";
     $database = new DataSource();
     
     // Store wizard form data to post
@@ -38,7 +38,7 @@ if (!empty($_POST)) {
 
 <head>
     <title>Booking Form</title>
-    <link rel="stylesheet" type="text/css" href="glm_css_files/booking_process1.css" />
+    <link rel="stylesheet" type="text/css" href="glm_css_files/book.css" />
     <link rel="stylesheet" type="text/css" href="glm_css_files/form_deatails.css" />
     <link rel="stylesheet" type="text/css" href="glm_css_files/wizard.css" />
 </head>
@@ -132,6 +132,23 @@ if (!empty($_POST)) {
                     <button type="button" onClick="validate(this)">Next</button>
                 </div>
             </section>
+
+<!-- Wizard section 5 -->
+<section id="discount-section" class="display-none">
+                <h3>Payment</h3>
+                <div id="confirmpage">
+            <?php
+            include("payment.php");
+            ?>
+            </div>
+                
+                <div class="row button-row">
+                    
+                    <button type="button" onClick="validate(this)">Pay</button>
+                </div>
+            </section>
+
+
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

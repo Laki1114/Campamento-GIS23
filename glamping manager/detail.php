@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="glm_css_files/details.css">
+    <link rel="stylesheet" href="glm_css_files/form_deatails.css">
 </head>
 <body>
 

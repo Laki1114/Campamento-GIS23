@@ -27,6 +27,7 @@
  .container {
      position: relative;
      width: 100%;
+    
  }
 
  /* ===================== Main ===================== */
@@ -124,7 +125,7 @@
      background: #fff;
  }
 
- .container1 {
+ .container2 {
      width: 30%;
      height: 270px;
      display: inline-block;
