@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Admin Profile </title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="../css/Admincss/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 <style>
       .btn {
     border: 2px solid black;
@@ -32,7 +32,6 @@
 h2,h3 {
     text-align:center;
     line-height:30px;
-    color:#327028;
 }
 
 table {
@@ -70,6 +69,7 @@ table {
 <body>
     <!-- =============== Navigation ================ -->
     <div class="containerr">
+        
         <div class="navigation">
         <?php include 'adminsidebar.php'; ?>
         </div>
@@ -93,42 +93,44 @@ table {
                 </div>
             </div>
 
-            
-            <div ><br>
-                <h2><b>Welcome John!</b></h2>
-                <h3><b>Admin ID - A102</b></h3>
-
-                <table>
-                <td>
+            <!-- ======================= Cards ================== -->
+            <div >
+                <h2>Welcome John!</h2>
+                <h3>User ID - U102</h3>
                 <div class="containerr" >
                     <div class="profile">
                     <div class="container-image">
-                    <img src="../resource/customer02.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
+                    <img src="images/customer02.jpg" alt="profile pic" class="profile-picture" width="200px" height="200px">
                     </div>
                     </div>
                 </div>
             
-                </td><td>
+  
                 <div class="profile-info">
-                <br><br>
-                    
-                        <p>First Name : John</p> <br>
-                        <p>NIC no : 200036785469</p><br>
-                    
-                        <p>Last name : Fernando</p><br>
-                        <p>Email : johnfernando12@gmail.com</p>
-                        <br>
-                        <p>Gender : Male</p><br>
-                        <p>Phone no : 0715428778</p><br><br>
-                   
-                        <button class="btnnav">Edit Your Data</button>
-                    
-                        <br><br>
+                    <table>
+                    <tr>
+                        <td>First Name : John</td>
+                        <td>NIC no : 200036785469</td>
+                    </tr>
+                    <tr>
+                        <td>Last name : Fernando</td>
+                        <td>Email : johnfernando12@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Gender : Male</td>
+                        <td>Phone no : 0715428778</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn info">Edit Your Data</button></td>
+                    </tr>
+                    </table>
+                
                 </div>
-                </td>
-                </table>
+  
             </div>
 
+             
 
             <div class="details2">
                 <div class="admincustomer">
@@ -168,6 +170,7 @@ table {
             </div>
         </div>
     </div>
+
 
 
 

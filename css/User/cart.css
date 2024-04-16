@@ -1,0 +1,92 @@
+/* Table */
+.table {
+    width: 75%; /* Set the table width to three-quarters of the screen */
+    margin-bottom: 1rem;
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+/* Increase font size for table */
+.table th,
+.table td {
+    font-size: 1.1rem; /* Increase font size for table headers and data cells */
+    padding: 0.50rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    align-content: center;
+}
+
+/* Card */
+.card {
+    margin-bottom: 1rem;
+    border: none;
+}
+
+/* Card header */
+.card-header {
+    background-color: #37b26d;
+    color: #fff;
+    padding: 1rem 1.25rem; /* Increase padding for card header */
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Card body */
+.card-body {
+    padding: 1.5rem; /* Increase padding for card body */
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    font-weight: 500; /* Increase font weight for button */
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #28a745; /* Change button background color to green */
+    border: 1px solid #28a745; /* Change button border color to green */
+    padding: 0.75rem 1.5rem; /* Increase padding for button */
+    font-size: 1.1rem; /* Increase font size for button */
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #218838; /* Darker shade of green for button hover */
+    border-color: #218838; /* Darker shade of green for button hover */
+}
+
+/* Container */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Text alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Background color */
+.bg-white {
+    background-color: #fff;
+}
+
+/* Spacing */
+.mr-3 {
+    margin-right: 1rem !important;
+}
+
+/* Utility classes */
+.text-white {
+    color: #fff !important;
+}
