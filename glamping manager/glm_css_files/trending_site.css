@@ -110,3 +110,8 @@ body {
     height: 100%;
     object-fit: cover;
   }
+  .star-container {
+    text-align: center;
+    margin-left: 20px;
+  }
+  
