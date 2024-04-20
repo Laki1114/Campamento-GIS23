@@ -145,17 +145,14 @@ body {
  }
 
 h1{
-  font-size: 20px;
+  font-size: 18px;
   color:#327028;
  }
 h2{
   font-size: 20px;
   color:#327028;
 }
-h6{
-    font-size: 15px;
-  color:#327028; 
-}
+
 p{
     color:rgb(128,128,128);
 }
@@ -213,4 +210,5 @@ a:hover {
 
 .star-container {
   text-align: center;
+  margin-left: 70px;
 }

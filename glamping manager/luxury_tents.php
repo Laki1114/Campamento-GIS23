@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> glm1 </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="glm_css_files/luxury_tents.css">
+    <link rel="stylesheet" href="glm_css_files/luxury_tent.css">
 
   
   
@@ -51,11 +51,11 @@
  <h1>Galoya glamping site</h1>
 </div>
 <div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
+<div id="star_rating">
+            <?php
+            include("star_rating.php");
+            ?>
+        </div>
 </div>
 
 <div class="des">
@@ -74,11 +74,11 @@
  <h1>Knuckels Glamping Tents</h1>
 </div>
 <div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
+<div id="star_rating">
+            <?php
+            include("star_rating.php");
+            ?>
+        </div>
 </div>
 
 <div class="des">
@@ -97,11 +97,11 @@
  <h1>Kottawatta Village</h1>
 </div>
 <div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
+<div id="star_rating">
+            <?php
+            include("star_rating.php");
+            ?>
+        </div>
 </div>
 
 <div class="des">
@@ -119,11 +119,11 @@
  <h1>Flameback Eco Lodge </h1>
 </div>
 <div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
+<div id="star_rating">
+            <?php
+            include("star_rating.php");
+            ?>
+        </div>
 </div>
 
 <div class="des">
@@ -141,11 +141,11 @@
  <h1>Kodev Kalpitiya </h1>
 </div>
 <div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
+<div id="star_rating">
+            <?php
+            include("star_rating.php");
+            ?>
+        </div>
 </div>
 
 <div class="des">
@@ -163,11 +163,11 @@
  <h1>River glamping by Gaga Bees </h1>
 </div>
 <div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
+<div id="star_rating">
+            <?php
+            include("star_rating.php");
+            ?>
+        </div>
 </div>
 
 <div class="des">
