@@ -287,7 +287,7 @@ body {
 .details {
   position: relative;
   width: 100%;
-  padding: 5px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
@@ -297,9 +297,9 @@ body {
 .details .recentOrders {
   position: relative;
   display: grid;
-  min-height: 200px;
+  min-height: 500px;
   background: var(--white);
-  padding: 15px;
+  padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
@@ -329,18 +329,16 @@ body {
 }
 .details table thead td {
   font-weight: 600;
-  white-space: nowrap;
 }
 .details .recentOrders table tr {
   color: var(--black1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
 }
 .details .recentOrders table tr:last-child {
   border-bottom: none;
 }
 .details .recentOrders table tbody tr:hover {
-  background: #519b46;
+  background: var(--green);
   color: var(--white);
 }
 .details .recentOrders table tr td {

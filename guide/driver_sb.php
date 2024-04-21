@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title>Driver sidebar</title>
+<title> sidebar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="../css/Driver/admin.css">
+<link rel="stylesheet" href="admin.css">
 
 <body>
 
@@ -57,11 +57,11 @@
                 </li>
 
                 <li>
-                    <a href="adminmessege.php">
+                    <a href="feedback.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
-                        <span class="title">Feedback received</span>
+                        <span class="title">Feedbacks received</span>
                     </a>
                 </li>
 

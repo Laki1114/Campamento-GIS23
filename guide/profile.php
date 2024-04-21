@@ -11,9 +11,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Profile </title>
+    <title> Guide</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="../css/Driver/admin.css">
+    <link rel="stylesheet" href="admin.css">
 <style>
       .btn {
     border: 2px solid black;
@@ -90,9 +90,9 @@ table {
 }
 
 .experience-item {
-  flex: 0 1 calc(33.333% - 25px);
+  flex: 0 1 calc(33.333% - 20px);
   box-sizing: border-box;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-bottom: 20px;
   background-color: #fff;
   padding: 10px;
@@ -158,15 +158,15 @@ table {
             <!-- ======================= Cards ================== -->
             <div >
             <?php    
-
+ 
  $email = $_SESSION['email'] ;
- $query  = mysqli_query($con, "SELECT * FROM driver WHERE email= '$email' ");
+ $query  = mysqli_query($con, "SELECT * FROM guide WHERE email= '$email' ");
 
  $row = mysqli_fetch_array($query);
-  $id= $row['d_id'];
+
 ?>
                 <h2>Welcome <?php echo $row['firstname']; ?>!</h2>
-                <h3>User ID - <b>D<?php echo $row['d_id']; ?></b></h3>
+                <h3>User ID - <b>G<?php echo $row['id']; ?></b></h3>
                 <div class="containerr" >
                     <div class="profile">
                     <div class="container-image">
@@ -194,7 +194,7 @@ table {
                     <tr>
                         <td></td>
                         
-                        <td><br><button class="btn info"><a href="editUser.php">Edit Your Data</a></button></td>
+                        <td><br><button class="btn info">Edit Your Data</button></td>
                     </tr>
                     </table>
                 
@@ -205,44 +205,23 @@ table {
              
 
             <!-- ================ Order Details List ================= -->
-            <br><br>
-            <h2><b>Vehicle Pictures</b></h2>
-<br>
-<div class="experience-grid">
-    <?php
-    // Assuming $driverId contains the driver's ID
-     // Replace with actual driver ID
-
-    // SQL query to select images for the given driver ID
-    $sqll = "SELECT * FROM v_images WHERE d_id = $id";
-
-    // Execute the query
-    $reslt = mysqli_query($con, $sqll);
-
-    // Check if there are any images
-    if (mysqli_num_rows($reslt) > 0) {
-        // Loop through each row to fetch images
-        while ($ro = mysqli_fetch_assoc($reslt)) {
-            // Display each image and edit button
-            echo "<div class='experience-item'>";
-            echo "<img src='vehicle/" . $ro['file_name'] . "' alt='Experience'>";
-            echo "<form action='update_image.php' method='post' enctype='multipart/form-data'>";
-            echo "<br> <input type='file' name='new_image'>";
-            echo "<input type='hidden' name='image_id' value='" . $ro['id'] . "'>";
-            echo "<button type='submit' class='edit-button'>Change Image</button>";
-            echo "</form>";
-            echo "</div>";
-        }
-    } else {
-        // If no images found, display a message
-        echo "<div>No images found for this user.</div>";
-    }
-
-
-    ?>
-</div>
-
-       
+        <br><br>
+       <h2><b>Vehicle Pictures</b></h2>
+       <br>
+       <div class="experience-grid">
+      <div class="experience-item">
+          <img src="../driver/ex 1.jpg" alt="Experience 1">
+          <button class="edit-button" onclick="editImage(1)">Edit</button>
+      </div>
+      <div class="experience-item">
+          <img src="../driver/ex 2.jpg" alt="Experience 2">
+          <button class="edit-button" onclick="editImage(2)">Edit</button>
+      </div>
+      <div class="experience-item">
+          <img src="../driver/ex 3.jpg" alt="Experience 3">
+          <button class="edit-button" onclick="editImage(3)">Edit</button>
+     </div>
+  </div>
 
 <!--script for image edit -->
   <script>
