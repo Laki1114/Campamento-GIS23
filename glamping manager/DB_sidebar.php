@@ -27,7 +27,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="../home/">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -47,7 +47,7 @@
                 <br>
 
                 <li>
-                    <a href="add_site_form.php">
+                    <a href="R2.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
