@@ -49,7 +49,7 @@
    <input type="text" placeholder="Enter Email" name="email" id="email" required><br>
                 
    <label for="psw"><b>Password</b></label><br>
-   <input type="password" placeholder="Password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+   <input type="password" placeholder="Password" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
                 
                    
     <label for="psw-repeat"><b>Repeat Password</b></label><br>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('../database/linklinkz.php');
 
 // Check if form is submitted
@@ -60,7 +61,7 @@ if(isset($_GET['id'])) {
 ?>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/form.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/User/form.css"/>
 </head>
 <div class="container">
     <div class="card">
@@ -108,7 +109,8 @@ if(isset($_GET['id'])) {
                                     <p class="help-block">Only jpg/png are allowed.</p>
                                 </div>
                             <?php endif; ?>
-                            <button type="submit" name='submit' class="btn btn-default">Submit</button>
+                            <br><br>
+                            <button type="submit" name='submit' style="background-color: #04AA6D;font-size: 18px; border: none; color: white; cursor: pointer;">Submit</button>
                         </form>
                     </div>
                 </div>

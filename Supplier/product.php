@@ -8,11 +8,11 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
 ?>
 
 <?php 
-include('nav.php');
+//include('nav.php');
 include ('../database/linklinkz.php');
  ?>
 <head>
-<link rel="stylesheet" type="text/css" href="product.css"/>
+<link rel="stylesheet" type="text/css" href="../css/Supplier/product.css"/>
 </head> 
 <div class="container">
 

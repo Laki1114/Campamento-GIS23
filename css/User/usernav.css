@@ -1,11 +1,13 @@
 body {margin:0;}
 .navbar {
+  z-index:1;
   overflow: hidden;
   background-color: #196619;
   position: fixed;
   top: 0;
   width: 100%;
   height:60px;
+  
 }
 
 .navbar a {
@@ -58,3 +60,4 @@ body {margin:0;}
   right: 10px; /* Adjust as needed */
 
 }
+

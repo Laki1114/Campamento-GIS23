@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../css/User/single.css">
   	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -33,54 +33,42 @@ $thumb  = $row['thumb'];
 ?>
 
 <div class="container">
-
     <div class="row text-white">
-        <div class="col-md-6 ">
+        <div class="left">
+            <!-- Main product image goes here -->
             <img src="../Supplier/<?php echo $thumb ?>" alt="" class='img-fluid' style='height:500px;width:500px;'>
         </div>
-        <div class="col-md-6 pt-5">
-        <h3><b><?php echo $product_name ?></b></h3>
-        <h2><b>INR <?php echo  $price ?>.00 </b></h2>
-<p>     <?php echo $product_description ?></p>            
-       
-<div class="row">
-    <div class="col-md-2">
-        Quantity:
+        <div id="rightside">
+            <div class="right-content">
+                <h3><b><?php echo $product_name ?></b></h3>
+                <h2><b>Rs <?php echo  $price ?>.00 </b></h2>
+                <p><?php echo $product_description ?></p>
+                <div class="row">
+                    <div class="col-md-2">Quantity:</div>
+                    <div class="col-md-2">
+                        <form action='addToCart.php'>  
+                            <input type="hidden" name='id' value='<?php echo  $product_id ?>'>
+                            <input type="number" class='form-control' name='quantity' value='1'> 
+                        </form>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-12 category">
+                        <?php
+                        $sql2 = "SELECT * FROM Category where cat_id = '$cat_id'";
+                        $result2 = mysqli_query($conn, $sql2); 
+                        $row2 = mysqli_fetch_assoc($result2)
+                        ?> 
+                        Categories - <a href="index.php?id=<?php echo $cat_id ?>"><?php echo $row2["cat_name"] ?></a>   
+                    </div>
+                </div>
+                <button type='submit' class="btn">
+                    <i class="fa fa-cart-arrow-down"></i> Add To Cart
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-2">
-    <form action='addToCart.php'>  
-    <input type="hidden" name='id' value='<?php echo  $product_id ?>'>
-        <input type="number" class='form-control' name='quantity' value='1'> 
-       
-    </div>
-   
-</div>
-<!-- for category display-->
-<div class="row ">
-    <div class="col-md-12 category">
-
-    <?php
-                  
-        
-                  $sql2 = "SELECT * FROM Category where cat_id = '$cat_id'";
-                  $result2 = mysqli_query($conn, $sql2); 
-                      // output data of each row
-                      $row2 = mysqli_fetch_assoc($result2)
-                          ?> 
-     Categories - <a href="index.php?id=<?php echo $cat_id ?>"><?php echo $row2["cat_name"] ?></a>   
-                
-     
-    </div>
-    <br>
-
-  
-    <button  type='submit' class="btn"  >
-                        <i class="fa fa-cart-arrow-down"></i> Add To Cart
-                    </button>
-                    </form>
-<br><br>
-
-
+    <br><br><br>
     <!--RELATED PRODUCTS STARTS HERE-->
     <div class="card">
 <div class="card-header">
@@ -93,7 +81,7 @@ Related Products
 <ul class="rig columns-4">
 
  <?php
- $sql_related = "SELECT * FROM products where product_id != $product_id  order by rand() limit 3";
+ $sql_related = "SELECT * FROM products where cat_id = $cat_id  order by rand() limit 3";
 //  if(isset($_GET['id'])){
 //      $catID = $_GET['id'];
 //      $sql .= " WHERE cat_id = '$catID'";
