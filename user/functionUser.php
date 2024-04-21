@@ -1,7 +1,7 @@
 <?php
 	function save_user($firstName,$lastName,$gender,$phoneNo,$nicNo,$email,$psw){
-		require("linklinkz.php");
-		$sql = "INSERT INTO user (FirstName,LastName,Gender,PhoneNo,NICNo,Email,Password) VALUES('$firstName','$lastName','$gender','$phoneNo','$nicNo','$email','$psw')";
+		include('../database/linklinkz.php');
+		$sql = "INSERT INTO user (FirstName,LastName,Gender,PhoneNo,NICNo,Email,Password,Status) VALUES('$firstName','$lastName','$gender','$phoneNo','$nicNo','$email','$psw','1')";
 		$result=mysqli_query($linkz,$sql); 
 
 

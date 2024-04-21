@@ -1,6 +1,6 @@
 <html >
 <head>
-<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="../css/blog/dataBlog.css">
     <title>Document</title>
 
     <script>
@@ -17,8 +17,7 @@
 </body>
 </html>
 <?php
-require("linklinkz.php");
-
+include ('../database/linklinkz.php');
 
 $sql = "select * from blog";
 $result = mysqli_query($linkz,$sql);

@@ -9,19 +9,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-  
-  * {
+ 
+* {
     box-sizing: border-box;
   }
-  body{
+body{
     background-image: url("../resource/login.jpg");
   }
   .bg-img {
     /* The image used */
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     min-height: 1220px;
-  
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -31,7 +29,7 @@
   .h1{
     text-align: center;
     color: #327028;
-
+    
   }
   /* Add styles to the form container */
   .container {
@@ -60,7 +58,7 @@
   }
 
   /* Full-width input fields */
-  input[type=text], input[type=password] {
+  input[type=text], input[type=time] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -138,3 +136,7 @@
     float: right;
     padding-top: 16px;
   }
+.next{
+  position: fixed;
+  right: 0;
+}

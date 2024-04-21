@@ -1,4 +1,4 @@
-<?php include '../database/linklinkz.php'; ?>
+<?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 
 <?php
 $sql = "SELECT * FROM driver";
-$result = $linkz->query($sql);
+$result = $con->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -33,7 +33,7 @@ echo '</div>';
 
 echo '<div class="des">';
 echo '<p>Location: ' . $row['location'] . '</p>';
-echo '<a href="book_now.php" class="button">Book Now</a>';
+echo '<a href="driver_info.php?id=' . $row['d_id'] . '" class="button">More</a>';
 echo '</div>';
 echo '</div>';
 

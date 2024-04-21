@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #003D25;
+  --white: #fff;
+  --yellow: #BFCC7C;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--yellow); /* Use the --yellow variable */
+}
+
+/* Style for the profile picture container */
+.container-image {
+  margin-right: 20px;
+}
+
+/* Style for the profile picture */
+.profile-picture {
+  border-radius: 50%; /* Make the profile picture circular */
+  border: 2px solid var(--black1); /* Use the --black1 variable */
+}
+
+/* Style for the profile information container */
+.profile-info {
+  margin-left: 400px; /* Push the profile info to the right */
+  text-align: center; /* Center the text within the container */
+}
+
+/* Style for the profile info table */
+.profile-info table {
+  width: 100%;
+}
+
+/* Style for the profile info table rows */
+.profile-info tr {
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--black2); /* Use the --black2 variable */
+}
+
+/* Style for the profile info table cells */
+.profile-info td {
+  padding: 5px;
+}
+
+/* Style for the edit button */
+.btn {
+  background-color: #2d7030;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Style for the edit button on hover */
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Style for the info button */
+.info {
+  background-color: #3e7e46;
+}
+
+/* Style for the info button on hover */
+.info:hover {
+  background-color: #316938;
+}
+
+/* Style for the profile info table */
+.profile-info table {
+  width: 60%; /* Set the table width to 100% */
+  border-collapse: collapse; /* Collapse the borders between table cells */
+  text-align: left;
+}
+
+/* Style for the table header */
+.profile-info th {
+  padding: 10px; /* Add padding to the table header cells */
+  background-color: var(--gray); /* Use the --gray variable */
+  text-align: left; /* Align text to the left within the table header cells */
+  border-bottom: 2px solid var(--black1); /* Use the --black1 variable */
+}

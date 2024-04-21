@@ -1,5 +1,5 @@
 <?php 
-      require '../database/linklinkz.php';
+      require 'config.php';
   
         if(!isset($_SESSION['email'])){
             header('location: ../login/login.php');
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Admin Profile </title>
+    <title> Profile </title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="../css/Driver/admin.css">
 <style>
@@ -71,29 +71,28 @@ table {
 
 .edit-button {
   display: block;
-            margin-top: 10px;
-            padding: 3px 8px;
-            background-color: #0f3411;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+  margin-top: 10px;
+  padding: 3px 8px;
+   background-color: #0f3411;
+  color: white;
+  border: none;
+ border-radius: 4px;
+ cursor: pointer;
         }
 
-   
-        .edit-button:hover {
-            background-color: #45a049;
-        }
-        .experience-grid {
+.edit-button:hover {
+  background-color: #45a049;
+}
+.experience-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .experience-item {
-  flex: 0 1 calc(33.333% - 20px);
+  flex: 0 1 calc(33.333% - 25px);
   box-sizing: border-box;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-bottom: 20px;
   background-color: #fff;
   padding: 10px;
@@ -159,12 +158,12 @@ table {
             <!-- ======================= Cards ================== -->
             <div >
             <?php    
- 
+
  $email = $_SESSION['email'] ;
- $query  = mysqli_query($linkz, "SELECT * FROM driver WHERE email= '$email' ");
+ $query  = mysqli_query($con, "SELECT * FROM driver WHERE email= '$email' ");
 
  $row = mysqli_fetch_array($query);
-
+  $id= $row['d_id'];
 ?>
                 <h2>Welcome <?php echo $row['firstname']; ?>!</h2>
                 <h3>User ID - <b>D<?php echo $row['d_id']; ?></b></h3>
@@ -195,7 +194,7 @@ table {
                     <tr>
                         <td></td>
                         
-                        <td><br><button class="btn info">Edit Your Data</button></td>
+                        <td><br><button class="btn info"><a href="editUser.php">Edit Your Data</a></button></td>
                     </tr>
                     </table>
                 
@@ -206,23 +205,44 @@ table {
              
 
             <!-- ================ Order Details List ================= -->
-        <br><br>
-       <h2><b>Vehicle Pictures</b></h2>
-       <br>
-       <div class="experience-grid">
-      <div class="experience-item">
-          <img src="../resource/ex 1.jpg" alt="Experience 1">
-          <button class="edit-button" onclick="editImage(1)">Edit</button>
-      </div>
-      <div class="experience-item">
-          <img src="../resource/ex 2.jpg" alt="Experience 2">
-          <button class="edit-button" onclick="editImage(2)">Edit</button>
-      </div>
-      <div class="experience-item">
-          <img src="../resource/ex 3.jpg" alt="Experience 3">
-          <button class="edit-button" onclick="editImage(3)">Edit</button>
-     </div>
-  </div>
+            <br><br>
+            <h2><b>Vehicle Pictures</b></h2>
+<br>
+<div class="experience-grid">
+    <?php
+    // Assuming $driverId contains the driver's ID
+     // Replace with actual driver ID
+
+    // SQL query to select images for the given driver ID
+    $sqll = "SELECT * FROM v_images WHERE d_id = $id";
+
+    // Execute the query
+    $reslt = mysqli_query($con, $sqll);
+
+    // Check if there are any images
+    if (mysqli_num_rows($reslt) > 0) {
+        // Loop through each row to fetch images
+        while ($ro = mysqli_fetch_assoc($reslt)) {
+            // Display each image and edit button
+            echo "<div class='experience-item'>";
+            echo "<img src='vehicle/" . $ro['file_name'] . "' alt='Experience'>";
+            echo "<form action='update_image.php' method='post' enctype='multipart/form-data'>";
+            echo "<br> <input type='file' name='new_image'>";
+            echo "<input type='hidden' name='image_id' value='" . $ro['id'] . "'>";
+            echo "<button type='submit' class='edit-button'>Change Image</button>";
+            echo "</form>";
+            echo "</div>";
+        }
+    } else {
+        // If no images found, display a message
+        echo "<div>No images found for this user.</div>";
+    }
+
+
+    ?>
+</div>
+
+       
 
 <!--script for image edit -->
   <script>
@@ -263,20 +283,6 @@ Pickup/Drop-off Location: <br>
 <br><br>
        <h2><b>Experience</b></h2>
        <br>
-       <div class="experience-grid">
-      <div class="experience-item">
-          <img src="ex 1.jpg" alt="Experience 1">
-          <button class="edit-button" onclick="editImage(1)">Edit</button>
-      </div>
-      <div class="experience-item">
-          <img src="ex 2.jpg" alt="Experience 2">
-          <button class="edit-button" onclick="editImage(2)">Edit</button>
-      </div>
-      <div class="experience-item">
-          <img src="ex 3.jpg" alt="Experience 3">
-          <button class="edit-button" onclick="editImage(3)">Edit</button>
-     </div>
-  </div>
 
   <div class="v-desc">
  
