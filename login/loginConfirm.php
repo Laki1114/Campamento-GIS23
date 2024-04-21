@@ -152,7 +152,7 @@ if ($result->num_rows > 0) {
                 if ($_POST['psw'] == $row["Password"]) {
                     if ($row["Status"] == '1') {
                         $_SESSION['email'] = $email;
-                        header("Location: ../Faheema/guide_pro.php");
+                        header("Location: ../guide/dr_db.php");
                         exit;
                     } else {
                         header("Location: ../login/login.php?error=deactivated");
