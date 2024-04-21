@@ -1,5 +1,12 @@
+
+
+
+
+
+
+
 <?php
-//include ('sidebar.php');
+
 //session_start();
 //include('../database/linklinkz.php');
 //if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
@@ -35,6 +42,30 @@ if (mysqli_query($conn, $sql)) {
         <link rel="stylesheet" type="text/css" href="../css/user/form.css"/> 
     </head>
     <body>
+    <div class="container2">
+    <div class="navigation">
+            
+            <?php include 'sidebar.php'; ?>
+                    
+            </div>
+
+            <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="images/customer01.jpg" alt="">
+                </div>
+            </div>
     
 <div class="container">
 
@@ -76,6 +107,13 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
 }
 
         ?>
+
+                
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
 </body>
 
