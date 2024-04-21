@@ -230,7 +230,7 @@ body{
 }
 .users-list a .status-dot{
   font-size: 12px;
-  color: #468669;
+  color: #327028;
   padding-left: 10px;
 }
 .users-list a .status-dot.offline{
@@ -291,7 +291,7 @@ body{
   max-width: calc(100% - 130px);
 }
 .outgoing .details p{
-  background: #333;
+  background: #327028;
   color: #fff;
   border-radius: 18px 18px 0 18px;
 }
@@ -310,7 +310,7 @@ body{
 }
 .incoming .details p{
   background: #fff;
-  color: #333;
+  color: #327028;
   border-radius: 18px 18px 18px 0;
 }
 .typing-area{
