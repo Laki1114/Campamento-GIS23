@@ -29,7 +29,22 @@
         </div>
        
     </div>
-    <a href="#cart" class="cart-icon"><i class="fa fa-shopping-cart" style="font-size:24px"></i></a>
+    <a href="cart.php" class="cart-icon"><i class="fa fa-shopping-cart" style="font-size:24px"></i></a>
+    <?php 
+					$count = '';
+					 
+					if(isset($_SESSION['cart'])){
+					 $cart = $_SESSION['cart'];
+					 $count = count($cart);//see website not showing the count
+					}
+					?>
+                    <?php
+                    // Loop to print &nbsp; 200 times
+                    for ($i = 0; $i < 315; $i++) {
+                        echo "&nbsp;";
+                    }
+                    ?>
+    <span style="color:white;font-size:32px;" class="badge"><b> <?php echo $count?></b></span>
 </div>
 
 

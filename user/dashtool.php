@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //include('../home/header.php');  
 include('../database/linklinkz.php'); 
 
@@ -16,7 +16,7 @@ include('../database/linklinkz.php');
 
 <br><br><br>
 <?php 
-include('usernav.php');
+include('check.php');
 
 ?>
 <?php 
@@ -43,12 +43,13 @@ $result = mysqli_query($conn, $sql);
                
                 <a href="#"> 
  <?php if(isset($row['thumb']) && !empty($row['thumb'])): ?>
-    <img src="../Supplier/<?php echo $row['thumb']; ?>" alt="" height='150' width='150'>
+  <center>  <img src="../Supplier/<?php echo $row['thumb']; ?>" alt="" height='150' width='150'></center>
 <?php endif; ?>     </a>
 
                     <h4 class="title"><?php echo  $row["product_name"] ?></h4>
 
-                    <p><?php echo  $row["product_description"] ?></p>
+                   <font size=2px> <p><?php echo implode(' ', array_slice(explode(' ', $row["product_description"]), 0, 10)); ?>...</p></font>
+
                     <div class="price"> <b>Rs <?php echo  $row["price"] ?>.00 </b></div>
                     
                     <hr>

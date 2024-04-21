@@ -1,8 +1,36 @@
+<?php
+ $error_message = "";
+if (isset($_GET['error'])) {
+ 
+  switch ($_GET['error']) {
+      case 'deactivated':
+          $error_message = "Your account is deactivated. Please contact support.";
+          break;
+      case 'password':
+          $error_message = "Invalid password.";
+          break;
+      case 'not_registered':
+          $error_message = "Email is not registered.";
+          break;
+      default:
+          $error_message = "An unknown error occurred.";
+          break;
+  }
+ 
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/login.css">
+<style>
+  .error-message {
+  color: red;
+  font-size: 17px;
+  margin-top: 5px;
+}
+</style>
 </head>
 <body>
 
@@ -10,14 +38,17 @@
 <div class="bg-img">
   <form action="loginConfirm.php" class="container" method="post">
     <h1>Login to your Account</h1> <br>
-
+    <?php
+    // Display the error message in the HTML
+    echo "<div class='error-message'>" . $error_message . "</div>";
+?>
     <label for="email"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="email" required>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <input type="submit" value="Login"> <br>
+    <input type="submit" name="submit" value="Login"> <br>
 
     <label style="align:center;">
      <input type="checkbox" checked="checked" name="remember"> Remember me

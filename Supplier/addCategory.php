@@ -1,5 +1,5 @@
 <?php
-
+//include ('sidebar.php');
 //session_start();
 //include('../database/linklinkz.php');
 //if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
@@ -32,8 +32,10 @@ if (mysqli_query($conn, $sql)) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../css/form.css"/> 
+        <link rel="stylesheet" type="text/css" href="../css/user/form.css"/> 
     </head>
+    <body>
+    
 <div class="container">
 
 <div class="card">
@@ -52,12 +54,30 @@ if (mysqli_query($conn, $sql)) {
 
     </div>
 </div>
-
-
-
 </div>
 
 
+
+<!--next container-->
+
+<div class="container">
+
+<div class="card">
+    <div class="card-header">
+        Added Category
+    </div>
+    <div class="card-body">
+      <?php 
+       
+       $sql2 = "SELECT cat_name FROM Category";
+$result2 = mysqli_query($conn, $sql2);
+while ($row2 = mysqli_fetch_assoc($result2)) {
+    echo "<li>" . $row2['cat_name'] . "</li><br>"; 
+}
+
+        ?>
+
+</body>
 
 
 
