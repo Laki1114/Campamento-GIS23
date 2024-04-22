@@ -6,15 +6,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+<div class="upperbar">
+<span  class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span></div>
 <div class="navbar">
-    <a href="#home">Home</a>
+    
     <div class="dropdown">
-    <a href="#">Categories</a>
+    <a href="index.php">Home</a>
         <div class="dropdown-content">
             <?php
             // Assuming $conn is your database connection
-            $sql = "SELECT * FROM Category";
+            /*$sql = "SELECT * FROM Category";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -23,7 +24,7 @@
                 }
             } else {
                 echo "0 results";
-            }
+            }*/
             ?>
            
         </div>
@@ -40,7 +41,7 @@
 					?>
                     <?php
                     // Loop to print &nbsp; 200 times
-                    for ($i = 0; $i < 315; $i++) {
+                    for ($i = 0; $i < 337; $i++) {
                         echo "&nbsp;";
                     }
                     ?>

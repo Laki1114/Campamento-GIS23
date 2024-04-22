@@ -62,9 +62,10 @@ $thumb  = $row['thumb'];
                         Categories - <a href="index.php?id=<?php echo $cat_id ?>"><?php echo $row2["cat_name"] ?></a>   
                     </div>
                 </div>
+                <a   href='addToCart.php?id=<?php echo  $product_id ?>'>  
                 <button type='submit' class="btn">
-                    <i class="fa fa-cart-arrow-down"></i> Add To Cart
-                </button>
+                  <i class="fa fa-cart-arrow-down"></i> Add To Cart
+                </button></a>
             </div>
         </div>
     </div>
