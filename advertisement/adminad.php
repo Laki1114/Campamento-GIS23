@@ -151,11 +151,11 @@ body, html {
                     </div>
                     
 
-<button class="tablink" onclick="openPage('All', this, 'white')">All</button>
+<button class="tablink" onclick="openPage('All', this, 'white')" id="defaultOpen">All</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<button class="tablink" onclick="openPage('New', this, 'white')" id="defaultOpen">New</button>
+<button class="tablink" onclick="openPage('New', this, 'white')" >New</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<button class="tablink" onclick="openPage('Posted', this, 'white')">Posted</button>
+<button class="tablink" onclick="openPage('Accepted', this, 'white')">Accepted</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <button class="tablink" onclick="openPage('Rejected', this, 'white')">Rejected</button>
 
@@ -173,6 +173,9 @@ body, html {
   <button class="btn active" > Reject</button>
 </span>
 </div>
+
+<?php include 'admin_panel.php'; ?>
+
 </div>
 
 <div id="New" class="tabcontent">
@@ -191,7 +194,7 @@ body, html {
 </div>
 </div>
 
-<div id="Posted" class="tabcontent">
+<div id="Accepted" class="tabcontent">
   <div class="contain">
   <img src="../resource/customer01.jpg" alt="Avatar" style="width:100%;">
   <h5>David | 12:00 | 24/02/2024</h5>
