@@ -3,10 +3,20 @@
 
 session_start();
 include('../database/linklinkz.php');
-$email=$_SESSION['customer'];
+
 //if(isset($_SESSION['customerid'])){
  // $UID= $_SESSION['customerid']; }
 
+ if(isset($_GET['user']) && isset($_GET['userid'])) {
+  
+  $email = $_GET['user']; // Retrieve the supplier email from the URL parameter
+  $_SESSION['customer'] = $email;
+  $UserID = $_GET['userid'];
+  $_SESSION['customerid'] = $UserID;
+ // echo $_SESSION['customer']."<br>";
+  //echo $_SESSION['customerid']."<br>";
+
+}
 $sql = "SELECT * FROM user WHERE Email = '$email'";//change Email='email' or Email='$email'
 $result = mysqli_query($linkz,$sql);
 

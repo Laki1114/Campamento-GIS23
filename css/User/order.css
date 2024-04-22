@@ -1,0 +1,84 @@
+/* CSS for My Account section */
+.container {
+    margin-top: 50px;
+}
+
+.text-white {
+    color: #080707; /* Text color */
+}
+
+.text-center {
+    text-align: center; /* Center align text */
+}
+
+.content-blog {
+    padding: 20px; /* Add padding */
+}
+
+.content-account {
+    margin-top: 20px; /* Add margin at the top */
+}
+
+.row {
+    margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+    border: 1px solid #ddd; /* Add border */
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 10px; /* Add padding */
+    border: 1px solid #ddd; /* Add border */
+}
+
+.bg-white {
+    background-color: #fff; /* White background */
+}
+
+.text-dark {
+    color: #222; /* Dark text color */
+}
+
+.ma-address {
+    margin-top: 50px; /* Add margin at the top */
+}
+
+.ma-address h3 {
+    font-size: 24px; /* Larger font size */
+    color: #003D25; /* Green text color */
+}
+
+.ma-address p {
+    font-size: 16px; /* Medium font size */
+    color: #222; /* Dark text color */
+}
+
+.ma-address .row {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 20px; /* Add padding */
+    border-radius: 10px; /* Add border radius */
+}
+
+.ma-address .row h4 {
+    font-size: 20px; /* Large font size */
+    color: #222; /* Dark text color */
+}
+
+.ma-address .row p {
+    font-size: 16px; /* Medium font size */
+    color: #222; /* Dark text color */
+}
+
+.ma-address .row a {
+    color: #BFCC7C; /* Yellow text color */
+    text-decoration: none; /* Remove underline */
+    margin-left: 10px; /* Add margin on the left */
+}
+
+.ma-address .row a:hover {
+    color: #1fd23d; /* Dark green text color on hover */
+}

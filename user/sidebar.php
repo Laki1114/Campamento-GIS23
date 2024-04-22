@@ -39,7 +39,7 @@
                
 
                 <li>
-                    <a href="trending_sites.php">
+                    <a href="index.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -66,7 +66,7 @@
                 </li>
 
                 <li>
-                    <a href="beach_glamping.php">
+                    <a href="profileUser.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
@@ -75,11 +75,19 @@
                 </li>
 
                 <li>
-                    <a href="treehouse.php">
+                    <a href="oder.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../login/logout.php">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Log out</span>
                     </a>
                 </li>
 
