@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Admin sidebar</title>
+<title>Driver sidebar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="../css/Driver/admin.css">
@@ -52,16 +52,16 @@
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Chat</span>
+                        <span class="title">Messages</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="adminmessege.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
-                        <span class="title">Feedback</span>
+                        <span class="title">Feedback received</span>
                     </a>
                 </li>
 

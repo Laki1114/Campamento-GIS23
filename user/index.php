@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //include('../home/header.php');  
 include('../database/linklinkz.php'); 
 
@@ -9,16 +9,24 @@ include('../database/linklinkz.php');
 
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/User/userindex.css"/>
-
+<link rel="stylesheet" type="text/css" href="../css/User/userindex.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/homestyle.css"/>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
-<br><br><br>
+<body>
 <?php 
-include('usernav.php');
+include('../home/headerIn.php');
 
 ?>
+<br><br><br><br><br>
+<?php 
+
+include('check.php');
+
+?>
+<br><br><br>
+<br><br><br><br><br><br><br><br><br>
 <?php 
 
 
@@ -43,13 +51,14 @@ $result = mysqli_query($conn, $sql);
                
                 <a href="#"> 
  <?php if(isset($row['thumb']) && !empty($row['thumb'])): ?>
-    <img src="../Supplier/<?php echo $row['thumb']; ?>" alt="" height='150' width='150'>
+  <center>  <img src="../Supplier/<?php echo $row['thumb']; ?>" alt="" height='150' width='150'></center>
 <?php endif; ?>     </a>
 
-                    <h4 class="title"><?php echo  $row["product_name"] ?></h4>
+                    <h2 class="title"><?php echo  $row["product_name"] ?></h4>
 
-                    <p><?php echo  $row["product_description"] ?></p>
-                    <div class="price"> <b>Rs <?php echo  $row["price"] ?>.00 </b></div>
+                   <font size=2px> <p><?php echo implode(' ', array_slice(explode(' ', $row["product_description"]), 0, 10)); ?>...</p></font>
+
+                  <div class="price">  <h2> <b>Rs <?php echo  $row["price"] ?>.00 </b></h2></div>
                     
                     <hr>
                   
@@ -70,7 +79,7 @@ $result = mysqli_query($conn, $sql);
           
              
        
-
+                </body>
 
 
 

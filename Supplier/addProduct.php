@@ -1,7 +1,7 @@
 <?php
 include ('../database/linklinkz.php');
 
-include ('nav.php');
+//include ('nav.php');
 //include('sidebar.php');
 
 // Initialize the $message variable
@@ -61,7 +61,7 @@ if(isset($_POST['submit'])) {
 ?> 
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/form.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/user/form.css"/>
 </head>
 <div class="container">
     <div class="card">

@@ -6,15 +6,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+<div class="upperbar">
+<span  class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span></div>
 <div class="navbar">
-    <a href="#home">Home</a>
+    
     <div class="dropdown">
-    <a href="#">Categories</a>
+    <a href="index.php">Home</a>
         <div class="dropdown-content">
             <?php
             // Assuming $conn is your database connection
-            $sql = "SELECT * FROM Category";
+            /*$sql = "SELECT * FROM Category";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -23,13 +24,28 @@
                 }
             } else {
                 echo "0 results";
-            }
+            }*/
             ?>
            
         </div>
        
     </div>
-    <a href="#cart" class="cart-icon"><i class="fa fa-shopping-cart" style="font-size:24px"></i></a>
+    <a href="cart.php" class="cart-icon"><i class="fa fa-shopping-cart" style="font-size:24px"></i></a>
+    <?php 
+					$count = '';
+					 
+					if(isset($_SESSION['cart'])){
+					 $cart = $_SESSION['cart'];
+					 $count = count($cart);//see website not showing the count
+					}
+					?>
+                    <?php
+                    // Loop to print &nbsp; 200 times
+                    for ($i = 0; $i < 337; $i++) {
+                        echo "&nbsp;";
+                    }
+                    ?>
+    <span style="color:white;font-size:32px;" class="badge"><b> <?php echo $count?></b></span>
 </div>
 
 

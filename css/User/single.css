@@ -1,0 +1,115 @@
+/* Style for the container */
+.container {
+    margin-top: 60px;
+    z-index:-1;
+}
+
+
+/* Style for the main product image */
+.col-md-6 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Style for the product details */
+.col-md-6.pt-5 {
+    padding-top: 20px;
+}
+
+.col-md-6.pt-5 h3 {
+    margin-top: 0;
+}
+
+/* Style for the quantity input */
+.row.quantity-row {
+    margin-top: 10px;
+}
+
+/* Style for the categories */
+.category {
+    margin-top: 20px;
+}
+
+.category a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style for the "Add to Cart" button */
+.btn {
+    background-color: #239429;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #52c460;
+}
+
+/* Style for the related products */
+.card {
+    margin-top: 30px;
+}
+
+.card-header {
+    background-color: #1fa475;
+    color: #fff;
+    padding: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+ul.rig {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.rig li {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+    width: 200px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.price {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Remove margin-top from #rightside */
+#rightside {
+    position: absolute;
+    top: 200px;
+    right: 200px;
+   
+}
+
+/* Adjust margin-right for better spacing */
+.right-content {
+    margin-right: 20px;
+    
+}
+
+/* Update .left class to set position */
+.left {
+    position: relative;
+    margin-left:50px;
+    top: 70px;
+}

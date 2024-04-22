@@ -1,5 +1,5 @@
 <?php
-      require '../database/linklinkz.php';
+      require 'config.php';
 
         if(!isset($_SESSION['email'])){
             header('location: ../login/login.php');
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Admin Dashboard </title>
+    <title> Dashboard </title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="../css/Driver/admin.css">
     <style>
@@ -67,7 +67,7 @@
 }
 
 .unavailable {
-    background-color:#4caf50; /* Different color when unavailable */
+    background-color: #ff0000; /* Change to red color */
     color: #fff;
 }
 
@@ -115,6 +115,13 @@
 #updateAvailabilityBtn:hover {
     background-color: #45a049;
 }
+
+        /* Add the new CSS for disabled dates */
+        .disabled {
+            background-color: #f0f0f0; /* Lighter color for disabled dates */
+            color: #bbb; /* Adjust text color for better visibility */
+            cursor: not-allowed; /* Change cursor to not-allowed for disabled dates */
+        }
 
     </style>
 </head>
@@ -206,79 +213,46 @@
         <button id="nextMonthBtn">&gt;</button>
     </div>
     <div class="calendar-grid" id="calendarGrid"></div>
+    <form id="availabilityForm" style="display: none;" method="post" action="update_availability.php">
+    <label for="availabilityInput">Update Availability:</label>
+    <select id="availabilityInput" name="availabilityInput">
+        <option value="unavailable" >Unavailable</option>
+    </select>
+    <input type="hidden" id="selectedDateInput" name="date" value="">
+    <input type="hidden" id="availabilityStatusInput" name="availability" value="">
+    <button type="submit" id="updateAvailabilityBtn">Update</button>
 
-    <div id="availabilityForm" style="display: none;">
-        <label for="availabilityInput">Update Availability:</label>
-        <select id="availabilityInput">
-            <option value="available">Available</option>
-            <option value="unavailable">Unavailable</option>
-        </select>
-        <button id="updateAvailabilityBtn">Update</button>
+</form>
+
+
     </div>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+<script>document.addEventListener('DOMContentLoaded', function () {
     const calendarGrid = document.getElementById('calendarGrid');
-    const prevMonthBtn = document.getElementById('prevMonthBtn');
-    const nextMonthBtn = document.getElementById('nextMonthBtn');
-    const currentMonthElement = document.getElementById('currentMonth');
     const availabilityForm = document.getElementById('availabilityForm');
-    const availabilityInput = document.getElementById('availabilityInput');
-    const updateAvailabilityBtn = document.getElementById('updateAvailabilityBtn');
-
+    const currentMonthElement = document.getElementById('currentMonth');
     const today = new Date();
-    let currentMonth = today.getMonth();
     let currentYear = today.getFullYear();
+    let currentMonth = today.getMonth();
+    let unavailableDates = []; // Store unavailable dates globally
 
-    renderCalendar(currentYear, currentMonth);
-
-    prevMonthBtn.addEventListener('click', function () {
-        currentMonth--;
-        if (currentMonth < 0) {
-            currentMonth = 11;
-            currentYear--;
-        }
+    // Fetch unavailable dates from the database
+    fetchUnavailableDates().then(data => {
+        unavailableDates = data.unavailableDates; // Store fetched unavailable dates globally
         renderCalendar(currentYear, currentMonth);
     });
 
-    nextMonthBtn.addEventListener('click', function () {
-        currentMonth++;
-        if (currentMonth > 11) {
-            currentMonth = 0;
-            currentYear++;
-        }
-        renderCalendar(currentYear, currentMonth);
-    });
-
-    updateAvailabilityBtn.addEventListener('click', function () {
-        const selectedDay = document.querySelector('.selected');
-        const selectedDate = selectedDay ? selectedDay.textContent : null;
-
-        if (selectedDate) {
-            const selectedOption = availabilityInput.value;
-
-            if (selectedOption === 'unavailable') {
-                selectedDay.classList.add('unavailable');
-            } else {
-                selectedDay.classList.remove('unavailable');
-            }
-
-            // You can perform an AJAX request to update the user's availability
-            alert(`Updating availability for ${selectedDate} to ${selectedOption}`);
-        } else {
-            alert('Please select a day before updating availability.');
-        }
-    });
-
+    // Function to render the calendar for a specific year and month
     function renderCalendar(year, month) {
         calendarGrid.innerHTML = '';
         const firstDay = new Date(year, month, 1);
         const lastDay = new Date(year, month + 1, 0);
         const daysInMonth = lastDay.getDate();
 
-        currentMonthElement.textContent = `${getMonthName(month)} ${year}`;
-
         const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+        // Update the current month element with the displayed month and year
+        currentMonthElement.textContent = `${getMonthName(month)} ${year}`;
 
         for (let i = 0; i < dayNames.length; i++) {
             const dayNameElement = createDayElement(dayNames[i], 'day-name');
@@ -294,40 +268,88 @@ document.addEventListener('DOMContentLoaded', function () {
             const date = new Date(year, month, day);
             const dayElement = createDayElement(day, 'normal');
 
-            if (date.toDateString() === today.toDateString()) {
-                dayElement.classList.add('today');
-            }
-
-            // Add your logic to determine availability and update the classes accordingly
-            // For simplicity, we're alternating availability for demonstration purposes
-            if (day % 2 === 0) {
-                dayElement.classList.add('available');
+            // Check if the date is in the past
+            if (date < today) {
+                dayElement.classList.add('disabled');
             } else {
-                dayElement.classList.add('unavailable');
-            }
+                // Attach click event listener only for future dates
+                dayElement.addEventListener('click', function () {
+                    if (!dayElement.classList.contains('unavailable')) {
+                        const selectedDay = document.querySelector('.selected');
+                        if (selectedDay) {
+                            selectedDay.classList.remove('selected');
+                        }
+                        this.classList.add('selected');
+                        availabilityForm.style.display = 'block';
+                        document.getElementById('selectedDateInput').value = formatDate(date);
+                    }
+                });
 
-            dayElement.addEventListener('click', function () {
-                // Highlight the selected day and show the availability form
-                const selectedDay = document.querySelector('.selected');
-                if (selectedDay) {
-                    selectedDay.classList.remove('selected');
+                // Check if the date is unavailable and mark it accordingly
+                if (unavailableDates.includes(formatDate(date))) {
+                    dayElement.classList.add('unavailable');
+                    dayElement.classList.add('disabled');
+                    dayElement.style.backgroundColor = '#FF0000'; // Red color
+                    dayElement.style.color = '#FFFFFF'; // White text
                 }
-                this.classList.add('selected');
-                availabilityForm.style.display = 'block';
-            });
+            }
 
             calendarGrid.appendChild(dayElement);
         }
     }
 
+    // Event listener for clicking the previous month button
+    document.getElementById('prevMonthBtn').addEventListener('click', function () {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        renderCalendar(currentYear, currentMonth);
+    });
+
+    // Event listener for clicking the next month button
+    document.getElementById('nextMonthBtn').addEventListener('click', function () {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        renderCalendar(currentYear, currentMonth);
+    });
+
+    // Function to create a day element
     function createDayElement(content, type) {
         const dayElement = document.createElement('div');
         dayElement.classList.add('calendar-day', type);
         dayElement.textContent = content;
-
         return dayElement;
     }
 
+    // Function to format date as YYYY-MM-DD
+    function formatDate(date) {
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    // Function to fetch unavailable dates from the database
+    async function fetchUnavailableDates() {
+        try {
+            const response = await fetch('fetch_unavailable_dates.php'); // Replace 'fetch_unavailable_dates.php' with the actual endpoint
+            if (!response.ok) {
+                throw new Error('Failed to fetch unavailable dates');
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error(error);
+            return { unavailableDates: [] }; // Return an empty array if there's an error
+        }
+    }
+
+    // Function to get the month name
     function getMonthName(month) {
         const monthNames = [
             'January', 'February', 'March', 'April', 'May', 'June',
@@ -336,6 +358,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return monthNames[month];
     }
 });
+</script>
+
+
 
 </script>
            

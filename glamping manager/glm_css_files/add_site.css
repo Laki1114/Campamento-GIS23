@@ -1,0 +1,100 @@
+ /* =========== Google Fonts ============ */
+ @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+ /* =============== Globals ============== */
+ * {
+   font-family: "Ubuntu", sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ :root {
+   --green: #003D25;
+   --white: #fff;
+   --yellow: #BFCC7C;
+   --gray: #f5f5f5;
+   --black1: #222;
+   --black2: #999;
+ }
+ 
+ body {
+   min-height: 100vh;
+   overflow-x: hidden;
+   background: #fff;
+   
+ }
+
+ nav {
+    background-color: #BFCC7C;
+    height: 70px;
+  }
+ 
+  .title{
+    margin-top: 50px;
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial;
+  }
+  .title h5{
+    font-weight: normal;
+  }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    height: auto;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(149, 34, 34, 0.1);
+    width: 400px;
+}
+
+.card-header {
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select.form-control {
+    appearance: none;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.btn-primary {
+    background-color: #003D25;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 350px;
+}
+
+.btn-primary:hover {
+    background-color: #003D25;
+}

@@ -1,105 +1,65 @@
+/* postblog.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e5f0a6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Center the content on the page */
-  h2 {
-    text-align: center;
-    padding: 20px 0;
-    color: #333;
-  }
-  
-  /* Style the form container */
-  .container {
-    background-color: #fff;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    padding-right: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style input fields and labels */
-  label {
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  /* Style the textareas differently */
-  textarea {
-    height: 150px;
-  }
-  
-  
-  input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  /* Add hover effect to the Submit button */
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  /* Add spacing between form elements */
-  form > * {
-    margin-bottom: 20px;
-  }
-  
+  font-family: Arial;
+  color: black; /* Text color set to black */
+}
 
-  /*==================file upload path=================*/
+h1 {
+  font-size: 24px; /* Adjust font size */
+  font-weight: bold;
+  color: #108359; /* Green color for h2 */
+}
 
-  /* Style the file upload input */
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-  /* Style the file input label */
-  label[for="image"] {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-  }
-  
-  
-  .file-upload-button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .file-upload-button:hover {
-    background-color: #45a049;
-  }
-  
+input[type=text],
+select {
+  width: calc(100% - 40px); /* Reduced width */
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: calc(100% - 40px); /* Reduced width */
+  padding: 12px 20px;
+  margin: 8px 0 20px; /* Added margin-bottom */
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 70%; /* Reduced form width */
+}
+
+/* Space between file uploads */
+input[type=file] {
+  margin-bottom: 10px;
+}
+
+/* Green color for upper topics */
+label {
+  color: #000000; /* Green color */
+}

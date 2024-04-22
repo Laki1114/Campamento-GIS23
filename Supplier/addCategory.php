@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <?php
 
 //session_start();
@@ -32,8 +39,34 @@ if (mysqli_query($conn, $sql)) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../css/form.css"/> 
+        <link rel="stylesheet" type="text/css" href="../css/user/form.css"/> 
     </head>
+    <body>
+    <div class="container2">
+    <div class="navigation">
+            
+            <?php include 'sidebar.php'; ?>
+                    
+            </div>
+
+            <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="images/customer01.jpg" alt="">
+                </div>
+            </div>
+    
 <div class="container">
 
 <div class="card">
@@ -52,12 +85,37 @@ if (mysqli_query($conn, $sql)) {
 
     </div>
 </div>
-
-
-
 </div>
 
 
+
+<!--next container-->
+
+<div class="container">
+
+<div class="card">
+    <div class="card-header">
+        Added Category
+    </div>
+    <div class="card-body">
+      <?php 
+       
+       $sql2 = "SELECT cat_name FROM Category";
+$result2 = mysqli_query($conn, $sql2);
+while ($row2 = mysqli_fetch_assoc($result2)) {
+    echo "<li>" . $row2['cat_name'] . "</li><br>"; 
+}
+
+        ?>
+
+                
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
 
 
 
