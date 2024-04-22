@@ -74,7 +74,7 @@
  <h1>Tools</h1>
 </div>
 <div class="des">
- <p style="font-size:15px;">plan a weekend getaway in the woods or embarking on a rugged hiking expedition, we've got you covered with high-quality gear and equipment.</p>
+ <p style="font-size:15px;">Plan a weekend getaway in the woods or embarking on a rugged hiking expedition, we've got you covered with high-quality gear and equipment.</p>
  <a href="..//tspage.php">
 <button>See More...</button></a>
 </div>
