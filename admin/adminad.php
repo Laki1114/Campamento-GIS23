@@ -174,7 +174,6 @@ body, html {
 </span>
 </div>
 
-<?php include 'admin_panel.php'; ?>
 
 </div>
 
