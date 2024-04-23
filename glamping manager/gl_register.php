@@ -9,8 +9,8 @@
 
 <div class="bg-img">
   
-  <form class="container" name="user" method="post" action="intermediateUser.php" onsubmit="myFunction()">
-  <h1>Register as a User</h1> <br>
+  <form class="container" name="user" method="post" action="intermediate_glm.php" onsubmit="myFunction()">
+  <h1>Register as a Glamping Site Manager</h1> <br>
     
     <p>Please fill in this form to create an account.</p><br>
   <table>
@@ -81,7 +81,7 @@
      <b> &nbsp;&nbsp;By creating an account you agree to our <a href="#">Terms & Privacy</a>.</b>
     <br>
 
-    <input type="submit" value="Register"> <br>
+    <input type="submit"   name="submit" value="Register"> <br>
 
 
       

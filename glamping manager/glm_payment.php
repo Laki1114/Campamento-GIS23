@@ -6,18 +6,11 @@
     <title>Payment form / glm </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="glm_css_files/glm_payment.css">
+    <link rel="stylesheet" href="glm_css_files/glm_payment1.css">
 </head>
 <body>
    
-<div class="status">
-  <div class="number">
-    <button>4</button>
-  </div>
-  <div class="text">
-    Payment
-  </div>
-</div>
+
 
 
 <div class="container">

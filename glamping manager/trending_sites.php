@@ -121,17 +121,47 @@ body {
     text-align: center;
     margin-left: 20px;
   }
-        
-        
-        
+
         
 .card {
     margin-bottom: 30px;
-            width: auto;
-            
+            width: 100%;
             box-shadow: 2px 2px 20px #000;
             border-radius: 5px;
 }
+.card-body{
+  height: 500px;
+}
+
+.button{
+   border: none;
+   color: #327028;
+   padding: 10px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 18px;
+   margin: 2px 2px;
+   cursor: pointer;
+   background-color: #eef0b9d4;
+   border-radius: 25px;
+   font-weight: 900;
+   font-family: "Ubuntu", sans-serif;
+ }
+ .button:hover{
+     background-color: rgb(250,250,210);
+   color: #327028;
+   transition: .5s;
+   cursor: pointer;
+ }
+ a {
+   text-decoration: none;
+   display: inline-block;
+   padding: 8px 16px;
+   
+ }
+ 
+
 
 </style>
     
@@ -197,6 +227,7 @@ body {
                                 <p class="card-text">Category: <?php echo $row['site_category']; ?></p>
                                 <p class="card-text">Price: <?php echo $row['price']; ?></p>
                             </div>
+                            <a href="booking_process.php" class="button">Book Now</a>
                         </div>
                     </div>
                     <?php
