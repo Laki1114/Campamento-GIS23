@@ -35,7 +35,7 @@ if(isset($_FILES['productimage']) && !empty($_FILES['productimage']['name'])) {
 			$res = mysqli_query($conn, $sql2);
 			if($res) {
 				$message = 'Saved Successfully with image';
-				header("location:profileUser.php");
+				header("Location: ../user/profileUSer.php?user=" . $_SESSION['customer'] . "&userid=" . $_SESSION['customerid']);
 			} else {
 				$message = "Failed to Create Product";
 				echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
@@ -52,7 +52,7 @@ if(isset($_FILES['productimage']) && !empty($_FILES['productimage']['name'])) {
 	if (mysqli_query($conn, $sql_update)) {
 		$message = 'Saved Successfully without image';
 
-		header("location:profileUser.php");
+		header("Location: ../user/profileUSer.php?user=" . $_SESSION['customer'] . "&userid=" . $_SESSION['customerid']);
 	} else {
 		echo "Error: " . $sql_update . "<br>" . mysqli_error($conn);
 	}

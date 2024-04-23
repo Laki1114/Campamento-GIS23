@@ -1,0 +1,111 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply styles to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Apply styles to container elements */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Apply styles to form elements */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply styles to input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Apply styles to buttons */
+button,
+input[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #336c2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #327447;
+}
+
+/* Apply styles to headings */
+h2,
+h3 {
+    margin-bottom: 20px;
+}
+
+/* Apply styles to links */
+a {
+    color: #2b9356;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #439556;
+}
+/* Apply styles to the logo container */
+.logo-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Apply styles to the logo image */
+.logo-container img {
+    margin-right: 20px; /* Adjust margin as needed to separate the image from text */
+}
+/* CSS for the table */
+.table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.table th:first-child, .table td:first-child {
+    border-left: none;
+}
+
+.table th:last-child, .table td:last-child {
+    border-right: none;
+}
+

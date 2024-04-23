@@ -92,6 +92,14 @@
                         <span class="title">Orders</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../login/logout.php">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Log Out</span>
+                    </a>
+                </li>
 
                 
 </body>

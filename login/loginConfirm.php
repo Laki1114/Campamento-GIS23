@@ -33,9 +33,13 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if ($_POST['psw'] == $row["Password"]) {
         if ($row["Status"] == '1') {
+            // Set customer email and customer ID in sessions
             $_SESSION['customer'] = $row["Email"];
             $_SESSION['customerid'] = $row['UserId'];
-            header("Location: ../user/profileUser.php");
+            
+            // Redirect to the target page with both IDs in the URL parameter
+            //header("Location: ../user/profileUSer.php?user=" . $_SESSION['customer'] . "&userid=" . $_SESSION['customerid']);
+            header("Location: ../user/checkout.php");
             exit;
         } else {
             $_SESSION['error'] = "deactivated";
