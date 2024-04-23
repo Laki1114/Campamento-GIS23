@@ -1,17 +1,17 @@
 <?php  
-
+ session_start();
 //include('inc/header.php'); 
  //include('inc/nav.php');  
  
- session_start();
+
  include ('../database/linklinkz.php');
 if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
- header('location:login.php');
+ header('location:../login/login.php');
 }
 
  
 if(!isset($_SESSION['customerid'])){
-	echo '<script>window.location.href = "login.php";</script>';
+	echo '<script>window.location.href = "../login/login.php";</script>';
 
 }
 
@@ -54,7 +54,7 @@ $up_sql = "UPDATE user_data SET firstname='$fname', lastname='$lname', company='
 
 $Updated = mysqli_query($conn, $up_sql);
      
-	 
+header("Location: ../user/orders.php");
 }
 
 }

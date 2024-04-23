@@ -5,13 +5,16 @@ session_start();
  //include('inc/nav.php');  
  
  include('../database/linklinkz.php');
+ $_SESSION['customer'] = 'eroshananlf1@gmail.com';
+$_SESSION['customerid'] = '16';
+
 if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
- header('location:login.php');
+ header('location:../login/login.php');
  
  
 }//echo $_SESSION['customer']."<br>";
 if(!isset($_SESSION['customerid'])){
-	echo '<script>window.location.href = "login.php";</script>';
+	echo '<script>window.location.href = "../login/login.php";</script>';
 
 }//echo $_SESSION['customerid']."<br>";?>
 <?php 
@@ -165,14 +168,14 @@ if($inserted){
 		   $row_cart = mysqli_fetch_assoc($result_cart); 
 			$price_product = $row_cart["price"];
 			 $q  = $value["quantity"];
-		   $insertordersItems = "INSERT INTO ordersitems (orderid, productid, quantity, productprice) 
+		   $insertordersItems = "INSERT INTO orderitems (orderid, productid, quantity, productprice) 
 		    VALUES ('$orderid', '$key', '$q', '$price_product')";
 		   
 		   if(mysqli_query($conn, $insertordersItems)){
 			//    echo 'inserted on both table orders and ordersItems';
 			unset($_SESSION['cart']);
 			// header("location:myaccount.php");
-			echo '<script>window.location.href = "myaccount.php";</script>';
+			echo '<script>window.location.href = "orders.php";</script>';
 
 		
 		   }
