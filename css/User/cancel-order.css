@@ -1,0 +1,79 @@
+/* External CSS for Cancel Order Page */
+
+/* General styling */
+.container {
+    margin-top: 50px;
+    color: #000000; /* Text color */
+}
+
+.text-center {
+    text-align: center; /* Center align text */
+}
+
+.page_header {
+    padding: 20px; /* Add padding */
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+/* Form styling */
+.billing-details {
+    padding: 20px; /* Add padding */
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2b7a3d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #27943a;
+}
+
+/* Table styling */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 10px; /* Add padding */
+    border: 1px solid #ddd; /* Add border */
+}
+
+.bg-white {
+    background-color: #fff; /* White background */
+}
+
+.text-dark {
+    color: #222; /* Dark text color */
+}
+
+/* Add spacing */
+.space30 {
+    height: 30px; /* Add vertical spacing */
+}
+
+.space20 {
+    height: 20px; /* Add vertical spacing */
+}

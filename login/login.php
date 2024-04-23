@@ -1,24 +1,28 @@
 <?php
- $error_message = "";
-if (isset($_GET['error'])) {
- 
-  switch ($_GET['error']) {
-      case 'deactivated':
-          $error_message = "Your account is deactivated. Please contact support.";
-          break;
-      case 'password':
-          $error_message = "Invalid password.";
-          break;
-      case 'not_registered':
-          $error_message = "Email is not registered.";
-          break;
-      default:
-          $error_message = "An unknown error occurred.";
-          break;
-  }
- 
+session_start();
+$error_message = "";
+
+// Check if error message is set in session
+if (isset($_SESSION['error'])) {
+    switch ($_SESSION['error']) {
+        case 'deactivated':
+            $error_message = "Your account is deactivated. Please contact support.";
+            break;
+        case 'password':
+            $error_message = "Invalid password.";
+            break;
+        case 'not_registered':
+            $error_message = "Email is not registered.";
+            break;
+        default:
+            $error_message = "An unknown error occurred.";
+            break;
+    }
+    // Unset the error session variable after reading it
+    //unset($_SESSION['error']);
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

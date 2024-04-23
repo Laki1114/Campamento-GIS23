@@ -8,7 +8,7 @@
 <body>
 
 <div class="navbar">
-    <a href="#home">Home</a>
+    <a href="index.php">Home</a>
     <div class="dropdown">
     <a href="#">Categories</a>
         <div class="dropdown-content">
@@ -40,7 +40,7 @@
 					?>
                     <?php
                     // Loop to print &nbsp; 200 times
-                    for ($i = 0; $i < 276; $i++) {
+                    for ($i = 0; $i < 500; $i++) {
                         echo "&nbsp;";
                     }
                     ?>

@@ -36,7 +36,7 @@ All Products
 				<tbody>
 
                 <?php
-    $sql = "SELECT * FROM products";
+    $sql = "SELECT * FROM products wHERE Status='1'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {

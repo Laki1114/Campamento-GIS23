@@ -103,7 +103,7 @@ h1{
 <div class="card">
 
 <div class="image">
-   <a href="../Amaya/tspage.php">
+   <a href="../user/dashtool.php">
    <img src="../resource/tsup.png" ></a>
 </div>
 <div class="title">

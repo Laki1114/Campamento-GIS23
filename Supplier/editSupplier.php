@@ -2,7 +2,7 @@
 <?php
 session_start();
 include('../database/linklinkz.php');
-$email=$_SESSION['customer'];
+$email=$_SESSION['supplier'];
 ?>
 <?php
 
@@ -35,7 +35,7 @@ if(isset($_FILES['productimage']) && !empty($_FILES['productimage']['name'])) {
 			$res = mysqli_query($conn, $sql2);
 			if($res) {
 				$message = 'Saved Successfully with image';
-				header("location:profileSupplier.php");
+				header("Location: profileSupplier.php?supplier=".$_SESSION['supplier']);
 			} else {
 				$message = "Failed to Create Product";
 				echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
@@ -52,7 +52,7 @@ if(isset($_FILES['productimage']) && !empty($_FILES['productimage']['name'])) {
 	if (mysqli_query($conn, $sql_update)) {
 		$message = 'Saved Successfully without image';
 
-		header("location:profileSupplier.php");
+		header("Location: profileSupplier.php?supplier=".$_SESSION['supplier']);
 	} else {
 		echo "Error: " . $sql_update . "<br>" . mysqli_error($conn);
 	}
@@ -162,7 +162,7 @@ while ($row = mysqli_fetch_assoc($result)){
    </table> 
    <?php if(isset($thumb) && !empty($thumb)): ?>
     <img src="<?php echo $thumb; ?>" alt="" height='150' width='150'><br>
-    <a href="deleteSupplier.php?id=<?php echo $userID; ?>">Delete Image</a><br>
+    <a href="delSupplierimage.php?id=<?php echo $userID; ?>">Delete Image</a><br>
 <?php else: ?>
     <div class="form-group">
         <label for="productimage">Product Image</label>
@@ -173,32 +173,7 @@ while ($row = mysqli_fetch_assoc($result)){
 
 
    <hr>   
-   <br>
-   <table >
-   <h1>Change Password</h1> <br>
-    <td width="300px" >
-   <label for="psw"><b>Current Password</b></label><br>
-   <input type="password" placeholder="Password" id="psw" name="psw" ><br>
-   
-   <label for="newPsw"><b>Password</b></label><br>
-   <input type="password" placeholder="Password" id="newPsw" name="newPsw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" ><br>
-  </td>  
-  <td>
-    <label for="psw-repeat"><b>Repeat Password</b></label><br>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" ><br>
-    </td>
-
-    </table> 
-    
-
-            <div id="message">
-              <p>Password must contain the following:</p>
-              <li id="letter" class="invalid">A <b>lowercase</b> letter</li>
-              <li id="capital" class="invalid">A <b>capital (uppercase)</b> letter</li>
-              <li id="number" class="invalid">A <b>number</b></li>
-              <li id="length" class="invalid">Minimum <b>8 characters</b></li>
-            </div>
-            
+  
                  
      
 

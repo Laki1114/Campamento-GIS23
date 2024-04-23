@@ -8,7 +8,9 @@
 
 if(isset($_GET['id'])){
     $product_id = $_GET['id'];
-   $sql = "DELETE FROM products WHERE product_id='$product_id'";
+   $sql = "UPDATE products
+   SET Status = '0'
+   WHERE Status='1'";
    $result = mysqli_query($conn, $sql);
    header('location:products.php');
 
