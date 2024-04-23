@@ -3,28 +3,20 @@ if (!empty($_POST)) {
     require_once __DIR__ . "/glm_lib_files/DataSource.php";
     $database = new DataSource();
     
-    // Store wizard form data to post
-    $query = "INSERT INTO tbl_order (billing_name, billing_email, billing_state, billing_city, billing_country, billing_zip, shipping_name, shipping_email, shipping_state, shipping_city, shipping_country, shipping_zip, discount_code, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $paramType = 'ssssssssssssss';
+    $query = "INSERT INTO customer_bookings (customer_name, email, phone, NIC, tent_type, num_of_rooms, price) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $paramType = 'sssssid'; // Assuming num_of_rooms is an integer and price is a decimal
     $paramValue = array(
-        $_POST["customer_billing_name"],
-        $_POST["billing_email"],
-        $_POST["billing_state"],
-        $_POST["billing_city"],
-        $_POST["billing_country"],
-        $_POST["billing_zipcode"],
-        $_POST["customer_shipping_name"],
-        $_POST["shipping_email"],
-        $_POST["shipping_state"],
-        $_POST["shipping_city"],
-        $_POST["shipping_country"],
-        $_POST["shipping_zipcode"],
-        $_POST["discount_coupon"],
-        $_POST["notes"],
+        $_POST["customer_name"],
+        $_POST["email"],
+        $_POST["phone_number"],
+        $_POST["nic"],
+        $_POST["tent_type"],
+        $_POST["num_of_rooms"],
+        $_POST["price"]
     );
     $insertId = $database->insert($query, $paramType, $paramValue);
     if (!empty($insertId)) {
-        $message = "Thank you for your order! Your checkout details have been successfully submitted.";
+        $message = "Thank you for your booking! Your details have been successfully submitted.";
         $type = "success";
         unset($_POST);
     } else {
@@ -33,6 +25,9 @@ if (!empty($_POST)) {
     }
 }
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -47,7 +42,7 @@ if (!empty($_POST)) {
     <div class="phppot-container">
         <h1>Make Your Reservation !</h1>
 
-        <form method="POST" id="checkout-form" onSubmit="return validateCheckout()">
+        
             <div class="wizard-flow-chart">
                 <span class="fill">1</span>
                 <span>2</span>
@@ -111,31 +106,20 @@ if (!empty($_POST)) {
             <!-- Wizard section 4 -->
             <section id="others-section" class="display-none">
             <h3>Customer details</h3>
-                <div class="row">
-                    <label class="float-left label-width">Name</label>
-                    <input name="customer_name" type="text">
-                </div>
-                <div class="row">
-                    <label class="float-left label-width">Email</label>
-                    <input name="email" type="text">
-                </div>
-                <div class="row">
-                    <label class="float-left label-width">Phone</label>
-                    <input name="phone_number" type="tel">
-                </div>
-                <div class="row">
-                    <label class="float-left label-width">NIC</label>
-                    <input name="nic" type="text">
-                </div>
+            <div id="confirmpage">
+            <?php
+            include("customer_details_form.php");
+            ?>
+            </div>
                 
-                <div class="row button-row">
-                    <button type="button" onClick="validate(this)">Next</button>
-                </div>
+                
             </section>
 
 <!-- Wizard section 5 -->
 <section id="discount-section" class="display-none">
                 <h3>Payment</h3>
+
+                
                 <div id="confirmpage">
             <?php
             include("payment.php");
@@ -146,10 +130,11 @@ if (!empty($_POST)) {
                     
                     <button type="button" onClick="validate(this)">Pay</button>
                 </div>
+               
             </section>
 
 
-        </form>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="glm_js_files/wizard.js"></script>

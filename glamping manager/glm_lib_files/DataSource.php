@@ -1,20 +1,5 @@
 <?php
 
-/**
- * Copyright (C) Phppot
- *
- * Distributed under 'The MIT License'
- * In essence you can modify, distribute, and use for commercial purposes.
- * Though not mandatory, you are requested to
- * attribute Phppot URL https://phppot.com in your code or website.
- */
-
-/**
- * A lightweight generic datasource class for handling database operations.
- * Uses MySqli or PDO and PreparedStatements.
- *
- * @version 3.2 - Namespace removed.
- */
 class DataSource
 {
 
@@ -24,19 +9,10 @@ class DataSource
 
     const PASSWORD = '';
 
-    const DATABASENAME = 'db_wizard_form';
+    const DATABASENAME = 'campamento';
 
     private $connection;
 
-    /**
-     * PHP implicitly takes care of cleanup for default database connection types.
-     * So no need to close connection explicitly.
-     *
-     * Singletons not required in PHP as there is no concept of shared memory.
-     * Every object lives only for a request.
-     *
-     * Keeping things simple and that works!
-     */
     function __construct()
     {
         $this->connection = $this->getConnection();
