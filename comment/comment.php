@@ -44,8 +44,8 @@
             $stmt->close();
         
             // Redirect back to the page after adding comment
-            header("Location: comment.php");
-            exit();
+            $_SESSION['redirect_page'] = $page;
+    exit("<script>window.location.replace('$page');</script>");
         }
         
 

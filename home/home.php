@@ -60,7 +60,7 @@ our campsite offers an idyllic setting for your outdoor escape.
 
 </section>
 
-
+<?php include '../comment/comment.php'; ?>
 
 <section class="about">
 
