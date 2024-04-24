@@ -9,14 +9,7 @@
 </head>
 <body>
     
-<nav>
-      <span  class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>
-  </nav>
 
-<div class="title">
-    <h1>List your glamping site on Campamento and start welcoming guests !</h1><br>
-    
-</div>
 
 
 <div class="container">
@@ -36,7 +29,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="site_description">Site Description</label>
-                                <textarea class="form-control" name="site_description" rows="3"></textarea>
+                                <textarea class="form-control" name="site_description" rows="3" maxlength="250"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="site_category">Site Category</label>

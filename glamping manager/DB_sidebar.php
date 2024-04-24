@@ -41,7 +41,7 @@
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Dashboard</span>
+                        <span class="title">Profile</span>
                     </a>
                 </li>
                 <br>
@@ -57,14 +57,16 @@
                 <br>
 
                 <li>
-                    <a href="">
+                    <a href="D_U.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Schedule</span>
+                        <span class="title">Delete / Update Site</span>
                     </a>
                 </li>
                 <br>
+                
+                
                 
                 <li>
                     <a href="">
@@ -72,15 +74,6 @@
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">Chat</span>
-                    </a>
-                </li>
-                <br>
-                <li>
-                    <a href="">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Feedback</span>
                     </a>
                 </li>
                 <br>

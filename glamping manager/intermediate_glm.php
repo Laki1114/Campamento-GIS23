@@ -7,6 +7,9 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Define a variable to store the error message
+$errorMsg = "";
+
 // Check if the form is submitted
 if(isset($_POST['submit'])) {
     // Retrieve form data
@@ -24,7 +27,7 @@ if(isset($_POST['submit'])) {
     // Validate passwords match
     if ($password !== $repeatPassword) {
         // Passwords don't match
-        echo "Passwords do not match.";
+        $errorMsg = "Passwords do not match.";
     } else {
         // Passwords match, proceed with registration
 
@@ -37,7 +40,7 @@ if(isset($_POST['submit'])) {
         // Execute SQL statement
         if (mysqli_query($conn, $sql)) {
             // Registration successful, redirect to home page
-            header("Location: glm_dashboard.php");
+            header("Location: glm_profile.php");
             exit(); // Ensure that no further code is executed after redirection
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -48,3 +51,23 @@ if(isset($_POST['submit'])) {
 // Close database connection
 mysqli_close($conn);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <!-- JavaScript to display error message as an alert -->
+    <?php if (!empty($errorMsg)): ?>
+    <script>
+        alert("<?php echo $errorMsg; ?>");
+    </script>
+    <?php endif; ?>
+
+    <!-- Your registration form goes here -->
+    <!-- Make sure to include the JavaScript code to display password validation messages as per your previous implementation -->
+</body>
+</html>
