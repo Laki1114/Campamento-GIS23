@@ -1,6 +1,7 @@
 <?php
-require("functionUser.php");
 
+require("functionUser.php");
+include('../database/linklinkz.php');
 $firstName=$_POST["firstName"];
 $lastName=$_POST["lastName"];
 $gender=$_POST["gender"];

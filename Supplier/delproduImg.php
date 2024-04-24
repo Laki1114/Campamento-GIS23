@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 include ('../database/linklinkz.php');
 /*if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
  header('location:login.php');

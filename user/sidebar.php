@@ -1,4 +1,5 @@
-<?php  ?>
+<?php 
+session_strat(); ?>
 <html lang="en">
 
 <head>

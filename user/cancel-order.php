@@ -1,17 +1,17 @@
 <?php  
-
+session_start();
 //include('inc/header.php'); 
  //include('inc/nav.php');  
- session_start();
+ 
 include ('../database/linklinkz.php');
 
 if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
- header('location:login.php');
+ header('location:../login/login.php');
 }
 
  
 if(!isset($_SESSION['customerid'])){
-	echo '<script>window.location.href = "login.php";</script>';
+	echo '<script>window.location.href = "../login/login.php";</script>';
 
 }
 
@@ -25,14 +25,16 @@ $message  = '';
 $_POST['agree'] = 'false';
 
 if(isset($_POST['submit'])){
-	 
-	 
+	
+	  
 	$orderid = $_POST['orderid'];
+	
     $reason = $_POST['reason'];
+	
     $status = 'cancelled';
 
  
-    $insertCancel = "INSERT INTO ordersTracking (orderid, status, reason )
+    $insertCancel = "INSERT INTO ordertracking (orderid, status, message )
 	VALUES ('$orderid', '$status', '$reason')";  
 
 	if(mysqli_query($conn, $insertCancel)){
@@ -178,7 +180,7 @@ if(isset($_SESSION['cart'])){
 			<?php
 				}
 			   } else {
-				 //I commented this code ,should be hereecho "0 results";
+				 echo "0 results";
 			   }
 			 
 			 
