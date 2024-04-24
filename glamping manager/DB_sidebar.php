@@ -47,7 +47,7 @@
                 <br>
 
                 <li>
-                    <a href="R2.php">
+                    <a href="add_site1.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>

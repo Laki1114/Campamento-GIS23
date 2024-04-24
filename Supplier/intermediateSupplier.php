@@ -1,6 +1,6 @@
 <?php
 require("functionSupplier.php");
-
+include('../database/linklinkz.php');
 $firstName=$_POST["firstName"];
 $lastName=$_POST["lastName"];
 $gender=$_POST["gender"];
@@ -9,7 +9,7 @@ $nicNo=$_POST["nicNo"];
 $email=$_POST["email"];
 $psw=($_POST["password"]);
 
-$ql1= "SELECT* FROM Supplier WHERE Email='$email'";
+$sql= "SELECT* FROM Supplier WHERE Email='$email'";
 $result=mysqli_query($linkz,$sql); 
 
 

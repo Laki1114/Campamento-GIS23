@@ -1,4 +1,5 @@
 <?php
+
 	function save_user($firstName,$lastName,$gender,$phoneNo,$nicNo,$email,$psw){
 		include('../database/linklinkz.php');
 		$sql = "INSERT INTO user (FirstName,LastName,Gender,PhoneNo,NICNo,Email,Password,Status) VALUES('$firstName','$lastName','$gender','$phoneNo','$nicNo','$email','$psw','1')";
