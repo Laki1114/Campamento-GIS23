@@ -33,7 +33,8 @@ if (mysqli_query($conn, $sql)) {
 
 ?> 
 
-
+<!DOCTYPE html>
+<html>
 <head> 
         <title>addCategory.php</title> 
         <meta charset="UTF-8">
@@ -41,66 +42,70 @@ if (mysqli_query($conn, $sql)) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../css/user/form.css"/> 
     </head>
+
+
+
     <body>
-    <div class="container2">
-    <div class="navigation">
+        <div class="container2">
+            <div class="navigation">
             
-            <?php include 'sidebar.php'; ?>
+                <?php include 'sidebar.php'; ?>
                     
             </div>
 
             <div class="main">
            
     
-<div class="container">
+                <div class="container">
 
-<div class="card">
-    <div class="card-header">
-        Add Category
-    </div>
-    <div class="card-body">
+                <div class="card">
+                    <div class="card-header">
+                        Add Category
+                    </div>
+                    <div class="card-body">
 
-    <form action="addCategory.php" method='post'>
-             <div class="form-group">
-            <label for="catName"> Name:</label>
-            <input type="text" class="form-control" id="catName" name='catName'>
-            </div> 
-            <button type="submit" name='submit' class="btn btn-primary">Submit</button>
-    </form>
+                    <form action="addCategory.php" method='post'>
+                            <div class="form-group">
+                            <label for="catName"> Name:</label>
+                            <input type="text" class="form-control" id="catName" name='catName'>
+                            </div> 
+                            <button type="submit" name='submit' class="btn btn-primary">Submit</button>
+                    </form>
 
-    </div>
-</div>
-</div>
+                    </div>
+                </div>
+                </div>
 
 
 
 <!--next container-->
 
-<div class="container">
+                <div class="container">
 
-<div class="card">
-    <div class="card-header">
-        Added Category
-    </div>
-    <div class="card-body">
-      <?php 
-       
-       $sql2 = "SELECT cat_name FROM Category";
-$result2 = mysqli_query($conn, $sql2);
-while ($row2 = mysqli_fetch_assoc($result2)) {
-    echo "<li>" . $row2['cat_name'] . "</li><br>"; 
-}
+                <div class="card">
+                    <div class="card-header">
+                        Added Category
+                    </div>
+                    <div class="card-body">
+                    <?php 
+                    
+                    $sql2 = "SELECT cat_name FROM Category";
+                    $result2 = mysqli_query($conn, $sql2);
+                    while ($row2 = mysqli_fetch_assoc($result2)) {
+                    echo "<li>" . $row2['cat_name'] . "</li><br>"; 
+                    }
 
-        ?>
+                    ?>
 
-                
+                                
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</div>
-</div>
 
 </body>
+</html>
 
 
 
