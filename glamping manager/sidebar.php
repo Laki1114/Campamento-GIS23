@@ -43,7 +43,7 @@
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Trending sites</span>
+                        <span class="title">All Sites</span>
                     </a>
                 </li>
 
@@ -80,6 +80,15 @@
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">Treehouses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gl_register.php">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Add glamping site</span>
                     </a>
                 </li>
 
