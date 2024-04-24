@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <?php
 
 //session_start();
@@ -33,19 +26,32 @@ if (mysqli_query($conn, $sql)) {
 
 ?> 
 
+<html lang="en">
 
-<head> 
-        <title>addCategory.php</title> 
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../css/user/form.css"/> 
-    </head>
-    <body>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> addCategory.php </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/User/form.css"/> 
+</head>
 
-    
-<div class="container">
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+    <div class="navigation">
+            
+            <?php include 'supplierSidebar.php'; ?>
+                    
+            </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+        <div >
+        <br><br>
 
 <div class="card">
     <div class="card-header">
@@ -65,12 +71,8 @@ if (mysqli_query($conn, $sql)) {
 </div>
 </div>
 
-
-
-<!--next container-->
-
-<div class="container">
-
+<div >
+<br><br>
 <div class="card">
     <div class="card-header">
         Added Category
@@ -91,10 +93,16 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
     </div>
 </div>
 
+           
 
+             
+
+        </div>
+    </div>
+
+
+
+    <!-- ====== ionicons ======= -->
 </body>
 
-
-
-
-
+</html>

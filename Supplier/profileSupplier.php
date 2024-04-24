@@ -23,22 +23,38 @@ if(isset($_GET['email'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Supplier Profile </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="../css/user/profileUser.css">
+
 </head>
+
 <body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            
+            <?php include 'supplierSidebar.php'; ?>
+                    
+        </div>
 
-<!-- Header Section -->
-<!-- Your HTML code for header section goes here -->
-
-<div class="upper-section">
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            
+        <div class="upper-section">
     <center>
         <h2>Welcome <?php  echo $firstName ?>!</h2>
         <br><br>
         <h3>Supplier ID - <?php  echo $userID ?></h3><br><br>
-        <div class="container">
+        <div >
             <div class="profile">
                 <div><!--class="container-image"-->
                     <img src="<?php echo $thumb; ?>" alt="" height='150' width='150'>
@@ -80,6 +96,10 @@ if(isset($_GET['email'])) {
         </div>
     </center>
 </div>
+                  
+
+        </div>
+    </div>
 
 <script>
     function openForm() {
@@ -90,5 +110,20 @@ if(isset($_GET['email'])) {
         document.getElementById("myForm").style.display = "none";
     }
 </script>
+
+   
 </body>
-</html>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
