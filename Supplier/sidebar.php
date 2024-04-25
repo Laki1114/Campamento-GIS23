@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html>
-<title>Admin sidebar</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="css/admin.css">
+<?php 
+session_start(); ?>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Supplier_side_bar </title>
+    <link rel="stylesheet" href="../css/user/sidebar.css">
+
+
+
+
+</head>
 
 <body>
-
-<!-- Sidebar -->
-<div class="navigation">
+   
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
             <ul>
                 <li>
-                    <a href="../home/home.php">
+                    <a href="home.php">
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
@@ -19,90 +29,81 @@
                     </a>
                 </li>
 
-                
+                <li>
+                    <a href="../home/">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
 
+               
 
                 <li>
                     <a href="addCategory.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Add Categories</span>
+                        <span class="title">Add Catogories</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="addProduct.php">
                         <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
+                            <ion-icon name="home-outline"></ion-icon>
                         </span>
                         <span class="title">Add Products</span>
                     </a>
                 </li>
 
+               
                 <li>
                     <a href="product.php">
                         <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
+                            <ion-icon name="people-outline"></ion-icon>
                         </span>
                         <span class="title">View Products</span>
                     </a>
                 </li>
-
+                
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
+                            <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">Notifications</span>
                     </a>
                 </li>
 
-
                 <li>
-                    <a href="profileSupplier.php">
+                    <a href="#">
                         <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
+                            <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">My Account</span>
                     </a>
                 </li>
 
-
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">Orders</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="../login/logout.php">
                         <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
+                            <ion-icon name="settings-outline"></ion-icon>
                         </span>
                         <span class="title">Log Out</span>
                     </a>
                 </li>
 
-<br><br>
-                <li>
-                    <a href="../home/home.php">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Back to Home</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-
-
-</div>
-      
+                
 </body>
-</html>
+</html>               
+
+        
