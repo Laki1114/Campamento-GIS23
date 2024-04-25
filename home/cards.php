@@ -60,12 +60,11 @@
 </div>
 <div class="des">
  <p style="font-size:15px;">A seasoned outdoor enthusiast or a newbie to the wilderness, our guide is here to help you make the most of your camping experience.</p>
-<<<<<<< HEAD
+
  <br>
- <a href="../Guide/guide_.php">
-=======
+ 
  <a href="../guide/guide_.php">
->>>>>>> d8a1e3c1e00450c6269fe4145f129c15131b7c34
+
 <button>See More...</button></a>
 </div>
 </div>
