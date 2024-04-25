@@ -48,9 +48,10 @@ $thumb  = $row['thumb'];
                 <div class="row">
                     <div class="col-md-2">Quantity:</div>
                     <div class="col-md-2">
-                        <form action='addToCart.php'>  
+                        <form action='addToCart.php' method="get">  
                             <input type="hidden" name='id' value='<?php echo  $product_id ?>'>
-                            <input type="number" class='form-control' name='quantity' value='1'> 
+                            <input type="number" class='form-control' name='quantity'>
+                            <input type="submit" value="Add to Cart"> 
                         </form>
                     </div>
                 </div>
@@ -64,7 +65,7 @@ $thumb  = $row['thumb'];
                         Categories - <a href="index.php?id=<?php echo $cat_id ?>"><?php echo $row2["cat_name"] ?></a>   
                     </div>
                 </div>
-                <a   href='addToCart.php?id=<?php echo  $product_id ?>'>  
+                <a   href='addToCart.php?id=<?php echo  $product_id ?>' >  
                 <button type='submit' class="btn">
                   <i class="fa fa-cart-arrow-down"></i> Add To Cart
                 </button></a>

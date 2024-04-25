@@ -3,7 +3,7 @@ session_start();
 //include('../home/header.php');  
 include('../database/linklinkz.php'); 
 
- 
+unset($_SESSION['error']);
 
 ?>
 

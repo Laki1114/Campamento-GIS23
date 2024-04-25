@@ -72,7 +72,7 @@ Total Amount: Rs <?php echo $total; ?>.00/-
 <div class="">
     <!-- <button class="btn mr-3">Update Cart</button> -->
 
-    <a class="btn" href='checkout.php'>Checkout</a>
+    <a class="btn" href='checkout.php?total=<?php echo $total; ?>'>Checkout</a>
 </div>
 </div>
 
