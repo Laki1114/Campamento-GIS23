@@ -11,7 +11,9 @@ include 'config.php'; ?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css/Driver/trending_sites.css">
+    <link rel="stylesheet" href="dr_css/trending_sites.css">
+    <link rel="stylesheet" href="../comment/comment.css">
+
     <style>
         body{
             font-family: 'Trebuchet MS', sans-serif;
@@ -230,7 +232,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         echo   '<ion-icon name="search-outline"></ion-icon>';                
         echo '</label>';
         echo '</div>';
-        echo '</div>';                                     
+        echo '</div>';   
+                                          
         echo  '<div class="driver">';
         echo  '<div class="d">';
         echo   '<br>';
@@ -255,9 +258,9 @@ echo '</div>';
 
         echo    '<div class="des">';
         echo '<h1>Hello I am '. $row['firstname'] .', Travel with me!</h2>';
-        echo '<br><p>I speak: English </p>';
+        echo '<br><p>I speak: '. $row['experience'] .'  </p>';
         echo '<br>';
-        echo '<a href="book.php?id='.$row['d_id'].'" class="button">Book</a>';
+        echo '<a href="first_step.php?id='.$row['d_id'].'" class="button">Book</a>';
         echo '<p><b>About Vehicle</b> </p><br>';
       
         echo '<table>';
@@ -311,6 +314,9 @@ echo '</div>';
         echo   '</div>';
         echo '</div>';        
         echo  '</div>';
+        echo '<div>';
+   include '../comment/comment.php';
+   echo '</div>';
         echo '</div>';
     }
     else {

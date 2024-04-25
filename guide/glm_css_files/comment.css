@@ -1,0 +1,24 @@
+/* Style the comment section */
+.comments {
+    margin-bottom: 20px;
+}
+
+.comments div {
+    margin-bottom: 10px;
+}
+
+/* Style the comment form */
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.comment-form button {
+    background-color: #327028;
+    color: #BFCC7C;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
