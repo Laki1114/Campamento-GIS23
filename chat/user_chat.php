@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_email'])) {
 include 'db.php';
 
 // Fetch all messages from admin
-$admin_messages_query = "SELECT * FROM admin_messages WHERE ReceiverId = 1";
+$admin_messages_query = "SELECT * FROM messages WHERE ReceiverId = 1";
 $admin_messages_result = $conn->query($admin_messages_query);
 
 // Display messages
