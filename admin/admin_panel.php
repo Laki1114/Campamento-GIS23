@@ -145,10 +145,11 @@ body, html {
             cursor: pointer;
         }
         .card-images img {
-            width: 100%;
-            height: auto;
+            width: auto;
+            height: 200px;
             margin-bottom: 10px;
         }
+        
     </style>
 </head>
 <body>
@@ -192,7 +193,9 @@ body, html {
                 // Display images if available
                 $images = explode(",", $row['images']);
                 foreach ($images as $image) {
-                    echo "<img src='uploads/" . $image . "' alt='Image'>";
+                    echo "<img src='{$image}' alt='Image' >";
+
+
                 }
                 echo "</div>";
                 echo "<div class='card-title'>" . $row['title'] . "</div>";
@@ -241,7 +244,7 @@ body, html {
                 // Display images if available
                 $images = explode(",", $row['images']);
                 foreach ($images as $image) {
-                    echo "<img src='uploads/" . $image . "' alt='Image'>";
+                    echo "<img src='{$image}' alt='Image' >";
                 }
                 echo "</div>";
                 echo "<div class='card-title'>" . $row['title'] . "</div>";
@@ -291,7 +294,7 @@ body, html {
                 // Display images if available
                 $images = explode(",", $row['images']);
                 foreach ($images as $image) {
-                    echo "<img src='uploads/" . $image . "' alt='Image'>";
+                    echo "<img src='{$image}' alt='Image' >";
                 }
                 echo "</div>";
                 echo "<div class='card-title'>" . $row['title'] . "</div>";
@@ -340,7 +343,7 @@ body, html {
                 // Display images if available
                 $images = explode(",", $row['images']);
                 foreach ($images as $image) {
-                    echo "<img src='uploads/" . $image . "' alt='Image'>";
+                    echo "<img src='{$image}' alt='Image' >";
                 }
                 echo "</div>";
                 echo "<div class='card-title'>" . $row['title'] . "</div>";
@@ -361,9 +364,7 @@ body, html {
                 echo "</div>";
                 echo "</div>";
             }
-        } else {
-            echo "<div>No advertisements found</div>";
-        }
+        } 
 
         $conn->close();
         ?>

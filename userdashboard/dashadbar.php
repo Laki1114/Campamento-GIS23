@@ -81,33 +81,68 @@ q {font-style: italic;}
 </head>
 <body>
 
+
+
 <div class="slideshow-container">
+  <?php
+  // Connect to your database (adjust these settings as needed)
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "campamento";
 
-<div class="mySlides">
-  <q>Grab your camping assesaries</q>
-  <p class="author">- Offer time limit</p>
-</div>
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
-<div class="mySlides">
-  <q>Grab your camping assesariesssss</q> 
-  <p class="author">- Offer time limit</p>
-</div>
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
 
-<div class="mySlides">
-  <q>Grab your camping assesaries</q>
-  <p class="author">- Offer time limit</p>
-</div>
+  // Fetch data from the database
+  $sql = "SELECT * FROM advertisements WHERE status = 'accepted'";
+  $result = $conn->query($sql);
 
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
+  // Display each advertisement as a slide
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      echo '<div class="mySlides">';
+     
+      $images = explode(",", $row["images"]);
+      foreach ($images as $image) {
+        echo "<img src='../admin/" . trim($image) . "' alt='Image'  height='200'>";
+      }
+      
+      echo '<br>';
+      echo '<q>' . $row["description"] . '</q>';
+      echo '<p class="author">- ' . $row["title"] . '</p>';
+      echo '</div>';
+  }
+} else {
+  echo "0 results";
+}
+  $conn->close();
+  ?>
+  
+  <!-- Next & previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
 </div>
 
 <div class="dot-container">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <!-- Generate dots dynamically based on the number of slides -->
+  <?php
+  if ($result->num_rows > 0) {
+      $counter = 1;
+      while($counter <= $result->num_rows) {
+          echo '<span class="dot" onclick="currentSlide(' . $counter . ')"></span>';
+          $counter++;
+      }
+  }
+  ?>
 </div>
+
+
 
 <script>
 var slideIndex = 1;
