@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../css/gl_register.css">
 </head>
 <body>
-
+ 
 
 <div class="bg-img">
   

@@ -136,7 +136,7 @@ body {
 .button{
    border: none;
    color: #327028;
-   padding: 10px 20px;
+   padding: 15px 55px;
    text-align: center;
    text-decoration: none;
    display: inline-block;
@@ -225,9 +225,14 @@ body {
                                 <h5 class="card-title"><?php echo $row['site_name']; ?></h5>
                                 <p class="card-text"><?php echo $row['site_description']; ?></p>
                                 <p class="card-text">Category: <?php echo $row['site_category']; ?></p>
-                                <p class="card-text">Price: <?php echo $row['price']; ?></p>
-                            </div>
-                            <a href="booking_process.php" class="button">Book Now</a>
+                                <p class="card-text"><?php echo $row['room1_type']; ?>: LKR <?php echo $row['room1_price']; ?></p>
+                                
+                                <p class="card-text"><?php echo $row['room2_type']; ?> : LKR <?php echo $row['room2_price']; ?></p>
+                            
+                                <a href="booking_process.php" class="button">Book Now</a>
+                              </div>
+
+
                         </div>
                     </div>
                     <?php

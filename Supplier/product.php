@@ -11,10 +11,32 @@ if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
 //include('nav.php');
 include ('../database/linklinkz.php');
  ?>
+<!DOCTYPE html>
+<html>
 <head>
-<link rel="stylesheet" type="text/css" href="../css/Supplier/product.css"/>
-</head> 
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Product  </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/Supplier/product.css"/>
+
+
+</head>
+<body>
+
 <div class="container">
+        
+    <div class="navigation">
+            
+        <?php include 'supplierSidebar.php'; ?>
+                    
+    </div>
+
+    <div class="main">
+            
+    <div><br><br><br>
 
 <div class="card">
 <div class="card-header">
@@ -76,7 +98,11 @@ All Products
 
 
 </div>
+                    
+    </div>
+</div>
+        
 
 
-
-
+</body>
+</html>

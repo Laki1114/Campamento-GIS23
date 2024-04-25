@@ -27,7 +27,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="../home/">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
