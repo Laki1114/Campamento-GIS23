@@ -12,7 +12,7 @@ session_start();
 <?php //include('inc/header.php');  ?>
 
 <?php include('usernav.php');  
-
+unset($_SESSION['Payment_Success']);
 include('../database/linklinkz.php');
 
 if(isset($_GET['id'])){
@@ -50,8 +50,8 @@ $thumb  = $row['thumb'];
                     <div class="col-md-2">
                         <form action='addToCart.php' method="get">  
                             <input type="hidden" name='id' value='<?php echo  $product_id ?>'>
-                            <input type="number" class='form-control' name='quantity'>
-                            <input type="submit" value="Add to Cart"> 
+                            <input type="number" class='form-control' name='quantity' value="1">
+                            <input type="submit" value="Add to Cart" class="btn"> 
                         </form>
                     </div>
                 </div>
@@ -66,9 +66,9 @@ $thumb  = $row['thumb'];
                     </div>
                 </div>
                 <a   href='addToCart.php?id=<?php echo  $product_id ?>' >  
-                <button type='submit' class="btn">
+                <!-- <button type='submit' class="btn">
                   <i class="fa fa-cart-arrow-down"></i> Add To Cart
-                </button></a>
+                </button></a> -->
             </div>
         </div>
     </div>

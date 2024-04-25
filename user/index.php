@@ -5,6 +5,7 @@ include('../database/linklinkz.php');
 
 unset($_SESSION['error']);
 
+
 ?>
 
 
@@ -36,7 +37,6 @@ if(isset($_GET['id'])){
     $sql .= " WHERE cat_id = '$catID'";
 }
 
-
 $result = mysqli_query($conn, $sql);
  
   while($row = mysqli_fetch_assoc($result)) {
@@ -48,7 +48,7 @@ $result = mysqli_query($conn, $sql);
       
 
                 <div class="card">
-               
+
                 <a href="#"> 
  <?php if(isset($row['thumb']) && !empty($row['thumb'])): ?>
   <center>  <img src="../Supplier/<?php echo $row['thumb']; ?>" alt="" height='150' width='150'></center>

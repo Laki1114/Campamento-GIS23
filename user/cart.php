@@ -6,7 +6,7 @@ include('../database/linklinkz.php');
   ?>
 
 <?php include('usernav.php');  
-
+unset($_SESSION['Payment_Success']);
  
 $cart =  $_SESSION['cart'];
 

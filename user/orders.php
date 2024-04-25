@@ -31,7 +31,14 @@ include ('../database/linklinkz.php');
  
 <div class="container text-white">
     <h2 class='text-center text-white'>My Orders</h2>
-
+	<div>
+		<?php 
+		if(isset($_SESSION['Payment_Success'])){
+			echo $_SESSION['Payment_Success'];
+		}
+		
+		?>
+	</div>
     <section id="content">
 		<div class="content-blog content-account">
 			<div class="container">

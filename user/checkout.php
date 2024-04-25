@@ -65,7 +65,6 @@ $sql = "SELECT * FROM user_data where userid = $cid";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
-
 //  ?>
 
 
@@ -306,7 +305,13 @@ payBtn.addEventListener("click", function (evt) {
 		sendDataToDB(formData)
 		.then(function(result){
 			response = result;
-			console.log(response);
+			console.log(result)
+			const redirectUrl = result.url;
+			if (redirectUrl.includes('user/orders')) {
+			window.location.href = redirectUrl;
+			} else {
+			console.log('Redirect URL invalid.');
+			}
 		})
 		.catch(function(error){
 			console.error(error);
@@ -369,8 +374,8 @@ const sendDataToDB = function(formData){
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify(formData),
-    }).then(function (response) {
-        return response.json();
+    }).then(function (result) {
+        return result;
     });
 
 };
