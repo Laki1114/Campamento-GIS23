@@ -13,7 +13,7 @@ $psw=($_POST["password"]);
 
 
 
-$ql1= "SELECT* FROM user WHERE Email='$email'";
+$sq1= "SELECT* FROM user WHERE Email='$email'";
 $result=mysqli_query($linkz,$sql); 
 
 

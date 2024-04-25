@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <title>Admin sidebar</title>
@@ -16,7 +15,7 @@
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
-                        <span  class="as"><img src="images/logo.png" alt="" width="150" height="70"></span>
+                        <span  class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>
                     </a>
                 </li>
 
@@ -24,53 +23,63 @@
 
 
                 <li>
-                    <a href="admin.php">
+                    <a href="addCategory.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Dashboard</span>
+                        <span class="title">Add Categories</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="admincustomer.php">
+                    <a href="addProduct.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Manage User</span>
+                        <span class="title">Add Products</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="admin_panel.php">
+                    <a href="product.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Advertisement</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="../chat/admin_chat.php">
-                        <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                        </span>
-                        <span class="title">Messages</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="adminprofile.php">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Profile</span>
+                        <span class="title">View Products</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Notifications</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="profileSupplier.php">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">My Account</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Orders</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>

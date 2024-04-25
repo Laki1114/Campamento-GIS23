@@ -2,7 +2,7 @@
 <?php
 session_start();
 include('../database/linklinkz.php');
-$email=$_SESSION['email'];
+$email=$_SESSION['supplier'];
 ?>
 <?php
 

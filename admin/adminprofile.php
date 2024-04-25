@@ -133,10 +133,10 @@ th, td {
                             <td>First Name : <?php  echo $firstName ?></td>
                         </tr>
                         <tr>
-                            <td>NIC no : <?php  echo $nicNo ?></td>
+                            <td>Last name : <?php  echo $lastName ?></td>
                         </tr>
                         <tr>
-                            <td>Last name : <?php  echo $lastName ?></td>
+                            <td>NIC no : <?php  echo $nicNo ?></td>
                         </tr>
                         <tr>
                             <td>Email : <?php  echo $email ?></td>
