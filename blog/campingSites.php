@@ -194,7 +194,7 @@ $result = mysqli_query($conn, $sql);
 
                 <a href="#"> 
                 <?php if(isset($row['Image1']) && !empty($row['Image1'])): ?>
-                <center>  <img src="blog/uploads/<?php echo $row['Image1']; ?>" alt="" height='150' width='150'></center>
+                <center>  <img src="uploads/<?php echo $row['Image1']; ?>" alt="" height='150' width='150'></center>
                 <?php endif; ?>     </a>
 
 
