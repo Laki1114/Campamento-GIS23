@@ -60,7 +60,7 @@
 
 
                 <li>
-                    <a href="profileSupplier.php">
+                    <a href="profileUser.php">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>

@@ -42,7 +42,7 @@ if (mysqli_query($conn, $sql)) {
 <body>
     <!-- =============== Navigation ================ -->
     <div class="container">
-    <div class="navigation">
+            <div class="navigation">
             
             <?php include 'supplierSidebar.php'; ?>
                     
