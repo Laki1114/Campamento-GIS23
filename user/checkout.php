@@ -5,8 +5,8 @@ session_start();
  //include('inc/nav.php');  
  
  include('../database/linklinkz.php');
- $_SESSION['customer'] = 'eroshananlf1@gmail.com';
-$_SESSION['customerid'] = '16';
+ //$_SESSION['customer'] = 'eroshananlf1@gmail.com';
+//$_SESSION['customerid'] = '16';
 
 if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
  header('location:../login/login.php');

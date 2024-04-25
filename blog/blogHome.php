@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../database/linklinkz.php');?>
 <!DOCTYPE html>
 <html>
@@ -140,7 +141,7 @@ body {
   </div>
 
 <div class="header">
-  <h2>Campamento Blog </h2>
+  <h2><span class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>Campamento Blog </h2>
 </div>
 
 
@@ -162,35 +163,42 @@ body {
   <div class="leftcolumn">
     <div class="card-row"  id="cs">
       <h1 style="color:white;">Camping Sites</h1>
-      <div class="card">
+     
+        <?php   
+         
+         $sql_related = "SELECT * FROM blog where cat_id = '1'  order by rand() limit 3";
         
-        <h2>ELLA</h2>
-        <h5>Sithara Kodithuwakku, Apr 7, 2023</h5>
-        <div> <img src="../resource/assets/blog/ella.jpg" class="pic1"  style="height:200px;"></div>
-        <p><a href="ella.php"><button class="btn">Read More</button></a></p>
-        <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
-      </div>
-      
-      <div class="card">
-        <h2>HIKKADUWA CORALS</h2>
-        <h5>Shehan Fernando, May 2, 2023</h5>
-        <div><img src="../resource/assets/blog/hikkaduwa.jpg" class="pic1"  style="height:200px;"></div>
-        <p><button class="btn">Read More</button></p>
-        <p> short description goes here.short description goes here.short description goes here.short description goes here.</p>
-      </div>
+         
+         
+         $result_related = mysqli_query($conn, $sql_related);
+          
+           while($row = mysqli_fetch_assoc($result_related)) {
 
+         ?>
+           <div class="card">
+        <h2><?php echo  $row["shortTitle"] ?></h2>
+        <h5><?php echo  $row["postDate"] ?></h5>
+        <div> <img src="uploads/<?php echo $row['Image1']; ?>" class="pic1"  style="height:200px;"></div>
+        <br>   <a   href='single.php?id=<?php echo  $row["blogID"] ?>'><button class="btn">Read More</button></a><br>
+        <p><?php echo  $row["subjectShort"] ?></p>
+      </div>
       
-      <div class="card clear-card">
+    
+          <?php
+           }
+          ?>
+      
+     <!-- <div class="card clear-card">
           <h2>SIGIRIYA</h2>
           <h5>Ridmi Prabodi, Sep 2, 2023</h5>
           <div><img src="../resource/assets/blog/sigiriya.jpg" class="pic1"  style="height:200px;"></div>
           <p><button class="btn">Read More</button></p>
           <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
-      </div>
+      </div>-->
 
     </div>
-    <p class="text-center">View More New Posts.</p>
-    <div class="pagination">
+   <a href="campingSites.php"> <p class="text-center">View More New Posts.</p></a>
+   <!-- <div class="pagination">
       <a href="#">&laquo;</a>
       <a href="#">1</a>
       <a class="active" href="#">2</a>
@@ -199,90 +207,70 @@ body {
       <a href="#">5</a>
       <a href="#">6</a>
       <a href="#">&raquo;</a>
-    </div>
+    </div>-->
     <p></p>
     <!-- second row atarts here-->
     <div class="card-row" id="gs">
       <h1 style="color:white;">Glamping Sites</h1>
-      <div class="card">
-        <h2>NILAVELI BEACH</h2>
-        <h5>Wishen Peries, Jun 5, 2023</h5>
-        <div><img src="../resource/assets/blog/nilavali.jpg" class="pic1"  style="height:200px;"></div>
-        <p><button class="btn">Read More</button></p>
-        <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
+      <?php   
+         
+         $sql_related = "SELECT * FROM blog where cat_id = '2'  order by rand() limit 3";
+        
+         
+         
+         $result_related = mysqli_query($conn, $sql_related);
+          
+           while($row = mysqli_fetch_assoc($result_related)) {
+
+         ?>
+           <div class="card">
+        <h2><?php echo  $row["shortTitle"] ?></h2>
+        <h5><?php echo  $row["postDate"] ?></h5>
+        <div> <img src="uploads/<?php echo $row['Image1']; ?>" class="pic1"  style="height:200px;"></div>
+        <br>  <a   href='single.php?id=<?php echo  $row["blogID"] ?>'><button class="btn">Read More</button></a><br>
+        <p><?php echo  $row["subjectShort"] ?></p>
       </div>
       
-      <div class="card">
-        <h2>HUNASFALLS CAMP</h2>
-        <h5>Amila Perera, Sep 8, 2023</h5>
-        <div><img src="../resource/assets/blog/hunafallscamp.jpg" class="pic1"  style="height:200px;"></div>
-        <p><button class="btn">Read More</button></p>
-        <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
-      </div>
-
-      
-      <div class="card clear-card">
-          <h2>UVA GLAMPSITES</h2>
-          <h5>Windy Rodrigu, Sep 26, 2023</h5>
-          <div><img src="../resource/assets/blog/uvaglamp.jpg" class="pic1"  style="height:200px;"></div>
-          <p><button class="btn">Read More</button></p>
-          <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
-      </div>
+    
+          <?php
+           }
+          ?>
 
     </div>
-    <p class="text-center">View More New Posts.</p>
-    <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a class="active" href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
+    <a href="glampingSites.php"><p class="text-center">View More New Posts.</p></a>
+   
     <p></p>
     <!--third row starts here-->
     <div class="card-row" id="ts">
       <h1 style="color:white;">Travel  Sites</h1>
-      <div class="card">
-        <h2>NILAVELI BEACH</h2>
-        <h5>Wishen Peries, Jun 5, 2023</h5>
-        <div><img src="../resource/assets/blog/nilavali.jpg" class="pic1"  style="height:200px;"></div>
-        <p><button class="btn">Read More</button></p>
-        <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
-      </div>
-      
-      <div class="card">
-        <h2>HUNASFALLS CAMP</h2>
-        <h5>Amila Perera, Sep 8, 2023</h5>
-        <div><img src="../resource/assets/blog/hunafallscamp.jpg" class="pic1"  style="height:200px;"></div>
-        <p><button class="btn">Read More</button></p>
-        <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
-      </div>
+      <?php   
+         
+         $sql_related = "SELECT * FROM blog where cat_id = '3'  order by rand() limit 3";
+        
+         
+         
+         $result_related = mysqli_query($conn, $sql_related);
+          
+           while($row = mysqli_fetch_assoc($result_related)) {
 
-      
-      <div class="card clear-card">
-          <h2>UVA GLAMPSITES</h2>
-          <h5>Windy Rodrigu, Sep 26, 2023</h5>
-          <div><img src="../resource/assets/blog/uvaglamp.jpg" class="pic1"  style="height:200px;"></div>
-          <p><button class="btn">Read More</button></p>
-          <p>short description goes here.short description goes here.short description goes here.short description goes here.</p>
+         ?>
+           <div class="card">
+        <h2><?php echo  $row["shortTitle"] ?></h2>
+        <h5><?php echo  $row["postDate"] ?></h5>
+        <div> <img src="uploads/<?php echo $row['Image1']; ?>" class="pic1"  style="height:200px;"></div>
+        <br>  <a   href='single.php?id=<?php echo  $row["blogID"] ?>'><button class="btn">Read More</button></a><br>
+        <p><?php echo  $row["subjectShort"] ?></p>
       </div>
+      
+    
+          <?php
+           }
+          ?>
 
     </div>
-    <p class="text-center">View More New Posts.</p>
+   <a href="travelSites.php"> <p class="text-center">View More New Posts.</p></a>
 
-<div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  <a class="active" href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-</div>
+
 </div>
 </div>
 
@@ -299,13 +287,36 @@ body {
       <p>Click the icon to create and account to post blogs...</p>
     </div>
     <div class="card">
-      <h3>Popular Post</h3>
-      <div class="pic">Bandarawella</div><br>
-      <div class="pic">Trincomalee</div><br>
-      <div class="pic">Matara</div><br>
-      <div class="pic">Kithulgala</div><br>
-      <div class="pic">Jaffna</div><br>
-      <div class="pic">Matale</div>
+      <h3>Recent Posts</h3>
+      <?php   
+         
+         $sql_related = "SELECT * FROM blog ORDER BY postDate DESC LIMIT 10";
+
+        
+         
+         
+         $result_related = mysqli_query($conn, $sql_related);
+          
+           while($row = mysqli_fetch_assoc($result_related)) {
+         echo "<table>";
+         ?>
+          
+          <div >
+    <tr><td >
+        <img class="recent" src="uploads/<?php echo $row['Image1']; ?>" style="height:70px;width:70px;"></td>
+     <td class="pic"><a href='single.php?id=<?php echo $row["blogID"] ?>'>   <?php echo $row["shortTitle"] ?></a></td>
+    </div>
+</div>
+
+       
+      
+      
+    
+          <?php
+          echo"</table>"; }
+          ?>
+      
+      
     </div>
     <br><br>
     <div class="card2">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../database/linklinkz.php');
 
 if(isset($_POST['submit'])) {

@@ -147,7 +147,7 @@ body {
   </div>
 
 <div class="header">
-  <h2>Campamento Blog </h2>
+  <h2><span class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>Campamento Blog </h2>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -194,7 +194,7 @@ $result = mysqli_query($conn, $sql);
 
                 <a href="#"> 
                 <?php if(isset($row['Image1']) && !empty($row['Image1'])): ?>
-                <center>  <img src="blog/uploads/<?php echo $row['Image1']; ?>" alt="" height='150' width='150'></center>
+                <center>  <img src="uploads/<?php echo $row['Image1']; ?>" alt="" height='150' width='150'></center>
                 <?php endif; ?>     </a>
 
 

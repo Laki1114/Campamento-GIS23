@@ -1,4 +1,6 @@
-<?php include('../database/linklinkz.php');?>
+<?php 
+session_start();
+include('../database/linklinkz.php');?>
 <!DOCTYPE html>
 <html>
 <head>
