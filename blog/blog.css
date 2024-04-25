@@ -32,9 +32,11 @@
     background-color: #aaa;
     width: 100%;
     padding: 0px;
-    text-align:center;
-   
+    
+   color:black;
   }
+ 
+
   /*blog post sec pic*/
   .pic1{
     
@@ -68,7 +70,6 @@
   background-color: white;
   padding: 20px;
   margin-top: 20px;
-
 }
 
 /* Clear floats after the columns */
