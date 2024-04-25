@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +12,8 @@
 </head>
 <body>
 <div class="bg-img">
+
+    
     <form class="container" action="submit_advertisement.php" method="post" enctype="multipart/form-data">
     <h3>Submit Advertisement</h3>
         <label>Title:</label><br>
@@ -19,7 +25,24 @@
         <label>Images:</label><br>
         <input type="file" name="images[]" multiple accept="image/*"><br><br>
         <input type="submit" value="Submit">
+        <button id="goBackButton">Go Back</button> <!-- Add Go Back button -->
+
     </form>
+
+    <?php
+    // Display success message if set in session variable
+    if (isset($_SESSION['success_message'])) {
+        echo "<p>{$_SESSION['success_message']}</p>";
+        unset($_SESSION['success_message']); // Remove success message from session
+    }
+    ?>
+    
 </div>
+
+<script>
+document.getElementById("goBackButton").addEventListener("click", function() {
+  window.history.go(-2); // JavaScript function to navigate back two pages in history
+});
+</script>
 </body>
 </html>
