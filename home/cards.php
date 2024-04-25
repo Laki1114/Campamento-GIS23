@@ -58,7 +58,7 @@
 </div>
 <div class="des">
  <p style="font-size:15px;">A seasoned outdoor enthusiast or a newbie to the wilderness, our guide is here to help you make the most of your camping experience.</p>
- <a href="../Faheema/Guide/guide.php">
+ <a href="../guide/guide_.php">
 <button>See More...</button></a>
 </div>
 </div>
@@ -92,7 +92,7 @@
 </div>
 <div class="des">
  <p style="font-size:15px;">Looking for a driver for your camping trip, you'll want someone reliable, knowledgeable about the area, and preferably with some outdoor experience. </p>
- <a href="../Faheema/driver/driver_.php">
+ <a href="../driver/driver_.php">
 <button>See More...</button></a>
 </div>
 </div>
