@@ -202,7 +202,7 @@ body {
                                 <p class="card-text"><?php echo $row['room1_type']; ?>: LKR <?php echo $row['room1_price']; ?></p>
                                 
                                 <p class="card-text"><?php echo $row['room2_type']; ?> : LKR <?php echo $row['room2_price']; ?></p>
-                                <a href="booking_process.php" class="button">Book Now</a>
+                                <a href="check_in.php" class="button">Book Now</a>
                             </div>
                         </div>
                     </div>

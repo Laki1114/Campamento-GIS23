@@ -31,15 +31,20 @@
   }
   
       /* =============== Navigation ================ */
-  .navigation {
-    position: fixed;
-    width: 270px;
-    height: 100%;
-    background: var(--green);
-    border-left: 1px solid var(--green);
-    transition: 0.5s;
-    overflow: hidden;
-  }
+      .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 270px;
+        height: 100%;
+        background: var(--green);
+        border-left: 1px solid var(--green);
+        transition: 0.5s;
+        overflow: hidden;
+      }
+
+
+ 
   .navigation.active {
     width: 80px;
   }

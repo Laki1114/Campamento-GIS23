@@ -113,41 +113,34 @@
      object-fit: cover;
  }
 
- /*card css*/
- .grid {
-     width: 55%; 
-     height: 500px;
-     display: inline-block;
-     box-shadow: 2px 2px 20px black;
-     border-radius: 15px;
-     margin: 2.3%;
-     margin-top: 100px;
-     background: #fff;
- }
+
+.container1{
+    width: 500px;
+    height: 200px;
+    display: inline-block;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 15px; 
+    margin-top: 50px;
+    margin-left: 150px;
+    background: #fff;
+}
+
+
 
  .container2 {
-     width: 30%;
-     height: 270px;
+     width: 500px;
+     height: auto;
      display: inline-block;
      box-shadow: 2px 2px 20px black;
-     border-radius: 15px;
-     margin: 2.3%; 
-     margin-top: 100px;
+     border-radius: 15px; 
+     margin-top: 40px;
+     margin-left: 150px;
      background: #fff;
  }
+.title{
+    text-align: center;
+    font-size: medium;
+    margin-top: 10px;
 
+}
  
- 
-
- .title {
-
-     text-align: left;
-     padding: 10px;
-
-
- }
-
- h1 {
-     font-size: 20px;
-     color: #327028;
- }
