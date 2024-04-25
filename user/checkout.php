@@ -1,12 +1,11 @@
 <?php  
 session_start();
-
+require_once 'config.php';
 //include('inc/header.php'); 
  //include('inc/nav.php');  
- 
  include('../database/linklinkz.php');
- //$_SESSION['customer'] = 'eroshananlf1@gmail.com';
-//$_SESSION['customerid'] = '16';
+//  $_SESSION['customer'] = 'eroshananlf1@gmail.com';
+// $_SESSION['customerid'] = '16';
 
 if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
  header('location:../login/login.php');
@@ -39,163 +38,26 @@ if(!isset($_SESSION['customerid'])){
 // print_r($_POST);
 // echo '</pre>';
 $total = 0;
-if(isset($_SESSION['cart'])){
-	 $cart = $_SESSION['cart'];
-	foreach($cart as $key => $value){
-	 // echo $key ." : ". $value['quantity'] . "<br>";
+$total_amount = 0;
+// $cart = "";
+// if(isset($_SESSION['cart'])){
+// 	$cart = $_SESSION['cart'];
+// 	foreach($cart as $key => $value){
+// 	 // echo $key ." : ". $value['quantity'] . "<br>";
 	 
-	 $sql_cart = "SELECT * FROM products where product_id = $key";
-	$result_cart = mysqli_query($conn, $sql_cart);
-	$row_cart = mysqli_fetch_assoc($result_cart);
-	$total = $total +  ($row_cart['price'] * $value['quantity']);
-}
+// 	 $sql_cart = "SELECT * FROM products where product_id = $key";
+// 	$result_cart = mysqli_query($conn, $sql_cart);
+// 	$row_cart = mysqli_fetch_assoc($result_cart);
+// 	$total = $total +  ($row_cart['price'] * $value['quantity']);
+// }
+// }
+
+if (isset($_GET['total'])){
+	$total = $_GET['total'];
 }
 
 
 $message  = '';
-$_POST['agree'] = 'false';
-
-if(isset($_POST['submit'])){
-	 
-	if($_POST['agree'] == true){
-	$country = $_POST['country'];
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$companyName = $_POST['companyName'];
-	$addr1 = $_POST['addr1'];
-	$addr2 = $_POST['addr2'];
-	$city = $_POST['city'];
-	$state = '';
-	$Postcode = $_POST['Postcode'];
-	$Email = '';
-	$Phone = $_POST['Phone'];
-	$payment = $_POST['payment'];
-	$agree = $_POST['agree'];
-	$cid = $_SESSION['customerid']; 
-	$sql = "SELECT * FROM user_data where userid = $cid";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
-
-
-if (mysqli_num_rows($result) == 1) {
-//   update query
-$up_sql = "UPDATE user_data SET firstname='$fname', lastname='$lname', company='$companyName', address1='$addr1', address2='$addr2', city='$city', country='$country', zip='$Postcode', mobile='$Phone'  WHERE userid=$cid";
-
-$Updated = mysqli_query($conn, $up_sql);
-if($Updated){
-
-	if(isset($_SESSION['cart'])){
-		$total = 0;
-		foreach($cart as $key => $value){
-		 // echo $key ." : ". $value['quantity'] . "<br>";
-		 
-		 $sql_cart = "SELECT * FROM products where product_id = $key";
-		$result_cart = mysqli_query($conn, $sql_cart);
-		$row_cart = mysqli_fetch_assoc($result_cart);
-		$total = $total +  ($row_cart['price'] * $value['quantity']);
-	}
-	}
-
-
-	// echo 'order table and order items - updated';
-
-	$insertOrder = "INSERT INTO orders (userid, totalprice, orderstatus, paymentmode )
-	VALUES ('$cid', '$total', 'Order Placed', '$payment')";  
-
-	if(mysqli_query($conn, $insertOrder)){
-	 
-		$orderid = mysqli_insert_id($conn); 
-		foreach($cart as $key => $value){ 
-			$sql_cart = "SELECT * FROM products where product_id = $key";
-		   $result_cart = mysqli_query($conn, $sql_cart);
-		   $row_cart = mysqli_fetch_assoc($result_cart); 
-			$price_product = $row_cart["price"];
-			 $q  = $value["quantity"];
-		   $insertordersItems = "INSERT INTO orderitems (orderid, productid, quantity, productprice) 
-		    VALUES ('$orderid', '$key', '$q', '$price_product')";
-		   
-		   if(mysqli_query($conn, $insertordersItems)){
-			//    echo 'inserted on both table orders and ordersItems';
-			unset($_SESSION['cart']);
-			// header("location:myaccount.php");
-			echo '<script>window.location.href = "orders.php";</script>';
-
-		
-		   }
-
-
-	   }
-
-	
-
-	}
-}
-} else {
-  // insert 
- 
-
-
-  $ins_sql = "INSERT INTO user_data (userid, firstname, lastname, company, address1, address2, city, country, zip, mobile)
-  VALUES ('$cid', '$fname', '$lname', '$companyName', '$addr1', '$addr2', '$city', '$country', '$Postcode', '$Phone')"; 
-$inserted = mysqli_query($conn, $ins_sql);
-if($inserted){
-	// echo 'order table and order items - inserted';
-	
-	if(isset($_SESSION['cart'])){
-		$total = 0;
-		foreach($cart as $key => $value){
-		 // echo $key ." : ". $value['quantity'] . "<br>";
-		 
-		 $sql_cart = "SELECT * FROM products where product_id = $key";
-		$result_cart = mysqli_query($conn, $sql_cart);
-		$row_cart = mysqli_fetch_assoc($result_cart);
-		$total = $total +  ($row_cart['price'] * $value['quantity']);
-	}
-	}
-
-
-	// echo 'order table and order items - updated';
-
-	$insertOrder = "INSERT INTO orders (userid, totalprice, orderstatus, paymentmode )
-	VALUES ('$cid', '$total', 'Order Placed', '$payment')";  
-
-	if(mysqli_query($conn, $insertOrder)){
-	 
-		$orderid = mysqli_insert_id($conn); 
-		foreach($cart as $key => $value){ 
-			$sql_cart = "SELECT * FROM products where product_id = $key";
-		   $result_cart = mysqli_query($conn, $sql_cart);
-		   $row_cart = mysqli_fetch_assoc($result_cart); 
-			$price_product = $row_cart["price"];
-			 $q  = $value["quantity"];
-		   $insertordersItems = "INSERT INTO orderitems (orderid, productid, quantity, productprice) 
-		    VALUES ('$orderid', '$key', '$q', '$price_product')";
-		   
-		   if(mysqli_query($conn, $insertordersItems)){
-			//    echo 'inserted on both table orders and ordersItems';
-			unset($_SESSION['cart']);
-			// header("location:myaccount.php");
-			echo '<script>window.location.href = "orders.php";</script>';
-
-		
-		   }
-
-
-	   }
-
-	
-
-	}
-}
-
-}
-}else{
-	$message =  'agreen to terms and condition';
-}
-
-
-}
-
 
 $cid =$_SESSION['customerid'];
 
@@ -204,7 +66,7 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 
- ?>
+//  ?>
 
 
 
@@ -219,17 +81,7 @@ $row = mysqli_fetch_assoc($result);
 
 
 
-if(isset($_SESSION['cart'])){
-	$total = 0;
-	foreach($cart as $key => $value){
-	 // echo $key ." : ". $value['quantity'] . "<br>";
-	 
-	 $sql_cart = "SELECT * FROM products where product_id = $key";
-	$result_cart = mysqli_query($conn, $sql_cart);
-	$row_cart = mysqli_fetch_assoc($result_cart);
-	$total = $total +  ($row_cart['price'] * $value['quantity']);
-}
-}
+
 
 
 
@@ -247,7 +99,7 @@ if(isset($_SESSION['cart'])){
             </center>
         </div>
     </div>
-<form method='post'>
+<form'>
 <?php echo $message ?>
 <div class="container ">
 			<div class="row">
@@ -255,9 +107,8 @@ if(isset($_SESSION['cart'])){
 					<div class="billing-details">
 						<h3 class="uppercase">Billing Details</h3>
 						<div class="space30"></div>
-					 
 							<label class="">Country </label>
-							<select class="form-control" name='country'>
+							<select class="form-control" name='country' id="country">
 								<option value="">Select Country</option>
 								<option value="SL">Sri Lanka</option>
 								
@@ -267,31 +118,31 @@ if(isset($_SESSION['cart'])){
 							<div class="row">
 								<div class="col-md-6">
 									<label>First Name </label>
-									<input class="form-control" name='fname' placeholder="" value="<?php if(isset($row['firstname'])) { echo $row['firstname']; } ?>" type="text">
+									<input class="form-control" name='fname' id="fname" placeholder="" value="<?php if(isset($row['firstname'])) { echo $row['firstname']; } ?>" type="text">
 								</div>
 								<div class="col-md-6">
 									<label>Last Name </label>
-									<input class="form-control" name='lname' placeholder="" value="<?php if(isset($row['lastname'])) {echo $row['lastname']; } ?>" type="text">
+									<input class="form-control" name='lname' id="lname" placeholder="" value="<?php if(isset($row['lastname'])) {echo $row['lastname']; } ?>" type="text">
 								</div>
 							</div>
 							<div class="clearfix space20"></div>
 							<label>Company Name</label>
-							<input class="form-control" name='companyName' placeholder="" value="<?php if(isset($row['company'])) {echo $row['company']; } ?>" type="text">
+							<input class="form-control" name='companyName' id="companyname" placeholder="" value="<?php if(isset($row['company'])) {echo $row['company']; } ?>" type="text">
 							<div class="clearfix space20"></div>
 							<label>Address </label>
-							<input class="form-control" name='addr1' placeholder="Street address" value="<?php if(isset($row['address1'])) {echo $row['address1']; } ?>" type="text">
+							<input class="form-control" name='addr1' id="addr1" placeholder="Street address" value="<?php if(isset($row['address1'])) {echo $row['address1']; } ?>" type="text">
 							<div class="clearfix space20"></div>
-							<input class="form-control" name='addr2' placeholder="Apartment, suite, unit etc. (optional)" value="<?php if(isset($row['address2'])) {echo $row['address2'];  } ?>" type="text">
+							<input class="form-control" name='addr2' id="addr2" placeholder="Apartment, suite, unit etc. (optional)" value="<?php if(isset($row['address2'])) {echo $row['address2'];  } ?>" type="text">
 							<div class="clearfix space20"></div>
 							<div class="row">
 								<div class="col-md-4">
 									<label>Town / City </label>
-									<input class="form-control" name='city' placeholder="Town / City" value="<?php if(isset($row['city'])) {echo $row['city']; } ?>" type="text">
+									<input class="form-control" name='city' id="city" placeholder="Town / City" value="<?php if(isset($row['city'])) {echo $row['city']; } ?>" type="text">
 								</div>
  
 								<div class="col-md-4">
 									<label>Postcode </label>
-									<input class="form-control" name='Postcode' placeholder="Postcode / Zip" value="<?php if(isset($row['zip'])) {echo $row['zip']; } ?>" type="text">
+									<input class="form-control" name='Postcode' id="postcode" placeholder="Postcode / Zip" value="<?php if(isset($row['zip'])) {echo $row['zip']; } ?>" type="text">
 								</div>
 							</div>
 							<div class="clearfix space20"></div>
@@ -299,8 +150,10 @@ if(isset($_SESSION['cart'])){
 							<input class="form-control" name='Email' placeholder="" value="-" type="text"> -->
 							<div class="clearfix space20"></div>
 							<label>Phone </label>
-							<input class="form-control" name='Phone'  id="billing_phone" placeholder="" value="<?php if(isset($row['mobile'])) {echo $row['mobile']; } ?>" type="text">
-						 
+							<input class="form-control" name='Phone'  id="phonenumber" placeholder="" value="<?php if(isset($row['mobile'])) {echo $row['mobile']; } ?>" type="text">
+							<input name="total_amount" id="total_amount" value= "<?php echo $total?>" type="hidden">
+							<input name="currency" id="currency" value= "LKR" type="hidden">
+
 					</div>
 				</div>
 				
@@ -325,6 +178,7 @@ if(isset($_SESSION['cart'])){
 					<tr>
 						<th>Order Total</th>
 						<td><strong><span class="amount"><?php echo $total?>.00/-</span></strong> </td>
+					
 					</tr>
 				</tbody>
 			</table>
@@ -336,14 +190,14 @@ if(isset($_SESSION['cart'])){
 			<div class="payment-method mt-5">
              
 				<div class="row d-flex">
-				
+						<div id="payMethodError" class="error"></div>
 						<div class="col-md-4">
 							<input name="payment" value='COD'  id="radio1" class="mr-2 css-checkbox" type="radio"><span>Cash on delivery</span>
 							<div class="space20"></div>
 							<p>You can deliver handle payments with the delivery party</p>
 						</div>
 						<div class="col-md-4">
-							<input name="payment" value='Cheque'  id="radio2" class="mr-2 css-checkbox" type="radio"><span>Card Payment</span>
+							<input name="payment" value='Card'  id="radio2" class="mr-2 css-checkbox" type="radio"><span>Card Payment</span>
 							<div class="space20"></div>
 							<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won't be shipped until the funds have cleared in our account.</p>
 						</div>
@@ -352,15 +206,20 @@ if(isset($_SESSION['cart'])){
                 </div>
            
 				<div class="space30"></div>
-			 
-					<input name="agree" value='true' id="checkboxG2" class="mr-2 css-checkbox " type="checkbox"><span>I've read and accept the <a href="#">terms &amp; conditions</a></span>
+					<div id="agreeError" class="error"></div>
+					<input name="agree" id="checkboxG2" class="mr-2 css-checkbox " type="checkbox"><span>I've read and accept the <a href="#">terms &amp; conditions</a></span>
+
 			 
 				
         </div>		
         
         <div class="row">
             <div class="col-md-12 text-center">
-                <input type='submit' name='submit' value='Pay Now' class="btn">
+                <!-- <input type='submit' name='submit' value='Pay Now' class="btn" id="payButton"> -->
+				<button class="stripe-button" id="payButton">
+					<div class="spinner hidden" id="spinner"></div>
+					<span id="buttonText">Pay</span>
+				</button>
             </div>
         </div>
 		
@@ -377,5 +236,183 @@ if(isset($_SESSION['cart'])){
 
 
 <?php //include('inc/footer.php');  ?>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Set Stripe publishable key to initialize Stripe.js
+const stripe = Stripe('<?php echo STRIPE_PUBLISHABLE_KEY; ?>');
+
+
+
+// Select payment button
+const payBtn = document.querySelector("#payButton");
+var name = ""; 
+var productId = "";
+var price = 0;
+var currency = "" ;
+var paymentRadios = "";
+var errorDiv ="";
+var payMethodError = "";
+// Payment request handler
+payBtn.addEventListener("click", function (evt) {
+	country = document.querySelector('#country').value;
+    fname = document.querySelector("#fname").value;
+	lname = document.querySelector('#lname').value;
+	companyname = document.querySelector('#companyname').value;
+	addr1 = document.querySelector('#addr1').value;
+	addr2 = document.querySelector('#addr2').value;
+	city = document.querySelector('#city').value;
+	postcode = document.querySelector('#postcode').value;
+	phonenumber = document.querySelector('#phonenumber').value;
+	agree = document.querySelector('#checkboxG2');
+    price = document.querySelector("#total_amount").value;
+    currency = document.querySelector("#currency").value;
+	paymentRadios = document.getElementsByName('payment');
+	errorDiv = document.querySelector('#agreeError');
+	payMethodError = document.querySelector('#payMethodError');
+	console.log('Agree'+agree);
+	console.log(fname);
+	console.log(price);
+	console.log(currency);
+	var selectedPayment;
+
+	
+
+	for(var i=0; i< paymentRadios.length; i++){
+		if(paymentRadios[i].checked){
+			selectedPayment = paymentRadios[i].value;
+			break;
+			
+		}
+	}
+	console.log(selectedPayment);
+
+	const formData = {
+		country: country,
+		fname: fname,
+		lname: lname,
+		companyname: companyname,
+		addr1: addr1,
+		addr2: addr2,
+		city: city,
+		postcode: postcode,
+		phonenumber: phonenumber,
+		price: price,
+		paymentMode: selectedPayment,
+
+	}
+
+	if(price != 0){
+		if(agree.checked){
+		sendDataToDB(formData)
+		.then(function(result){
+			response = result;
+			console.log(response);
+		})
+		.catch(function(error){
+			console.error(error);
+		})
+
+    // setLoading(true);
+		console.log(paymentRadios)
+		if(selectedPayment == "Card"){
+		console.log(selectedPayment);createCheckoutSession().then(function (data) {
+			if(data.sessionId){
+				stripe.redirectToCheckout({
+					sessionId: data.sessionId,
+				}).then(handleResult);
+			}else{
+				handleResult(data);
+			}
+		})
+		}else if(selectedPayment == null){
+			payMethodError.innerText = "Please select a method of payment";
+		}
+		
+	}else{
+		errorDiv.innerText = "Read and Accept the terms and conditions";
+	}
+	}
+
+	
+	
+	
+	
+	
+    // 
+
+        
+});
+    
+// Create a Checkout Session with the selected product
+const createCheckoutSession = function (stripe) {
+    return fetch("payment_init.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            createCheckoutSession: 1,
+			productID: fname,
+            productName: fname,
+            productPrice: price,
+            currency: currency
+        }),
+    }).then(function (result) {
+        return result.json();
+    });
+};
+
+const sendDataToDB = function(formData){
+	return fetch("storedata.php", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(formData),
+    }).then(function (response) {
+        return response.json();
+    });
+
+};
+
+// Handle any errors returned from Checkout
+const handleResult = function (result) {
+    if (result.error) {
+        showMessage(result.error.message);
+    }
+    
+    setLoading(false);
+};
+
+// Show a spinner on payment processing
+function setLoading(isLoading) {
+    if (isLoading) {
+        // Disable the button and show a spinner
+        payBtn.disabled = true;
+        document.querySelector("#spinner").classList.remove("hidden");
+        document.querySelector("#buttonText").classList.add("hidden");
+    } else {
+        // Enable the button and hide spinner
+        payBtn.disabled = false;
+        document.querySelector("#spinner").classList.add("hidden");
+        document.querySelector("#buttonText").classList.remove("hidden");
+    }
+}
+
+// Display message
+function showMessage(messageText) {
+    const messageContainer = document.querySelector("#paymentResponse");
+	
+    // messageContainer.classList.remove("hidden");
+    // messageContainer.textContent = messageText;
+	
+    setTimeout(function () {
+        messageContainer.classList.add("hidden");
+        messageText.textContent = "";
+    }, 5000);
+}
+
+
+</script>
 
 

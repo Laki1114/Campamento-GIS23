@@ -130,7 +130,7 @@ body {
   }
 }
 </style>
-<link rel="stylesheet" href="ella.css">
+<link rel="stylesheet" href="../css/blog/single.css">
 </head>
 <body>
   
