@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-$sql = "SELECT * FROM glamping_manager WHERE Email = '$email'";
+$sql = "SELECT * FROM glamping_manager_registration WHERE Email = '$email'";
 $result = mysqli_query($linkz, $sql);
 
 if ($result->num_rows > 0) {

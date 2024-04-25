@@ -51,7 +51,7 @@
                 </li>
 
                 <li>
-                    <a href="https://dashboard.tawk.to/?lang=en#/chat">
+                    <a href="../chat/admin_chat.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
