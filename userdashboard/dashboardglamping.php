@@ -25,6 +25,7 @@ body{
      box-shadow: 2px 2px 20px black;
      border-radius: 5px; 
      margin: 2.3%;
+     height:430px;
     }
 
 .image img{
@@ -55,7 +56,7 @@ h1{
 .des{
   padding: 3px;
   text-align: center;
- 
+  height:150px;
   padding-top: 10px;
         border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -90,71 +91,53 @@ button:hover{
     <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
   </div>
 
-<div class="grid">
 
-<div class="imaged">
-   <img src="../resource/tree2.jpg">
-</div>
-<div class="title">
- <h1>glamping sites</h1>
-</div>
-<div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
-</div>
-</div>
+  <?php
+    // Database connection
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "campamento";
 
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-<div class="grid">
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-<div class="imaged">
-   <img src="../resource/tree3.jpg">
-</div>
-<div class="title">
- <h1>glamping sites</h1>
-</div>
-<div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
-</div>
-</div>
+    // SQL query to fetch data from the glmp_sites table
+    $sql = "SELECT * FROM glmp_sites";
+    $result = $conn->query($sql);
 
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/tree1.jpg">
-</div>
-<div class="title">
- <h1>glamping sites</h1>
-</div>
-<div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
-</div>
-</div>
-
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/home.png">
-</div>
-<div class="title">
- <h1>glamping sites</h1>
-</div>
-<div class="des">
- <p>You can Add Desccription Here...</p>
-<button>Book Now...</button><button>Read More...</button>
-</div>
-</div>
-<!--cards -->
+    // Display data
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            ?>
+            <div class="grid">
+                <div class="imaged">
+                    <img src="../glamping manager/uploads/<?php echo $row['site_image']; ?>">
+                </div>
+                <div class="title">
+                    <h1><?php echo $row['site_name']; ?></h1>
+                </div>
+                <div class="des">
+                    <p><?php echo $row['site_description']; ?></p>
+                    <a href="../glamping manager/booking_process.php"><button>Book Now...</button></a>
+                    <a href="../glamping manager/trending_sites.php"><button>Read More...</button></a>
+                </div>
+            </div>
+            <?php
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
 
 
-
-<a href="../glamping manager/trending_sites.php"><button class="button" > See More....</button></a>
-
-
+<a href="../glamping manager/trending_sites.php"><button class="button"> See More....</button></a>
 </div>
+
 </body>
 </html>
