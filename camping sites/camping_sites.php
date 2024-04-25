@@ -1,19 +1,183 @@
-<!DOCTYPE html>
+<?php  ?>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camping Sites</title>
+    <title> camp_site </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="camping_css_files/camping_sites.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #003D25;
+  --white: #fff;
+  --yellow: #BFCC7C;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--yellow);
+}
+
+
+/* ===================== Main ===================== */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--yellow);
+    transition: 0.5s;
+  }
+  .main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+  }
+  
+  .topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  
+  .search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+    margin-right: 350px;
+  }
+  
+  .search label {
+    position: relative;
+    width: 100%;
+  }
+  
+  .search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+  }
+  
+  .search label ion-icon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .star-container {
+    text-align: center;
+    margin-left: 20px;
+  }
+
+        
+.card {
+    margin-bottom: 30px;
+            width: 100%;
+            box-shadow: 2px 2px 20px #000;
+            border-radius: 5px;
+}
+.card-body{
+  height: 400px;
+}
+
+.button{
+   border: none;
+   color: #327028;
+   padding: 15px 55px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 18px;
+   margin: 2px 2px;
+   cursor: pointer;
+   background-color: #eef0b9d4;
+   border-radius: 25px;
+   font-weight: 900;
+   font-family: "Ubuntu", sans-serif;
+ }
+ .button:hover{
+     background-color: rgb(250,250,210);
+   color: #327028;
+   transition: .5s;
+   cursor: pointer;
+ }
+ a {
+   text-decoration: none;
+   display: inline-block;
+   padding: 8px 16px;
+   
+ }
+ 
+
+
+</style>
+    
+    
+
 </head>
+
+
 <body>
-     <!------sidebar---->
-     <div id="sidebar">
-        <?php
-        include("camping_sidebar.php");
-        ?>
-    </div>
+
+ <!------sites---->
+ <div id="sidebar">
+            <?php
+            include("camping_sidebar.php");
+            ?>
+        </div>
 
 <!-- ========================= Main ==================== -->
 <div class="main">
@@ -33,142 +197,55 @@
             </div>
 
            <!------sites---->
-           <div class="grid">
+           <div class="container">
+        
+        <div class="row">
+            <?php
+            // Database connection
+            $conn = mysqli_connect("localhost", "root", "", "campamento");
 
-<div class="imaged">
-   <img src="../resource/madolsima.jpg">
-</div>
-<div class="title">
- <h1>Madolsima Camping site</h1>
-</div>
-<div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-</div>
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
 
-<div class="des">
- <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
- 
-</div>
-</div>
+            // Query to select data from the database
+            $sql = "SELECT * FROM camping_sites";
+            $result = mysqli_query($conn, $sql);
 
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/namunukula.jpg">
-</div>
-<div class="title">
- <h1>Namunukula Camping Site</h1>
-</div>
-<div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-</div>
-
-<div class="des">
- <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
- 
-</div>
-</div>
+            // Check if there are any rows returned
+            if (mysqli_num_rows($result) > 0) {
+                // Loop through each row of data
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="uploads/<?php echo $row['camp_site_image']; ?>" class="card-img-top" alt="camp_Site Image">               
+                           
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['camp_site_name']; ?></h5>
+                                <p class="card-text"><?php echo $row['camp_site_description']; ?></p>
+                                
+                                
+                            
+                                
+                              </div>
 
 
-<div class="grid">
+                        </div>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "No camping sites found.";
+            }
 
-<div class="imaged">
-   <img src="../resource/bible rock.jpg">
-</div>
-<div class="title">
- <h1>Bible Rock Camping site</h1>
-</div>
-<div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-</div>
-
-<div class="des">
- <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
-
-</div>
-</div>
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/wangedigala.jpg">
-</div>
-<div class="title">
- <h1>Wangedigala Camping Site </h1>
-</div>
-<div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-</div>
-
-<div class="des">
- <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
- 
-</div>
-</div>
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/yahangala.JPG">
-</div>
-<div class="title">
- <h1>Yahangala Camping Site</h1>
-</div>
-<div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-</div>
-
-<div class="des">
- <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
- 
-</div>
-</div>
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/haritha kanda.jpg">
-</div>
-<div class="title">
- <h1>Haritha Kanda Camping Sites </h1>
-</div>
-<div class="star-container">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-</div>
-
-<div class="des">
- <p>Located near the prestigious Gal Oya National Park, which has been unblemished for centuries, Wild Glamping Gal Oya is stationed in "Rathugala," a majestic mountain-locked village inhabited by the Veddas — the aboriginal inhabitants of Sri Lanka.</p>
- 
-</div>
-</div>
+            // Close database connection
+            mysqli_close($conn);
+            ?>
+        </div>
+    </div>
 
 
-
-</div>    
+        
 </body>
-</html>
+</html>    

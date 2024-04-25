@@ -35,7 +35,7 @@ if (!empty($_POST)) {
     <title>Booking Form</title>
     <link rel="stylesheet" type="text/css" href="glm_css_files/book.css" />
     <link rel="stylesheet" type="text/css" href="glm_css_files/form_deatails.css" />
-    <link rel="stylesheet" type="text/css" href="glm_css_files/wizard.css" />
+    <link rel="stylesheet" type="text/css" href="glm_css_files/wizard1.css" />
 </head>
 
 <body>
@@ -48,26 +48,20 @@ if (!empty($_POST)) {
                 <span>2</span>
                 <span>3</span>
                 <span>4</span>
-                <span>5</span>
+                
             </div>
             <?php if (isset($message)) { ?>
                 <div class="message <?php echo $type; ?>"><?php echo $message; ?></div>
             <?php } ?>
+
             <!-- Wizard section 1 -->
             <section id="billing-section">
                 <h3>Check Availability</h3>
-                <div class="row">
-                    <label class="float-left label-width">Check-In</label>
-                    <input type="date" id="input-group" placeholder=" Check-In">
-                </div>
-                <div class="row">
-                    <label class="float-left label-width">Check-Out</label>
-                    <input type="date" id="input-group" placeholder=" Check-Out">
-                </div>
-                
-                <div class="row button-row">
-                    <button type="button" onClick="validate(this)">Check Availability</button>
-                </div>
+                <div id="detailpage">
+            <?php
+            include("check_in.php");
+            ?>
+            </div>
             </section>
 
             <!-- Wizard section 2 -->
@@ -88,26 +82,9 @@ if (!empty($_POST)) {
 
             <!-- Wizard section 3 -->
             <section id="discount-section" class="display-none">
-                <h3>Summary of Booking:</h3>
+                <h3>Customer details</h3>
                 <div id="confirmpage">
-            <?php
-            include("third_step.php");
-            ?>
-            </div>
-                
-                <div class="row button-row">
-                    
-                    <button type="button" onClick="validate(this)">Confirm</button>
-                </div>
-            </section>
-
-                  
-
-            <!-- Wizard section 4 -->
-            <section id="others-section" class="display-none">
-            <h3>Customer details</h3>
-            <div id="confirmpage">
-            <?php
+                <?php
             include("customer_details_form.php");
             ?>
             </div>
@@ -115,23 +92,24 @@ if (!empty($_POST)) {
                 
             </section>
 
-<!-- Wizard section 5 -->
-<section id="discount-section" class="display-none">
-                <h3>Payment</h3>
+                  
 
-                
-                <div id="confirmpage">
+            <!-- Wizard section 4 -->
+            <section id="others-section" class="display-none">
+            
+            <div id="confirmpage">
             <?php
             include("payment.php");
             ?>
             </div>
-                
-                <div class="row button-row">
+            <div class="row button-row">
                     
                     <button type="button" onClick="validate(this)">Pay</button>
-                </div>
-               
+                </div>  
+                
             </section>
+
+
 
 
         

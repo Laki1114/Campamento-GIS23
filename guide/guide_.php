@@ -17,6 +17,7 @@
 
 .filter-container label {
     margin-right: 10px;
+
 }
 
 .filter-container select {
@@ -39,6 +40,7 @@
     border: none;
     cursor: pointer;
 }
+
     </style>
 </head>
 
@@ -69,7 +71,7 @@
    <!-- Filters for districts and expertise areas -->
    <div class="filter-container">
 
-                <label for="district-filter"><b>Filter : </b> Location</label>
+                <label for="district-filter">Location</label>
                 <select id="district-filter" name="district">
                     <option value="">All</option>
                     <!-- Add options dynamically based on data from the database -->
@@ -103,6 +105,25 @@
                     }
                     ?>
                 </select>
+                <label for="expertise-filter">Tour type:</label>
+                <select id="expertise-filter" name="expertise">
+                    <option value="">All</option>
+                    <!-- Add options dynamically based on data from the database -->
+                    <?php
+                    $tour_query = "SELECT DISTINCT tour_types FROM guide";
+                    $tour_result = $con->query($tour_query);
+                    if ($tour_result->num_rows > 0) {
+                        while ($row = $tour_result->fetch_assoc()) {
+                            // Split the expertise areas into individual items
+                            $tour_areas = explode(',', $row['tour_types']);
+                            foreach ($tour_areas as $area) {
+                                echo "<option value='" . $area . "'>" . $area . "</option>";
+                            }
+                        }
+                    }
+                    ?>
+                </select>
+                <input type="submit" id="filter" value="Filter">
             </div>
         <!------sites---->
         <div id="cards">

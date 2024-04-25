@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Cards</title>
-    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="../css/Guide/cards.css">
 </head>
 <body>
 

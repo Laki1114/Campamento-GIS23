@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin_email'])) {
 include 'db.php';
 
 // Fetch all messages from users
-$user_messages_query = "SELECT * FROM user_messages WHERE ReceiverId = 1";
+$user_messages_query = "SELECT * FROM messages WHERE ReceiverId = 1";
 $user_messages_result = $conn->query($user_messages_query);
 
 // Display messages
@@ -29,7 +29,7 @@ while ($row = $user_messages_result->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Admin Dashboard </title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../admin/css/admin.css">
 </head>
 
 
@@ -43,7 +43,7 @@ while ($row = $user_messages_result->fetch_assoc()) {
     <div class="container">
     <div class="navigation">
             
-            <?php include 'adminsidebar.php'; ?>
+            <?php include '../admin/adminsidebar.php'; ?>
                     
             </div>
 

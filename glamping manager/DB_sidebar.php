@@ -37,7 +37,7 @@
                 <br>
 
                 <li>
-                    <a href="glm_dashboard.php">
+                    <a href="glm_Profile.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>

@@ -1,0 +1,62 @@
+/* RESET & BASIC STYLES */
+:root {
+  --white: #fff;
+  --darkblue: #1b4965;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: currentColor;
+}
+
+body {
+  margin: 50px 0 150px;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+/* TABLE STYLES */
+.table-clickable {
+  text-align: left;
+  border-collapse: collapse;
+  border-left: 1px solid #003D25;
+  border-right: 1px solid #003D25;
+  margin: 20px auto;
+}
+
+.table-clickable th,
+.table-clickable tbody td {
+  padding: 20px 20px 20px 30px;
+}
+
+.table-clickable th {
+  color: var(--white);
+  background: #003D25;
+}
+
+.table-clickable tbody tr:not(:first-child) td {
+  border-top: 1px solid #003D25;
+}
+
+.table-clickable tbody tr:last-child td {
+  border-bottom: 1px solid #003D25;
+}
+
+.table-clickable tbody tr.selected {
+  background-color: #BFCC7C;
+}
