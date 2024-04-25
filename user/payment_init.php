@@ -7,7 +7,8 @@ require_once 'config.php';
 require_once '../libraries/stripe-php-master/init.php'; 
  
 // Set API key 
-$stripe = new \Stripe\StripeClient(STRIPE_API_KEY);
+//$stripe = new \Stripe\StripeClient(STRIPE_API_KEY);
+$stripe=new\Stripe\StripeClient(STRIPE_API_KEY);
 $name;
  
 $response = array( 

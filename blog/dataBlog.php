@@ -21,8 +21,11 @@ include ('../database/linklinkz.php');
 
 $sql = "select * from blog";
 $result = mysqli_query($linkz,$sql);
-
-
+for ($i = 0; $i < 20; $i++) {
+    echo "&nbsp;";
+}
+echo '<a href="postBlog.php"><img src="../resource/assets/blog/post.png" height="100px" width="100px"></a>';
+echo "<h4 style='margin-left: 40px;'>Click the icon to post</h4>";
 
 echo "<br> <br><br>";
 echo "<h2 style='margin-left: 40px;'>Your Blog Posts</h2>";

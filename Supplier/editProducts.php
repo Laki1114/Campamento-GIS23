@@ -98,7 +98,7 @@ if(isset($_GET['id'])) {
                             <input type="hidden" name='hiddenID' value='<?php echo $product_id?>'>
                             <div class="form-group">
                                 <label for="Productname">Product Name</label>
-                                <input type="text" class="form-control" value='<?php echo $row['product_name']; ?>' name="productname" id="Productname" placeholder="Product Name">
+                               <?php echo $row['product_name']; ?>
                             </div>
                             <div class="form-group">
                                 <label for="productdescription">Product Description</label>

@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if ($_POST['psw'] == $row["Password"]) {
         if ($row["Status"] == '1') {
-            
+            $_SESSION['SupplierId'] = $row['SupplierId'];
             $_SESSION['email'] = $row["Email"];
             //header("Location: ../supplier/profileSupplier.php?supplier=" . $_SESSION['supplier']);
             //header("Location: ../Supplier/orders.php?supplier=" . $_SESSION['email']);
