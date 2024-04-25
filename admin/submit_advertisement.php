@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db.php';
 
 // Check if form fields are set and not empty
@@ -42,22 +43,27 @@ if (isset($_POST['title']) && isset($_POST['description']) && isset($_FILES['ima
     $stmt = $conn->prepare($sql);
     
     // Bind parameters and execute the statement
+    $uploadedFilesImploded = implode(",", $uploadedFiles); // Concatenate uploaded file paths into a comma-separated string
+    
     $stmt->bind_param("sss", $title, $description, $uploadedFilesImploded); // Concatenate uploaded file paths into a comma-separated string
 
     $stmt->execute();
 
     // Check if insertion was successful
     if ($stmt->affected_rows > 0) {
-        echo "Advertisement submitted successfully!";
+        $_SESSION['success_message'] = "Advertisement submitted successfully!"; // Store success message in session variable
     } else {
-        echo "Failed to submit advertisement!";
+        $_SESSION['success_message'] = "Failed to submit advertisement!";
     }
 
     $stmt->close();
 } else {
-    echo "Form fields are not set or empty.";
+    $_SESSION['success_message'] = "Form fields are not set or empty.";
 }
 
 $conn->close();
+
+header("Location: ad.php"); // Redirect back to the advertisement form page
+exit(); // Exit the script after redirection
 ?>
 
