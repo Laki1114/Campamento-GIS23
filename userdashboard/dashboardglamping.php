@@ -60,6 +60,7 @@ h1{
   padding-top: 10px;
         border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  overflow:hidden;
 }
 button{
   margin-top: 5px;

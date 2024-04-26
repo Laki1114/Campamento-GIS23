@@ -24,7 +24,7 @@
 </div>
 <div class="des">
  <p style="font-size:15px;">Nestled amidst towering pines and rolling hills, our camping site offers a serene retreat for nature enthusiasts and adventure seekers alike.</p>
- <br>
+ 
  <a href="../camping sites/camping_sites.php">
  <button>See More...</button></a>
 </div>
@@ -42,7 +42,7 @@
 </div>
 <div class="des">
  <p style="font-size:15px;">Glamping, short for glamorous camping, offers a luxurious outdoor experience blending the best of camping with the comforts of a hotel.</p>
- <br>
+ 
  <a href="../glamping manager/trending_sites.php">
 <button>See More...</button></a>
 </div>
@@ -61,7 +61,7 @@
 <div class="des">
  <p style="font-size:15px;">A seasoned outdoor enthusiast or a newbie to the wilderness, our guide is here to help you make the most of your camping experience.</p>
 
- <br>
+ 
  
  <a href="../guide/guide_.php">
 
