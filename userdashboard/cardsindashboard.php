@@ -90,7 +90,7 @@ h1{
 <div class="card">
 
 <div class="image">
-   <a href="../Faheema/Guide/guide.php">
+   <a href="../guide/guide_.php">
    <img src="../resource/guide.png" ></a>
 </div>
 <div class="title">
@@ -116,7 +116,7 @@ h1{
 <div class="card">
 
 <div class="imaged">
-<a href="../Faheema/driver/driver_.php">
+<a href="../driver/driver_.php">
    <img src="../resource/driver.png"  ></a>
 </div>
 <div class="title">

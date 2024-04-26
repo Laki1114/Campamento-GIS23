@@ -50,6 +50,18 @@ while ($row = $user_messages_result->fetch_assoc()) {
         <!-- ========================= Main ==================== -->
         <div class="main">
 
+        <?php
+    if ($result !== false && $result->num_rows > 0) {
+        // Output chat messages
+        while($row = $result->fetch_assoc()) {
+            echo "<p>User: " . $row["user_email"]. "<br>Message: " . $row["message"]. "</p>";
+        }
+    } else {
+        echo "<p>No chat messages.</p>";
+    }
+    ?>
+
+
         <form action="send_message.php" method="post">
             <textarea name="message"></textarea><br>
             <input type="submit" value="Send">
