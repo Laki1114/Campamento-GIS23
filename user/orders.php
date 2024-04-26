@@ -75,7 +75,7 @@ include ('../database/linklinkz.php');
 				</thead>
 				<tbody>
 				<?php
-                $_SESSION['customerid']='16';
+                //$_SESSION['customerid']='16';
 				$c_id = $_SESSION['customerid'];
 
  
