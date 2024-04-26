@@ -1,9 +1,6 @@
 <?php
 
-include ('../database/linklinkz.php');
 
-$sql = "select * from blog";
-$result = mysqli_query($linkz,$sql);
 
 ?> 
 
@@ -32,7 +29,10 @@ $result = mysqli_query($linkz,$sql);
         <!-- ========================= Main ==================== -->
         <div class="main">
         <?php
+include ('../database/linklinkz.php');
 
+$sql = "select * from blog";
+$result = mysqli_query($linkz,$sql);
 for ($i = 0; $i < 20; $i++) {
     echo "&nbsp;";
 }

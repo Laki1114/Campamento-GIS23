@@ -3,7 +3,8 @@
 
 session_start();
 include('../database/linklinkz.php');
-
+$_SESSION['customer'] = 'eroshananlf1@gmail.com';
+$_SESSION['customerid'] = '16';
 if(isset($_SESSION['customerid'])){
  $UID= $_SESSION['customerid']; }
 
