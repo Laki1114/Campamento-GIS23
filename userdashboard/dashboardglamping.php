@@ -123,7 +123,7 @@ button:hover{
                 </div>
                 <div class="des">
                     <p><?php echo $row['site_description']; ?></p>
-                    <a href="../glamping manager/booking_process.php"><button>Book Now...</button></a>
+                    <a href="../glamping manager/check_in.php"><button>Book Now...</button></a>
                     <a href="../glamping manager/trending_sites.php"><button>Read More...</button></a>
                 </div>
             </div>

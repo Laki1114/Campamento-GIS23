@@ -8,7 +8,7 @@ $gender=$_POST["gender"];
 $phoneNo=$_POST["phoneNo"];
 $nicNo=$_POST["nicNo"];
 $email=$_POST["email"];
-$psw=($_POST["password"]);
+$psw=$_POST["password"];
 
 
 
