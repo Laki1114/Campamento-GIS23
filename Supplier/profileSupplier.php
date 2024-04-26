@@ -2,9 +2,11 @@
 session_start();
 include('../database/linklinkz.php');
 
-if(isset($_GET['email'])) {
-    $email = $_GET['email']; // Retrieve the supplier email from the URL parameter
-    $_SESSION['email']=$email;
+//if(isset($_GET['email'])) {
+   // $email = $_GET['email']; // Retrieve the supplier email from the URL parameter
+   $_SESSION['email']='nihal@gmail.com';
+    //$_SESSION['email']=$email;
+    $email='nihal@gmail.com';
     $sql = "SELECT * FROM supplier WHERE Email = '$email'";
     $result = mysqli_query($linkz,$sql);
 
@@ -20,7 +22,7 @@ if(isset($_GET['email'])) {
         $thumb=$row["thumb"];
         
     }
-}
+
 ?>
 
 

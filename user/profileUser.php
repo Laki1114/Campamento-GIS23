@@ -3,7 +3,8 @@
 
 session_start();
 include('../database/linklinkz.php');
-
+$_SESSION['customer']='eroshananlf1@gmai.com';
+$_SESSION['customerid']='16';
 if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
   header('location:../login/login.php');}
 if(isset($_SESSION['customerid'])){

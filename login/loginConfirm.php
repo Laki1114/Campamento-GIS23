@@ -92,8 +92,8 @@ if ($result->num_rows > 0) {
             $_SESSION['SupplierId'] = $row['SupplierId'];
             $_SESSION['email'] = $row["Email"];
             //header("Location: ../supplier/profileSupplier.php?supplier=" . $_SESSION['supplier']);
-            //header("Location: ../Supplier/orders.php?supplier=" . $_SESSION['email']);
-            header("Location: ../Supplier/profileSupplier.php");
+            header("Location: ../Supplier/orders.php?supplier=" . $_SESSION['email']);
+            //header("Location: ../Supplier/profileSupplier.php");
             exit;
         } else {
             $_SESSION['error'] = "deactivated";
