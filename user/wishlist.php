@@ -2,7 +2,7 @@
 session_start();
 include('../database/linklinkz.php');
 
-//$_SESSION['customerid']='16';
+$_SESSION['customerid']='16';
 if(!isset($_SESSION['customerid'])){
     
 header('location:index.php');
