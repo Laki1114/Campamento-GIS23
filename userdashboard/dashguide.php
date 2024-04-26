@@ -4,7 +4,7 @@
  <title>Cards</title>
 </head>
 
-<style type="text/css">
+<style >
 
 
 *{
@@ -25,6 +25,7 @@ body{
      box-shadow: 2px 2px 20px black;
      border-radius: 5px; 
      margin: 2.3%;
+     
     }
 
 .image img{
@@ -57,8 +58,14 @@ h1{
   text-align: center;
  
   padding-top: 10px;
-        border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  overflow:hidden;
+}
+
+.info{
+  text-align: center;
+  margin-top:0px;
 }
 button{
   margin-top: 5px;
@@ -90,66 +97,57 @@ button:hover{
     <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
   </div>
 
-<div class="grid">
+  <?php
+    // Establishing a connection to the MySQL database
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "campamento";
 
-<div class="imaged">
-   <img src="../resource/customer02.jpg">
-</div>
-<div class="title">
- <h1>David</h1>
-</div>
-<div class="des">
- <p>Qualifications here...</p>
-</div>
-</div>
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-<div class="grid">
+    // Fetching data from the driver table
+    $sql = "SELECT * FROM guide";
+    $result = $conn->query($sql);
 
-<div class="imaged">
-   <img src="../resource/customer03.jpg">
-</div>
-<div class="title">
- <h1>David</h1>
-</div>
-<div class="des">
- <p>Qualifications here...</p>
-</div>
-</div>
+    // Counter variable
+    $counter = 0;
+    // Displaying data in cards
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
 
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/customer01.jpg">
-</div>
-<div class="title">
- <h1>David</h1>
-</div>
-<div class="des">
- <p>Qualifications here...</p>
-</div>
-</div>
+          if ($counter < 4) {
+            echo "<div class='grid'>";
+            echo "<div class='imaged'><img src='../guide/" . $row['picture'] . "'></div>";
+            echo "<div class='title'><h1>" . $row['firstname'] . " " . $row['lastname'] . "</h1></div>";
+            echo "<div class='des'>";
+            echo "<p>"  . $row['expertise'] . "<br>" . $row['district'] . "</p>";
 
 
-<div class="grid">
+            echo "<a href='../guide/guide_infor.php?id=" . $row['id'] . "'><button class='button'>Read More</button></a>";
+            echo "</div>";
+            echo "</div>";
+               
+            $counter++;
+          } else {
+            break; // Exit the loop after displaying four grids
+          }}
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
+<br>
+    <!-- See More button -->
+    <a href="../guide/guide_.php">
+        <button class="button">See More....</button>
+    </a>
 
-<div class="imaged">
-   <img src="../resource/customer03.jpg">
-</div>
-<div class="title">
- <h1>David</h1>
-</div>
-<div class="des">
- <p>Qualifications here...</p>
-</div>
-</div>
-<!--cards -->
-
-
-<a href="../Faheema/Guide/guide_info.php">
-<button class="button" > See More....</button>
-</a>
 
 </div>
 </body>

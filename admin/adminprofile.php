@@ -1,25 +1,31 @@
 <?php
-
-
-
 require("linklinkz.php");
-
 
 $AID = 1;
 $sql = "SELECT * FROM admin WHERE AdminId = '$AID'";
-$result = mysqli_query($linkz,$sql);
+$result = mysqli_query($linkz, $sql);
 
-while ($row = mysqli_fetch_assoc($result)){
-  $adminID=$row["AdminId"];
-  $firstName=$row["FirstName"];
-  $lastName=$row["LastName"];
-  $gender=$row["Gender"];
-  $phoneNo=$row["PhoneNo"];
-  $nicNo=$row["NICNo"];
-  $email=$row["Email"];
-  $psw=$row["Password"];
+// Check if the query executed successfully
+if (!$result) {
+    die("Database query failed: " . mysqli_error($linkz));
 }
 
+// Fetch admin details
+$row = mysqli_fetch_assoc($result);
+
+// Check if the fetched row is not null
+if ($row) {
+    $adminID = $row["AdminId"];
+    $firstName = $row["FirstName"];
+    $lastName = $row["LastName"];
+    $gender = $row["Gender"];
+    $phoneNo = $row["PhoneNo"];
+    $nicNo = $row["NICNo"];
+    $email = $row["Email"];
+    $psw = $row["Password"];
+} else {
+    die("Admin details not found.");
+}
 ?>
 
 
@@ -40,12 +46,14 @@ while ($row = mysqli_fetch_assoc($result)){
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-    border-radius:10px
+    border-radius:10px;
+    
   }
   /* Blue */
   .info {
     border-color: #327028;
     color: black;
+    
   }
   
   .info:hover {
@@ -118,11 +126,85 @@ th, td {
                 <h2>Welcome <?php  echo $firstName ?>!</h2>
                 <h3>Admin ID - A01</h3>
                 <br><br>
+
+                <?php
+
+$con = $linkz; 
+// Check if the form was submitted
+if(isset($_POST['change'])){
+    // Check if a file was uploaded without errors
+    if(isset($_FILES["new_image"]) && $_FILES["new_image"]["error"] == 0){
+        $target_dir = "pic/";
+        $target_file = $target_dir . basename($_FILES["new_image"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+        // Check if image file is a actual image or fake image
+        $check = getimagesize($_FILES["new_image"]["tmp_name"]);
+        if($check !== false) {
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    
+        // Allow certain file formats
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+            echo "Sorry, only JPG, JPEG & PNG files are allowed.";
+            $uploadOk = 0;
+        }
+    
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        } else {
+            if (move_uploaded_file($_FILES["new_image"]["tmp_name"], $target_file)) {
+                echo "The file ". htmlspecialchars( basename( $_FILES["new_image"]["name"])). " has been uploaded.";
+                // Now update the database with the new image path
+                $new_image_path = $target_dir . basename($_FILES["new_image"]["name"]);
+
+                // SQL to update the picture path
+                $sql = "UPDATE admin SET picture='$new_image_path' WHERE AdminId='$AID'";
+                if ($con->query($sql) === TRUE) {
+                  echo "<script>alert('Record updated successfully');</script>";
+                  echo "<script>window.setTimeout(function() { window.location = 'adminprofile.php'; }, 2000);</script>";
+                } else {
+                    echo "Error updating record: " . $con->error;
+                }
+
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+    }
+}
+?>
+
                 <div class="containerr" >
                     <div class="profile">
                         <div class="container-image">
-                        <img src="images/customer02.jpg" alt="profile pic" class="profile-picture" width="300px" height="300px">
-                        </div>
+                        <?php 
+        // Check if $row['picture'] is set and not null
+        if (isset($row['picture']) && !empty($row['picture'])) {
+            $imagePath = $row['picture'];
+            // Check if the image file exists
+            if (file_exists($imagePath)) {
+        ?>
+                <img src="<?php echo $imagePath; ?>" alt="profile pic" class="profile-picture" width="300px" height="300px">
+        <?php 
+            } else {
+                echo "Image not found.";
+            }
+        } else {
+            echo "Image path not available.";
+        }
+        ?>
+                        </div><br>
+                        <form action="" method="post" enctype="multipart/form-data" class="change-image-form">
+                            <input type="file" name="new_image" accept="image/*">
+                            <button type="submit" name="change" class="btn info" style="width:150px;">Change image</button>
+                        </form>
                     </div>
                 
             

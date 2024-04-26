@@ -55,9 +55,9 @@ h1{
 .des{
   padding: 3px;
   text-align: center;
- 
+  font-size: 14px;
   padding-top: 10px;
-        border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 button{
@@ -90,66 +90,56 @@ button:hover{
     <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
   </div>
 
-<div class="grid">
 
-<div class="imaged">
-   <img src="../resource/customer01.jpg">
-</div>
-<div class="title">
- <h1>David</h1>
-</div>
-<div class="des">
- <p>Details here...</p>
-</div>
-</div>
+  <?php
+    // Establishing a connection to the MySQL database
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "campamento";
 
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-<div class="grid">
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-<div class="imaged">
-   <img src="../resource/customer02.jpg">
-</div>
-<div class="title">
- <h1>Amrit</h1>
-</div>
-<div class="des">
- <p>Details here...</p>
-</div>
-</div>
+    // Fetching data from the driver table
+    $sql = "SELECT * FROM driver";
+    $result = $conn->query($sql);
 
+    // Counter variable
+    $counter = 0;
+    // Displaying data in cards
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
 
-<div class="grid">
+          if ($counter < 4) {
+            echo "<div class='grid'>";
+            echo "<div class='imaged'><img src='../driver/" . $row['picture'] . "'></div>";
+            echo "<div class='title'><h1>" . $row['firstname'] . " " . $row['lastname'] . "</h1></div>";
+            echo "<div class='des'>";
+            echo "<p>" . $row['experience'] . "<br>" . $row['Vehicle_type'] . "<br>" . $row['district'] . "</p>";
+            echo "<a href='../driver/driver_info.php?id=" . $row['d_id'] . "'><button class='button'>Read More</button></a>";
+            echo "</div>";
+            echo "</div>";
+               
+            $counter++;
+          } else {
+            break; // Exit the loop after displaying four grids
+          }}
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
+<br>
+    <!-- See More button -->
+    <a href="../driver/driver_.php">
+        <button class="button">See More....</button>
+    </a>
 
-<div class="imaged">
-   <img src="../resource/customer03.jpg">
-</div>
-<div class="title">
- <h1>John</h1>
-</div>
-<div class="des">
- <p>Details here...</p>
-</div>
-</div>
-
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/customer01.jpg">
-</div>
-<div class="title">
- <h1>Mical</h1>
-</div>
-<div class="des">
- <p>Details here...</p>
-</div>
-</div>
-<!--cards -->
-
-
-<a href="../Faheema/driver/driver.php">
-<button class="button" > See More....</button>
-</a>
 
 </div>
 </body>
