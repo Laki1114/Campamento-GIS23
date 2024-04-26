@@ -8,7 +8,7 @@
             <a href="../home/home.php">Home</a>
             <a href="home.php">About Us</a>
             <a href="home.php">Services</a>
-            <a href="../blog/blog.html">blog</a>
+            <a href="../blog/blogHome.php">blog</a>
             <a href="contactus.php">Contact Us</a>
          </nav>
 

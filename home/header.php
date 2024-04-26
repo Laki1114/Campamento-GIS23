@@ -12,7 +12,7 @@
             <a href="home.php">Home</a>
             <a href="home.php#about">About Us</a>
             <a href="home.php#service">Services</a>
-            <a href="../blog/blog.html">blog</a>
+            <a href="../blog/blogHome.php">blog</a>
             <a href="home.php#contact">Contact Us</a>
          </nav>
          
@@ -27,7 +27,7 @@
         <button>REGISTER</button>
         <div class="content">
         <a href="../user/registerUser.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a User</a>
-        <a href="../Amaya/index.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Glamping Manager</a>
+        <a href="../glamping manager/gl_register.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Glamping Manager</a>
         <a href="../Amaya/registerSupplier.html" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Tool Supplier</a>
         <a href="../guide/reg_gu.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Guide</a>
         <a href="../driver/reg_dr.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Driver</a>
