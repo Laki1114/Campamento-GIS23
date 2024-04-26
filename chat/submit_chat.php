@@ -1,22 +1,24 @@
 <?php
-// submit_chat.php - Script to submit chat messages
+session_start();
+
+if (!isset($_SESSION['user_email'])) {
+    echo "User not logged in.";
+    exit();
+}
 
 include 'db.php';
 
-session_start();
-if(isset($_SESSION['user_email'])) {
-    $user_email = $_SESSION['user_email']; // Assuming user is logged in
-    $message = $_POST['message']; // Assuming the submitted form has a field named 'message'
+$user_email = $_SESSION['user_email'];
+$message = isset($_POST['message']) ? $_POST['message'] : '';
 
-    // Insert the chat message into the database
-    $insert_query = "INSERT INTO chat_messages (user_email, message) VALUES ('$user_email', '$message')";
-    
-    if ($conn->query($insert_query) === TRUE) {
-        echo "Chat message submitted successfully.";
-    } else {
-        echo "Error: " . $insert_query . "<br>" . $conn->error;
-    }
+// Insert the chat message into the database
+$insert_query = "INSERT INTO messages (SenderId, ReceiverId, Message) VALUES ((SELECT UserId FROM user WHERE Email = '$user_email'), 1, '$message')";
+
+if ($conn->query($insert_query) === TRUE) {
+    echo "Chat message submitted successfully.";
 } else {
-    echo "User not logged in.";
+    echo "Error: " . $insert_query . "<br>" . $conn->error;
 }
+
+$conn->close();
 ?>
