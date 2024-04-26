@@ -3,10 +3,8 @@
 
 session_start();
 include('../database/linklinkz.php');
-$_SESSION['customer']='eroshananlf1@gmai.com';
-$_SESSION['customerid']='16';
-if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
-  header('location:../login/login.php');}
+$_SESSION['customer'] = 'eroshananlf1@gmail.com';
+$_SESSION['customerid'] = '16';
 if(isset($_SESSION['customerid'])){
  $UID= $_SESSION['customerid']; }
 
@@ -36,25 +34,32 @@ while ($row = mysqli_fetch_assoc($result)){
 
 ?>
 
+<html lang="en">
 
-
-
-
-<!DOCTYPE html>
-<html>
 <head>
-
-    
-
-<link rel="stylesheet" type="text/css" href="../css/user/profileUser.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Profile User </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/User/profileUser.css">
 </head>
+
+
 <body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+            <div class="navigation">
+            
+            <?php include 'userSidebar.php'; ?>
+                    
+            </div>
 
-
-
-</header><br><br><br><br><br><br>
-<div class="upper-section"><center>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+        
+        <div class="upper-section"><center>
 <h2>Welcome <?php  echo $firstName ?>!</h2>
 <br><br>
 <h3>User ID - <?php  echo $userID ?></h3><br><br>
@@ -102,6 +107,10 @@ while ($row = mysqli_fetch_assoc($result)){
         </div>
 </div>
 
+        </div>
+    </div>
+
+
 <script>
   function openForm() {
     document.getElementById("myForm").style.display = "block";
@@ -111,7 +120,7 @@ while ($row = mysqli_fetch_assoc($result)){
     document.getElementById("myForm").style.display = "none";
   }
   </script>
-
- 
+    <!-- ====== ionicons ======= -->
 </body>
+
 </html>

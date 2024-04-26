@@ -121,7 +121,7 @@ if(isset($_SESSION['cart'])){
 					</div>
 <form method='post'>
 <?php echo $message ?>
-<div>
+<div >
 			<div class="row">
 				<div class="offset-md-2 col-md-8">
 					<div class="billing-details">

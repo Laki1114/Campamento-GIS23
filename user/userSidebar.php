@@ -27,7 +27,7 @@
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Add Categories</span>
+                        <span class="title">Book Drivers</span>
                     </a>
                 </li>
 
@@ -36,12 +36,12 @@
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Add Products</span>
+                        <span class="title">Hire Guides</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="product.php">
+                    <a href="index.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
@@ -50,11 +50,11 @@
                 </li>
 
                 <li>
-                    <a href="../admin/ad.php">
+                    <a href="../blog/dataBlog.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
-                        <span class="title">Post Advertisements</span>
+                        <span class="title">Blogs</span>
                     </a>
                 </li>
 
@@ -70,7 +70,7 @@
 
 
                 <li>
-                    <a href="#">
+                    <a href="orders.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>

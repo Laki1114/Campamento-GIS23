@@ -21,7 +21,7 @@
   }
 
 .upper-section{
-  background-color: rgb(196, 240, 121);
+  background-color: rgb(12, 143, 64);
   margin-top:10px;
 }
 
@@ -37,13 +37,13 @@ table {
 }
 
 /* =========================wrapping profile pic and table=====================*/
-.container {
-  display: flex; /* Use flexbox to arrange elements horizontally */
-  align-items: center; /* Vertically center-align elements */
+/*.container {
+  display: flex; /* Use flexbox to arrange elements horizontally 
+  align-items: center; /* Vertically center-align elements 
   margin-left: 70px;
   margin-top:0px;
 
-}
+}*/
 
 .profile {
   flex: 1; /* Let the profile picture take 1/4 of the available space */
@@ -58,7 +58,7 @@ table {
 
 /* =========================edit button on pic=====================*/
 
-.container-image {
+/*.container-image {
   position: relative;
   width: 100%;
   max-width: 300px;
@@ -91,7 +91,7 @@ table {
 .container-image .btn:hover {
   background-color: white;
 }
-
+*/
 /*here starts the styling for purchses table*/
 table.purchases {
   border-collapse: collapse;
