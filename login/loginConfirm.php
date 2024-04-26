@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
         header("Location: ../login/login.php");
         exit;
     }
-} else {
+ else {
     // Redirect to login page if form is not submitted
     header("Location: ../login/login.php");
     exit;}
@@ -166,7 +166,7 @@ if($result->num_rows > 0)
 	}
 }
 
-
+}
 
 
 
