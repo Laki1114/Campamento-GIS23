@@ -82,19 +82,19 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo '<div class="column">';
-            echo '<img src="../glamping manager/uploads/'. $row["camp_site_image"] .'" style="width:100%">';
-            echo '<div class="text-block">';
-            echo '<h2>' . $row["camp_site_name"] . '</h2>';
-            echo '</div>';
-            echo '</div>';
-        }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
+      // Output data of each row
+      while($row = $result->fetch_assoc()) {
+          echo '<div class="column">';
+          echo '<img src="../glamping manager/uploads/'. $row["camp_site_image"] .'" style="width:100%">';
+          echo '<div class="text-block">';
+          echo '<h2>' . $row["camp_site_name"] . '</h2>';
+          echo '</div>';
+          echo '</div>';
+      }
+  } else {
+      echo "0 results";
+  }
+  $conn->close();
     ?>
   </div> 
   <a href="../camping sites/camping_sites.php"><button class="button" >See More....</button></a>
