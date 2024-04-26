@@ -1,6 +1,21 @@
 <?php
 session_start();
-?><!DOCTYPE html>
+include('../database/linklinkz.php'); 
+$_SESSION['customerid']='16';
+?>
+
+<?php
+
+$message =  '';
+
+
+?>
+
+
+
+
+
+<!DOCTYPE html>
 <html>
 <head>
 	
@@ -58,21 +73,30 @@ $thumb  = $row['thumb'];
                 <div class="row ">
                     <div class="col-md-12 category">
                         <?php
-                        $sql2 = "SELECT * FROM Category where cat_id = '$cat_id'";
+                        $sql2 = "SELECT * FROM category where cat_id = '$cat_id'";
                         $result2 = mysqli_query($conn, $sql2); 
-                        $row2 = mysqli_fetch_assoc($result2)
+                        $row2 = mysqli_fetch_assoc($result2);
                         ?> 
                         Categories - <a href="index.php?id=<?php echo $cat_id ?>"><?php echo $row2["cat_name"] ?></a>   
                     </div>
                 </div>
-                <a   href='addToCart.php?id=<?php echo  $product_id ?>' >  
-                <!-- <button type='submit' class="btn">
-                  <i class="fa fa-cart-arrow-down"></i> Add To Cart
+                <a href='wishlist.php?id=<?php echo $product_id ?>'>
+    <input type="button" value="Add To WishList" class="btn">
+</a>
+
+                <!--<button type='submit' class="btn">
+                  <i class="fa fa-cart-arrow-down"></i> Wish list
                 </button></a> -->
             </div>
         </div>
     </div>
     <br><br><br>
+
+  
+
+                                    
+
+
     <!--RELATED PRODUCTS STARTS HERE-->
     <div class="card">
 <div class="card-header">
@@ -124,3 +148,119 @@ Related Products
 }
 
 ?>
+<!--change comes here-->
+<div class="card">
+<div class="card-header">
+Reviews
+
+</div>
+
+
+
+<div id="Paris" class="tabcontent bg-white">
+ 
+   
+    
+							
+							 
+									<h3> Reviews for</h3>
+									<ul class="comment-list">
+
+<?php
+$sql_allReview = "SELECT * FROM reviews JOIN user_data ON user_data.userid = reviews.uid WHERE pid='$product_id'";
+
+                                    $result_allReview = mysqli_query($conn, $sql_allReview);
+                                
+                                 if (mysqli_num_rows($result_allReview) > 0) {
+                                     
+                                    while($row_nameEmail = mysqli_fetch_assoc($result_allReview)) {
+?>
+	<li> 
+											<div class="comment-meta">
+											    	<a href="#">   <?php echo $row_nameEmail['firstname'] ?></a>
+												<span>
+												    <em><?php echo $row_nameEmail['timestamp'] ?></em>
+                                                </span>
+<p><?php echo $row_nameEmail['review'] ?></p>
+                                            </div> 
+                                        </li>
+  
+
+<?php
+}
+                                    }
+?>
+
+
+								 
+									
+                                  
+								 
+									</ul>
+								 
+                                   
+                                    
+
+<?php
+ $proid = $_GET['id'];
+ if(isset($_SESSION['customerid'])){
+     $c_id = $_SESSION['customerid']; 
+$sql_count = "SELECT * FROM reviews where pid='$proid' AND uid='$c_id '";
+$result_count = mysqli_query($conn, $sql_count);
+if (mysqli_num_rows($result_count) > 0) { 
+
+echo '<h3 class="text-center">You Already Submitted Review for this product</h3>' ;
+}else{
+?>
+
+
+<h3>Add a review</h3>
+									<form id="form" class="review-form" action="submit-review.php" method="post">
+                                 <?php
+                                    
+                                    $name  ='' ;
+                                    $email  ='' ;
+
+                                 if(isset($_SESSION['customerid'])){
+                                    $c_id = $_SESSION['customerid']; 
+                                    $sql_nameEmail = "SELECT user.Email, user_data.firstname, user_data.lastname FROM user JOIN user_data ON user.UserID=user_data.userid AND user_data.userid = '$c_id'";
+                                    $result_nameEmail = mysqli_query($conn, $sql_nameEmail);
+                                
+                                 if (mysqli_num_rows($result_nameEmail) > 0) { 
+                                     $row_nameEmail = mysqli_fetch_assoc($result_nameEmail);
+                                      $name = $row_nameEmail['firstname'] ." ". $row_nameEmail['lastname']  ;
+                                      $email = $row_nameEmail['Email'];
+                                    }
+                                }
+                                 
+                                 ?>
+										<div class="row">
+											<div class="col-md-6 space20">
+												<input name="name" value='<?php echo  $name ?>' class="form-control" placeholder="Name *"  required="" type="text" <?php if($name != ''){echo 'disabled';} else{echo " ";}    ?> >
+											</div>
+											<div class="col-md-6 space20">
+												<input name="email" value='<?php echo  $email ?>' class="form-control" placeholder="Email *" required="" type="text"  <?php if($email != ''){echo 'disabled';} else{echo " ";}  ?> >
+											</div>
+										</div>
+								 
+										<div class="space20 mt-2">
+											<textarea name="review" id="text" class="input-md form-control" rows="6" placeholder="Add review.." maxlength="400"></textarea>
+										</div>
+                                        <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+    <!-- Add a hidden input field to pass the product ID -->
+    <button type="submit" name="submit" class="btn btn-primary mt-2">
+        Submit Review
+    </button>
+                                        <?php echo $message  ?>
+                                    </form>
+                                    <?php
+                                    }
+                                }
+                                    
+                                    ?>
+								 
+								</div>
+							 
+						 
+</div>
+                            </div>

@@ -162,7 +162,7 @@ body {
 
   <div class="leftcolumn">
     <div class="card-row"  id="cs">
-      <h1 style="color:white;">Camping Sites</h1>
+      <h1 style="color:white;">Camping Sites</h1>&nbsp;
      
         <?php   
          
@@ -211,7 +211,7 @@ body {
     <p></p>
     <!-- second row atarts here-->
     <div class="card-row" id="gs">
-      <h1 style="color:white;">Glamping Sites</h1>
+      <h1 style="color:white;">Glamping Sites</h1>&nbsp;
       <?php   
          
          $sql_related = "SELECT * FROM blog where cat_id = '2'  order by rand() limit 3";
@@ -242,7 +242,7 @@ body {
     <p></p>
     <!--third row starts here-->
     <div class="card-row" id="ts">
-      <h1 style="color:white;">Travel  Sites</h1>
+      <h1 style="color:white;">Travel  Sites   </h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <?php   
          
          $sql_related = "SELECT * FROM blog where cat_id = '3'  order by rand() limit 3";

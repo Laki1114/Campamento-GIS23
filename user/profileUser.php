@@ -4,6 +4,8 @@
 session_start();
 include('../database/linklinkz.php');
 
+if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
+  header('location:../login/login.php');}
 if(isset($_SESSION['customerid'])){
  $UID= $_SESSION['customerid']; }
 

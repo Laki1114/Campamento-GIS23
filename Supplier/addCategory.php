@@ -7,7 +7,7 @@
 
 <?php
 
-//session_start();
+session_start();
 //include('../database/linklinkz.php');
 //if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
  //header('location:login.php');
@@ -42,9 +42,16 @@ if (mysqli_query($conn, $sql)) {
         <link rel="stylesheet" type="text/css" href="../css/user/form.css"/> 
     </head>
     <body>
-    
+    <div class="container2">
+    <div class="navigation">
+            
+            <?php include 'SupplierSidebar.php'; ?>
+                    
+            </div>
 
-    
+            <div class="main">
+           
+    <br><br>
 <div class="container">
 
 <div class="card">
@@ -65,7 +72,7 @@ if (mysqli_query($conn, $sql)) {
 </div>
 </div>
 
-
+<br><br>
 
 <!--next container-->
 
@@ -90,7 +97,8 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
         </div>
     </div>
 </div>
-
+</div>
+</div>
 
 </body>
 

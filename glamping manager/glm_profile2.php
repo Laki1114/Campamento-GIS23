@@ -4,14 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Profile</title>
-    <link rel="stylesheet" href="glm_css_files/D_U.css"> 
+    <style>
+        /* CSS styles for the Glamping Sites list */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .glamping-container {
+            list-style-type: none;
+            margin: 20px;
+            padding: 0;
+            border-collapse: collapse;
+            width: 80%; /* Adjust as needed */
+        }
+
+        .glamping-container li {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .glamping-container li:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .glamping-container li:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
-   
-    
-
-    
-    <ul class="glamping-container"> <!-- Apply the "glamping-container" class to the UL element -->
+    <ul class="glamping-container">
         <?php
         // PHP code to generate Glamping Sites list
         // Connect to the database
@@ -32,11 +57,11 @@
                 // Display glamping site name and provide delete/update options
                 echo "<li>";
                 echo "Site Name: " . $row['site_name'];
-                
+                // Add delete/update options here if needed
                 echo "</li>";
             }
         } else {
-            echo "No glamping sites found.";
+            echo "<li>No glamping sites found.</li>";
         }
 
         // Close database connection
