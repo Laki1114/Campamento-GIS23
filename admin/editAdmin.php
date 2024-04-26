@@ -96,17 +96,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    <td width="300px">
     
    <label for="email"><b>Email</b></label><br>
-   <input type="text" placeholder="Enter Email" name="email" id="email" value="<?php  echo $email ?>" required disabled><br>
+   <input type="text" placeholder="Enter Email" name="email" id="email" value="<?php  echo $email ?>" readonly ><br>
 
 
   
-    <label for="gender"><b>Gender</b></label><br>
-     <select id="gender" name="gender" required>
-     <option value="" disabled selected>Select Gender</option>
-     <option  <?php if($gender == "male") echo "SELECTED"; ?> >Male</option>
-    <option  <?php if($gender == "female") echo "SELECTED"; ?> >Female</option>
-      <option  <?php if($gender == "other") echo "SELECTED"; ?>>Other</option>
-    </select>
+   <label for="gender"><b>Gender</b></label><br>
+    <input type="text" placeholder="Gender" name="gender" id="gender" value="<?php echo $gender ?>" readonly><br>
+                
     
 
      
