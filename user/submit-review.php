@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../database/linklinkz.php');
-$_SESSION['customerid']='16';
+//$_SESSION['customerid']='16';
 $message = '';
 
 if(isset($_POST['submit'])){

@@ -43,10 +43,11 @@ if ($result->num_rows > 0) {
             // Set customer email and customer ID in sessions
             $_SESSION['customer'] = $row["Email"];
             $_SESSION['customerid'] = $row['UserId'];
-            echo $_SESSION['customer'];
+            //echo $_SESSION['customer'];
             // Redirect to the target page with both IDs in the URL parameter
             //header("Location: ../user/profileUSer.php?user=" . $_SESSION['customer'] . "&userid=" . $_SESSION['customerid']);
-            header("Location: ../user/checkout.php");
+            //header("Location: ../user/checkout.php");
+            header("Location: ../user/profileUser.php");
             exit;
         } else {
             $_SESSION['error'] = "deactivated";
