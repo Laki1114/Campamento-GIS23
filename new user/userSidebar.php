@@ -77,6 +77,14 @@
                         <span class="title">Orders</span>
                     </a>
                 </li>
+                <li>
+                    <a href="show-wishlist.php">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">My wish list</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="../login/logout.php">

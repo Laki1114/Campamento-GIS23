@@ -25,7 +25,7 @@ body{
      box-shadow: 2px 2px 20px black;
      border-radius: 5px; 
      margin: 2.3%;
-     height:430px;
+     height:500px;
     }
 
 .image img{
@@ -56,10 +56,11 @@ h1{
 .des{
   padding: 3px;
   text-align: center;
-  height:150px;
+  height:300px;
   padding-top: 10px;
-        border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  overflow:hidden;
 }
 button{
   margin-top: 5px;
@@ -123,7 +124,7 @@ button:hover{
                 </div>
                 <div class="des">
                     <p><?php echo $row['site_description']; ?></p>
-                    <a href="../glamping manager/booking_process.php"><button>Book Now...</button></a>
+                    <a href="../glamping manager/check_in.php"><button>Book Now...</button></a>
                     <a href="../glamping manager/trending_sites.php"><button>Read More...</button></a>
                 </div>
             </div>

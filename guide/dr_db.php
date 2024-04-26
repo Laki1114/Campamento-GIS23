@@ -11,9 +11,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title> Admin Dashboard </title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="../css/Guide/admin.css">
+    <link rel="stylesheet" href="../css/Driver/admin.css">
     <style>
 
 .calendar {
@@ -200,161 +201,21 @@
 
             <!-- ================ Order Details List ================= -->
             <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Availability Calendar</h2><br>
-                        <div class="calendar">
-    <div class="calendar-header">
-        <button id="prevMonthBtn">&lt;</button>
-        <h2 id="currentMonth">Month Year</h2>
-        <button id="nextMonthBtn">&gt;</button>
-    </div>
-    <div class="calendar-grid" id="calendarGrid"></div>
+               
 
-    <div id="availabilityForm" style="display: none;">
-        <label for="availabilityInput">Update Availability:</label>
-        <select id="availabilityInput">
-            <option value="available">Available</option>
-            <option value="unavailable">Unavailable</option>
-        </select>
-        <button id="updateAvailabilityBtn">Update</button>
-    </div>
-</div>
-<script>
-   
-document.addEventListener('DOMContentLoaded', function () {
-    const calendarGrid = document.getElementById('calendarGrid');
-    const prevMonthBtn = document.getElementById('prevMonthBtn');
-    const nextMonthBtn = document.getElementById('nextMonthBtn');
-    const currentMonthElement = document.getElementById('currentMonth');
-    const availabilityForm = document.getElementById('availabilityForm');
-    const availabilityInput = document.getElementById('availabilityInput');
-    const updateAvailabilityBtn = document.getElementById('updateAvailabilityBtn');
 
-    const today = new Date();
-    let currentMonth = today.getMonth();
-    let currentYear = today.getFullYear();
-    const availabilityStatus = []; 
 
-    renderCalendar(currentYear, currentMonth);
-
-    prevMonthBtn.addEventListener('click', function () {
-        currentMonth--;
-        if (currentMonth < 0) {
-            currentMonth = 11;
-            currentYear--;
-        }
-        renderCalendar(currentYear, currentMonth);
-    });
-
-    nextMonthBtn.addEventListener('click', function () {
-        currentMonth++;
-        if (currentMonth > 11) {
-            currentMonth = 0;
-            currentYear++;
-        }
-        renderCalendar(currentYear, currentMonth);
-    });
-    updateAvailabilityBtn.addEventListener('click', function () {
-    const selectedDay = document.querySelector('.selected');
-    const selectedDate = selectedDay ? selectedDay.textContent : null;
-
-    if (selectedDate) {
-        const selectedOption = availabilityInput.value;
-        const dayIndex = parseInt(selectedDate, 10);
-
-        // Update the availability status in the array
-        availabilityStatus[dayIndex] = selectedOption;
-
-        // Update the UI based on the selected availability
-        if (selectedOption === 'unavailable') {
-            selectedDay.classList.add('unavailable');
-        } else {
-            selectedDay.classList.remove('unavailable');
-        }
-
-        alert(`Updating availability for ${selectedDate} to ${selectedOption}`);
-    } else {
-        alert('Please select a day before updating availability.');
-    }
-});
-
-    function renderCalendar(year, month) {
-        calendarGrid.innerHTML = '';
-        const firstDay = new Date(year, month, 1);
-        const lastDay = new Date(year, month + 1, 0);
-        const daysInMonth = lastDay.getDate();
-
-        currentMonthElement.textContent = `${getMonthName(month)} ${year}`;
-
-        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-        for (let i = 0; i < dayNames.length; i++) {
-            const dayNameElement = createDayElement(dayNames[i], 'day-name');
-            calendarGrid.appendChild(dayNameElement);
-        }
-
-        for (let i = 0; i < firstDay.getDay(); i++) {
-            const emptyDay = createDayElement('', 'empty');
-            calendarGrid.appendChild(emptyDay);
-        }
-
-        for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(year, month, day);
-        const dayElement = createDayElement(day, 'normal');
-
-        // Set the default availability for each day to 'available'
-        availabilityStatus[day] = 'available';
-
-        if (date.toDateString() === today.toDateString()) {
-            dayElement.classList.add('today');
-        }
-
-        // Disable click event for days before today
-        if (date < today) {
-            dayElement.classList.add('disabled');
-        } else {
-            dayElement.addEventListener('click', function () {
-                const selectedDay = document.querySelector('.selected');
-                if (selectedDay) {
-                    selectedDay.classList.remove('selected');
-                }
-                this.classList.add('selected');
-                availabilityForm.style.display = 'block';
-            });
-        }
-
-        calendarGrid.appendChild(dayElement);
-    }
-
-    }
-
-    function createDayElement(content, type) {
-        const dayElement = document.createElement('div');
-        dayElement.classList.add('calendar-day', type);
-        dayElement.textContent = content;
-
-        return dayElement;
-    }
-
-    function getMonthName(month) {
-        const monthNames = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-        return monthNames[month];
-    }
-});
-
-</script>
-           
 
                 <!-- ================= New Customers ================ -->
    
-            </div>
-        </div>
+        
+       
+       
     </div>
-
+<div>
+<?php include 'chart.php'; ?>
+<h4>Monthly Report: </h4><a href="monthly_report.php" target="_blank">Download Monthly Report</a><br><br>
+</div>
 
 
     <!-- ====== ionicons ======= -->

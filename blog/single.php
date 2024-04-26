@@ -178,6 +178,8 @@ body {
     
 
 </div>
+<br><br>
+
 </td>
 <!--2coulmn starts here-->
 <td>
@@ -250,6 +252,7 @@ body {
   </div>
   
 </div>
+
 <?php  
   //require("comment.php"); 
   ?>

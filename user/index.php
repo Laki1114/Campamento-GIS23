@@ -17,7 +17,7 @@ unset($_SESSION['error']);
 </head>
 <body>
 <?php 
-include('../home/headerIn.php');
+include('headerIn.php');
 
 ?>
 <br><br><br><br><br>
@@ -27,7 +27,7 @@ include('check.php');
 
 ?>
 <br><br><br>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <?php 
 
 
@@ -56,13 +56,14 @@ $result = mysqli_query($conn, $sql);
 
                     <h2 class="title"><?php echo  $row["product_name"] ?></h4>
 
-                   <font size=2px> <p><?php echo implode(' ', array_slice(explode(' ', $row["product_description"]), 0, 10)); ?>...</p></font>
+                      <font size=2px> <p><?php echo implode(' ', array_slice(explode(' ', $row["product_description"]), 0, 10)); ?>...</p></font>
 
-                  <div class="price">  <h2> <b>Rs <?php echo  $row["price"] ?>.00 </b></h2></div>
+                   &nbsp;&nbsp;&nbsp;  <div class="price">  <h2> <b>Rs <?php echo  $row["price"] ?>.00 </b></h2></div>
                     
                     <hr>
                   
-                    <a   href='addToCart.php?id=<?php echo  $row["product_id"] ?>'><button class="buttonz">Add To Cart 
+             &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    
+               <a   href='addToCart.php?id=<?php echo  $row["product_id"] ?>'><button class="buttonz">Add To Cart 
                         </button> </a>
                   
                         <a   href='single.php?id=<?php echo  $row["product_id"] ?>'><button class="buttonz">  Details

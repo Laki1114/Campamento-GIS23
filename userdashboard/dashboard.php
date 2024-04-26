@@ -64,54 +64,42 @@
   </seciton>
 
 <hr>
-  <section>
-  <div>
-    <h1>Camping sites</h1>
-    <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
-  </div>
-  
-  <div class="row"> 
-  <div class="column" >
-  <img src="../resource/madolsima.jpg" style="width:100%">
-  <div class="text-block">
-    <h2>Madolsima</h2>
-  </div>
-</div>
-  
-   
-  <div class="column2"> 
-  <div class="row" >
-  <img src="../resource/narangala.jpg" style="width:100%">
-  <div class="text-block">
-    <h2>Narangala</h2>
-  </div>
-</div>
-  <div class="row" >
-  <img src="../resource/home.png" style="width:100%">
-  <div class="text-block">
-    <h2>Nature</h2>
-  </div>
-  </div></div>
+<div class="row"> 
+    <?php
+    // Database connection
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "campamento";
 
-  <div class="column2"> 
-  <div class="row" >
-  <img src="../resource/namunukula.jpg" style="width:100%">
-  <div class="text-block">
-    <h2>Namunukula</h2>
-  </div>
-</div>
-  <div class="row" >
-  <img src="../resource/home.png" style="width:100%">
-  <div class="text-block">
-    <h2>Nature</h2>
-  </div>
-  </div></div>
-  
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM camping_sites";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo '<div class="column">';
+            echo '<img src="../glamping manager/uploads/'. $row["camp_site_image"] .'" style="width:100%">';
+            echo '<div class="text-block">';
+            echo '<h2>' . $row["camp_site_name"] . '</h2>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
   </div> 
-  
-    <a href="../camping sites/camping_sites.php"><button class="button" > See More....</button></a>
-  </div>
-  </section>
+  <a href="../camping sites/camping_sites.php"><button class="button" >See More....</button></a>
+</section>
+
 <hr>
 
   <seciton>

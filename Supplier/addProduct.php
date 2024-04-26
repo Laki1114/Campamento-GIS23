@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ('../database/linklinkz.php');
-
+//$supID=$_SESSION['SupplierId'];
 //include ('nav.php');
 //include('sidebar.php');
 
@@ -36,7 +36,7 @@ if(isset($_POST['submit'])) {
             $destination = $upload_dir . $new_file_name;
 
             if(move_uploaded_file($file_tmp, $destination)) {
-                $sql2 = "INSERT INTO products (product_name, cat_id, price, product_description, thumb,Status) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription', '$destination','1')";
+                $sql2 = "INSERT INTO products (product_name, cat_id, price, product_description, thumb,Status,SupplierID) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription', '$destination','1','$supID')";
 
                 if(mysqli_query($conn, $sql2)) {
                     $message = 'Product added successfully with image.';
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
             $message = 'Invalid file or file size too large.';
         }
     } else {
-        $sql = "INSERT INTO products (product_name, cat_id, price, product_description,Status) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription','1')";
+        $sql = "INSERT INTO products (product_name, cat_id, price, product_description,Status,SupplierID) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription','1','$supID')";
 
         if(mysqli_query($conn, $sql)) {
             $message = 'Product added successfully.';

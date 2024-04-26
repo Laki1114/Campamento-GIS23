@@ -1,9 +1,9 @@
 <?php
-// login.php - Login script
-
-include 'db.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include 'db.php';
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($admin_result->num_rows > 0) {
         // Admin login successful
-        session_start();
         $_SESSION['admin_email'] = $email;
         header("location: admin_chat.php");
     } else {
@@ -23,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($user_result->num_rows > 0) {
             // User login successful
-            session_start();
             $_SESSION['user_email'] = $email;
             header("location: user_chat.php");
         } else {
@@ -43,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h2>Login</h2>
-    <form method="POST" >
+    <form method="POST">
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" required><br><br>
         

@@ -1,4 +1,4 @@
-<?php  
+<?php
 session_start();
 //include('inc/header.php'); 
  //include('inc/nav.php');  
@@ -63,15 +63,9 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 
- ?>
 
 
-
- 
- 
-
-<div class="container text-white">
-
+?> 
 <?php
 // echo "<pre>";
 // print_r($_SESSION['cart']);
@@ -94,15 +88,32 @@ if(isset($_SESSION['cart'])){
 
 
 ?>
- <head>
+
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Page</title>
-    
-    <link rel="stylesheet" type="text/css" href="../css/User/cancel-order.css"> <!-- Link to the external stylesheet -->
+    <title> cancel-order.php </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/User/cancel-order.css"/> 
 </head>
 
-    <section id="content">
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+            <div class="navigation">
+            
+            <?php include 'userSidebar.php'; ?>
+                    
+            </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+        <section id="content">
 		<div class="content-blog">
 					<div class="page_header text-center  py-5">
 						<h2>Cancel Order</h2>
@@ -110,7 +121,7 @@ if(isset($_SESSION['cart'])){
 					</div>
 <form method='post'>
 <?php echo $message ?>
-<div class="container ">
+<div>
 			<div class="row">
 				<div class="offset-md-2 col-md-8">
 					<div class="billing-details">
@@ -222,7 +233,7 @@ if(isset($_SESSION['cart'])){
 						 
 							<div class="clearfix space20"></div>
 							<label>Reason</label>
- 						 <textarea class="form-control" name='reason' id="" cols="30" rows="10"></textarea>
+ 						 <textarea class="form-control" name='reason' id="" cols="20" rows="5"></textarea>
 					 
 					 
 					</div>
@@ -255,6 +266,18 @@ if(isset($_SESSION['cart'])){
 
 
 
-<?php //include('inc/footer.php');  ?>
 
 
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <!-- ====== ionicons ======= -->
+</body>
+
+</html>

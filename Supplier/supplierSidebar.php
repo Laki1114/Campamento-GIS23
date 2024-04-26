@@ -50,11 +50,11 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                <a href="../admin/ad.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
-                        <span class="title">Notifications</span>
+                        <span class="title">Post Advertisement</span>
                     </a>
                 </li>
 
@@ -70,7 +70,7 @@
 
 
                 <li>
-                    <a href="#">
+                    <a href="orders.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>

@@ -4,9 +4,11 @@ require 'config.php';
 
 // Initialize an empty array to store unavailable dates
 $unavailableDates = [];
+$id = $_GET['id'];
+// Assuming you have a table named 'unavailable_dates' with a column 'date'
 
 // Assuming you have a table named 'unavailable_dates' with a column 'date'
-$sql = "SELECT date FROM driver_availability";
+$sql = "SELECT date FROM driver_availability WHERE driver_id='$id' ";
 
 $result = mysqli_query($con, $sql);
 

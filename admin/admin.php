@@ -1,4 +1,19 @@
-<?php  ?>
+<?php
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION['email'])) {
+    header("Location: ../login/login.php"); // Redirect to login page
+    exit();
+}
+
+
+$adminData = array(
+    'picture' => 'pic/customer02.jpg', // Placeholder for the profile picture path
+); // Placeholder for the profile picture path
+?>
+
+
 <html lang="en">
 
 <head>
@@ -41,7 +56,11 @@
                 </div>
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                <?php if (isset($adminData['picture']) && !empty($adminData['picture'])) : ?>
+                        <img src="<?php echo $adminData['picture']; ?>" alt="profile pic" class="profile-picture">
+                    <?php else : ?>
+                        <span>Image not found</span>
+                    <?php endif; ?>
                 </div>
             </div>
 

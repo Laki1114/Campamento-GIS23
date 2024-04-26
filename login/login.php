@@ -1,27 +1,8 @@
 <?php
 session_start();
-$error_message = "";
 
-// Check if error message is set in session
-if (isset($_SESSION['error'])) {
-    switch ($_SESSION['error']) {
-        case 'deactivated':
-            $error_message = "Your account is deactivated. Please contact support.";
-            break;
-        case 'password':
-            $error_message = "Invalid password.";
-            break;
-        case 'not_registered':
-            $error_message = "Email is not registered.";
-            break;
-        default:
-            $error_message = "An unknown error occurred.";
-            break;
-    }
-    // Unset the error session variable after reading it
-    //unset($_SESSION['error']);
-}
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -35,23 +16,54 @@ if (isset($_SESSION['error'])) {
   margin-top: 5px;
 }
 </style>
+
+<script>
+// Function to validate email format
+function validateEmail(email) {
+    // Regular expression for email validation
+    var regex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    return regex.test(email);
+}
+
+// Function to handle form submission
+function validateForm() {
+    var emailInput = document.getElementById("email");
+    var email = emailInput.value;
+
+    // Check if email is empty
+    if (email.trim() === "") {
+        alert("Email is required");
+        emailInput.focus();
+        return false;
+    }
+
+    // Check if email format is valid
+    if (!validateEmail(email)) {
+        alert("Invalid email format. Please enter an email in the format youremail@gmail.com");
+        emailInput.focus();
+        return false;
+    }
+
+    // Form is valid, proceed with submission
+    return true;
+}
+</script>
+
 </head>
 <body>
 
 
 <div class="bg-img">
-  <form action="loginConfirm.php" class="container" method="post">
+  <form action="loginConfirm.php" class="container" method="post" onsubmit="return validateForm()">
     <h1>Login to your Account</h1> <br>
-    <?php
-    // Display the error message in the HTML
-    echo "<div class='error-message'>" . $error_message . "</div>";
-?>
+ 
     <label for="email"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="email" required>
+    <input type="text" id="email" placeholder="Enter Username" name="email" required >
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
+    
     <input type="submit" name="submit" value="Login"> <br>
 
     <label style="align:center;">

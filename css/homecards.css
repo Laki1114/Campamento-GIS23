@@ -18,6 +18,7 @@
         border-radius: 5px; 
         margin: 2.3%;
         
+        
        }
    
    .image img{
@@ -53,6 +54,7 @@
      padding-top: 10px;
            border-bottom-right-radius: 5px;
      border-bottom-left-radius: 5px;
+     overflow:hidden;
    }
    button{
      margin-top: 40px;
