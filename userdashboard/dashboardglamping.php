@@ -25,7 +25,7 @@ body{
      box-shadow: 2px 2px 20px black;
      border-radius: 5px; 
      margin: 2.3%;
-     height:430px;
+     height:500px;
     }
 
 .image img{
@@ -56,9 +56,9 @@ h1{
 .des{
   padding: 3px;
   text-align: center;
-  height:150px;
+  height:300px;
   padding-top: 10px;
-        border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   overflow:hidden;
 }
