@@ -1,11 +1,11 @@
 <?php
-session_start();
 
+
+include('../database/linklinkz.php');
 
 // Check if the form is submitted
 if (isset($_POST['submit'])) {
     // Include database connection
-    include('../database/linklinkz.php');
 
     // Get user inputs
     $email = $_POST["email"];
@@ -27,28 +27,9 @@ if (isset($_POST['submit'])) {
                 // Redirect to admin.php
                 header("Location: ../admin/admin.php");
                 exit;
-            } else {
-                // Admin account is deactivated
-                $_SESSION['error'] = "deactivated";
-                header("Location: ../login/login.php");
-                exit;
-            }
-        } else {
-            // Incorrect password
-            $_SESSION['error'] = "password";
-            header("Location: ../login/login.php");
-            exit;
-        }
-    } else {
-        // Admin does not exist
-        $_SESSION['error'] = "email";
-        header("Location: ../login/login.php");
-        exit;
-    }}else {
-    // Redirect to login page if form is not submitted
-    header("Location: ../login/login.php");
-    exit;
-}
+            } 
+        } 
+    } 
 
     
 
@@ -167,7 +148,7 @@ if($result->num_rows > 0)
 }
 
 
-
+}
 
 
 
