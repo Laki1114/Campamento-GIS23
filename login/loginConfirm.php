@@ -48,7 +48,8 @@ if (isset($_POST['submit'])) {
 } else {
     // Redirect to login page if form is not submitted
     header("Location: ../login/login.php");
-    exit;}
+    exit;
+}
 
     
 
