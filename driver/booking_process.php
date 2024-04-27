@@ -1,7 +1,7 @@
 <?php
 // Include the database connection or any necessary configuration file
 include 'config.php';
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['customer'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
@@ -519,7 +519,7 @@ function renderCalendar(year, month, type, checkInDate) {
             <section id="shipping-section">
                 <div id="detailpage">
                 <?php
-    $em = $_SESSION['email'];
+    $em = $_SESSION['customer'];
     $sql = "SELECT FirstName, PhoneNo, Email FROM user WHERE Email = '$em'";
     $result = $con->query($sql);
 

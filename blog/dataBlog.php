@@ -1,8 +1,10 @@
 <?php
+session_start();
 
+$cid =$_SESSION['customerid'];
 include ('../database/linklinkz.php');
 
-$sql = "select * from blog";
+$sql = "SELECT * FROM blog WHERE userid='$cid'";
 $result = mysqli_query($linkz,$sql);
 
 ?> 
@@ -31,6 +33,7 @@ $result = mysqli_query($linkz,$sql);
 
         <!-- ========================= Main ==================== -->
         <div class="main">
+            <br><br>
         <?php
 
 for ($i = 0; $i < 20; $i++) {

@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['customer'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
@@ -302,7 +302,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
                 <div class="row"  style="display: none;" id="checkIn">
-                    <label class="float-left label-width">Check-In</label>
+                    <label class="float-left label-width">Start-Date</label>
                     <div class="input-container" id="calendarInputContainerCheckIn">
                         <input type="text" id="input-group-checkin" placeholder=" Check-In" name="checkInDate" required>
                         <button type="button" id="calendarIconCheckIn">&#128197;</button>
@@ -317,7 +317,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="row"  style="display: none;" id="checkInOut">
-                    <label class="float-left label-width">Check-Out</label>
+                    <label class="float-left label-width">End-Date</label>
                     <div class="input-container" id="calendarInputContainerCheckOut">
                         <input type="text" id="input-group-checkout" placeholder=" Check-Out" name="checkOutDate">
                         <button type="button" id="calendarIconCheckOut">&#128197;</button>

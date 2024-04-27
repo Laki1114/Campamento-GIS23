@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['customer'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
@@ -254,7 +254,7 @@ if (!isset($_SESSION['email'])) {
                 <h2>Check availability</h2><br>
                 <input type="hidden" name="id" value="<?php echo $driver_id; ?>">
                 <div class="row" id="checkIn">
-                    <label class="float-left label-width">Check-In</label>
+                    <label class="float-left label-width">Date:</label>
                     <div class="input-container" id="calendarInputContainerCheckIn">
                         <input type="text" id="input-group-checkin" placeholder=" Check-In" name="checkInDate" required>
                         <button type="button" id="calendarIconCheckIn">&#128197;</button>

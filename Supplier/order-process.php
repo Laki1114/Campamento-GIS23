@@ -145,7 +145,7 @@ if(isset($_POST['submit'])){
                         
 						</td>
 						<td>
-						<?php echo $row["totalprice"] ?>
+						<?php echo $row_ProName["price"] ?>
 						</td>
 						<td>
 						<?php echo $row["orderstatus"] ?>		

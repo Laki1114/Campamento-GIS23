@@ -31,11 +31,12 @@ include('check.php');
 <?php 
 
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM products WHERE Status = '1'";
 if(isset($_GET['id'])){
     $catID = $_GET['id'];
-    $sql .= " WHERE cat_id = '$catID'";
+    $sql .= " AND cat_id = '$catID'";
 }
+
 
 $result = mysqli_query($conn, $sql);
  

@@ -7,6 +7,12 @@ include ('../database/linklinkz.php');
 
 // Initialize the $message variable
 $message = '';
+$email =  $_SESSION['email'];
+$sql = "SELECT SupplierID FROM supplier WHERE Email = '$email'";//change Email='email' or Email='$email'
+$result = mysqli_query($linkz,$sql);
+while ($row = mysqli_fetch_assoc($result)){
+    $supID=$row["SupplierID"];}
+
 
 if(isset($_POST['submit'])) {
     $productname = $_POST['productname'];
