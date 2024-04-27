@@ -4,7 +4,7 @@ include ('../database/linklinkz.php');
 
 // Check if form is submitted
 if(isset($_POST['submit'])) {
-    $productname = $_POST['productname'];
+    
     $productdescription = $_POST['productdescription'];
     $productcategory = $_POST['productcategory'];
     $productprice = $_POST['productprice'];
@@ -26,10 +26,11 @@ if(isset($_POST['submit'])) {
 
             // Move uploaded file to destination
             if(move_uploaded_file($tmp_name, $filePath)) {
-                $sql2 = "UPDATE products SET product_name='$productname', product_description='$productdescription', cat_id='$productcategory', price='$productprice', thumb='$filePath' WHERE product_id='$product_id'";
+                $sql2 = "UPDATE products SET  product_description='$productdescription', cat_id='$productcategory', price='$productprice', thumb='$filePath' WHERE product_id='$product_id'";
                 $res = mysqli_query($conn, $sql2);
                 if($res) {
                     $message = 'Saved Successfully with image';
+                    header('location:product.php');
                 } else {
                     $message = "Failed to Create Product";
                     echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
@@ -42,9 +43,10 @@ if(isset($_POST['submit'])) {
         }
     } else {
         // If no image uploaded, update other product details
-        $sql_update = "UPDATE products SET product_name='$productname', product_description='$productdescription', cat_id='$productcategory', price='$productprice' WHERE product_id='$product_id'";
+        $sql_update = "UPDATE products SET  product_description='$productdescription', cat_id='$productcategory', price='$productprice' WHERE product_id='$product_id'";
         if (mysqli_query($conn, $sql_update)) {
             $message = 'Saved Successfully';
+            header('location:product.php');
         } else {
             echo "Error: " . $sql_update . "<br>" . mysqli_error($conn);
         }

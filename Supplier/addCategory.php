@@ -9,9 +9,9 @@
 
 session_start();
 //include('../database/linklinkz.php');
-//if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
- //header('location:login.php');
-//}
+if(!isset($_SESSION['email']) && empty($_SESSION['email']) ){
+ header('location:../login/login.php');
+}
 
 include ('../database/linklinkz.php');
 
@@ -23,7 +23,7 @@ $sql = "INSERT INTO Category (cat_name) VALUES ('$catName')";
 
 if (mysqli_query($conn, $sql)) {
   echo "New record created successfully";
-  header('location:categories.php');
+  header('location:addCategory.php');
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

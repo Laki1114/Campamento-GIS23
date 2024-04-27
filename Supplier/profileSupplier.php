@@ -35,7 +35,7 @@ include('../database/linklinkz.php');
     <title> Supplier Profile </title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" type="text/css" href="../css/user/profileUser.css">
+    <link rel="stylesheet" type="text/css" href="../css/User/profileUser.css">
 
 </head>
 

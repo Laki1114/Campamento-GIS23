@@ -31,7 +31,7 @@ include('check.php');
 <?php 
 
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM products WHERE Status='1'";
 if(isset($_GET['id'])){
     $catID = $_GET['id'];
     $sql .= " WHERE cat_id = '$catID'";

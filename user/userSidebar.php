@@ -41,7 +41,7 @@
                 </li>
 
                 <li>
-                    <a href="index.php">
+                    <a href="/CAMPAMENTO-GIS23/user/index.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
