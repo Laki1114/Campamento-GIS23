@@ -575,7 +575,7 @@ function renderCalendar(year, month, type, checkInDate) {
                     </form> 
                    
                     <div class="row button-row">
-                        <button type="button" onClick="showPrevious(this)">Previous</button>
+                        
                         <button type="submit" onclick="validateAndNext()">Next</button>
                     </div>
                 </div>
