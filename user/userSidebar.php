@@ -23,20 +23,20 @@
 
 
                 <li>
-                    <a href="dr_bookings.php">
+                    <a href="/CAMPAMENTO-GIS23/user/dr_bookings.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Book Drivers</span>
+                        <span class="title">Driver Bookings</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="gu_bookings.php">
+                    <a href="/CAMPAMENTO-GIS23/user/gu_bookings.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Hire Guides</span>
+                        <span class="title">Guide Bookings</span>
                     </a>
                 </li>
 
