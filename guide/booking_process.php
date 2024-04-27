@@ -554,10 +554,10 @@ function renderCalendar(year, month, type, checkInDate) {
 <?php } ?>
   
 
-    <label for="adult"><b>Number of Adults(13+)</b></label>
+    <label for="adult"><b>Number of Adults(Age: 13+)</b></label>
     <input type="text" placeholder="Adult" name="adult" id="adult" required><br><br>
 
-    <label for="children"><b>Number of children(6 to 12)</b></label>
+    <label for="children"><b>Number of children(Age: 6 to 12)</b></label>
     <input type="text" placeholder="Children" name="children" id="children" reuired><br><br>
 
     <label for="languagePreference"><b>Language preference (if applicable):</b></label>
