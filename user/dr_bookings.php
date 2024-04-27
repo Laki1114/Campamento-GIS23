@@ -285,7 +285,7 @@ textarea, select {
                                             }
 
                                             echo "</td>";
-                                            echo "<td><button class='view' onclick='showDetails( \"" . $ro['Vehicle_type'] . "\", \"" . $ro['Model'] . "\",\"" . $ro['AC'] . "\", \"" . $row['adults'] . "\", \"" . $row['children'] . "\", \"" . $row['info'] . "\", \"" . $row['created_at'] . "\", \"" . $row['booking_id'] . "\")'>View</button></td>";
+                                            echo "<td><button class='view' onclick='showDetails( \"" . $ro['Vehicle_type'] . "\", \"" . $ro['Model'] . "\",\"" . $row['amount'] . "\",\"" . $row['advancepay'] . "\",\"" . $ro['AC'] . "\", \"" . $row['adults'] . "\", \"" . $row['children'] . "\", \"" . $row['info'] . "\", \"" . $row['created_at'] . "\", \"" . $row['booking_id'] . "\")'>View</button></td>";
                                             if ($row['booking_status'] == 2) {  
                                                 echo "<button class='view' onclick='showReviewForm(". $row['booking_id'] .")'>Review</button>";
                                              }
@@ -309,20 +309,20 @@ textarea, select {
 </div>
                 </div>
 <script>
-    function showDetails(vehType, model, ac,  adults, children, info,on, booking_id) {
+    function showDetails(vehType, model, amount, advance, ac,  adults, children, info,on, booking_id) {
         var modal = document.getElementById("myModal");
         var bookingDetails = document.getElementById("bookingDetails");
         bookingDetails.innerHTML = `
             <p><b>More Details</b></p><br>
             <p><strong>Vehicle Type: </strong>${vehType}</p>
             <p><strong>Model: </strong>${model}</p>
-            <p><strong>Amount paid: </strong></p>
+            <p><strong>Amount paid: </strong>${advance}</p>
             <p><strong>Adults: </strong>${adults}</p>
             <p><strong>Children: </strong>${children}</p>
             <p><strong>A/C or Non A/C: </strong>${ac}</p>
             <p><strong>Booked on: </strong>${on}</p>
             <p><strong>More Information: </strong>${info}</p>
-            <p><strong>Total amount: </strong></p>
+            <p><strong>Total amount: </strong>${amount}</p>
         `;
         modal.style.display = "block";
         

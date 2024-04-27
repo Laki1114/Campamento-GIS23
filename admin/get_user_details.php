@@ -31,13 +31,22 @@ if (isset($_GET['UserId'])) {
         //echo json_encode($user); // For JSON response
         // Alternatively, you can output user details as HTML and style it accordingly
         echo '<h1>User Details</h1>';
-        echo '<p>User ID: ' . $user['UserId'] . '</p>';
-        echo '<p>First Name: ' . $user['FirstName'] . '</p>';
-        echo '<p>Last Name: ' . $user['LastName'] . '</p>';
-        echo '<p>Gender: ' . $user['Gender'] . '</p>';
-        echo '<p>Phone No: ' . $user['PhoneNo'] . '</p>';
-        echo '<p>NIC No: ' . $user['NICNo'] . '</p>';
-        echo '<p>Email Address: ' . $user['Email'] . '</p>';
+        
+        $images = explode(",", $user['thumb']);
+                foreach ($images as $image) {
+                    echo "<img src='../user/{$image}' alt='Image' width='200px' height='200px'>";
+
+
+                }
+
+
+        echo '<p><Strong>User ID:</Strong> ' . $user['UserId'] . '</p>';
+        echo '<p><Strong>First Name:</Strong> ' . $user['FirstName'] . '</p>';
+        echo '<p><Strong>Last Name:</Strong> ' . $user['LastName'] . '</p>';
+        echo '<p><Strong>Gender: </Strong>' . $user['Gender'] . '</p>';
+        echo '<p><Strong>Phone No: </Strong>' . $user['PhoneNo'] . '</p>';
+        echo '<p><Strong>NIC No: </Strong>' . $user['NICNo'] . '</p>';
+        echo '<p><Strong>Email Address:</Strong> ' . $user['Email'] . '</p>';
     } else {
         // If no user found with the provided userId
         echo 'User not found';
@@ -71,14 +80,15 @@ if (isset($_GET['glm_id'])) {
         //echo json_encode($user); // For JSON response
         // Alternatively, you can output user details as HTML and style it accordingly
         echo '<h1>Glamping site Manager Details</h1>';
-        echo '<p>Glamping site Manager ID: ' . $user['glm_id'] . '</p>';
-        echo '<p>First Name: ' . $user['first_name'] . '</p>';
-        echo '<p>Last Name: ' . $user['last_name'] . '</p>';
-        echo '<p>Gender: ' . $user['gender'] . '</p>';
-        echo '<p>Phone No: ' . $user['phone_number'] . '</p>';
-        echo '<p>NIC No: ' . $user['NIC'] . '</p>';
-        echo '<p>Email Address: ' . $user['email'] . '</p>';
-    } else {
+        echo '<p><Strong>Glamping site Manager ID:</Strong> ' . $user['glm_id'] . '</p>';
+        echo '<p><Strong>First Name: </Strong>' . $user['first_name'] . '</p>';
+        echo '<p><Strong>Last Name:</Strong> ' . $user['last_name'] . '</p>';
+        echo '<p><Strong>Gender: </Strong>' . $user['gender'] . '</p>';
+        echo '<p><Strong>Phone No: </Strong>' . $user['phone_number'] . '</p>';
+        echo '<p><Strong>NIC No:</Strong> ' . $user['NIC'] . '</p>';
+        echo '<p><Strong>Business Name:</Strong> ' . $user['business_name'] . '</p>';
+        echo '<p><Strong>Business Registration Number: </Strong>' . $user['business_registration_no'] . '</p>';
+        } else {
         // If no user found with the provided userId
         echo 'User not found';
     }
@@ -111,13 +121,36 @@ if (isset($_GET['id'])) {
         //echo json_encode($user); // For JSON response
         // Alternatively, you can output user details as HTML and style it accordingly
         echo '<h1>Guide Details</h1>';
-        echo '<p>Guide ID: ' . $user['id'] . '</p>';
-        echo '<p>First Name: ' . $user['firstname'] . '</p>';
-        echo '<p>Last Name: ' . $user['lastname'] . '</p>';
-        echo '<p>Gender: ' . $user['gender'] . '</p>';
-        echo '<p>Phone No: ' . $user['phone'] . '</p>';
-        echo '<p>NIC No: ' . $user['nic'] . '</p>';
-        echo '<p>Email Address: ' . $user['email'] . '</p>';
+
+        $images = explode(",", $user['picture']);
+                foreach ($images as $image) {
+                    echo "<img src='../guide/{$image}' alt='Image' width='200px' height='200px'>";
+
+
+                }
+
+
+        echo '<p><Strong>Guide ID:</Strong> ' . $user['id'] . '</p>';
+        echo '<p><Strong>First Name:</Strong> ' . $user['firstname'] . '</p>';
+        echo '<p><Strong>Last Name: </Strong>' . $user['lastname'] . '</p>';
+        echo '<p><Strong>Gender: </Strong>' . $user['gender'] . '</p>';
+        echo '<p><Strong>Phone No:</Strong> ' . $user['phone'] . '</p>';
+        echo '<p><Strong>NIC No:</Strong> ' . $user['nic'] . '</p>';
+        echo '<p><Strong>Email Address:</Strong> ' . $user['email'] . '</p>';
+        echo '<p><Strong>Address:</Strong> ' . $user['address'] . '</p>';
+        echo '<p><Strong>Experience: </Strong>' . $user['experience'] . '</p>';
+        echo '<p><Strong>Location: </Strong>' . $user['location'] . '</p>';
+        echo '<p><Strong>Qualification: </Strong>' . $user['qualification'] . '</p>';
+        echo '<p><Strong>Language:</Strong> ' . $user['language'] . '</p>';
+        echo '<p><Strong>Expertise : </Strong>' . $user['expertise'] . '</p>';
+        echo '<p><Strong>Tour Types:</Strong> ' . $user['tour_types'] . '</p>';
+
+        $images = explode(",", $user['license']);
+        foreach ($images as $image) {
+            echo "<img src='../guide/{$image}' alt='Image' width='300px' height='200px'>";
+
+        }
+
     } else {
         // If no user found with the provided userId
         echo 'User not found';
@@ -151,13 +184,36 @@ if (isset($_GET['d_id'])) {
         //echo json_encode($user); // For JSON response
         // Alternatively, you can output user details as HTML and style it accordingly
         echo '<h1>Driver Details</h1>';
-        echo '<p>Driver ID: ' . $user['d_id'] . '</p>';
-        echo '<p>First Name: ' . $user['firstname'] . '</p>';
-        echo '<p>Last Name: ' . $user['lastname'] . '</p>';
-        echo '<p>Gender: ' . $user['gender'] . '</p>';
-        echo '<p>Phone No: ' . $user['phone'] . '</p>';
-        echo '<p>NIC No: ' . $user['nic'] . '</p>';
-        echo '<p>Email Address: ' . $user['email'] . '</p>';
+
+        $images = explode(",", $user['picture']);
+        foreach ($images as $image) {
+            echo "<img src='../driver/{$image}' alt='Image' width='200px' height='200px'>";
+
+
+        }
+
+
+        echo '<p><Strong>Driver ID:</Strong> ' . $user['d_id'] . '</p>';
+        echo '<p><Strong>First Name: </Strong>' . $user['firstname'] . '</p>';
+        echo '<p><Strong>Last Name:</Strong> ' . $user['lastname'] . '</p>';
+        echo '<p><Strong>Gender: </Strong>' . $user['gender'] . '</p>';
+        echo '<p><Strong>Phone No: </Strong>' . $user['phone'] . '</p>';
+        echo '<p><Strong>NIC No: </Strong>' . $user['nic'] . '</p>';
+        echo '<p><Strong>Email Address: </Strong>' . $user['email'] . '</p>';
+        echo '<p><Strong>Vehicle Des: </Strong>' . $user['veh_des'] . '</p>';
+        echo '<p><Strong>Experience: </Strong>' . $user['experience'] . '</p>';
+        echo '<p><Strong>Location: </Strong>' . $user['location'] . '</p>';
+        echo '<p><Strong>Qualification: </Strong>' . $user['qualification'] . '</p>';
+        echo '<p><Strong>Vehicle Type:</Strong> ' . $user['Vehicle_type'] . '</p>';
+        echo '<p><Strong>Model : </Strong>' . $user['Model'] . '</p>';
+        echo '<p><Strong>AC or Non-AC:</Strong> ' . $user['AC'] . '</p>';
+        echo '<p><Strong>District:</Strong> ' . $user['district'] . '</p>';
+        
+        $images = explode(",", $user['license']);
+        foreach ($images as $image) {
+            echo "<img src='../driver/{$image}' alt='Image' width='300px' height='200px'>";
+
+        }
     } else {
         // If no user found with the provided userId
         echo 'User not found';
@@ -190,13 +246,21 @@ if (isset($_GET['SupplierId'])) {
         //echo json_encode($user); // For JSON response
         // Alternatively, you can output user details as HTML and style it accordingly
         echo '<h1>Tool Supplier Details</h1>';
-        echo '<p>Tool Supplier ID: ' . $user['SupplierId'] . '</p>';
-        echo '<p>First Name: ' . $user['FirstName'] . '</p>';
-        echo '<p>Last Name: ' . $user['LastName'] . '</p>';
-        echo '<p>Gender: ' . $user['Gender'] . '</p>';
-        echo '<p>Phone No: ' . $user['PhoneNo'] . '</p>';
-        echo '<p>NIC No: ' . $user['NICNo'] . '</p>';
-        echo '<p>Email Address: ' . $user['Email'] . '</p>';
+
+        $images = explode(",", $user['thumb']);
+        foreach ($images as $image) {
+            echo "<img src='../supplier/{$image}' alt='Image' width='200px' height='200px'>";
+
+
+        }
+
+        echo '<p><Strong>Tool Supplier ID:</Strong> ' . $user['SupplierId'] . '</p>';
+        echo '<p><Strong>First Name: </Strong>' . $user['FirstName'] . '</p>';
+        echo '<p><Strong>Last Name:</Strong> ' . $user['LastName'] . '</p>';
+        echo '<p><Strong>Gender:</Strong> ' . $user['Gender'] . '</p>';
+        echo '<p><Strong>Phone No:</Strong> ' . $user['PhoneNo'] . '</p>';
+        echo '<p><Strong>NIC No:</Strong> ' . $user['NICNo'] . '</p>';
+        echo '<p><Strong>Email Address:</Strong> ' . $user['Email'] . '</p>';
     } else {
         // If no user found with the provided userId
         echo 'User not found';

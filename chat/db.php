@@ -5,13 +5,11 @@ $password = "";
 $database = "campamento";
 
 $conn = new mysqli($host, $username, $password, $database);
-$conns = new mysqli($host, $username, $password, $database);
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($conns->connect_error) {
-    die("Connection failed: " . $conns->connect_error);
-}
+
 ?>

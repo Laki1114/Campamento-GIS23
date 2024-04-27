@@ -209,7 +209,7 @@ body {
             }
 
             // Query to select data from the database
-            $sql = "SELECT * FROM glmp_sites";
+            $sql = "SELECT * FROM sites";
             $result = mysqli_query($conn, $sql);
 
             // Check if there are any rows returned

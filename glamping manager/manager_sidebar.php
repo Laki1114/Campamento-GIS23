@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title> Sidebar</title>
+<title>Admin sidebar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="../css/Guide/admin.css">
+<link rel="stylesheet" href="glm_css_files/manager_sidebar.css">
 
 <body>
 
@@ -19,69 +19,79 @@
                     </a>
                 </li>
 
+                
+
+
                 <li>
-                    <a href="dr_db.php">
+                    <a href="../home/">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Dashboard</span>
+                        <span class="title">Home</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="Bookings.php">
+                    <a href="manager_details.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Bookings</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="chat.php">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Messages</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="feedback.php">
-                        <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                        </span>
-                        <span class="title">Feedbacks received</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="d_profile.php">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
                         <span class="title">Profile</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="logout.php">
+                    <a href="add_site1.php">
                         <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
+                            <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Sign Out</span>
+                        <span class="title">Add a glamping site</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="../home/home.php">
+                    <a href="glm_profile2.php">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                            <ion-icon name="settings-outline"></ion-icon>
                         </span>
-                        <span class="title">Back to Home</span>
+                        <span class="title">Added Sites</span>
                     </a>
                 </li>
+
+                <li>
+                <a href="D_U.php">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Delete / Update Site</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Chat</span>
+                    </a>
+                </li>
+
+
+                
+
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Log Out</span>
+                    </a>
+                </li>
+
+
+              
+
             </ul>
         </div>
 

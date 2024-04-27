@@ -11,7 +11,7 @@ if (isset($_POST['site_id'])) {
     $site_id = $_POST['site_id'];
     
     // Prepare and execute SQL query to delete the record
-    $sql = "DELETE FROM glmp_sites WHERE site_id = '$site_id'";
+    $sql = "DELETE FROM sites WHERE site_id = '$site_id'";
     if (mysqli_query($conn, $sql)) {
         // Redirect back to the profile page after deletion
         header("Location: D_U.php");

@@ -11,6 +11,8 @@
 
 </head>
 
+<script src="//code.tidio.co/1rbhbwkbw0jzaprhj345pjorejf4lq48.js" async></script>
+
 <body style="background-color: ;">
 
 <!-- Navigation Bar -->
@@ -62,10 +64,60 @@
   <seciton>
   <?php include 'cardsindashboard.php'; ?>
   </seciton>
+  <div>
+    <h1>Camping sites</h1>
+    <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
+  </div>
+  
+  <div class="row"> 
+  <div class="column" >
+  <img src="../resource/madolsima.jpg" style="width:100%">
+  <div class="text-block">
+    <h2>Madolsima</h2>
+  </div>
+</div>
+  
+   
+  <div class="column2"> 
+  <div class="row" >
+  <img src="../resource/narangala.jpg" style="width:100%">
+  <div class="text-block">
+    <h2>Narangala</h2>
+  </div>
+</div>
+  <div class="row" >
+  <img src="../resource/home.png" style="width:100%">
+  <div class="text-block">
+    <h2>Nature</h2>
+  </div>
+  </div></div>
 
+  <div class="column2"> 
+  <div class="row" >
+  <img src="../resource/namunukula.jpg" style="width:100%">
+  <div class="text-block">
+    <h2>Namunukula</h2>
+  </div>
+</div>
+  <div class="row" >
+  <img src="../resource/home.png" style="width:100%">
+  <div class="text-block">
+    <h2>Nature</h2>
+  </div>
+  </div></div>
+  
+  </div> 
+  
+    <a href="../camping sites/camping_sites.php"><button class="button" > See More....</button></a>
+  </div>
+  </section>
+  <!--
 <hr>
+
 <div class="row"> 
+  
     <?php
+   /*
     // Database connection
     $servername = "localhost";
     $username = "root";
@@ -94,12 +146,12 @@
   } else {
       echo "0 results";
   }
-  $conn->close();
+  $conn->close();*/
     ?>
   </div> 
   <a href="../camping sites/camping_sites.php"><button class="button" >See More....</button></a>
 </section>
-
+-->
 <hr>
 
   <seciton>
