@@ -372,15 +372,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         radio.addEventListener("change", function () {
             if (this.value === "Hourly") {
                 hourlyInput.style.display = "block";
-                daysInputHalfDay.style.display = "none";
+                daysInputHalfDay.style.display = "block";
                 daysInputFullDay.style.display = "block";
-                inputGroupCheckOut.removeAttribute("required");
+               
                 showCalendar(); // Show calendar when Hourly booking type is selected
             } else if (this.value === "half_day_morning" || this.value === "half_day_afternoon") {
                 hourlyInput.style.display = "none";
-                daysInputHalfDay.style.display = "none";
+                daysInputHalfDay.style.display = "block";
                 daysInputFullDay.style.display = "block";
-                inputGroupCheckOut.removeAttribute("required");
+               
                 showCalendar(); 
                 showCalendar(); // Show calendar when Half Day booking type is selected
             } else if (this.value === "full_day") {
