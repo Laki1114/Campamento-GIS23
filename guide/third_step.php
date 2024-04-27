@@ -226,8 +226,7 @@ $advancePayment = $final * 0.3;
 </div>
 
                 <div class="row button-row">
-                <button type="button" onClick="prevSection('discoun-section','shipping-section')">Previous</button>
-                <button type="submit" id="confirmButton">Confirm</button>
+                               <button type="submit" id="confirmButton">Confirm</button>
 </div>
 
 <script>

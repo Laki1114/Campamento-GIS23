@@ -46,6 +46,16 @@
                 </li>
                 <br><br>
 
+                <li>
+                    <a href="add_camping_site.php">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Add Camping Site</span>
+                    </a>
+                </li>
+                <br><br>
+
 
                 <li>
                     <a href="camp_tips.php">

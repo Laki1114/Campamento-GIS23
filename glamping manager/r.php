@@ -24,17 +24,17 @@ if (isset($_POST['submit'])) {
     if (mysqli_query($conn, $sql_site)) {
         // Handle file upload if needed
         move_uploaded_file($_FILES['site_image']['tmp_name'], 'uploads/' . $_FILES['site_image']['name']);
-        echo "Glamping site added successfully!";
-        
+
         // Retrieve the auto-generated site_id
         $site_id = mysqli_insert_id($conn);
 
         // Insert room details into rooms table
-        $sql_room1 = "INSERT INTO rooms (site_id, room1_type, room1_price, room2_type, room2_price) 
-                      VALUES ('$site_id', '$room1_type', '$room1_price', '$room2_type', '$room2_price')";
-        
+        $sql_room1 = "INSERT INTO rooms (site_id, room1_type, room1_price) 
+                      VALUES ('$site_id', '$room1_type', '$room1_price')";
+        $sql_room2 = "INSERT INTO rooms (site_id, room2_type, room2_price) 
+                      VALUES ('$site_id', '$room2_type', '$room2_price')";
 
-        if (mysqli_query($conn, $sql_room1)) {
+        if (mysqli_query($conn, $sql_room1) && mysqli_query($conn, $sql_room2)) {
             echo "Glamping site and room details added successfully!";
         } else {
             echo "Error: " . $sql_room1 . "<br>" . mysqli_error($conn);
