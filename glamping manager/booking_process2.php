@@ -12,10 +12,10 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $nic = $_POST['NIC'];
-    $num_of_rooms = $_POST['num_of_rooms'];
+    
 
     // Insert new booking into the database
-    $sql = "INSERT INTO customer_bookings (customer_name, email, phone, NIC, num_of_rooms) VALUES ('$customer_name', '$email', '$phone', '$nic', '$num_of_rooms')";
+    $sql = "INSERT INTO customer_bookings (customer_name, email, phone, NIC) VALUES ('$customer_name', '$email', '$phone', '$nic')";
 
     if (mysqli_query($conn, $sql)) {
         // Redirect to payment page

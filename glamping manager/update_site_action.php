@@ -19,7 +19,7 @@ if (isset($_POST['site_id'])) {
     $room2_price = $_POST['room2_price'];
 
     // Prepare and execute SQL query to update the site details
-    $sql = "UPDATE glmp_sites SET site_name = '$site_name', site_description = '$site_description', site_category = '$site_category', room1_type = '$room1_type', room1_price = '$room1_price', room2_type = '$room2_type', room2_price = '$room2_price' WHERE site_id = '$site_id'";
+    $sql = "UPDATE sites SET site_name = '$site_name', site_description = '$site_description', site_category = '$site_category', room1_type = '$room1_type', room1_price = '$room1_price', room2_type = '$room2_type', room2_price = '$room2_price' WHERE site_id = '$site_id'";
     if (mysqli_query($conn, $sql)) {
         // Redirect back to the profile page after successful update
         header("Location: D_U.php");

@@ -11,7 +11,7 @@ if (isset($_GET['site_id']) && is_numeric($_GET['site_id'])) {
     $site_id = mysqli_real_escape_string($conn, $_GET['site_id']);
 
     // Query the database to retrieve site details based on $site_id
-    $sql = "SELECT * FROM glmp_sites WHERE site_id = $site_id";
+    $sql = "SELECT * FROM sites WHERE site_id = $site_id";
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {
