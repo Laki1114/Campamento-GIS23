@@ -14,10 +14,9 @@ include 'db.php';
 $select_query = "SELECT m.*, a.Email AS admin_email FROM messages m JOIN admin a ON m.SenderId = a.AdminId ORDER BY m.Timestamp";
 $result = $conn->query($select_query); // Execute the query
 
-$selects_query = "SELECT m.*, a.Email AS user_email FROM messages m JOIN user a ON m.ReceiverId = a.UserId ORDER BY m.Timestamp";
-$results = $conns->query($selects_query); // Execute the query
-
-
+// Fetch user messages from the database
+$selects_query = "SELECT m.*, u.Email AS user_email FROM messages m JOIN user u ON m.ReceiverId = u.UserId ORDER BY m.Timestamp";
+$results = $conn->query($selects_query); // Execute the query
 ?>
 
 <!-- HTML starts here -->
@@ -39,25 +38,23 @@ $results = $conns->query($selects_query); // Execute the query
         // Output admin chat messages
         while($row = $result->fetch_assoc()) {
             // Display each admin message
-            echo "<p><strong>From Admin:</strong> {$row['admin_email']} <br> <strong>Message:</strong> {$row['Message']} <br> <strong>Sent At:</strong> {$row['Timestamp']}</p>";
+            echo "<p><strong>From Admin:</strong>  <br> <strong>Message:</strong> {$row['Message']} <br> <strong>Sent At:</strong> {$row['Timestamp']}</p>";
         }
     } else {
         // If no admin messages found, display a message
-        echo "<p>No chat messages.</p>";
+        echo "<p>No admin chat messages.</p>";
     }
-    ?>
 
-    <?php
-    // Attempting to fetch user messages, but this block will not work due to $result being already exhausted in the previous loop
+    // Check if there are user messages retrieved from the database
     if ($results !== false && $results->num_rows > 0) {
         // Output user chat messages
         while($row = $results->fetch_assoc()) {
-            // Display each user message (This block won't be executed)
+            // Display each user message
             echo "<p><strong>From user:</strong> {$row['user_email']} <br> <strong>Message:</strong> {$row['Message']} <br> <strong>Sent At:</strong> {$row['Timestamp']}</p>";
         }
     } else {
         // If no user messages found, display a message
-        echo "<p>No chat messages.</p>";
+        echo "<p>No user chat messages.</p>";
     }
     ?>
 
