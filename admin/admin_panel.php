@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Admin Manage Advertisement </title>
-
+    <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="css/admin.css">
+
     <style>
 
 
@@ -151,8 +152,20 @@ body, html {
         }
         
     </style>
+
 </head>
 <body>
+
+<div class="container">
+    <div class="navigation">
+            
+        <?php include 'adminsidebar.php'; ?>
+                    
+    </div>
+
+
+    <div class="main">
+          
     <div class="cardHeader">
     <br><br><br>
     <h2><center>Manage Advertisment</center></h2>
@@ -162,8 +175,7 @@ body, html {
     
     <div class=tab>
 
-<button class="tablink" onclick="openPage('', this, 'white')"><a href="admin.php">Go back</a></button>
-&nbsp;&nbsp;&nbsp;&nbsp;
+
 <button class="tablink" onclick="openPage('All', this, 'white')">All</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <button class="tablink" onclick="openPage('New', this, 'white')" id="defaultOpen">New</button>
@@ -372,7 +384,11 @@ body, html {
 
 
 
-    <script>
+    </div>
+</div>
+
+
+<script>
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -390,9 +406,6 @@ function openPage(pageName,elmnt,color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
-
-
-
-
+   
 </body>
-</html>
+</html> 

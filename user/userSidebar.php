@@ -60,7 +60,7 @@
 
 
                 <li>
-                    <a href="profileUser.php">
+                    <a href="/CAMPAMENTO-GIS23/user/profileUser.php">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>
@@ -70,7 +70,7 @@
 
 
                 <li>
-                    <a href="orders.php">
+                    <a href="/CAMPAMENTO-GIS23/user/orders.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -82,7 +82,7 @@
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
-                        <span class="title">My wish list</span>
+                        <span class="title">Wish list & Reports</span>
                     </a>
                 </li>
 

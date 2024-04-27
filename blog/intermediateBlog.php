@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../database/linklinkz.php');
-
+$cid =$_SESSION['customerid'];
 if(isset($_POST['submit'])) {
     $shortTitle = mysqli_real_escape_string($conn, $_POST["shortTitle"]);
     $postDate = mysqli_real_escape_string($conn, $_POST["postDate"]);
@@ -54,14 +54,14 @@ if(isset($_POST['submit'])) {
 
 
     // Prepare and execute the SQL query to insert data into the database
-    $sql = "INSERT INTO blog (shortTitle, postDate, subjectShort, LongDescription1, LongDescription2, LongDescription3, LongDescription4, Image1, Image2, Image3, Image4, Image5, Image6,cat_id)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+    $sql = "INSERT INTO blog (shortTitle, postDate, subjectShort, LongDescription1, LongDescription2, LongDescription3, LongDescription4, Image1, Image2, Image3, Image4, Image5, Image6,cat_id,userid)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
     if ($stmt) {
      
-        mysqli_stmt_bind_param($stmt, "sssssssssssssi", $shortTitle, $postDate, $subjectShort, $LongDescription1, $LongDescription2, $LongDescription3, $LongDescription4, $imageNames[0], $imageNames[1], $imageNames[2], $imageNames[3], $imageNames[4], $imageNames[5], $productcategory);
+        mysqli_stmt_bind_param($stmt, "sssssssssssssii", $shortTitle, $postDate, $subjectShort, $LongDescription1, $LongDescription2, $LongDescription3, $LongDescription4, $imageNames[0], $imageNames[1], $imageNames[2], $imageNames[3], $imageNames[4], $imageNames[5], $productcategory,$cid);
         
         if(mysqli_stmt_execute($stmt)) {
            

@@ -240,39 +240,7 @@ if(isset($_POST['change'])){
 
             <br>
 
-            <div class="details2">
-                <div class="admincustomer">
-                    <div class="cusdet">
-                        <h2 >Recent Activities</h2>
-                    </div>
-
-                    <table>
-                        <thead>
-                        <tr>
-                                <td>Activity</td>
-                                <td>Revenue</td>
-                                <td>Payment</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                        <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                                <td><button class="btn active" > Remove</button></td>
-                            </tr>
-
-                            
-                            
-
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </div></div>
+            </div>
 
                 </div>
             </div>

@@ -74,6 +74,7 @@ $row = mysqli_fetch_assoc($result);
 
 
 if(isset($_SESSION['cart'])){
+	$cart=$_SESSION['cart'];
 	$total = 0;
 	foreach($cart as $key => $value){
 	 // echo $key ." : ". $value['quantity'] . "<br>";
@@ -113,6 +114,7 @@ if(isset($_SESSION['cart'])){
 
         <!-- ========================= Main ==================== -->
         <div class="main">
+			<br><br>
         <section id="content">
 		<div class="content-blog">
 					<div class="page_header text-center  py-5">
