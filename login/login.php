@@ -69,7 +69,11 @@ function validateForm() {
     <label style="align:center;">
      <input type="checkbox" checked="checked" name="remember"> Remember me
      </label>
-<br><br><br>
+<br> <?php 
+            if (isset($_GET['error']) && $_GET['error'] == 1) {
+                echo '<div class="error">Incorrect email or password!</div>';
+            }
+            ?><br><br>
      <div >
         <button type="button" class="cancelbtn" onclick="document.location='../home/home.php'"> Cancel</button>
         <span class="psw">Forgot <a href="fogotpw.php">password?</a></span>

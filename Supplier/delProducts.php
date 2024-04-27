@@ -10,9 +10,9 @@ if(isset($_GET['id'])){
     $product_id = $_GET['id'];
    $sql = "UPDATE products
    SET Status = '0'
-   WHERE Status='1'";
+   WHERE Status='1' AND product_id='$product_id'";
    $result = mysqli_query($conn, $sql);
-   header('location:products.php');
+   header('location:product.php');
 
 
 }

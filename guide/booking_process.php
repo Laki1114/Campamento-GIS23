@@ -1,7 +1,7 @@
 <?php
 // Include the database connection or any necessary configuration file
 include 'config.php';
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['customer'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
@@ -527,7 +527,7 @@ function renderCalendar(year, month, type, checkInDate) {
                
     
 <?php
-    $em = $_SESSION['email'];
+    $em = $_SESSION['customer'];
     $sql = "SELECT FirstName, PhoneNo, Email FROM user WHERE Email = '$em'";
     $result = $con->query($sql);
 
@@ -554,10 +554,10 @@ function renderCalendar(year, month, type, checkInDate) {
 <?php } ?>
   
 
-    <label for="adult"><b>Number of Adults(13+)</b></label>
+    <label for="adult"><b>Number of Adults(Age: 13+)</b></label>
     <input type="text" placeholder="Adult" name="adult" id="adult" required><br><br>
 
-    <label for="children"><b>Number of children(6 to 12)</b></label>
+    <label for="children"><b>Number of children(Age: 6 to 12)</b></label>
     <input type="text" placeholder="Children" name="children" id="children" reuired><br><br>
 
     <label for="languagePreference"><b>Language preference (if applicable):</b></label>
@@ -575,7 +575,7 @@ function renderCalendar(year, month, type, checkInDate) {
                     </form> 
                    
                     <div class="row button-row">
-                        <button type="button" onClick="showPrevious(this)">Previous</button>
+                        
                         <button type="submit" onclick="validateAndNext()">Next</button>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 // Include the database connection or any necessary configuration file
 include 'config.php';
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['customer'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
@@ -226,8 +226,7 @@ $advancePayment = $final * 0.3;
 </div>
 
                 <div class="row button-row">
-                <button type="button" onClick="prevSection('discoun-section','shipping-section')">Previous</button>
-                <button type="submit" id="confirmButton">Confirm</button>
+                               <button type="submit" id="confirmButton">Confirm</button>
 </div>
 
 <script>

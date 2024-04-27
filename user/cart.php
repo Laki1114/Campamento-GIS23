@@ -4,7 +4,10 @@ session_start();
 
 include('../database/linklinkz.php');
   ?>
+<?php 
+//include('headerIn.php');
 
+?>
 <?php include('usernav.php');  
 unset($_SESSION['Payment_Success']);
  
@@ -14,9 +17,11 @@ $cart =  $_SESSION['cart'];
 //  print_r($cart);
 
 ?>
+
  <head>
+ 
  <link rel="stylesheet" type="text/css" href="../css/User/cart.css">
-  	
+ 
 </head>
  
 <div class="container">

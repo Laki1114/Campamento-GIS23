@@ -23,25 +23,25 @@
 
 
                 <li>
-                    <a href="addCategory.php">
+                    <a href="/CAMPAMENTO-GIS23/user/dr_bookings.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">Book Drivers</span>
+                        <span class="title">Driver Bookings</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="addProduct.php">
+                    <a href="/CAMPAMENTO-GIS23/user/gu_bookings.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Hire Guides</span>
+                        <span class="title">Guide Bookings</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="index.php">
+                    <a href="/CAMPAMENTO-GIS23/user/index.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
@@ -60,7 +60,7 @@
 
 
                 <li>
-                    <a href="profileUser.php">
+                    <a href="/CAMPAMENTO-GIS23/user/profileUser.php">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>
@@ -70,7 +70,7 @@
 
 
                 <li>
-                    <a href="orders.php">
+                    <a href="/CAMPAMENTO-GIS23/user/orders.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -82,7 +82,7 @@
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
-                        <span class="title">My wish list</span>
+                        <span class="title">Wish list & Reports</span>
                     </a>
                 </li>
 

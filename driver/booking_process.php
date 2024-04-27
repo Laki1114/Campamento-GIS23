@@ -1,7 +1,7 @@
 <?php
 // Include the database connection or any necessary configuration file
 include 'config.php';
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['customer'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
@@ -27,10 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['children'] = $_POST['children'];
     $_SESSION['specificInterests'] = $_POST['specificInterests'];
     $_SESSION['referenceNumber'] = $_POST['referenceNumber'];
-
+   $_SESSION['distance'] = $_POST['distance'];
+ 
     // Connect to your databas
 
-    $em = $_SESSION['email'];
+    $em = $_SESSION['customer'];
     $sql = "SELECT UserId FROM user WHERE Email = '$em'";
     $result = $con->query($sql);
     if ($result->num_rows > 0) {
@@ -241,6 +242,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
     </style>
     <!-- Add jQuery library -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOzD0GiBe1hD6t94YwNNUg-A5KaLkKAyE&libraries=places&callback=initMap" async defer></script>
+ 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -519,7 +522,7 @@ function renderCalendar(year, month, type, checkInDate) {
             <section id="shipping-section">
                 <div id="detailpage">
                 <?php
-    $em = $_SESSION['email'];
+    $em = $_SESSION['customer'];
     $sql = "SELECT FirstName, PhoneNo, Email FROM user WHERE Email = '$em'";
     $result = $con->query($sql);
 
@@ -534,7 +537,17 @@ function renderCalendar(year, month, type, checkInDate) {
                                     <div class="container-left">
                                         <h2> Booking Details</h2><br><br><br>
                                         <input type="hidden" name="form" value="form1">
+                                        <label for="pickup"><b>Pick Up Location</b></label>
+    <input id="pickup-input" name="pickup" placeholder="Enter pickup location" type="text" required><br><br>
     
+    <label for="dropoff"><b>Drop Off Location</b></label>
+    <input id="dropoff-input" name="dropoff" placeholder="Enter dropoff location" type="text" required><br><br>
+    <button style="margin: 4px 2px;" onclick="calculateDistance()">Calculate Distance</button>
+    <label for="distance"><b>Distance: </b></label>
+    <div id="distance" style="display:none"></div>
+ 
+    <input type="text" id="distanceInput" name="distance" value=" " readonly required>
+
     <label for="name"><b>Name </b></label>
     <input type="text"  value="<?php echo $row['FirstName']?>" name="name" id="name" required><br><br>
 
@@ -542,27 +555,22 @@ function renderCalendar(year, month, type, checkInDate) {
     <input type="text"  name="contact" value="<?php echo $row['PhoneNo']?>" id="contact" pattern="\d{10}" title="Contact number must be 10 digits" required><br><br>
 
     <label for="email"><b>Email</b></label>
-    <input type="email" name="email" value="<?php echo $row['Email']?>" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid email" required><br><br>
- 
+    <input type="email" name="email" value="<?php echo $row['Email']?>" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid email" required><br><br> 
 
-    <label for="pickup"><b>Pick Up Location</b></label>
-    <input type="text" placeholder="pickup" name="pickup" id="pickup" ><br><br>
-
-    <label for="dropoff"><b>Drop Off Location</b></label>
-    <input type="text" placeholder="dropoff" name="dropoff" id="dropoff" ><br><br>
-
-    <label for="time"><b>Time </b></label><br>
+    <label for="time"><b>Time </b></label>
       <input type="time" placeholder="Time" name="time" required><br><br>
 
     <label for="adult"><b>Number of Adults(13+)</b></label>
-    <input type="text" placeholder="Adult" name="adult" id="adult" ><br><br>
+    <input type="text" placeholder="Adult" name="adult" id="adult" required><br><br>
 
     <label for="children"><b>Number of children(6 to 12)</b></label>
-    <input type="text" placeholder="Children" name="children" id="children" ><br><br>
+    <input type="text" placeholder="Children" name="children" id="children" required><br><br>
 
     <label for="specificInterests"><b>Additional information(if any):</b></label>
     <textarea id="specificInterests" name="specificInterests" rows="4"></textarea><br><br>
 
+    
+    
 <?php } ?>
 </div>
                                 </td>
@@ -572,10 +580,43 @@ function renderCalendar(year, month, type, checkInDate) {
                    
                     <div class="row button-row">
                         <button type="button" onClick="showPrevious(this)">Previous</button>
-                        <button type="submit" onclick="validateAndNext()">Next</button>
+                        <button type="submit" onclick="validateAndNext();">Next</button>
                     </div>
                 </div>
-  
+                <script> 
+        let pickupInput, dropoffInput, distanceService;
+
+        function initMap() {
+            pickupInput = document.getElementById('pickup-input');
+            dropoffInput = document.getElementById('dropoff-input');
+            distanceService = new google.maps.DistanceMatrixService();
+
+            const pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput);
+            const dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffInput);
+        }
+
+        function calculateDistance() {
+            const pickup = pickupInput.value;
+            const dropoff = dropoffInput.value;
+
+            distanceService.getDistanceMatrix({
+                origins: [pickup],
+                destinations: [dropoff],
+                travelMode: 'DRIVING'
+            }, function(response, status) {
+                if (status === 'OK') {
+                    const distanceText = response.rows[0].elements[0].distance.text;
+                    const distanceValue = parseInt(distanceText.replace(/\D/g, ''));
+                    document.getElementById('distance').innerHTML = 'Distance: ' + distanceText;
+                    document.getElementById('distanceInput').value = distanceValue;
+                } else {
+                    alert('Error: ' + status);
+                }
+            });
+        }
+    </script>
+
+
                 <script>
     function validateAndNext() {
         // Perform form validation

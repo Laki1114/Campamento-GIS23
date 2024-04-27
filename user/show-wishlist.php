@@ -119,7 +119,9 @@ include('../database/linklinkz.php');
 
 
 			</div>
-
+<?php include 'weeklyreport.php';?>
+<br><br>
+<?php include 'monthlyreport.php';?>
 					</div>
 				</div>
 			</div>
