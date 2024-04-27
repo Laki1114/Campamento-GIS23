@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Cards</title>
-    <link rel="stylesheet" href="dr_css/cards.css">
+    <link rel="stylesheet" href="../css/Driver/cards.css">
     <style>
         .star-container {
             color: #FFD700;
