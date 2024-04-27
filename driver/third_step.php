@@ -9,61 +9,11 @@ if (!isset($_SESSION['customer'])) {
 } 
 
 // Define variables and initialize with empty values
-$name = $contact = $email = $adult = $children = $languagePreference = $specificInterests = "";
+$name = $contact = $email = $adult = $children = $specificInterests = "";
 
 // Payment amount and advance payment variables
 $amount = $advancePayment = 0;
 
-// Processing form data when form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    if(isset($_SESSION['checkInDate'])){
-    $checkIn = $_SESSION['checkInDate'];
-    $name = $_SESSION['name'];
-    $contact = $_SESSION['contact'];
-    $email = $_SESSION['email'];
-    $adult = $_SESSION['adult'];
-    $children = $_SESSION['children'];
-    $languagePreference = $_SESSION['languagePreference'];
-    $specificInterests = $_SESSION['specificInterests'];
-    $referenceNumber = $_SESSION['referenceNumber'];
-    $user_id = $_SESSION['user_id'];
-    $bookingType = $_SESSION['bookingType'];
-    $checkInDate = $checkOutDate = $time = "";
-    
-    $checkInDate = $checkOutDate = $time = $endTime = '';
-
-    // Set check-in/out date and time based on booking type
-    if($bookingType == 'full_day' || $bookingType == 'Hourly' || $bookingType == 'half_day') {
-        $checkInDate = isset($_SESSION['checkInDate']) ? $_SESSION['checkInDate'] : '';
-    }
-    if($bookingType == 'full_day') {
-        $checkOutDate = isset($_SESSION['checkOutDate']) ? $_SESSION['checkOutDate'] : '';
-    }
-    if($bookingType == 'Hourly') {
-        $time = isset($_SESSION['time']) ? $_SESSION['time'] : '';
-        $endTime = isset($_SESSION['endTime']) ? $_SESSION['endTime'] : '';
-    }
-
-    
-}
-if(isset($_SESSION['g_id'])) {
-    // Retrieve guide_id from session
-    $guide_id = $_SESSION['g_id'];}
-    // Calculate the 30% advance payment
-    $advancePayment = $final * 0.3;
-    $booking_status = 0; 
-    // Insertion into the database
-    $sql = "INSERT INTO booking_guide (name, contact, email, adults, children, langPref, specInt, reference_number, userId, guide_id, amount, advancePayment, bookingType, checkIn, checkOut, startTime, endTime, booking_status)
-            VALUES ('$name', '$contact', '$email', '$adult', '$children', '$languagePreference', '$specificInterests', '$referenceNumber', '$user_id', '$guide_id', '$amount', '$advancePayment', '$bookingType', '$checkInDate', '$checkOutDate', '$time', '$endTime', '$booking_status')";
-
-if ($con->query($sql) === TRUE) {
-    echo "Booking success!";
-} else {
-    echo "Error storing booking details: " . $con->error;
-}
-$con->close();
-}
 
 ?>
 
@@ -107,8 +57,8 @@ $con->close();
     $specificInterests = $_SESSION['specificInterests'];
     $referenceNumber = $_SESSION['referenceNumber'];
     $user_id = $_SESSION['user_id'];
-
-
+   $distance= $_SESSION['distance'];
+  
 ?>
 
 <!-- Displaying data in the summary page -->
@@ -117,18 +67,50 @@ $con->close();
     <h2>Booking Summary</h2><br>
 <?php 
     // Set check-in/out date and time based on booking type
-     // Retrieve form data from session
-     if(isset($_SESSION['g_id'])) {
-        // Retrieve guide_id from session
+
+    
+    if(isset($_SESSION['g_id'])) {
+    
         $guide_id = $_SESSION['g_id']; 
         $sql = "SELECT Vehicle_type, Model FROM driver WHERE d_id = '$guide_id'";
     $result = $con->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc(); 
+    
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc(); 
+                $vehicle_type = $row['Vehicle_type'];
+    
+                // Calculate payment based on vehicle type
+                switch ($vehicle_type) {
+                    case 'Car/ Mini SUV(3-4)':
+                        $amount = 125;
+                        break;
+                    case 'Mini Car(2-3)':
+                        $amount = 125;
+                        break;
+                    case 'Standard size Car(3-4)':
+                        $amount = 135;
+                        break;
+                    case 'People Carrier(6-7)':
+                        $amount = 190;
+                        break;
+                    case 'Large People Carrier(8-9)':
+                        $amount = 200;
+                        break;
+                    default:
+                        $amount = 0;
+                        break;
+                }
+            }
+    
+            $final = $distance * $amount;
+        // Calculate the 30% advance payment
+        $advancePayment = $final * 0.3;
+     // Retrieve form data from session
+     
      }
-    }
+    
     ?>
+  
     <p><b>Name:</b> <?php echo $name; ?></p><br>
     <p><b>Contact: </b><?php echo $contact; ?></p><br>
     <p><b>Email:</b> <?php echo $email; ?></p><br>
@@ -142,8 +124,8 @@ $con->close();
     <p><b>Vehicle Type:</b> <?php echo $row['Vehicle_type']; ?></p><br>
     <p><b>Vehicle Model:</b> <?php echo  $row['Model']; ?></p><br>
 
-    <br><p><b>Total Payment: LKR</b></p><br>
-        <p><b>Advance Payment (30%): LKR</b></p><br>
+    <br><p><b>Total Payment: LKR<?php echo  $final ?></b></p><br>
+        <p><b>Advance Payment (30%): LKR <?php echo $advancePayment ?></b></p><br>
     
 </div>
 </div>
@@ -164,7 +146,7 @@ $con->close();
             }
         };
         
-        var data = "name=<?php echo $name; ?>&contact=<?php echo $contact; ?>&email=<?php echo $email; ?>>&pickup=<?php echo $pickup; ?>&dropoff=<?php echo $dropoff; ?>&time=<?php echo $time; ?>&adult=<?php echo $adult; ?>&children=<?php echo $children; ?>&specificInterests=<?php echo $specificInterests; ?>&referenceNumber=<?php echo $referenceNumber; ?>&user_id=<?php echo $user_id; ?>&guide_id=<?php echo $guide_id; ?>&checkInDate=<?php echo $checkInDate; ?> ";
+        var data = "name=<?php echo $name; ?>&contact=<?php echo $contact; ?>&email=<?php echo $email; ?>>&pickup=<?php echo $pickup; ?>&dropoff=<?php echo $dropoff; ?>&time=<?php echo $time; ?>&adult=<?php echo $adult; ?>&children=<?php echo $children; ?>&specificInterests=<?php echo $specificInterests; ?>&referenceNumber=<?php echo $referenceNumber; ?>&user_id=<?php echo $user_id; ?>&driver_id=<?php echo $guide_id; ?>&date=<?php echo $checkInDate; ?>&advance=<?php echo $advancePayment; ?> &amount=<?php echo $final; ?>  ";
         
         xhr.send(data);
     });
