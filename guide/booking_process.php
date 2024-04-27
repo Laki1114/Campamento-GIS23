@@ -527,7 +527,7 @@ function renderCalendar(year, month, type, checkInDate) {
                
     
 <?php
-    $em = $_SESSION['email'];
+    $em = $_SESSION['customer'];
     $sql = "SELECT FirstName, PhoneNo, Email FROM user WHERE Email = '$em'";
     $result = $con->query($sql);
 
