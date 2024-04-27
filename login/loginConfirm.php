@@ -3,6 +3,26 @@
 
 include('../database/linklinkz.php');
 
+// Function to insert login attempt into the database
+function insertLoginAttempt($email) {
+    global $linkz; // Assuming $linkz is your database connection variable
+
+    // Prepare SQL statement
+    $sql = "INSERT INTO login_attempts (email, login_time) VALUES (?, NOW())";
+    $stmt = $linkz->prepare($sql);
+
+    // Bind parameters
+    $stmt->bind_param("s", $email);
+
+    // Execute the statement
+    $stmt->execute();
+
+    // Close statement
+    $stmt->close();
+}
+
+
+
 // Check if the form is submitted
 if (isset($_POST['submit'])) {
     // Include database connection
@@ -24,6 +44,9 @@ if (isset($_POST['submit'])) {
             if ($row["Status"] == '1') {
                 // Set session variable for admin email
                 $_SESSION['email'] = $email;
+// Insert login attempt into the database
+insertLoginAttempt($email);
+
                 // Redirect to admin.php
                 header("Location: ../admin/admin.php");
                 exit;
@@ -43,6 +66,9 @@ if ($result->num_rows > 0) {
             // Set customer email and customer ID in sessions
             $_SESSION['customer'] = $row["Email"];
             $_SESSION['customerid'] = $row['UserId'];
+
+            // Insert login attempt into the database
+            insertLoginAttempt($email);
             //echo $_SESSION['customer'];
             // Redirect to the target page with both IDs in the URL parameter
             //header("Location: ../user/profileUSer.php?user=" . $_SESSION['customer'] . "&userid=" . $_SESSION['customerid']);
@@ -69,6 +95,9 @@ if ($result->num_rows > 0) {
     if ($_POST['psw'] == $row["Password"]) {
         if ($row["Status"] == '1') {
             $_SESSION['email'] = $email;
+// Insert login attempt into the database
+insertLoginAttempt($email);
+
             header("Location: ../glamping manager/glm_Prfile.php");
             exit;
         } else {
@@ -92,6 +121,10 @@ if ($result->num_rows > 0) {
         if ($row["Status"] == '1') {
             $_SESSION['SupplierId'] = $row['SupplierId'];
             $_SESSION['email'] = $row["Email"];
+
+// Insert login attempt into the database
+insertLoginAttempt($email);
+
             //header("Location: ../supplier/profileSupplier.php?supplier=" . $_SESSION['supplier']);
             header("Location: ../Supplier/orders.php?supplier=" . $_SESSION['email']);
             //header("Location: ../Supplier/profileSupplier.php");
@@ -121,6 +154,10 @@ if($result->num_rows > 0)
 		if($_POST['email'] == $row["email"] && $_POST['psw'] == $row["password"] )
 		{
 			$_SESSION['email'] = $email;
+
+            // Insert login attempt into the database
+            insertLoginAttempt($email);
+
 			header("Location:../driver/dr_db.php");
 		}
 		
@@ -141,6 +178,10 @@ if($result->num_rows > 0)
 		if($_POST['email'] == $row["email"] && $_POST['psw'] == $row["password"] )
 		{
 			$_SESSION['email'] = $email;
+
+            // Insert login attempt into the database
+            insertLoginAttempt($email);
+
 			header("Location:../guide/dr_db.php");
 		}
 		
@@ -154,4 +195,6 @@ if($result->num_rows > 0)
 
 
 exit;
+
+$dailyViewsData = getDailyViewsData();
 ?>
