@@ -123,7 +123,10 @@ if($result->num_rows > 0)
 			$_SESSION['email'] = $email;
 			header("Location:../driver/dr_db.php");
 		}
-		
+		else {
+			header("Location: ../login/login.php?error=1");
+			exit;
+		}
 	}
 	}
 }
@@ -143,7 +146,10 @@ if($result->num_rows > 0)
 			$_SESSION['email'] = $email;
 			header("Location:../guide/dr_db.php");
 		}
-		
+		else {
+			header("Location: ../login/login.php?error=1");
+			exit;
+		}
 	}
 	}
 }
