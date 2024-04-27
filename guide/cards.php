@@ -72,27 +72,23 @@ if ($result) {
             echo '<h2>' . $row['firstname'] . '</h2>';
             echo '</div>';
             echo '<div class="star-container">';
-            if($row['avg_rating']) {
+            if($row['avg_rating'] !== NULL) {
                 $rating = round($row['avg_rating']);
-                for($i = 0; $i < $rating; $i++) {
-                    echo '<span class="fa fa-star checked"></span>';
+                for($i = 0; $i < 5; $i++) {
+                   
                 }
-                for($i = 0; $i < (5 - $rating); $i++) {
-                    echo '<span class="fa fa-star"></span>';
-                }
-                echo '<span>(' . number_format($row['avg_rating'], 1) . ')</span>';
+                echo 'Rating: ' . number_format($row['avg_rating'], 1) . '';
             }
             else {
                 echo '<div class="no-rating">';
                 for($i = 0; $i < 5; $i++) {
-                    echo '<span class="fa fa-star"></span>';
+                    
                 }
-                echo '<span>(0.0)</span>';
+                echo 'Rating: <span>(0.0)</span>';
                 echo '</div>';
             }
             echo '</div>';
             echo '<div class="des">';
-            echo '<p>Location: ' . $row['location'] . '</p>';
             echo '<a href="guide_infor.php?id=' . $row['id'] . '" class="button">More</a>';
             echo '</div>';
             echo '</div>';

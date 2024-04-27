@@ -62,25 +62,25 @@ if ($result->num_rows > 0) {
         if($row['avg_rating']) {
             $rating = round($row['avg_rating']);
             for($i = 0; $i < $rating; $i++) {
-                echo '<span class="fa fa-star checked"></span>';
+               
             }
             for($i = 0; $i < (5 - $rating); $i++) {
-                echo '<span class="fa fa-star"></span>';
+               
             }
-            echo '<span>(' . number_format($row['avg_rating'], 1) . ')</span>';
+            echo 'Rating: <span>' . number_format($row['avg_rating'], 1) . '</span>';
         }
         else {
             echo '<div class="no-rating">';
             for($i = 0; $i < 5; $i++) {
-                echo '<span class="fa fa-star"></span>';
+                
             }
-            echo '<span>(0.0)</span>';
+            echo 'Rating: <span>(0.0)</span>';
             echo '</div>';
         }
         echo '</div>';
 
         echo '<div class="des">';
-        echo '<p>Location: ' . $row['location'] . '</p>';
+        echo '<p style="color:black;">Location: ' . $row['location'] . '</p>';
         echo '<a href="driver_info.php?id=' . $row['d_id'] . '" class="button">More</a>';
         echo '</div>';
         echo '</div>';
