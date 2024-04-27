@@ -17,8 +17,6 @@ if(isset($_POST['submit'])) {
     $lastName = $_POST['lastName'];
     $nicNo = $_POST['nicNo'];
     $email = $_POST['email'];
-    $bName = $_POST['BName'];
-    $bNo = $_POST['BNo'];
     $gender = $_POST['gender'];
     $phoneNo = $_POST['phoneNo'];
     $password = $_POST['psw'];
@@ -35,7 +33,7 @@ if(isset($_POST['submit'])) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // Prepare SQL statement to insert data into the database
-        $sql = "INSERT INTO glamping_manager_registration (first_name, last_name, NIC, email, business_name, business_registration_no, gender, phone_number, password, repeat_password) VALUES ('$firstName', '$lastName', '$nicNo', '$email', '$bName', '$bNo', '$gender', '$phoneNo', '$hashedPassword', '$repeatPassword')";
+        $sql = "INSERT INTO camp_register (firstName, lastName, nicNo, email, gender, phoneNo, password, repeat_password) VALUES ('$firstName', '$lastName', '$nicNo', '$email',  '$gender', '$phoneNo', '$hashedPassword', '$repeatPassword')";
 
         // Execute SQL statement
         if (mysqli_query($conn, $sql)) {
