@@ -23,7 +23,7 @@
 
 
                 <li>
-                    <a href="addCategory.php">
+                    <a href="dr_bookings.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -32,7 +32,7 @@
                 </li>
 
                 <li>
-                    <a href="addProduct.php">
+                    <a href="gu_bookings.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>

@@ -50,8 +50,8 @@ if(!empty($request->createCheckoutSession)){
                 'quantity' => 1 
             ]], 
             'mode' => 'payment', 
-            'success_url' => "http://localhost/Campamento-GIS23-main/user/payment-success.php?session_id={CHECKOUT_SESSION_ID}", 
-            'cancel_url' => "http://localhost/Campamento-GIS23-main/user/payment-cancel.php", 
+            'success_url' => "http://localhost/Campamento-GIS23/user/payment-success.php?session_id={CHECKOUT_SESSION_ID}", 
+            'cancel_url' => "http://localhost/Campamento-GIS23/user/payment-cancel.php", 
         ]); 
 
     } catch(Exception $e) {  

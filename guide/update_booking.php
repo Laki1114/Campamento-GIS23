@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $status = $_POST['status'];
 
         // Update the status in the database
-        $sql = "UPDATE bookings SET booking_status = '$status' WHERE booking_id = '$id'";
+        $sql = "UPDATE booking_guide SET booking_status = '$status' WHERE id = '$id'";
         $result = mysqli_query($con, $sql);
 
         if ($result) {
