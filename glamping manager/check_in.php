@@ -128,10 +128,10 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
   .then(response => response.json())
   .then(rooms => {
     // Display the available rooms as a selectable row table
-    var tableHtml = "<table><thead><tr><th>Tent Type</th><th>Price</th></tr></thead><tbody>";
+    var tableHtml = "<table><thead><tr><th>Tent Type</th><th>Max No of Guests</th><th>Price</th></tr></thead><tbody>";
     rooms.forEach(room => {
-      tableHtml += `<tr data-room-name1="${room.room1_type}" data-room-price1="${room.room1_price}"><td>${room.room1_type}</td><td>${room.room1_price}</td></tr>`;
-      tableHtml += `<tr data-room-name2="${room.room2_type}" data-room-price2="${room.room2_price}"><td>${room.room2_type}</td><td>${room.room2_price}</td></tr>`;
+      tableHtml += `<tr data-room-name1="${room.room1_type}" data-room-max-guests1="${room.max_guests_1}" data-room-price1="${room.room1_price}"><td>${room.room1_type}</td><td>${room.max_guests_1}</td><td>${room.room1_price}</td></tr>`;
+      tableHtml += `<tr data-room-name2="${room.room2_type}" data-room-max-guests2="${room.max_guests_2}" data-room-price2="${room.room2_price}"><td>${room.room2_type}</td><td>${room.max_guests_2}</td><td>${room.room2_price}</td></tr>`;
     });
     tableHtml += "</tbody></table>";
     document.getElementById('availableRooms').innerHTML = tableHtml;
@@ -149,11 +149,13 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
         
         // Get room details from the selected row
         var roomName = this.getAttribute('data-room-name');
+        var maxGuests = this.getAttribute('data-room-max-guests');
         var roomPrice = this.getAttribute('data-room-price');
         
         // Redirect to another page with room details as URL parameters
         var queryParams = new URLSearchParams();
         queryParams.append('roomName', roomName);
+        queryParams.append('maxGuests', maxGuests);
         queryParams.append('roomPrice', roomPrice);
         queryParams.append('checkInDate', checkInDate);
         queryParams.append('checkOutDate', checkOutDate);

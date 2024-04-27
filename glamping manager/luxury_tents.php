@@ -204,7 +204,7 @@ body {
 
             // Query to select wild glamping sites
             $category = "Luxurysite";
-            $sql = "SELECT * FROM glmp_sites WHERE site_category = '$category'";
+            $sql = "SELECT * FROM sites WHERE site_category = '$category'";
             $result = mysqli_query($conn, $sql);
 
             // Check if there are any rows returned

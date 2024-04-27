@@ -22,7 +22,7 @@
         }
 
         // Query to fetch glamping site details
-        $sql = "SELECT site_id, site_name FROM glmp_sites"; // Modify the query as per your table structure
+        $sql = "SELECT site_id, site_name FROM sites"; // Modify the query as per your table structure
         $result = mysqli_query($conn, $sql);
 
         // Check if there are any rows returned

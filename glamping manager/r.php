@@ -16,10 +16,12 @@ if (isset($_POST['submit'])) {
     $room1_price = $_POST['room1_price'];
     $room2_type = $_POST['room2_type'];
     $room2_price = $_POST['room2_price'];
+    $max_guests_1 = $_POST['max_guests_1'];
+    $max_guests_2 = $_POST['max_guests_2'];
 
     // Insert data into glmp_sites table
-    $sql_site = "INSERT INTO glmp_sites (site_name, site_description, site_category, site_image, room1_type, room1_price, room2_type, room2_price) 
-                 VALUES ('$site_name', '$site_description', '$site_category', '$site_image', '$room1_type', '$room1_price', '$room2_type', '$room2_price')";
+    $sql_site = "INSERT INTO sites (site_name, site_description, site_category, site_image, room1_type, room1_price, room2_type, room2_price,max_guests_1,max_guests_2) 
+                 VALUES ('$site_name', '$site_description', '$site_category', '$site_image', '$room1_type', '$room1_price', '$room2_type', '$room2_price', '$max_guests_1', '$max_guests_2')";
 
     if (mysqli_query($conn, $sql_site)) {
         // Handle file upload if needed
@@ -29,15 +31,15 @@ if (isset($_POST['submit'])) {
         $site_id = mysqli_insert_id($conn);
 
         // Insert room details into rooms table
-        $sql_room1 = "INSERT INTO rooms (site_id, room1_type, room1_price) 
-                      VALUES ('$site_id', '$room1_type', '$room1_price')";
-        $sql_room2 = "INSERT INTO rooms (site_id, room2_type, room2_price) 
-                      VALUES ('$site_id', '$room2_type', '$room2_price')";
+        $sql_rooms = "INSERT INTO rooms (site_id, room1_type, room1_price,room2_type, room2_price,max_guests_1,max_guests_2) 
+                      VALUES ('$site_id', '$room1_type', '$room1_price', '$room2_type', '$room2_price', '$max_guests_1', '$max_guests_2')";
+        
 
-        if (mysqli_query($conn, $sql_room1) && mysqli_query($conn, $sql_room2)) {
-            echo "Glamping site and room details added successfully!";
+        if (mysqli_query($conn, $sql_rooms) ) {
+            header("Location: manager_details.php");
+             exit();
         } else {
-            echo "Error: " . $sql_room1 . "<br>" . mysqli_error($conn);
+            echo "Error: " . $sql_rooms . "<br>" . mysqli_error($conn);
         }
     } else {
         echo "Error: " . $sql_site . "<br>" . mysqli_error($conn);

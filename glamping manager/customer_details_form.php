@@ -55,6 +55,7 @@
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 30px;
             margin-left: 130px;
         }
 
@@ -93,13 +94,7 @@
             <input type="text" id="nic" name="NIC" placeholder="012345678912/012345678v" required>
         </div>
 
-        <div class="form-group">
-            <label for="num_of_rooms">No. of Rooms</label>
-            <select id="num_of_rooms" name="num_of_rooms">
-                <option>1</option>
-                <option>2</option>
-            </select>
-        </div>
+        
 
         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
