@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['customer'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
