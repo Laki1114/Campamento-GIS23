@@ -49,7 +49,7 @@ function getBookingsForDriver($Id) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Bookings</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="../css/Guide/admin.css">
+    <link rel="stylesheet" href="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  
     <style>
@@ -96,16 +96,11 @@ function getBookingsForDriver($Id) {
     .details .recentOrders {
   position: relative;
   display: grid;
-  min-height: 100px;
+  min-height: 200px;
   background: var(--white);
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
-}
-.details .recentOrders table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
 }
 .modal {
         display: none;
@@ -121,7 +116,7 @@ function getBookingsForDriver($Id) {
     }
 
     .modal-content {
-        background-color: #fefefe;
+        background-color: #BFCC7C;
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
@@ -142,6 +137,46 @@ function getBookingsForDriver($Id) {
         text-decoration: none;
         cursor: pointer;
     }
+    #bookingDetails {
+    text-align: left;
+} 
+#cancelModal{
+    margin-left: 400px;
+}
+    .details {
+  position: relative;
+  width: 90%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  margin-top: 60px;
+  /* margin-top: 10px; */
+}
+
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  min-height: 200px;
+  background: var(--white);
+  padding: 15px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.details table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details table thead td {
+  font-weight: 600;
+ 
+}
+.view{
+    background-color: #134812;
+  color: white;
+  padding: 4px 9px;
+}
     </style>
 </head>
 
@@ -173,9 +208,8 @@ function getBookingsForDriver($Id) {
                 </div>
             </div>
            
-
             <!-- ================ Order Details List ================= -->
-            <div class="ad">
+           
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
@@ -194,6 +228,8 @@ function getBookingsForDriver($Id) {
                                 <td>Check-Out</td>
                                 <td>Start Time</td>
                                 <td>End Time</td>
+                                <td>View</td>
+                                <td>Action</td>
                                 
                             </tr>
                         </thead>
@@ -215,7 +251,7 @@ function getBookingsForDriver($Id) {
                         echo "<td>" . $row['checkOut'] . "</td>";
                         echo "<td>" . $row['startTime'] . "</td>";
                         echo "<td>" . $row['endTime'] . "</td>";
-                        echo "<td><button onclick='showDetails( \"" . $row['langPref'] . "\", \"" . $row['specInt'] . "\", \"" . $row['amount'] . "\", \"" . $row['adults'] . "\", \"" . $row['children'] . "\")'>View</button></td>";
+                        echo "<td><button class='view'  onclick='showDetails( \"" . $row['langPref'] . "\", \"" . $row['specInt'] . "\", \"" . $row['amount'] . "\", \"" . $row['adults'] . "\", \"" . $row['children'] . "\")'>View</button></td>";
  
                         echo "<td>";
                         if ($row['booking_status'] == 0) { // Pending
@@ -253,17 +289,16 @@ function getBookingsForDriver($Id) {
             <!-- Booking details will be displayed here -->
         </div>
     </div>
-</div>
-
+            </div>
 <script>
     function showDetails(langPref, specInt, amount, adults, children, status) {
         var modal = document.getElementById("myModal");
         var bookingDetails = document.getElementById("bookingDetails");
         bookingDetails.innerHTML = `
-        <p><b>Details</b></p>
+        <h2><b>Details</b></h2><br>
            <p><strong>Languages: </strong>${langPref}</p>
             <p><strong>Specific Interests: </strong>${specInt}</p>
-            <p><strong>Amount: </strong>${amount}</p>
+            <p><strong>Payment: </strong>${amount}</p>
             <p><strong>Adults: </strong>${adults}</p>
             <p><strong>Children: </strong>${children}</p>
         `;
@@ -361,7 +396,7 @@ function cancelBooking(id) {
 </script>
                 </div>
                 </div>
-
+</div>
                 <script>
         $(document).ready(function () {
             $("#gfg").on("keyup", function () {
