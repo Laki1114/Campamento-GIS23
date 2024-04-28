@@ -146,13 +146,24 @@ body {
 <div class="header">
   <h2><span class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>Campamento Blog </h2>
 </div>
-<br>
+
 <hr style="border-top: 3px solid black;">
 <br><br><br>
   
     <?php
     if(isset($_GET['id'])){
         $blogID = $_GET['id'];
+
+          
+          $sql1 = "SELECT b.*, u.FirstName, u.LastName 
+          FROM blog b 
+          JOIN user u 
+          ON b.userid = u.UserID 
+          WHERE b.blogID='$blogID'";
+          $result1 = mysqli_query($conn, $sql1);
+          $row1= mysqli_fetch_assoc($result1);
+   
+
        $sql = "SELECT * FROM blog  WHERE blogID='$blogID'";
        $result = mysqli_query($conn, $sql);
      
@@ -160,8 +171,10 @@ body {
     ?>
 <table><tr><td>
 <div class="para">
-    <p><h1><?php echo  $row["shortTitle"] ?></h1></p><br>
-    <b> <?php echo  $row["postDate"] ?></b>
+    <h1><?php echo  $row["shortTitle"] ?></h1>   
+ <br>
+    <b> <?php echo  $row["postDate"]; echo ",";?>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo "By: ";echo  $row1["FirstName"]; ?>
+    &nbsp;<?php echo  $row1["LastName"] ?></b>
     
   <p> <?php echo  $row["LongDescription1"] ?> </p>
    
@@ -179,7 +192,7 @@ body {
 
 </div>
 <br><br>
-
+<?php include 'likes.php'; ?>
 </td>
 <!--2coulmn starts here-->
 <td>
@@ -295,5 +308,6 @@ function showSlides(n) {
 <hr style="border-top: 3px solid black;">
 <h2> Comments  </h2>
 <?php include '../comment/comment.php'; ?>
+<br><br>
 </body>
 </html>
