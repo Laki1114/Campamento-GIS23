@@ -117,7 +117,12 @@ if(isset($_POST['regbtn'])){
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="registerUser.css">
+<link rel="stylesheet" href="../css/Driver/registerUser.css">
+<style>
+  body{
+    background-image: url("../resource/login.jpg");
+  }
+  </style>
 </head>
 <body>
 
