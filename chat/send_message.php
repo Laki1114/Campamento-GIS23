@@ -1,46 +1,62 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_email']) && !isset($_SESSION['user_email'])) {
-    header("location: login.php");
-    exit();
-}
-
 include 'db.php';
 
-$message = isset($_POST['message']) ? $_POST['message'] : '';
+$senderType = $_POST['senderType']; // 'user' or 'admin'
+$message = $_POST['message'];
 
-// Determine sender and receiver based on session
-if (isset($_SESSION['admin_email'])) {
-    $sender_id = 1; // AdminId
-    $receiver_id = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
-} else {
-    $sender_id = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : null;
-    $receiver_id = 1; // AdminId
-}
+// Check if the user ID is set in the session
+if (isset($_SESSION['UserId'])) {
+    $userId = $_SESSION['UserId'];
 
-// Check if receiver_id is null, and handle the error
-if ($receiver_id === null) {
-    echo "Error: Receiver ID is null.";
-    exit();
-}
+    // Check if the user ID exists in the user table
+    $userExistsQuery = "SELECT * FROM user WHERE UserId = $userId";
+    $result = $conn->query($userExistsQuery);
+    
+    if ($result->num_rows > 0) {
+        // User exists, proceed with inserting the message and creating a chat room
+        if ($senderType =='user') {
+            $senderId = $userId;
+            $recipientId = 1; // Assuming admin ID is 1
+            } else {
+            $senderId = 1; // Assuming admin ID is 1
+            $recipientId = $userId;
+            }
+            // Get or create chat room ID
+    $chatRoomIdQuery = "SELECT ChatRoomId FROM chat_rooms WHERE UserId = $recipientId";
+    $result = $conn->query($chatRoomIdQuery);
 
-// Insert message into the database
-$insert_query = "INSERT INTO messages (SenderId, ReceiverId, Message) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($insert_query);
-
-if ($stmt) {
-    $stmt->bind_param("iis", $sender_id, $receiver_id, $message);
-    // Execute the statement
-    if ($stmt->execute()) {
-        header("location: " . ($_SESSION['admin_email'] ? "admin_chat.php" : "user_chat.php"));
-        exit();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $chatRoomId = $row["ChatRoomId"];
     } else {
-        echo "Error executing query: " . $stmt->error;
+        // Create a new chat room for the user if it doesn't exist
+        $createChatRoomQuery = "INSERT INTO chat_rooms (UserId, AdminId) VALUES ($recipientId, 1)";
+        if ($conn->query($createChatRoomQuery) === TRUE) {
+            $chatRoomId = $conn->insert_id;
+        } else {
+            echo "Error creating chat room: " . $conn->error;
+        }
+    }
+
+    // Insert message into database
+    $insertMessageQuery = "INSERT INTO messages (ChatRoomId, SenderId, RecipientId, Message) VALUES ($chatRoomId, $senderId, $recipientId, '$message')";
+    if ($conn->query($insertMessageQuery) === TRUE) {
+        // Redirect back to chat page
+        if ($senderType == 'user') {
+            header("Location: user_chat.php");
+        } else {
+            header("Location: admin_chat.php");
+        }
+    } else {
+        echo "Error: " . $insertMessageQuery . "<br>" . $conn->error;
     }
 } else {
-    echo "Error preparing statement: " . $conn->error;
+    echo "User does not exist";
 }
-
-$stmt->close();
-$conn->close();
-?>
+} else {
+    echo "User ID not set in session";
+    }
+    
+    $conn->close();
+    ?>
