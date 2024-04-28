@@ -206,6 +206,14 @@ include 'config.php'; ?>
         .past {
     color: #bbb; /* Light color for past dates */
 }
+.container {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            max-width: 550px;
+            margin-left: 50px;
+        }
 
     </style>
 </head>
@@ -258,11 +266,12 @@ echo '</div>';
 
         echo    '<div class="des">';
         echo '<h1>Hello I am '. $row['firstname'] .', Travel with me!</h2>';
-        echo '<br><p>I speak: '. $row['experience'] .'  </p>';
+        echo '<br><p>I speak: '. $row['languages'] .'  </p>';
         echo '<br>';
         echo '<a href="first_step.php?id='.$row['d_id'].'" class="button">Book</a>';
         echo '<br>';
         echo '<br>';
+        echo '<div class="container">';
         echo '<p><b>Rates per KM</b> </p><br>';
         echo '<table>';
         echo '<tr>';
@@ -286,6 +295,7 @@ echo '</div>';
         echo '<td>LKR 200 </td>';
         echo '</tr>';
         echo '</table>';
+        echo '</div>';
         echo '<br>';
         echo '<br>';
         echo '<p><b>About Vehicle</b> </p><br>';
@@ -342,6 +352,32 @@ echo '</div>';
         echo '</div>';        
         echo  '</div>';
         echo '<div>';
+        echo "<br>";
+        echo "<br>";
+        echo '<div style="background-color: white; display: inline-block; padding: 6px;width: 100%"><h2>Reviews</h2></div>';
+        echo    '<div class="des">';
+        
+        
+        $sql = "SELECT * FROM bookings WHERE d_id='$driverId'";
+        $result = $con->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                if (!empty($row['review'])) {
+                echo "<p style='font-size:17px;'>" . $row['name'] . "</p>";
+                echo "<br>";
+                echo "<p style='font-size:15px;'>" . $row['review'] . "</p>";
+                echo "<br>";
+                }
+            }else {
+                echo "<p style='font-size:15px;'>No reviews yet.</p>";
+            }
+        } else {
+            echo "<p style='font-size:15px;'>No reviews yet.</p>";
+        }
+        echo '</div>';
+        echo '<br>';
+        echo '<br>';
    include '../comment/comment.php';
    echo '</div>';
         echo '</div>';
