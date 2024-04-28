@@ -146,9 +146,9 @@ body {
 <div class="header">
   <h2><span class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>Campamento Blog </h2>
 </div>
+<br>
+<hr style="border-top: 3px solid black;">
 <br><br><br>
-
-   
   
     <?php
     if(isset($_GET['id'])){
@@ -253,6 +253,7 @@ body {
   
 </div>
 
+
 <?php  
   //require("comment.php"); 
   ?>
@@ -290,5 +291,9 @@ function showSlides(n) {
 
 </tr>
 </table>
+<br><br><br><br>
+<hr style="border-top: 3px solid black;">
+<h2> Comments  </h2>
+<?php include '../comment/comment.php'; ?>
 </body>
 </html>

@@ -20,16 +20,6 @@
                 </li>
 
                 <li>
-                    <a href="../home/home.php">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Home</span>
-                    </a>
-                </li>
-
-
-                <li>
                     <a href="dr_db.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
@@ -81,6 +71,15 @@
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
                         <span class="title">Sign Out</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../home/home.php">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Back to Home</span>
                     </a>
                 </li>
             </ul>

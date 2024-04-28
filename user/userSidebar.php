@@ -50,7 +50,7 @@
                 </li>
 
                 <li>
-                    <a href="../blog/dataBlog.php">
+                    <a href="/CAMPAMENTO-GIS23/blog/dataBlog.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="show-wishlist.php">
+                    <a href="/CAMPAMENTO-GIS23/user/show-wishlist.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -87,7 +87,7 @@
                 </li>
 
                 <li>
-                    <a href="../login/logout.php">
+                    <a href="/CAMPAMENTO-GIS23/login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>

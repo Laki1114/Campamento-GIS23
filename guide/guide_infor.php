@@ -249,147 +249,170 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
   
        }else{}
 
-    echo '<div class="topbar">';
-    echo  '<div class="toggle">';
-    echo  '<ion-icon name="menu-outline"></ion-icon>';
-    echo   '</div>';
-
-    echo  '<div class="search">';
-    echo  '<label>';
-    echo   '<input type="text" id="searchInput"  placeholder="Search here">';    
-    echo   '<ion-icon name="search-outline"></ion-icon>';
-    echo '</label>';
-    echo '</div>';
-    echo '</div>';                            
-
-    echo  '<div class="driver">';
-    echo  '<div class="d">';
-    echo   '<br>';
-    echo '<div style="background-color: white; display: inline-block; padding: 10px;width: 100%"><p><b>Explore with  '. $row['firstname'] .':</b></p></div>';
-    echo '</div>';
-    echo '<div class="do">';
-    echo '<div class="d-img">';
-    echo   '<img src="' . $row['picture'] . '" alt="pic">';
-    echo '</div>';
+       echo '<div class="topbar">';
+       echo  '<div class="toggle">';
+       echo  '<ion-icon name="menu-outline"></ion-icon>';
+       echo   '</div>';
    
-    echo '<div class="calendar">';
-    echo '<div class="calendar-header">';
-    echo '<button id="prevMonthBtn">&lt;</button>';
-    echo '<h2 id="currentMonth">Month Year</h2>';
-    echo '<button id="nextMonthBtn">&gt;</button>';
-   echo '</div>';
-   echo '<div class="calendar-grid" id="calendarGrid"></div>';
-   echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo  '</div>';
-    echo    '<div class="des">';
-    echo '<h1>Hello I am '. $row['firstname'] .', Travel with me!</h1>';
-    echo '<br><p>I speak:  ' . $languages . ' </p>';
-    echo '<br><p>'. $row['qualification'] .'</p>';
-    echo '<table>';
-    echo '<tr>';
-    echo '<th>Book Guide</th>';
-    echo '<th>Amount</th>';
-    echo '</tr>';
-    if ($row['hourly'] != 0) {
-        echo '<tr>';
-        echo '<td>Half Day</td>';
-        echo '<td>LKR '. ($row['hourly'] + ($row['hourly'] * 0.2)) .'</td>';
-        echo '</tr>';
-    }
-    if ($row['half_day'] != 0) {
-        echo '<tr>';
-        echo '<td>Half Day</td>';
-        echo '<td>LKR '. ($row['half_day'] + ($row['half_day'] * 0.2)) .'</td>';
-        echo '</tr>';
-    }
-    
-    if ($row['full_day'] != 0) {
-        echo '<tr>';
-        echo '<td>Full Day</td>';
-        echo '<td>LKR '. ($row['full_day'] + ($row['full_day'] * 0.2)) .'</td>';
-        echo '</tr>';
-    }
-    
-    echo '</table>';
+       echo  '<div class="search">';
+       echo  '<label>';
+       echo   '<input type="text" id="searchInput"  placeholder="Search here">';    
+       echo   '<ion-icon name="search-outline"></ion-icon>';
+       echo '</label>';
+       echo '</div>';
+       echo '</div>';                            
    
-
-    echo '<br>';
-    echo '<a href="first_step.php?id='.$row['id'].'" class="button">Book</a> <br> <br>';
-    echo  '</div>';
-    echo    '<div class="des">';
-    echo '<br>';
-    echo '<h2>Experience</h2><br>';
-    echo '<p>';
-    echo ''. $row['experience'] .'<br><br><br>';
-    echo  '</div>';
-    echo    '<div class="de">';
-    echo '<table style="width: 70%; border: 1px solid black;margin: 0 auto;">';
-    echo '<tr>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Qualification</td>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['qualification'] . '</td>';
-    echo '</tr>';
-    echo '<tr>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Location</td>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['location'] . '</td>';
-    echo '</tr>';
-    echo '<tr>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Expertise</td>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['expertise'] . '</td>';
-    echo '</tr>';
-    echo '<tr>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Tour types</td>';
-    echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['tour_types'] . '</td>';
-    echo '</tr>';
-    echo '</table>';
-    echo '<br>';
-    echo '<br>';
-    echo '<br>';
+       echo  '<div class="driver">';
+       echo  '<div class="d">';
+       echo   '<br>';
+       echo '<div style="background-color: white; display: inline-block; padding: 10px;width: 100%"><p><b>Explore with  '. $row['firstname'] .':</b></p></div>';
+       echo '</div>';
+       echo '<div class="do">';
+       echo '<div class="d-img">';
+       echo   '<img src="' . $row['picture'] . '" alt="pic">';
+       echo '</div>';
+      
+       echo '<div class="calendar">';
+       echo '<div class="calendar-header">';
+       echo '<button id="prevMonthBtn">&lt;</button>';
+       echo '<h2 id="currentMonth">Month Year</h2>';
+       echo '<button id="nextMonthBtn">&gt;</button>';
+      echo '</div>';
+      echo '<div class="calendar-grid" id="calendarGrid"></div>';
+      echo '</div>';
    echo '</div>';
-   
+   echo '</div>';
    echo '</div>';
    echo  '</div>';
-  
-  
-   $sqll = "SELECT * FROM exp_images WHERE guide_id = $id";
-
-   // Execute the query
-   $reslt = mysqli_query($con, $sqll);
-
-   // Check if there are any images
-   if (mysqli_num_rows($reslt) > 0) {
-       // Loop through each row to fetch images
-       echo '<div class="experience-grid">';
-       while ($ro = mysqli_fetch_assoc($reslt)) {
-           // Display each image and edit button
-           
-           echo "<div class='experience-item'>";
-           echo "<img src='experience/" . $ro['file_name'] . "' alt='Experience'>";
-           echo "</div>";
-        
-       }    echo "</div>";
-   } else {
-       // If no images found, display a message
-       echo "<div>No images found for this user.</div>";
-   }
-          
-   echo '</div>';
+       echo    '<div class="des">';
+       echo '<h1>Hello I am '. $row['firstname'] .', Travel with me!</h1>';
+       echo '<br><p>I speak:  ' . $languages . ' </p>';
+       echo '<br><p>'. $row['qualification'] .'</p>';
+       echo '<table>';
+       echo '<tr>';
+       echo '<th>Book Guide</th>';
+       echo '<th>Amount</th>';
+       echo '</tr>';
+       if ($row['hourly'] != 0) {
+           echo '<tr>';
+           echo '<td>Half Day</td>';
+           echo '<td>LKR '. ($row['hourly'] + ($row['hourly'] * 0.2)) .'</td>';
+           echo '</tr>';
+       }
+       if ($row['half_day'] != 0) {
+           echo '<tr>';
+           echo '<td>Half Day</td>';
+           echo '<td>LKR '. ($row['half_day'] + ($row['half_day'] * 0.2)) .'</td>';
+           echo '</tr>';
+       }
+       
+       if ($row['full_day'] != 0) {
+           echo '<tr>';
+           echo '<td>Full Day</td>';
+           echo '<td>LKR '. ($row['full_day'] + ($row['full_day'] * 0.2)) .'</td>';
+           echo '</tr>';
+       }
+       
+       echo '</table>';
+      
    
-            
-   echo '</div>';
-  echo '<br>';
-  echo '<br>';
-   echo '<div>';
-   include '../comment/comment.php';
-   echo '</div>';
-  }
-}else {
-        echo "Guide not found.";
-    }
-
-    ?>    
+       echo '<br>';
+       echo '<a href="first_step.php?id='.$row['id'].'" class="button">Book</a> <br> <br>';
+       echo  '</div>';
+       echo    '<div class="des">';
+       echo '<br>';
+       echo '<h2>Experience</h2><br>';
+       echo '<p>';
+       echo ''. $row['experience'] .'<br><br><br>';
+       echo  '</div>';
+       echo    '<div class="de">';
+       echo '<table style="width: 70%; border: 1px solid black;margin: 0 auto;">';
+       echo '<tr>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Qualification</td>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['qualification'] . '</td>';
+       echo '</tr>';
+       echo '<tr>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Location</td>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['location'] . '</td>';
+       echo '</tr>';
+       echo '<tr>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Expertise</td>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['expertise'] . '</td>';
+       echo '</tr>';
+       echo '<tr>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">Tour types</td>';
+       echo '<td style="padding: 10px; text-align: left; border: 1px solid black;">' . $row['tour_types'] . '</td>';
+       echo '</tr>';
+       echo '</table>';
+       echo '<br>';
+       echo '<br>';
+       echo '<br>';
+      echo '</div>';
+      
+      echo '</div>';
+      echo  '</div>';
+     
+     
+      $sqll = "SELECT * FROM exp_images WHERE guide_id = $id";
+   
+      // Execute the query
+      $reslt = mysqli_query($con, $sqll);
+   
+      // Check if there are any images
+      if (mysqli_num_rows($reslt) > 0) {
+          // Loop through each row to fetch images
+          echo '<div class="experience-grid">';
+          while ($ro = mysqli_fetch_assoc($reslt)) {
+              // Display each image and edit button
+              
+              echo "<div class='experience-item'>";
+              echo "<img src='experience/" . $ro['file_name'] . "' alt='Experience'>";
+              echo "</div>";
+           
+          }    echo "</div>";
+      } else {
+          // If no images found, display a message
+          echo "<div>No images found for this user.</div>";
+      }
+             
+      echo '</div>';
+      echo "<br>";
+      echo "<br>";
+      echo '<div style="background-color: white; display: inline-block; padding: 6px;width: 100%"><h2>Reviews</h2></div>';
+      echo    '<div class="des">';
+      
+      
+      $sql = "SELECT * FROM booking_guide WHERE guide_id='$id'";
+      $result = $con->query($sql);
+   
+      if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+           if (!empty($row['review'])) {
+              echo "<p style='font-size:17px;'>" . $row['name'] . "</p>";
+              echo "<p style='font-size:15px;'>" . $row['review'] . "</p>";
+              echo "<br>";
+          }
+       }
+      } else {
+          echo "<p style='font-size:15px;'>No reviews yet.</p>";
+      }
+      echo '</div>';
+      echo '<br>';
+      echo '<br>';
+               
+      echo '</div>';
+     echo '<br>';
+     echo '<br>';
+      echo '<div>';
+      include '../comment/comment.php';
+      echo '</div>';
+     }
+   }else {
+           echo "Guide not found.";
+       }
+   
+       ?>    
+       
     
 <script>
 document.addEventListener('DOMContentLoaded', function () {

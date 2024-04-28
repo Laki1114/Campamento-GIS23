@@ -1,24 +1,12 @@
-
 <?php
 // Include database connection file
 include('../database/linklinkz.php');
 
-// Initialize variables for start date and end date
-$startDate = isset($_GET['startDate']) ? $_GET['startDate'] : null;
-$endDate = isset($_GET['endDate']) ? $_GET['endDate'] : null;
-
-// Construct SQL query with optional date range filter
-$sql = "SELECT DATE(login_time) AS login_date, COUNT(*) AS login_attempts FROM login_attempts";
-if ($startDate && $endDate) {
-    // Add date range filter if both start date and end date are provided
-    $sql .= " WHERE DATE(login_time) BETWEEN '$startDate' AND '$endDate'";
-}
-$sql .= " GROUP BY login_date";
-
-// Execute SQL query
+// Fetch daily login attempts data from the database
+$sql = "SELECT DATE(login_time) AS login_date, COUNT(*) AS login_attempts FROM login_attempts GROUP BY login_date";
 $result = mysqli_query($linkz, $sql);
 
-// Initialize an array to store filtered data
+// Initialize an array to store data
 $data = array();
 
 // Check if there are results
