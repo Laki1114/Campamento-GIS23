@@ -87,7 +87,7 @@
                 </li>
 
                 <li>
-<<<<<<< HEAD
+
                     <a href="../chat4/chat.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
@@ -97,10 +97,9 @@
                 </li>
 
                 <li>
-                    <a href="/CAMPAMENTO-GIS23/login/logout.php">
-=======
+
                     <a href="/Campamento-GIS23/login/logout.php">
->>>>>>> de8d1138cb9b118c7c82a8b959736c2d8154c50d
+
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
