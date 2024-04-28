@@ -369,8 +369,6 @@ echo '</div>';
                 echo "<p style='font-size:15px;'>" . $row['review'] . "</p>";
                 echo "<br>";
                 }
-            }else {
-                echo "<p style='font-size:15px;'>No reviews yet.</p>";
             }
         } else {
             echo "<p style='font-size:15px;'>No reviews yet.</p>";
