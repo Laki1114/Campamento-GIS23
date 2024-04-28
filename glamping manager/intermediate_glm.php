@@ -32,15 +32,15 @@ if(isset($_POST['submit'])) {
         // Passwords match, proceed with registration
 
         // Hash the password
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
+       // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+      
         // Prepare SQL statement to insert data into the database
-        $sql = "INSERT INTO glamping_manager_registration (first_name, last_name, NIC, email, business_name, business_registration_no, gender, phone_number, password, repeat_password) VALUES ('$firstName', '$lastName', '$nicNo', '$email', '$bName', '$bNo', '$gender', '$phoneNo', '$hashedPassword', '$repeatPassword')";
+        $sql = "INSERT INTO glamping_manager_registration (first_name, last_name, NIC, email, business_name, business_registration_no, gender, phone_number, password, repeat_password) VALUES ('$firstName', '$lastName', '$nicNo', '$email', '$bName', '$bNo', '$gender', '$phoneNo', '$password', '$repeatPassword')";
 
         // Execute SQL statement
         if (mysqli_query($conn, $sql)) {
             // Registration successful, redirect to home page
-            header("Location: manager_details.php");
+            header("Location: ../login/login.php");
             exit(); // Ensure that no further code is executed after redirection
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);

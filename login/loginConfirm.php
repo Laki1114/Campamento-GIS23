@@ -96,9 +96,9 @@ if ($result->num_rows > 0) {
         if ($row["Status"] == '1') {
             $_SESSION['email'] = $email;
 // Insert login attempt into the database
-insertLoginAttempt($email);
+//insertLoginAttempt($email);
 
-            header("Location: ../glamping manager/glm_Prfile.php");
+            header("Location: ../glamping manager/manager_details.php");
             exit;
         } else {
             $_SESSION['error'] = "deactivated";
