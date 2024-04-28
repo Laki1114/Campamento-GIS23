@@ -40,13 +40,7 @@
     font-weight: normal;
   }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    height: auto;
-}
+
 
 .card {
     border: 1px solid #ccc;
