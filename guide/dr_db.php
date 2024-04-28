@@ -1,10 +1,45 @@
 <?php
-      require 'config.php';
+require 'config.php';
 
-        if(!isset($_SESSION['email'])){
-            header('location: ../login/login.php');
-        }
+if(!isset($_SESSION['email'])){
+    header('location: ../login/login.php');
+}
+
+$em = $_SESSION['email'];
+$sql = "SELECT * FROM guide WHERE email = '$em'";//change Email='email' or Email='$email'
+$result = mysqli_query($con,$sql);
+
+while ($row = mysqli_fetch_assoc($result)){
+  $id=$row["id"];
+}
+
+// Total number of trips
+$total_trips_sql = "SELECT COUNT(*) as total_trips FROM booking_guide WHERE guide_id='$id'";
+$total_trips_result = $con->query($total_trips_sql);
+$total_trips_row = $total_trips_result->fetch_assoc();
+$total_trips = $total_trips_row['total_trips'];
+
+// Completed trips
+$completed_trips_sql = "SELECT COUNT(*) as completed_trips FROM booking_guide WHERE guide_id='$id' AND booking_status ='Completed'";
+$completed_trips_result = $con->query($completed_trips_sql);
+$completed_trips_row = $completed_trips_result->fetch_assoc();
+$completed_trips = $completed_trips_row['completed_trips'];
+
+// Cancelled trips
+$cancelled_trips_sql = "SELECT COUNT(*) as cancelled_trips FROM booking_guide WHERE guide_id='$id' AND booking_status ='Cancelled'";
+$cancelled_trips_result = $con->query($cancelled_trips_sql);
+$cancelled_trips_row = $cancelled_trips_result->fetch_assoc();
+$cancelled_trips = $cancelled_trips_row['cancelled_trips'];
+
+// Overall rating
+$overall_rating_sql = "SELECT AVG(star_rating) as overall_rating FROM booking_guide WHERE guide_id='$id'";
+$overall_rating_result = $con->query($overall_rating_sql);
+$overall_rating_row = $overall_rating_result->fetch_assoc();
+$overall_rating = $overall_rating_row['overall_rating'];
+
 ?>
+
+
 <html lang="en">
 
 <head>
@@ -12,7 +47,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <title> Admin Dashboard </title>
+    <title> Dashboard </title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="../css/Driver/admin.css">
     <style>
@@ -68,7 +103,7 @@
 }
 
 .unavailable {
-    background-color:#4caf50; /* Different color when unavailable */
+    background-color: #ff0000; /* Change to red color */
     color: #fff;
 }
 
@@ -116,11 +151,14 @@
 #updateAvailabilityBtn:hover {
     background-color: #45a049;
 }
-.calendar-day.disabled {
-    pointer-events: none; /* Disable click events */
-    opacity: 0.5; /* Optionally reduce opacity for visual indication */
-    /* Add any additional styling as needed */
-}
+
+        /* Add the new CSS for disabled dates */
+        .disabled {
+            background-color: #f0f0f0; /* Lighter color for disabled dates */
+            color: #bbb; /* Adjust text color for better visibility */
+            cursor: not-allowed; /* Change cursor to not-allowed for disabled dates */
+        }
+
     </style>
 </head>
 
@@ -156,7 +194,7 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">30</div>
+                        <div class="numbers"><?php echo $total_trips ?></div>
                         <div class="cardName">Total No. of Trips</div>
                     </div>
 
@@ -167,7 +205,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">25</div>
+                        <div class="numbers"><?php echo $completed_trips ?></div>
                         <div class="cardName">Completed Trips</div>
                     </div>
 
@@ -178,7 +216,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">5</div>
+                        <div class="numbers"><?php echo $cancelled_trips ?></div>
                         <div class="cardName">Cancelled Trips</div>
                     </div>
 
@@ -189,8 +227,8 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">⭐4.5</div>
-                        <div class="cardName">Overall Rating</div>
+                        <div class="numbers">⭐<?php echo $overall_rating ?></div>
+                        <div class="cardName">Rating</div>
                     </div>
 
                     <div class="iconBx">
@@ -201,21 +239,18 @@
 
             <!-- ================ Order Details List ================= -->
             <div class="details">
-               
+                
 
 
-
+           
 
                 <!-- ================= New Customers ================ -->
    
-        
-       
-       
+                <?php include 'chart.php'; ?>
+           <br><h4>Monthly Report:</h4><br> <a href="monthly_report.php" target="_blank">Download Monthly Report</a>
+        </div>
     </div>
-<div>
-<?php include 'chart.php'; ?>
-<h4>Monthly Report: </h4><a href="monthly_report.php" target="_blank">Download Monthly Report</a><br><br>
-</div>
+
 
 
     <!-- ====== ionicons ======= -->

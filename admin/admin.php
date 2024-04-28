@@ -10,7 +10,38 @@ if (!isset($_SESSION['email'])) {
 // Include database connection file
 include 'db.php';
 
+$sqlGuide = "SELECT date, COUNT(*) AS guide_bookings FROM booking_guide GROUP BY date";
+$resultGuide = mysqli_query($conn, $sqlGuide);
 
+// Fetch data for driver bookings
+$sqlDriver = "SELECT booking_date AS date, COUNT(*) AS driver_bookings FROM bookings GROUP BY booking_date";
+$resultDriver = mysqli_query($conn, $sqlDriver);
+
+// Initialize arrays to store formatted data
+$dates = [];
+$guideBookings = [];
+$driverBookings = [];
+
+// Format guide bookings data
+while ($row = mysqli_fetch_assoc($resultGuide)) {
+    $dates[] = $row['date'];
+    $guideBookings[] = $row['guide_bookings'];
+}
+
+// Format driver bookings data
+while ($row = mysqli_fetch_assoc($resultDriver)) {
+    // Check if the date already exists in the array
+    $index = array_search($row['date'], $dates);
+    if ($index !== false) {
+        // If date exists, update the corresponding index in the array
+        $driverBookings[$index] = $row['driver_bookings'];
+    } else {
+        // If date doesn't exist, add it to the dates array and add 0 to guide bookings
+        $dates[] = $row['date'];
+        $guideBookings[] = 0;
+        $driverBookings[] = $row['driver_bookings'];
+    }
+}
 
 
 $adminData = array(
@@ -87,22 +118,61 @@ $adminData = array(
                         <h2>Daily Views</h2>
                         
                     </div>
-                    <!-- Add input fields for date selection -->
-<label for="startDate">Start Date:</label>
-<input type="date" id="startDate" name="startDate">
-<label for="endDate">End Date:</label>
-<input type="date" id="endDate" name="endDate">
-<button onclick="fetchFilteredData()">Apply Filter</button>
 
-<!-- Display Daily Views Chart -->
+                    <!-- Display Daily Views Chart -->
 
-                    
-                    <canvas id="dailyLoginChart" width="400px" height="200px"></canvas>
+                    <canvas id="dailyLoginChart" width="100px" height="50px"></canvas>
                     
                 </div>
-    </div>
+
+                <div class="recentOrders">
+                    
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Transactions</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                </div>
+                
+                
+
+            </div>
 
 
+
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Booking Details</h2>
+                        
+                    </div>
+
+                    <!-- Display Daily Views Chart -->
+
+                    <canvas id="bookingChart" width="200px" height="100px"></canvas>
+                    
+                </div>
+
+                <div class="recentOrders">
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Transactions</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                
+                 
+                </div>
+            </div>
+           
             
             <div class="cardBox">
                 
@@ -315,33 +385,6 @@ $conn->close();
                                 <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
                                 <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
                             </td>
                         </tr>
@@ -354,41 +397,8 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-// Function to fetch filtered data based on selected dates
-function fetchFilteredData() {
-    var startDate = document.getElementById("startDate").value;
-    var endDate = document.getElementById("endDate").value;
 
-    // Check if both start date and end date are provided
-    if (startDate && endDate) {
-        // Send AJAX request to fetch filtered data
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                // Parse the JSON response
-                var filteredData = JSON.parse(xhr.responseText);
-                // Update the chart with filtered data
-                updateChart(filteredData);
-            }
-        };
-        // Construct URL with parameters
-        var url = "fetch_daily_login_data.php?startDate=" + startDate + "&endDate=" + endDate;
-        // Send GET request
-        xhr.open("GET", url, true);
-        xhr.send();
-    } else {
-        alert("Please select both start date and end date.");
-    }
-}
 
-// Function to update chart with filtered data
-function updateChart(filteredData) {
-    // Update the chart data with filtered data
-    dailyViewsChart.data.labels = filteredData.labels;
-    dailyViewsChart.data.datasets[0].data = filteredData.loginAttempts;
-    // Update the chart
-    dailyViewsChart.update();
-}
 
         // Function to fetch daily login attempts data from the database
         function fetchDailyLoginData() {
@@ -444,6 +454,38 @@ function updateChart(filteredData) {
         fetchDailyLoginData();
     </script>
 
+
+<script>
+        var ctx = document.getElementById('bookingChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: <?php echo json_encode($dates); ?>,
+                datasets: [{
+                    label: 'Guide Bookings',
+                    data: <?php echo json_encode($guideBookings); ?>,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: false
+                }, {
+                    label: 'Driver Bookings',
+                    data: <?php echo json_encode($driverBookings); ?>,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
 
 
     <!-- ====== ionicons ======= -->

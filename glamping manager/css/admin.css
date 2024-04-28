@@ -245,8 +245,6 @@ body {
 
 }
 
-
-
 .cardBox .card {
   position: relative;
   background: var(--white);
@@ -285,8 +283,6 @@ body {
   color: var(--white);
 }
 
-
-
 /* ================== Order Details List ============== */
 .details {
   position: relative;
@@ -301,7 +297,7 @@ body {
 .details .recentOrders {
   position: relative;
   display: grid;
-  
+  min-height: 20px;
   background: var(--white);
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
@@ -329,7 +325,7 @@ body {
 .details table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 0px;
+  margin-top: 10px;
 }
 .details table thead td {
   font-weight: 600;

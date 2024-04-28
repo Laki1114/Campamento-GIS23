@@ -92,13 +92,13 @@ $result = mysqli_query($linkz, $sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    if ($_POST['psw'] == $row["Password"]) {
+    if ($_POST['psw'] == $row["password"]) {
         if ($row["Status"] == '1') {
             $_SESSION['email'] = $email;
 // Insert login attempt into the database
 //insertLoginAttempt($email);
 
-            header("Location: ../glamping manager/glm_Prfile.php");
+            header("Location: ../glamping manager/manager_details.php");
             exit;
         } else {
             $_SESSION['error'] = "deactivated";

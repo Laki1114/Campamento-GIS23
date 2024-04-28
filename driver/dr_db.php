@@ -1,12 +1,45 @@
-
-
 <?php
-      require 'config.php';
+require 'config.php';
 
-        if(!isset($_SESSION['email'])){
-            header('location: ../login/login.php');
-        }
+if(!isset($_SESSION['email'])){
+    header('location: ../login/login.php');
+}
+
+$em = $_SESSION['email'];
+$sql = "SELECT * FROM driver WHERE email = '$em'";//change Email='email' or Email='$email'
+$result = mysqli_query($con,$sql);
+
+while ($row = mysqli_fetch_assoc($result)){
+  $id=$row["d_id"];
+}
+
+// Total number of trips
+$total_trips_sql = "SELECT COUNT(*) as total_trips FROM bookings WHERE d_id='$id'";
+$total_trips_result = $con->query($total_trips_sql);
+$total_trips_row = $total_trips_result->fetch_assoc();
+$total_trips = $total_trips_row['total_trips'];
+
+// Completed trips
+$completed_trips_sql = "SELECT COUNT(*) as completed_trips FROM bookings WHERE d_id='$id' AND booking_status ='Completed'";
+$completed_trips_result = $con->query($completed_trips_sql);
+$completed_trips_row = $completed_trips_result->fetch_assoc();
+$completed_trips = $completed_trips_row['completed_trips'];
+
+// Cancelled trips
+$cancelled_trips_sql = "SELECT COUNT(*) as cancelled_trips FROM bookings WHERE d_id='$id' AND booking_status ='Cancelled'";
+$cancelled_trips_result = $con->query($cancelled_trips_sql);
+$cancelled_trips_row = $cancelled_trips_result->fetch_assoc();
+$cancelled_trips = $cancelled_trips_row['cancelled_trips'];
+
+// Overall rating
+$overall_rating_sql = "SELECT AVG(star_rating) as overall_rating FROM bookings WHERE d_id='$id'";
+$overall_rating_result = $con->query($overall_rating_sql);
+$overall_rating_row = $overall_rating_result->fetch_assoc();
+$overall_rating = $overall_rating_row['overall_rating'];
+
 ?>
+
+
 <html lang="en">
 
 <head>
@@ -161,7 +194,7 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">30</div>
+                        <div class="numbers"><?php echo $total_trips ?></div>
                         <div class="cardName">Total No. of Trips</div>
                     </div>
 
@@ -172,7 +205,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">25</div>
+                        <div class="numbers"><?php echo $completed_trips ?></div>
                         <div class="cardName">Completed Trips</div>
                     </div>
 
@@ -183,7 +216,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">5</div>
+                        <div class="numbers"><?php echo $cancelled_trips ?></div>
                         <div class="cardName">Cancelled Trips</div>
                     </div>
 
@@ -194,8 +227,8 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">⭐4.5</div>
-                        <div class="cardName">Overall Rating</div>
+                        <div class="numbers">⭐<?php echo $overall_rating ?></div>
+                        <div class="cardName">Rating</div>
                     </div>
 
                     <div class="iconBx">

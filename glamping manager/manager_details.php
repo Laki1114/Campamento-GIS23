@@ -6,8 +6,8 @@ include('database/glm_link.php');
 $glm_id = $firstName = $last_name = $gender = $phone_number = $NIC = $email = $password = '';
 
 // Set session email
-$_SESSION['email'] = 'nihal@gmail.com';
-$email = 'nihal@gmail.com';
+$email=$_SESSION['email'];
+
 
 // Fetch supplier details from the database
 $sql = "SELECT * FROM glamping_manager_registration WHERE email = '$email'";
@@ -20,13 +20,13 @@ if ($result) {
         // Fetch data from the result set
         $row = mysqli_fetch_assoc($result);
         $glm_id = $row["glm_id"];
-        $firstName = $row["firstName"];
+        $firstName = $row["first_name"];
         $last_name = $row["last_name"];
         $gender = $row["gender"];
-        $phone_number = $row["Phone_number"];
+        $phone_number = $row["phone_number"];
         $NIC = $row["NIC"];
-        $email = $row["Email"];
-        $password = $row["Password"];
+        $email = $row["email"];
+        $password = $row["password"];
         
     } else {
         // No rows found
