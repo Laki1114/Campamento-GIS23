@@ -68,7 +68,7 @@ if ($result->num_rows > 0) {
             $_SESSION['customerid'] = $row['UserId'];
 
             // Insert login attempt into the database
-            insertLoginAttempt($email);
+            //insertLoginAttempt($email);
             //echo $_SESSION['customer'];
             // Redirect to the target page with both IDs in the URL parameter
             //header("Location: ../user/profileUSer.php?user=" . $_SESSION['customer'] . "&userid=" . $_SESSION['customerid']);
@@ -96,7 +96,7 @@ if ($result->num_rows > 0) {
         if ($row["Status"] == '1') {
             $_SESSION['email'] = $email;
 // Insert login attempt into the database
-insertLoginAttempt($email);
+//insertLoginAttempt($email);
 
             header("Location: ../glamping manager/glm_Prfile.php");
             exit;
@@ -123,7 +123,7 @@ if ($result->num_rows > 0) {
             $_SESSION['email'] = $row["Email"];
 
 // Insert login attempt into the database
-insertLoginAttempt($email);
+//insertLoginAttempt($email);
 
             //header("Location: ../supplier/profileSupplier.php?supplier=" . $_SESSION['supplier']);
             header("Location: ../Supplier/orders.php?supplier=" . $_SESSION['email']);
