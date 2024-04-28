@@ -82,15 +82,81 @@ if($result->num_rows > 0) {
 <head>
     <title>Login</title>
 </head>
+
+<style>
+        body {
+            background-color: #BFCC7C;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #327028;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #327028;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #295822;
+        }
+
+        .error {
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+    </style>
+
 <body>
+
+
+
+
+
+<form method="post" action="">
 
 <h2>Login</h2>
 
 <?php if(isset($error)) { ?>
-    <p><?php echo $error; ?></p>
+    <p class="error"><?php echo $error; ?></p>
 <?php } ?>
 
-<form method="post" action="">
     <label>Email:</label><br>
     <input type="text" name="email" required><br><br>
 

@@ -80,28 +80,34 @@ $conn->close();
         }
 
         table {
-        width: 100%;
+        width: 80%;
         border-collapse: collapse;
         margin-top: 20px;
     }
 
     th, td {
-        border: 1px solid #ddd;
+        
         padding: 8px;
         text-align: left;
+        border-radius:10px;
     }
 
     th {
-        background-color: #ccc;
+        background-color: #327028;
     }
 
     tr:hover {
-        background-color: #ddd;
+        background-color: #ccc;
     }
 
     tr {
         cursor: pointer;
+        background-color:#ddd;
     }
+/* Add this CSS for the 'unread' class */
+tr.unread {
+    background-color: #ffe6e6; /* Example color for unread rows */
+}
 
     </style>
 
@@ -132,19 +138,39 @@ $conn->close();
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($users as $user): ?>
-            <tr onclick="window.location='chat_room.php?user_id=<?= $user['UserId']; ?>'">
-                <td><?= $user['UserId']; ?></td>
-                <td><?= $user['FirstName']; ?></td>
-            </tr>
-        <?php endforeach; ?>
+
+
+    <?php foreach ($users as $user): ?>
+                    <tr onclick="window.location='chat_room.php?user_id=<?= $user['UserId']; ?>'">
+                        <td><?= $user['UserId']; ?></td>
+                        <td><?= $user['FirstName']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
     </tbody>
 </table>
 
         </div>
   
     </div>
+    <script>
+        // Function to update row colors based on unread messages
+        function updateRowColors() {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.classList.remove('unread'); // Reset row color
+                const userId = row.querySelector('td:first-child').textContent;
+                // Add AJAX logic here to check for unread messages for the user
+                // For demonstration purposes, I'll set row color randomly
+                const hasUnread = Math.random() < 0.5; // Simulate unread messages
+                if (hasUnread) {
+                    row.classList.add('unread');
+                }
+            });
+        }
 
+        // Call the function initially to set row colors
+        updateRowColors();
+    </script>
     <!-- ====== ionicons ======= -->
 </body>
 
@@ -152,8 +178,3 @@ $conn->close();
 
 
 
-
-<body>
-    
-</body>
-</html>

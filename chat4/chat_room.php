@@ -53,11 +53,14 @@ $conn->close();
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Room</title>
+    <title> Chat Room </title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../admin/css/admin.css">
     <style>
 
 * {
@@ -133,9 +136,23 @@ $conn->close();
         }
     </style>
 
+
 </head>
+
 <body>
-    <h1>Chat with <?php echo $user['FirstName']; ?></h1>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        
+        <div class="navigation">
+            
+            <?php include '../admin/adminsidebar.php'; ?>
+                    
+            </div>
+
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+        <h1>Chat with <?php echo $user['FirstName']; ?></h1>
     <div id="chat">
         <?php foreach ($messages as $message): ?>
             <div>
@@ -146,8 +163,20 @@ $conn->close();
     </div>
     <form method="post" action="send_message.php">
         <input type="hidden" name="receiver_id" value="<?php echo $userId; ?>">
-        <input type="text" name="message" placeholder="Type your message..." required>
+        <input id="message-input" type="text" name="message" placeholder="Type your message..." required>
         <button type="submit">Send</button>
     </form>
+        
+        </div>
+  
+    </div>
+    <script>
+        
+    </script>
+    <!-- ====== ionicons ======= -->
 </body>
+
 </html>
+
+
+
