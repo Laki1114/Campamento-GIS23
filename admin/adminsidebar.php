@@ -16,7 +16,7 @@
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
-                        <span  class="as"><img src="images/logo.png" alt="" width="150" height="70"></span>
+                        <span  class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>
                     </a>
                 </li>
 
