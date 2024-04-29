@@ -147,13 +147,13 @@ while ($row = mysqli_fetch_assoc($result)){
 </td>
 
    <td width="300px">
-    
+    <?php /*
    <!--<label for="email"><b>Email</b></label><br>
    <input type="text" placeholder="Enter Email" name="email" id="email" value="<?php  echo $email ?>"  required><br>-->
 
 <!--<label for="nicNo"><b>NIC No </b></label><br>
- <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo $nicNo ?>" required>-->
-  
+ <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo $nicNo ?>" required>-->*/
+  ?>
    
     
 
