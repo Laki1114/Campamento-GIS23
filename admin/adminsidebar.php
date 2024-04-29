@@ -51,7 +51,7 @@
                 </li>
 
                 <li>
-                    <a href="../chat/admin_chat.php">
+                    <a href="../chat4/admin_chat.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>

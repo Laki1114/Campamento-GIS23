@@ -99,17 +99,18 @@ $conn->close();
 
         /* User message styles */
         .user-message {
-            background-color: #4CAF50;
+            
+            background-color: #327028;
             color: white;
-            float: right;
+            float: left;
             clear: both;
         }
 
         /* Admin message styles */
         .admin-reply {
-            background-color: #008CBA;
-            color: white;
-            float: left;
+            background-color: #BFCC7C;
+            color: black;
+            float: right;
             clear: both;
         }
 
@@ -145,7 +146,7 @@ $conn->close();
         
         <div class="navigation">
             
-            <?php include '../admin/adminsidebar.php'; ?>
+            <?php include 'adminsidebar.php'; ?>
                     
             </div>
 
@@ -153,14 +154,14 @@ $conn->close();
         <!-- ========================= Main ==================== -->
         <div class="main">
         <h1>Chat with <?php echo $user['FirstName']; ?></h1>
-    <div id="chat">
+        <div id="chat">
         <?php foreach ($messages as $message): ?>
-            <div>
+            <div class="message <?php echo ($message['SenderAdminId'] == $_SESSION['AdminId']) ? 'admin-reply' : 'user-message'; ?>">
                 <strong><?php echo ($message['SenderAdminId'] == $_SESSION['AdminId']) ? 'You' : $user['FirstName']; ?>:</strong>
                 <?php echo $message['Message']; ?>
             </div>
         <?php endforeach; ?>
-    </div>
+        </div>
     <form method="post" action="send_message.php">
         <input type="hidden" name="receiver_id" value="<?php echo $userId; ?>">
         <input id="message-input" type="text" name="message" placeholder="Type your message..." required>

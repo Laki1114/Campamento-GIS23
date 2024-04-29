@@ -116,15 +116,15 @@ if (isset($_POST['message'])) {
 
         /* User message styles */
         .user-message {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #BFCC7C;
+            color: black;
             float: right;
             clear: both;
         }
 
         /* Admin message styles */
         .admin-reply {
-            background-color: #008CBA;
+            background-color: #327028;
             color: white;
             float: left;
             clear: both;
@@ -176,16 +176,38 @@ if (isset($_POST['message'])) {
                 <h2><center>Chat with Admin</center></h2>
 
 
-                <div id="chat">
-                    <?php displayMessages($conn, $userId, $adminId); ?>
-                </div>
+                <!-- HTML and PHP code for displaying messages -->
+<div id="chat">
+    <?php
+    $sql = "SELECT * FROM messages WHERE (SenderUserId = $userId AND ReceiverAdminId = $adminId) OR (SenderAdminId = $adminId AND ReceiverUserId = $userId) ORDER BY TimeStamp ASC";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            // Determine the class for the message based on sender
+            $messageClass = ($row['SenderUserId'] == $userId) ? "user-message" : "admin-reply";
+
+            // Output the message with the appropriate class
+            echo "<div class='message $messageClass'>";
+            echo "<strong>" . ($messageClass == "user-message" ? "You" : "Admin") . ": </strong>";
+            echo $row['Message'];
+            echo "</div>";
+        }
+    } else {
+        echo "No messages yet.";
+    }
+    ?>
+</div>
+
 
                 <form method="post" action="">
                     <input type="text" id="message-input" name="message" placeholder="Type your message..." required>
                     <button type="submit">Send</button>
                 </form>
 
-            
+               <!-- <form action="logout.php" method="post">
+        <button style="float:right;" type="submit">Logout</button>
+    </form>-->
             
             </div>
         </div>

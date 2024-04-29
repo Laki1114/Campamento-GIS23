@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Check if admin is logged in, otherwise return an error response
+if (!isset($_SESSION['AdminId'])) {
+    http_response_code(403); // Forbidden
+    exit();
+}
+
 // Your database connection code here
 $servername = "localhost";
 $username = "root";
@@ -8,19 +16,29 @@ $database = "campamento";
 $conn = new mysqli($servername, $username, $password, $database);
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    http_response_code(500); // Internal Server Error
+    exit();
 }
 
-// Check if there are unread messages for the user
-$userId = $_GET['user_id']; // Assuming user ID is sent via GET request
-$sql = "SELECT COUNT(*) AS unreadCount FROM messages WHERE ReceiverUserId = $userId AND IsRead = 0";
+// Get the user ID from the AJAX request
+$userId = $_GET['userId'];
+
+// Query to check if there are unread messages for the specified user
+$sql = "SELECT COUNT(*) AS UnreadMessagesCount FROM messages WHERE ReceiverUserId = $userId AND IsRead = 0";
 $result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$unreadCount = $row['unreadCount'];
 
-// Close connection
-$conn->close();
+if ($result) {
+    $row = $result->fetch_assoc();
+    $unreadMessagesCount = $row['UnreadMessagesCount'];
 
-// Return true if there are unread messages, false otherwise
-echo json_encode($unreadCount > 0);
-?>
+    // Return JSON response indicating whether there are unread messages
+    header('Content-Type: application/json');
+    echo json_encode(array('hasUnread' => $unreadMessagesCount > 0));
+
+    // Close database connection
+    $conn->close();
+    exit();
+} else {
+    http_response_code(500); // Internal Server Error
+    exit();
+}
