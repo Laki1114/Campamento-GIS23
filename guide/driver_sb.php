@@ -64,7 +64,7 @@
                         <span class="title">Profile</span>
                     </a>
                 </li>
-
+<br><br>
                 <li>
                     <a href="logout.php">
                         <span class="icon">
