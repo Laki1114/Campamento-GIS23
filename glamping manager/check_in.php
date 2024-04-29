@@ -1,3 +1,12 @@
+<?php 
+if(isset($_GET['id'])){
+  $siteID = $_GET['id'];
+
+
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +104,7 @@ tr:hover {
 
 <!-- Booking Form -->
 <div class="container">
-  <h1>Room Booking</h1>
+  <h1>Tent Booking</h1>
   <form id="bookingForm">
     <label for="checkInDate">Check-in Date:</label>
     <input type="date" id="checkInDate" name="checkInDate" required>

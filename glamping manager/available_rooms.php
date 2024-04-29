@@ -10,6 +10,8 @@ if ($mysqli->connect_error) {
   die("Connection failed: " . $mysqli->connect_error);
 }
 
+
+
 // Retrieve data from the request
 $data = json_decode(file_get_contents('php://input'), true);
 $checkInDate = $data['checkInDate'];
@@ -19,12 +21,18 @@ $checkOutDate = $data['checkOutDate'];
 $query = "SELECT 
               room1_type, max_guests_1, room1_price,
               room2_type, max_guests_2, room2_price
-          FROM rooms 
-          WHERE NOT EXISTS (
+          FROM sites
+          WHERE site_id = '$siteID' 
+          AND NOT EXISTS (
               SELECT * FROM customer_bookings 
-              WHERE rooms.room_id = customer_bookings.room_id AND
-              (? < customer_bookings.check_out_date AND ? > customer_bookings.check_in_date)
+              WHERE sites.room1_id = customer_bookings.room_id 
+              AND (
+                  ? < customer_bookings.check_out_date 
+                  AND 
+                  ? > customer_bookings.check_in_date
+              ) 
           )";
+
 $stmt = $mysqli->prepare($query);
 $stmt->bind_param("ss", $checkInDate, $checkOutDate);
 $stmt->execute();

@@ -81,7 +81,7 @@ $result = mysqli_query($linkz,$sql);
 
 while ($row = mysqli_fetch_assoc($result)){
   $userID=$row["glm_id"];
-  $firstName=$row["firstName"];
+  $firstName=$row["first_name"];
   $lastName=$row["last_name"];
   $gender=$row["gender"];
   $phoneNo=$row["phone_number"];

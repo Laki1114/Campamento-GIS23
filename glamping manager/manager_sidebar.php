@@ -69,11 +69,11 @@
 
 
                 <li>
-                    <a href="">
+                    <a href="../admin/ad.php">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>
-                        <span class="title">Chat</span>
+                        <span class="title">Post Advertisement</span>
                     </a>
                 </li>
 

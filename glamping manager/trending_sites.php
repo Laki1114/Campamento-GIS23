@@ -125,9 +125,10 @@ body {
         
 .card {
     margin-bottom: 30px;
-            width: 100%;
+            max-width: 500px;
             box-shadow: 2px 2px 20px #000;
             border-radius: 5px;
+            max-height: 700px;
 }
 .card-body{
   height: 500px;
@@ -160,7 +161,9 @@ body {
    padding: 8px 16px;
    
  }
- 
+ .card-img-top{
+  flex: 0 0 20%;
+ }
 
 
 </style>
@@ -229,7 +232,7 @@ body {
                                 
                                 <p class="card-text"><?php echo $row['room2_type']; ?> : LKR <?php echo $row['room2_price']; ?></p>
                             
-                                <a href="check_in.php" class="button">Book Now</a>
+                                <a href="check_in.php?id=<?php echo $row['site_id']?>" class="button">Book Now</a>
                               </div>
 
 

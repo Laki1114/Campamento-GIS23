@@ -13,7 +13,7 @@ session_start();
     <title> addsite1.php</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="glm_css_files/add_site2.css">
+    <link rel="stylesheet" href="../css/User/form.css">
 </head>
 
 
@@ -28,6 +28,7 @@ session_start();
 
         <!-- ========================= Main ==================== -->
         <div class="main">
+            <br><br>
         <center>
         <div>
         <div class="card">

@@ -10,6 +10,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #f0f0f0;
+            
         }
 
         .glamping-container {
@@ -17,7 +24,7 @@
             margin: 20px;
             padding: 0;
             border-collapse: collapse;
-            width: 80%; /* Adjust as needed */
+            width: 90%; /* Adjust as needed */
         }
 
         .glamping-container li {
@@ -36,6 +43,13 @@
     </style>
 </head>
 <body>
+    <div class="sidebar">
+   
+            
+            <?php include 'manager_sidebar.php'; ?>
+                    
+        
+    </div>
     <ul class="glamping-container">
         <?php
         // PHP code to generate Glamping Sites list
