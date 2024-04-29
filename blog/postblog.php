@@ -8,7 +8,7 @@ include('../database/linklinkz.php');?>
     <title>Your Blog Writing Page</title>
 </head>
 <body>
-    <form name="user" method="post" action="intermediateBlog.php" enctype="multipart/form-data" onsubmit="myFunction()">
+    <form name="user" method="post" action="intermediateBlog.php" enctype="multipart/form-data" onsubmit="return validateForm()">
     <div class="container">
         <h1>Blog Writing Section</h1>
         <label for="shortTitle" ><b>Title in Short </b></label><br>
@@ -54,9 +54,43 @@ include('../database/linklinkz.php');?>
     </form>
     <script>
 
-        function myFunction() {
-          alert("The form was submitted");
-        }
+function validateForm() {
+    // Get the value of the date input field
+    var dateString = document.getElementById("postDate").value;
+
+    // Parse the date string into a Date object using a standardized format
+    var inputDate = parseDateString(dateString);
+
+    // Get today's date
+    var today = new Date();
+    
+    // Set hours, minutes, seconds, and milliseconds to 0 for comparison
+    inputDate.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
+
+    // Compare the input date with today's date
+    if (inputDate.getTime() !== today.getTime()) {
+        alert("Please choose today's date.");
+        return false;
+    }
+    return true;
+}
+
+// Function to parse date string into a Date object with a standardized format
+function parseDateString(dateString) {
+    // Split the date string into components (assuming it's in the format YYYY-MM-DD)
+    var components = dateString.split('-');
+
+    // Create a new Date object using the components
+    var year = parseInt(components[0]);
+    var month = parseInt(components[1]) - 1; // Months are 0-indexed in JavaScript
+    var day = parseInt(components[2]);
+
+    return new Date(year, month, day);
+}
+
+
+
         </script>
 </body>
 </html>

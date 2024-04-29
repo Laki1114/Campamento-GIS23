@@ -63,7 +63,7 @@ if (mysqli_query($conn, $sql)) {
     <form action="addCategory.php" method='post'>
              <div class="form-group">
             <label for="catName"> Name:</label>
-            <input type="text" class="form-control" id="catName" name='catName'>
+            <input type="text" class="form-control" id="catName" name='catName' required>
             </div> 
             <button type="submit" name='submit' class="btn btn-primary">Submit</button>
     </form>

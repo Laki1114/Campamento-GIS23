@@ -98,7 +98,7 @@ while ($row = mysqli_fetch_assoc($result)){
 
               <tr>
                 <td></td>
-                <td><a href='#'><button class="btn info">change password</button></a></td>
+                <td><a href='changePassword.php'><button class="btn info">change password</button></a></td>
                 <td><a href="deleteUser.php.?id=<?php echo $userID; ?>"><button class="btn info">Delete Account</button></a></td>
               </tr>
             </table>

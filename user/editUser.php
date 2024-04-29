@@ -170,7 +170,7 @@ while ($row = mysqli_fetch_assoc($result)){
         <p class="help-block">Only jpg/png are allowed.</p>
     </div>
 <?php endif; ?>
-
+<!--
 
    <hr>   
    <br>
@@ -200,14 +200,14 @@ while ($row = mysqli_fetch_assoc($result)){
             </div>
             
                  
-     
+     -->
 
     <input type="submit" name="submit" value="Update"> <br>
 
 
       
 
-       
+
 
   </form>
 

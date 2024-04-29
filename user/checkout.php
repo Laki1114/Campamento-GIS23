@@ -107,7 +107,7 @@ $row = mysqli_fetch_assoc($result);
 						<h3 class="uppercase">Billing Details</h3>
 						<div class="space30"></div>
 							<label class="">Country </label>
-							<select class="form-control" name='country' id="country">
+							<select class="form-control" name='country' id="country" required>
 								<option value="">Select Country</option>
 								<option value="SL">Sri Lanka</option>
 								
@@ -117,11 +117,11 @@ $row = mysqli_fetch_assoc($result);
 							<div class="row">
 								<div class="col-md-6">
 									<label>First Name </label>
-									<input class="form-control" name='fname' id="fname" placeholder="" value="<?php if(isset($row['firstname'])) { echo $row['firstname']; } ?>" type="text">
+									<input class="form-control" name='fname' id="fname" placeholder="" value="<?php if(isset($row['firstname'])) { echo $row['firstname']; } ?>" type="text" required>
 								</div>
 								<div class="col-md-6">
 									<label>Last Name </label>
-									<input class="form-control" name='lname' id="lname" placeholder="" value="<?php if(isset($row['lastname'])) {echo $row['lastname']; } ?>" type="text">
+									<input class="form-control" name='lname' id="lname" placeholder="" value="<?php if(isset($row['lastname'])) {echo $row['lastname']; } ?>" type="text" required>
 								</div>
 							</div>
 							<div class="clearfix space20"></div>
@@ -129,9 +129,9 @@ $row = mysqli_fetch_assoc($result);
 							<input class="form-control" name='companyName' id="companyname" placeholder="" value="<?php if(isset($row['company'])) {echo $row['company']; } ?>" type="text">
 							<div class="clearfix space20"></div>
 							<label>Address </label>
-							<input class="form-control" name='addr1' id="addr1" placeholder="Street address" value="<?php if(isset($row['address1'])) {echo $row['address1']; } ?>" type="text">
+							<input class="form-control" name='addr1' id="addr1" placeholder="Street address" value="<?php if(isset($row['address1'])) {echo $row['address1']; } ?>" type="text" required>
 							<div class="clearfix space20"></div>
-							<input class="form-control" name='addr2' id="addr2" placeholder="Apartment, suite, unit etc. (optional)" value="<?php if(isset($row['address2'])) {echo $row['address2'];  } ?>" type="text">
+							<input class="form-control" name='addr2' id="addr2" placeholder="Apartment, suite, unit etc. (optional)" value="<?php if(isset($row['address2'])) {echo $row['address2'];  } ?>" type="text" required>
 							<div class="clearfix space20"></div>
 							<div class="row">
 								<div class="col-md-4">
@@ -149,7 +149,7 @@ $row = mysqli_fetch_assoc($result);
 							<input class="form-control" name='Email' placeholder="" value="-" type="text"> -->
 							<div class="clearfix space20"></div>
 							<label>Phone </label>
-							<input class="form-control" name='Phone'  id="phonenumber" placeholder="" value="<?php if(isset($row['mobile'])) {echo $row['mobile']; } ?>" type="text">
+							<input class="form-control" name='Phone'  id="phonenumber" placeholder="" value="<?php if(isset($row['mobile'])) {echo $row['mobile']; } ?>" type="text" required>
 							<input name="total_amount" id="total_amount" value= "<?php echo $total?>" type="hidden">
 							<input name="currency" id="currency" value= "LKR" type="hidden">
 
@@ -203,10 +203,14 @@ $row = mysqli_fetch_assoc($result);
 						
 				
                 </div>
+				<!--<div class="space30"></div>
+					<div id="agreeError" class="error"></div>
+					<input name="agree" id="checkboxG2" class="mr-2 css-checkbox " type="checkbox"><span>I read and accept the <a href="#">terms &amp; conditions</a></span>-->
+
            
 				<div class="space30"></div>
 					<div id="agreeError" class="error"></div>
-					<input name="agree" id="checkboxG2" class="mr-2 css-checkbox " type="checkbox"><span>I've read and accept the <a href="#">terms &amp; conditions</a></span>
+					<input name="agree" id="checkboxG2" class="mr-2 css-checkbox " type="checkbox"><span>I accept what ever the terms set by the company.</span>
 
 			 
 				

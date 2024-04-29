@@ -13,7 +13,7 @@ $message =  '';
 
 
 
-
+<?php  include('usernav.php');   ?>
 
 <!DOCTYPE html>
 <html>
@@ -23,10 +23,11 @@ $message =  '';
   	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="bg-info">
-<?php //include('inc/header.php');  ?>
 
-<?php include('usernav.php');  
+<body class="bg-info">
+
+
+<?php 
 unset($_SESSION['Payment_Success']);
 include('../database/linklinkz.php');
 

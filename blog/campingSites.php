@@ -5,16 +5,13 @@ include('../database/linklinkz.php');
 
  
 
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="blog.css">
-
-
-<style>
-  .main {
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="blog.css">
+    <style>
+       .main {
   position: absolute;
   width: calc(100% - 300px);
   left: 300px;
@@ -132,99 +129,81 @@ body {
     text-align: left;
   }
 }
-</style>
-
+        /* Existing CSS styles */
+        /* Add a class to style the container for card rows */
+        .card-container {
+            display: flex; /* Display the card rows as flex */
+            flex-wrap: wrap; /* Allow flex items to wrap to the next row */
+            justify-content: space-between; /* Distribute space between rows */
+            margin-top: 20px; /* Add top margin to separate rows */
+        }
+        
+        /* Adjust the card styles */
+        .card {
+            width: calc(25% - 20px); /* Set the width for each card (25% of the container minus margins) */
+            height: 400px; /* Set a fixed height for the card */
+            margin-bottom: 20px; /* Add bottom margin to separate rows */
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6); /* Add ash color border shadow */
+            border-radius: 10px; /* Add border radius */
+        }
+    </style>
 </head>
 <body>
   
-  <div class="topnav" id="myTopnav">
-    <a href="../home/home.php" class="active">Home</a>
-    <a href="blogHome.php">Blog</a>
-    <a href="campingSites.php">Camping site </a>
-    <a href="glampingSites.php">Glamping site</a>
-    <a href="travelSites.php">travel sites</a>
-    
-  </div>
+    <!-- Top navigation bar -->
+    <div class="topnav" id="myTopnav">
+        <a href="../home/home.php" class="active">Home</a>
+        <a href="blogHome.php">Blog</a>
+        <a href="campingSites.php">Camping site</a>
+        <a href="glampingSites.php">Glamping site</a>
+        <a href="travelSites.php">Travel sites</a>
+    </div>
 
-<div class="header">
-  <h2><span class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>Campamento Blog </h2>
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-
-  <div class="topbar">
-      <div class="toggle">
-        
-          <ion-icon name="menu-outline"></ion-icon>
-          
-      </div>
-
-     <!-- here starts cards-->
+    <!-- Header -->
+    <div class="header">
+        <h2><span class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>Campamento Blog</h2>
+    </div>
   
-<head>
-    <link rel="stylesheet" type="text/css" href="../css/blog/card.css"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-
-<?php 
-
-$catID = 1;
-$sql = "SELECT b.*, u.firstName, u.lastName 
-        FROM blog b 
-        INNER JOIN user u ON b.UserID = u.UserID 
-        WHERE b.cat_id = '$catID'";
-//if(isset($_GET['id'])){
-    //$catID = $_GET['id'];
-   // $sql .= " WHERE cat_id = '$catID'";
-//}
-
-
-$result = mysqli_query($conn, $sql);
- 
-  while($row = mysqli_fetch_assoc($result)) {
-    // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-
-    ?> 
- 
-
-      
-
-         <div class="card">
-
-                <h3 class="title"><?php echo  $row["shortTitle"] ?></h3>
-              <!-- Display user first name and last name -->
-        <div class="user-info">
-            <p>By: <?php echo $row['firstName'] . ' ' . $row['lastName']; ?></p>
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
         </div>
-                <div class="price"> <b> <?php echo  $row["postDate"] ?></b></div>
-                 <!--   <div class="price"> <b> <?php //echo  $row["price"] ?></b></div> Add name profile later-->
+    </div>
 
-                <a href="#"> 
-                <?php if(isset($row['Image1']) && !empty($row['Image1'])): ?>
-                <center>  <img src="uploads/<?php echo $row['Image1']; ?>" alt="" height='150' width='150'></center>
-                <?php endif; ?>     </a>
-
-
-                
-
-                    
-
-                   <font size=2px> <p><?php echo $row["subjectShort"]?>...</p></font>
-
-                    
-                  
-                
-                        <a   href='single.php?id=<?php echo  $row["blogID"] ?>'><button class="buttonz">  Read More
-                        </button> </a>  
-                  
-                    
-                
-  </div>
-
-                <?php
-                  }  
-                  ?>
-               
-              
-         
+    <!-- Card container -->
+    <div class="card-container">
+        <!-- PHP code to generate cards -->
+        <?php 
+        $catID = 1;
+        $sql = "SELECT b.*, u.firstName, u.lastName 
+                FROM blog b 
+                INNER JOIN user u ON b.UserID = u.UserID 
+                WHERE b.cat_id = '$catID'";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_assoc($result)) {
+        ?> 
+        <div class="card">
+            <!-- Card content -->
+            <h3 class="title"><?php echo $row["shortTitle"] ?></h3>
+            <div class="user-info">
+                <p>By: <?php echo $row['firstName'] . ' ' . $row['lastName']; ?></p>
+            </div>
+            <div class="price"> <b> <?php echo $row["postDate"] ?></b></div>
+            <?php if (isset($row['Image1']) && !empty($row['Image1'])): ?>
+            <a href="#">
+                <center><img src="uploads/<?php echo $row['Image1']; ?>" alt="" height='150' width='150'></center>
+            </a>
+            <?php else: ?>
+            <div class="image-error">Image not found</div>
+            <?php endif; ?>
+            <font size=2px> <p><?php echo $row["subjectShort"] ?>...</p></font>
+            <a href='single.php?id=<?php echo $row["blogID"] ?>'><button class="buttonz">Read More</button></a>
+        </div>
+        <?php
+        }  
+        ?>
+    </div>
+</body>
+</html>

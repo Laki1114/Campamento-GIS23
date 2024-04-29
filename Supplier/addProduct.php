@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
     $productdescription = $_POST['productdescription'];
     $productcategory = $_POST['productcategory'];
     $productprice = $_POST['productprice'];
-
+    $productquantity = $_POST['productquantity'];
     // File upload handling
     if(isset($_FILES['productimage']) && !empty($_FILES['productimage']['name'])) {
         $file_name = $_FILES['productimage']['name'];
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])) {
             $destination = $upload_dir . $new_file_name;
 
             if(move_uploaded_file($file_tmp, $destination)) {
-                $sql2 = "INSERT INTO products (product_name, cat_id, price, product_description, thumb,Status,SupplierID) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription', '$destination','1','$supID')";
+                $sql2 = "INSERT INTO products (product_name, cat_id, price, product_description, thumb,Status,SupplierID,quantity) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription', '$destination','1','$supID','$productquantity')";
 
                 if(mysqli_query($conn, $sql2)) {
                     $message = 'Product added successfully with image.';
@@ -56,7 +56,7 @@ if(isset($_POST['submit'])) {
             $message = 'Invalid file or file size too large.';
         }
     } else {
-        $sql = "INSERT INTO products (product_name, cat_id, price, product_description,Status,SupplierID) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription','1','$supID')";
+        $sql = "INSERT INTO products (product_name, cat_id, price, product_description,Status,SupplierID,quantity) VALUES ('$productname', '$productcategory', '$productprice', '$productdescription','1','$supID','$productquantity')";
 
         if(mysqli_query($conn, $sql)) {
             $message = 'Product added successfully.';
@@ -105,15 +105,15 @@ if(isset($_POST['submit'])) {
                         <form method="post" enctype="multipart/form-data" action='addProduct.php'>
                             <div class="form-group">
                                 <label for="Productname">Product Name</label>
-                                <input type="text" class="form-control" name="productname" id="Productname" placeholder="Product Name">
+                                <input type="text" class="form-control" name="productname" id="Productname" placeholder="Product Name" required>
                             </div>
                             <div class="form-group">
                                 <label for="productdescription">Product Description</label>
-                                <textarea class="form-control" name="productdescription" rows="3"></textarea>
+                                <textarea class="form-control" name="productdescription" rows="3" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="productcategory">Product Category</label>
-                                <select class="form-control" id="productcategory" name="productcategory">
+                                <select class="form-control" id="productcategory" name="productcategory" required>
                                     <option value="" selected disabled>---SELECT CATEGORY---</option>
                                     <?php
                                     $sql = "SELECT * FROM Category";
@@ -126,11 +126,15 @@ if(isset($_POST['submit'])) {
                             </div>
                             <div class="form-group">
                                 <label for="productprice">Product Price</label>
-                                <input type="text" class="form-control" name="productprice" id="productprice" placeholder="Product Price">
+                                <input type="text" class="form-control" name="productprice" id="productprice" placeholder="Product Price" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productquantity">Product Quantity</label>
+                                <input type="text" class="form-control" name="productquantity" id="productquantity" placeholder="product quantity" required>
                             </div>
                             <div class="form-group">
                                 <label for="productimage">Product Image</label>
-                                <input type="file" name="productimage" id="productimage">
+                                <input type="file" name="productimage" id="productimage" required>
                                 <p class="help-block">Only jpg/png are allowed.</p>
                             </div>
                             <button type="submit" name='submit' class="btn btn-primary">Submit</button>

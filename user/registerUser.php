@@ -9,7 +9,7 @@
 
 <div class="bg-img">
   
-  <form class="container" name="user" method="post" action="intermediateUser.php" onsubmit="myFunction()">
+  <form class="container" name="user" method="post" action="intermediateUser.php" onsubmit="return validateForm()">
   <h1>Register as a User</h1> <br>
     
     <p>Please fill in this form to create an account.</p><br>
@@ -34,7 +34,7 @@
     
 
      <label for="phoneNo"><b>Phone No </b></label><br>
-      <input type="text" placeholder="Phone No" name="phoneNo" id="phoneNo" required><br>
+      <input type="text" placeholder="Phone No" name="phoneNo" pattern="\d{10}" id="phoneNo" required><br>
 
       </td>
 
@@ -87,10 +87,16 @@
 </div>
 <script>
 
-function myFunction() {
-  alert("The form was submitted");
+function validateForm() {
+  var password = document.getElementById("psw").value;
+  var confirmPassword = document.getElementById("psw-repeat").value;
+  
+  if (password != confirmPassword) {
+    alert("Passwords do not match.");
+    return false;
+  }
+  return true;
 }
-
 
   var myInput = document.getElementById("psw");
   var letter = document.getElementById("letter");
