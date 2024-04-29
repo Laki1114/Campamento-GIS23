@@ -23,7 +23,7 @@
 
 
                 <li>
-                    <a href="/campamento/Campamento-GIS23/user/dr_bookings.php">
+                    <a href="../user/dr_bookings.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -32,7 +32,7 @@
                 </li>
 
                 <li>
-                    <a href="/campamento/Campamento-GIS23/user/gu_bookings.php">
+                    <a href="../user/gu_bookings.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -41,7 +41,7 @@
                 </li>
 
                 <li>
-                    <a href="/campamento/Campamento-GIS23/user/index.php">
+                    <a href="../user/index.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
@@ -50,7 +50,7 @@
                 </li>
 
                 <li>
-                    <a href="/campamento/Campamento-GIS23/blog/dataBlog.php">
+                    <a href="../blog/dataBlog.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
@@ -60,7 +60,7 @@
 
 
                 <li>
-                    <a href="/campamento/Campamento-GIS23/user/profileUser.php">
+                    <a href="../user/profileUser.php">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>
@@ -70,7 +70,7 @@
 
 
                 <li>
-                    <a href="/campamento/Campamento-GIS23/user/orders.php">
+                    <a href="../user/orders.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/campamento/Campamento-GIS23/user/show-wishlist.php">
+                    <a href="../user/show-wishlist.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -98,7 +98,7 @@
 
                 <li>
 
-                    <a href="/campamento/Campamento-GIS23/login/logout.php">
+                    <a href="../login/logout.php">
 
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
