@@ -7,7 +7,9 @@ $id = $_POST['booking_id'];
 $review = $_POST['review'];
 $starRating = $_POST['star_rating'];
 
-$sql = "UPDATE bookings SET review = '$review', star_rating = '$starRating' WHERE booking_id = '$id'";
+$review_timestamp = date("Y-m-d H:i:s");
+
+$sql = "UPDATE bookings SET review = '$review', star_rating = '$starRating', review_timestamp = '$review_timestamp' WHERE booking_id = '$id'";
 $result = $linkz->query($sql);
 
 if ($result) {
