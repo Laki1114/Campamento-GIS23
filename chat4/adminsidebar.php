@@ -24,7 +24,7 @@
 
 
                 <li>
-                    <a href="admin.php">
+                    <a href="../admin/admin.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -33,7 +33,7 @@
                 </li>
 
                 <li>
-                    <a href="admincustomer.php">
+                    <a href="../admin/admincustomer.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -42,7 +42,7 @@
                 </li>
 
                 <li>
-                    <a href="admin_panel.php">
+                    <a href="../admin/admin_panel.php">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
                         </span>
@@ -51,7 +51,7 @@
                 </li>
 
                 <li>
-                    <a href="../chat4/admin_chat.php">
+                    <a href="admin_chat.php">
                         <span class="icon">
                             <ion-icon name="chatbubble-outline"></ion-icon>
                         </span>
@@ -61,7 +61,7 @@
 
 
                 <li>
-                    <a href="adminprofile.php">
+                    <a href="../admin/adminprofile.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -70,7 +70,7 @@
                 </li>
 
                 <li>
-                    <a href="admin_logout.php">
+                    <a href="../admin/admin_logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>

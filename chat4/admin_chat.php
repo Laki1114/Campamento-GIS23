@@ -105,9 +105,23 @@ $conn->close();
         background-color:#ddd;
     }
 /* Add this CSS for the 'unread' class */
-tr.unread {
-    background-color: #ffe6e6; /* Example color for unread rows */
-}
+        tr.unread {
+            background-color: #ffe6e6; /* Example color for unread rows */
+        }
+
+
+        button[type="submit"] {
+            padding: 8px 20px;
+            background-color: #327028;
+            color: white;
+            border: 1px solid #327028;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
     </style>
 
@@ -120,7 +134,7 @@ tr.unread {
         
         <div class="navigation">
             
-            <?php include '../admin/adminsidebar.php'; ?>
+            <?php include 'adminsidebar.php'; ?>
                     
             </div>
 
@@ -148,29 +162,44 @@ tr.unread {
                     <?php endforeach; ?>
     </tbody>
 </table>
-
-        </div>
+<!--
+<form action="logout.php" method="post">
+        <button style="float:right;" type="submit">Logout</button>
+    </form>
+        </div>-->
   
     </div>
     <script>
-        // Function to update row colors based on unread messages
-        function updateRowColors() {
-            const rows = document.querySelectorAll('tbody tr');
-            rows.forEach(row => {
-                row.classList.remove('unread'); // Reset row color
-                const userId = row.querySelector('td:first-child').textContent;
-                // Add AJAX logic here to check for unread messages for the user
-                // For demonstration purposes, I'll set row color randomly
-                const hasUnread = Math.random() < 0.5; // Simulate unread messages
-                if (hasUnread) {
-                    row.classList.add('unread');
+    // Function to update row colors based on unread messages
+    function updateRowColors() {
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            row.classList.remove('unread'); // Reset row color
+            const userId = row.querySelector('td:first-child').textContent;
+            // Send AJAX request to check for unread messages for the user
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        const hasUnread = JSON.parse(xhr.responseText).hasUnread;
+                        if (hasUnread) {
+                            row.classList.add('unread'); // Add 'unread' class to row if there are unread messages
+                        }
+                    }
                 }
-            });
-        }
+            };
+            xhr.open('GET', 'check_unread_messages.php?userId=' + userId, true);
+            xhr.send();
+        });
+    }
 
-        // Call the function initially to set row colors
-        updateRowColors();
-    </script>
+    // Call the function initially to set row colors
+    updateRowColors();
+
+    // Refresh row colors every few seconds (adjust interval as needed)
+    setInterval(updateRowColors, 5000); // Update every 5 seconds
+</script>
+
     <!-- ====== ionicons ======= -->
 </body>
 
