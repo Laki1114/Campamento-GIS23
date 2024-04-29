@@ -15,7 +15,7 @@ if(isset($_POST['submit'])) {
     $LongDescription4 = mysqli_real_escape_string($conn, $_POST["LongDescription4"]);
     
     // Function to delete previous images
-    function deletePreviousImages($conn, $id) {
+    /*function deletePreviousImages($conn, $id) {
         $sql = "SELECT Image1, Image2, Image3, Image4, Image5, Image6 FROM blog WHERE id =  $id";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "i", $id);
@@ -35,10 +35,10 @@ if(isset($_POST['submit'])) {
                 }
             }
         }
-    }
-
+    }*/
+/*
     // Call the function to delete previous images
-    deletePreviousImages($conn, $id);
+   // deletePreviousImages($conn, $id);
     
     // Array to store image file names
     $imageNames = array();
@@ -70,13 +70,14 @@ if(isset($_POST['submit'])) {
 
     // Convert the array of image names into a comma-separated string
     $imageNamesString = implode(',', $imageNames);
-
+*/
     // Prepare and execute the SQL query to update data in the database
-    $sql = "UPDATE blog SET  subjectShort=?, LongDescription1=?, LongDescription2=?, LongDescription3=?, LongDescription4=?, Image1=?, Image2=?, Image3=?, Image4=?, Image5=?, Image6=?, cat_id=? WHERE blogID=$id";
+    /*$sql = "UPDATE blog SET  subjectShort=?, LongDescription1=?, LongDescription2=?, LongDescription3=?, LongDescription4=?, Image1=?, Image2=?, Image3=?, Image4=?, Image5=?, Image6=?, cat_id=? WHERE blogID=$id";*/
+    $sql = "UPDATE blog SET  subjectShort=?, LongDescription1=?, LongDescription2=?, LongDescription3=?, LongDescription4=?,  cat_id=? WHERE blogID=$id";
     $stmt = mysqli_prepare($conn, $sql);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "sssssssssssi",  $subjectShort, $LongDescription1, $LongDescription2, $LongDescription3, $LongDescription4, $imageNames[0], $imageNames[1], $imageNames[2], $imageNames[3], $imageNames[4], $imageNames[5], $productcategory);
+        mysqli_stmt_bind_param($stmt, "sssssi",  $subjectShort, $LongDescription1, $LongDescription2, $LongDescription3, $LongDescription4, $productcategory);
         
         if(mysqli_stmt_execute($stmt)) {
             $message = 'Blog post updated successfully.';

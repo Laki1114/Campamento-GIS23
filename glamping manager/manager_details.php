@@ -77,7 +77,7 @@ if ($result) {
             <div class="profile">
                 <div><!--class="container-image"-->
                     <img src="<?php echo $thumb; ?>" alt="" height='150' width='150'>
-                    <a href='editSupplier.php'>
+                    <a href='editManager.php'>
                         <button class="btn">
                             <img src="../resource/assets/profile/edit.png" width="30px" height="30px">
                         </button>

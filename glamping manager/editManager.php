@@ -2,7 +2,7 @@
 <?php
 session_start();
 include('../database/linklinkz.php');
-$email=$_SESSION['supplier'];
+$email=$_SESSION['email'];
 ?>
 <?php
 
@@ -30,12 +30,12 @@ if(isset($_FILES['productimage']) && !empty($_FILES['productimage']['name'])) {
 
 		// Move uploaded file to destination
 		if(move_uploaded_file($tmp_name, $filePath)) {
-			$sql2 = "UPDATE Supplier SET FirstName = '$firstName',LastName = '$lastName',Gender = '$gender', PhoneNo = '$phoneNo' ,thumb='$filePath' WHERE Email= '$email'" ;
+			$sql2 = "UPDATE glamping_manager_registration SET first_name = '$firstName',last_name = '$lastName',gender = '$gender', phone_number = '$phoneNo' ,thumb='$filePath' WHERE email= '$email'" ;
 			
 			$res = mysqli_query($conn, $sql2);
 			if($res) {
 				$message = 'Saved Successfully with image';
-				header("Location: profileSupplier.php?supplier=".$_SESSION['supplier']);
+				header("Location: manager_details.php?manager=".$_SESSION['email']);
 			} else {
 				$message = "Failed to Create Product";
 				echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);
@@ -48,11 +48,11 @@ if(isset($_FILES['productimage']) && !empty($_FILES['productimage']['name'])) {
 	}
 } else {
 	// If no image uploaded, update other product details
-	$sql_update = "UPDATE Supplier SET FirstName = '$firstName',LastName = '$lastName',Gender = '$gender', PhoneNo = '$phoneNo'  WHERE Email= '$email'" ;
+	$sql_update = "UPDATE glamping_manager_registration SET first_name = '$firstName',last_name = '$lastName',gender = '$gender', phone_number = '$phoneNo' WHERE email= '$email'" ;
 	if (mysqli_query($conn, $sql_update)) {
 		$message = 'Saved Successfully without image';
 
-		header("Location: profileSupplier.php?supplier=".$_SESSION['supplier']);
+		header("Location: manager_details.php?manager=".$_SESSION['email']);
 	} else {
 		echo "Error: " . $sql_update . "<br>" . mysqli_error($conn);
 	}
@@ -72,22 +72,22 @@ else {
 }
 
 */
-
+//$sql_update = "UPDATE glamping_manager_registration SET first_name = '$firstName',last_name = '$lastName',gender = '$gender', phone_number = '$phoneNo' WHERE email= '$email'" ;
 ?>
 <?php
 
-$sql = "SELECT * FROM Supplier WHERE Email = '$email'";//change Email='email' or Email='$email'
+$sql = "SELECT * FROM glamping_manager_registration WHERE email = '$email'";//change Email='email' or Email='$email'
 $result = mysqli_query($linkz,$sql);
 
 while ($row = mysqli_fetch_assoc($result)){
-  $userID=$row["SupplierId"];
-  $firstName=$row["FirstName"];
-  $lastName=$row["LastName"];
-  $gender=$row["Gender"];
-  $phoneNo=$row["PhoneNo"];
-  $nicNo=$row["NICNo"];
-  $email=$row["Email"];
-  $psw=$row["Password"];
+  $userID=$row["glm_id"];
+  $firstName=$row["firstName"];
+  $lastName=$row["last_name"];
+  $gender=$row["gender"];
+  $phoneNo=$row["phone_number"];
+  $nicNo=$row["NIC"];
+  $email=$row["email"];
+  $psw=$row["password"];
   $thumb=$row["thumb"];
 
 }
@@ -105,7 +105,7 @@ while ($row = mysqli_fetch_assoc($result)){
 
 <div class="bg-img">
   
-  <form class="container" name="user" method="post" enctype="multipart/form-data"  action="editSupplier.php">
+  <form class="container" name="user" method="post" enctype="multipart/form-data"  action=".php">
   <h1>Edit Your Data Here</h1> <br>
     
     <p>Please fill in this form to Edit your account details.</p>
@@ -147,14 +147,14 @@ while ($row = mysqli_fetch_assoc($result)){
 </td>
 
    <td width="300px">
-  <?php  /*
+    <?php /*
    <!--<label for="email"><b>Email</b></label><br>
    <input type="text" placeholder="Enter Email" name="email" id="email" value="<?php  echo $email ?>"  required><br>-->
 
 <!--<label for="nicNo"><b>NIC No </b></label><br>
  <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo $nicNo ?>" required>-->
   */
-  ?>
+   ?>
     
 
      
