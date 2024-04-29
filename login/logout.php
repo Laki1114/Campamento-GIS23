@@ -6,6 +6,6 @@ unset($_SESSION['customerid']);
 unset($_SESSION['cart']);
 session_destroy();
 
-header('location:../userdashboard/dashboard.php')
+header('location:../home/home.php')
 
 ?>

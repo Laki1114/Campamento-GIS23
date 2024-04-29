@@ -297,26 +297,78 @@ $conn->close();
                 </div>
 
                 <div class="recentOrder">
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Transactions</div>
-                    </div>
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
+                                <!--===================glamping reservation========================-->
+<?php
+// Include database connection file
+include 'db.php';
+
+// Query to fetch data from the rooms table
+$sql = "SELECT COUNT(*) AS field_count FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'campamento' AND TABLE_NAME = 'rooms'";
+$result = $conn->query($sql);
+
+// Check if there is a result
+if ($result->num_rows > 0) {
+    // Fetch the row
+    $row = $result->fetch_assoc();
+    
+    // Get the number of fields
+    $field_count = $row['field_count'];
+
+    // Output HTML for the card
+    echo '<div class="card">';
+    echo '<div>';
+    echo '<div class="numbers">' . $field_count . '</div>';
+    echo '<div class="cardName">Glamping Reservation</div>';
+    echo '</div>';
+    echo '<div class="iconBx">';
+    echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
+    echo '</div>';
+    echo '</div>';
+} else {
+    // If no result found
+    echo '<p>No fields found in the rooms table.</p>';
+}
+
+// Close database connection
+$conn->close();
+?>
                 
 
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Transactions</div>
-                    </div>
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
+                                <!--===================glamping reservation========================-->
+<?php
+// Include database connection file
+include 'db.php';
+
+// Query to fetch data from the rooms table
+$sql = "SELECT COUNT(*) AS order_count FROM orders";
+$result = $conn->query($sql);
+
+// Check if there is a result
+if ($result->num_rows > 0) {
+    // Fetch the row
+    $row = $result->fetch_assoc();
+    
+    // Get the number of fields
+    $order_count = $row['order_count'];
+
+    // Output HTML for the card
+    echo '<div class="card">';
+    echo '<div>';
+    echo '<div class="numbers">' . $order_count . '</div>';
+    echo '<div class="cardName">Order Count</div>';
+    echo '</div>';
+    echo '<div class="iconBx">';
+    echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
+    echo '</div>';
+    echo '</div>';
+} else {
+    // If no result found
+    echo '<p>No fields found in the rooms table.</p>';
+}
+
+// Close database connection
+$conn->close();
+?>
                 
                 
                  
