@@ -228,7 +228,7 @@ textarea, select {
                     <div class="recentOrders">
                         <div class="cardHeader">
                             <h2>Bookings </h2>
-                            <a href="../home/home.php">home</a>
+                          
                             <a href="#" class="btn">View All</a>
                         </div>
                         <table>
