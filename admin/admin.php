@@ -110,6 +110,11 @@ $adminData = array(
 }
 
 
+.cardLink {
+    text-decoration: none; /* Remove default underline */
+}
+
+
 
 
 </style>
@@ -193,6 +198,7 @@ if ($result->num_rows > 0) {
     $transactionCount = $row['transactionCount'];
 
     // Output HTML for the card
+    echo '<a href="transaction_count.php" class="cardLink">';
     echo '<div class="card">';
     echo '<div>';
     echo '<div class="numbers">' . $transactionCount . '</div>';
@@ -202,6 +208,7 @@ if ($result->num_rows > 0) {
     echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
     echo '</div>';
     echo '</div>';
+    echo '</a>';
 } else {
     // If no result found
     echo '<p>No fields found in the rooms table.</p>';
@@ -230,6 +237,7 @@ if ($result->num_rows > 0) {
     $field_count = $row['field_count'];
 
     // Output HTML for the card
+    echo '<a href="orderCount.php" class="cardLink">';
     echo '<div class="card">';
     echo '<div>';
     echo '<div class="numbers">' . $field_count . '</div>';
@@ -272,13 +280,13 @@ $conn->close();
                 </div>
 
                 <div class="recentOrder">
-                                <!--===================glamping reservation========================-->
+                                <!--===================Reviews========================-->
 <?php
 // Include database connection file
 include 'db.php';
 
 // Query to fetch data from the rooms table
-$sql = "SELECT COUNT(*) AS field_count FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'campamento' AND TABLE_NAME = 'rooms'";
+$sql = "SELECT COUNT(*) AS review_count FROM reviews";
 $result = $conn->query($sql);
 
 // Check if there is a result
@@ -287,18 +295,20 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     
     // Get the number of fields
-    $field_count = $row['field_count'];
+    $review_count = $row['review_count'];
 
     // Output HTML for the card
+    echo '<a href="reviewCount.php" class="cardLink">';
     echo '<div class="card">';
     echo '<div>';
-    echo '<div class="numbers">' . $field_count . '</div>';
-    echo '<div class="cardName">Glamping Reservation</div>';
+    echo '<div class="numbers">' . $review_count . '</div>';
+    echo '<div class="cardName">Reviews</div>';
     echo '</div>';
     echo '<div class="iconBx">';
     echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
     echo '</div>';
     echo '</div>';
+    echo '</a>';
 } else {
     // If no result found
     echo '<p>No fields found in the rooms table.</p>';
@@ -327,7 +337,8 @@ if ($result->num_rows > 0) {
     $order_count = $row['order_count'];
 
     // Output HTML for the card
-    echo '<div class="card">';
+    echo '<a href="orderCount.php" class="cardLink">';
+    echo '<div class="card" >';
     echo '<div>';
     echo '<div class="numbers">' . $order_count . '</div>';
     echo '<div class="cardName">Order Count</div>';
@@ -336,9 +347,10 @@ if ($result->num_rows > 0) {
     echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
     echo '</div>';
     echo '</div>';
+    echo '</a>';
 } else {
     // If no result found
-    echo '<p>No fields found in the rooms table.</p>';
+    echo '<p>No Orders found.</p>';
 }
 
 // Close database connection
@@ -369,74 +381,45 @@ $conn->close();
                         <a href="#" class="btn">View All</a>
                     </div>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
+                    <?php
+// Assuming you have already connected to your database
+include 'db.php';
+// Fetch data from the transactions table
+$query = "SELECT * FROM transactions ORDER BY created DESC";
+$result = mysqli_query($conn, $query);
 
-                        <tbody>
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
+// Check if there are any rows returned
+if (mysqli_num_rows($result) > 0) {
+    echo '<table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Payment</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tbody>';
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
+    // Loop through each row of data
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<tr>
+                <td>' . $row['item_name'] . '</td>
+                <td>$' . $row['item_price'] . '</td>
+                <td>' . $row['payment_status'] . '</td>
+                <td><span class="status">' . $row['payment_status'] . '</span></td>
+              </tr>';
+    }
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
+    echo '</tbody></table>';
+} else {
+    echo "No transactions found";
+}
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
+// Close the database connection
+mysqli_close($conn);
+?>
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
 
                 <!-- ================= New Customers ================ -->
@@ -454,7 +437,7 @@ include 'db.php';
 $sqlLoginAttempts = "SELECT l.login_time, u.FirstName, u.LastName, u.thumb 
                     FROM login_attempts l
                     JOIN user u ON l.email = u.Email
-                    ORDER BY l.login_time DESC";
+                    ORDER BY l.login_time DESC LIMIT 5";
 $resultLoginAttempts = mysqli_query($conn, $sqlLoginAttempts);
 
 // Check if there are login attempts
