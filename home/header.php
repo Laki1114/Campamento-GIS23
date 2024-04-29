@@ -28,7 +28,7 @@
         <div class="content">
         <a href="../user/registerUser.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a User</a>
         <a href="../glamping manager/gl_register.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Glamping Manager</a>
-        <a href="../Amaya/registerSupplier.html" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Tool Supplier</a>
+        <a href="../Supplier/registerSupplier.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Tool Supplier</a>
         <a href="../guide/reg_gu.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Guide</a>
         <a href="../driver/reg_dr.php" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Register as a Driver</a>
       

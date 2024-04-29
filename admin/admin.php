@@ -66,32 +66,6 @@ $adminData = array(
 </head>
 
 <style>
-.item1 { grid-area: header; }
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer; }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header'
-    'main  '
-    'footer';
-  gap: 10px;
-  
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: #327028;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-
-
-
 
 .recentOrder .card {
   position: relative;
@@ -104,6 +78,7 @@ $adminData = array(
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   height:210px;
   margin-bottom:20px;
+  
   
 }
 
@@ -132,6 +107,11 @@ $adminData = array(
 .recentOrder .card:hover .cardName,
 .recentOrder .card:hover .iconBx {
   color: var(--white);
+}
+
+
+.cardLink {
+    text-decoration: none; /* Remove default underline */
 }
 
 
@@ -218,6 +198,7 @@ if ($result->num_rows > 0) {
     $transactionCount = $row['transactionCount'];
 
     // Output HTML for the card
+    echo '<a href="transaction_count.php" class="cardLink">';
     echo '<div class="card">';
     echo '<div>';
     echo '<div class="numbers">' . $transactionCount . '</div>';
@@ -227,6 +208,7 @@ if ($result->num_rows > 0) {
     echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
     echo '</div>';
     echo '</div>';
+    echo '</a>';
 } else {
     // If no result found
     echo '<p>No fields found in the rooms table.</p>';
@@ -255,6 +237,7 @@ if ($result->num_rows > 0) {
     $field_count = $row['field_count'];
 
     // Output HTML for the card
+    echo '<a href="orderCount.php" class="cardLink">';
     echo '<div class="card">';
     echo '<div>';
     echo '<div class="numbers">' . $field_count . '</div>';
@@ -297,13 +280,13 @@ $conn->close();
                 </div>
 
                 <div class="recentOrder">
-                                <!--===================glamping reservation========================-->
+                                <!--===================Reviews========================-->
 <?php
 // Include database connection file
 include 'db.php';
 
 // Query to fetch data from the rooms table
-$sql = "SELECT COUNT(*) AS field_count FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'campamento' AND TABLE_NAME = 'rooms'";
+$sql = "SELECT COUNT(*) AS review_count FROM reviews";
 $result = $conn->query($sql);
 
 // Check if there is a result
@@ -312,18 +295,20 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     
     // Get the number of fields
-    $field_count = $row['field_count'];
+    $review_count = $row['review_count'];
 
     // Output HTML for the card
+    echo '<a href="reviewCount.php" class="cardLink">';
     echo '<div class="card">';
     echo '<div>';
-    echo '<div class="numbers">' . $field_count . '</div>';
-    echo '<div class="cardName">Glamping Reservation</div>';
+    echo '<div class="numbers">' . $review_count . '</div>';
+    echo '<div class="cardName">Reviews</div>';
     echo '</div>';
     echo '<div class="iconBx">';
     echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
     echo '</div>';
     echo '</div>';
+    echo '</a>';
 } else {
     // If no result found
     echo '<p>No fields found in the rooms table.</p>';
@@ -352,7 +337,8 @@ if ($result->num_rows > 0) {
     $order_count = $row['order_count'];
 
     // Output HTML for the card
-    echo '<div class="card">';
+    echo '<a href="orderCount.php" class="cardLink">';
+    echo '<div class="card" >';
     echo '<div>';
     echo '<div class="numbers">' . $order_count . '</div>';
     echo '<div class="cardName">Order Count</div>';
@@ -361,9 +347,10 @@ if ($result->num_rows > 0) {
     echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
     echo '</div>';
     echo '</div>';
+    echo '</a>';
 } else {
     // If no result found
-    echo '<p>No fields found in the rooms table.</p>';
+    echo '<p>No Orders found.</p>';
 }
 
 // Close database connection
@@ -394,74 +381,45 @@ $conn->close();
                         <a href="#" class="btn">View All</a>
                     </div>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
+                    <?php
+// Assuming you have already connected to your database
+include 'db.php';
+// Fetch data from the transactions table
+$query = "SELECT * FROM transactions ORDER BY created DESC";
+$result = mysqli_query($conn, $query);
 
-                        <tbody>
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
+// Check if there are any rows returned
+if (mysqli_num_rows($result) > 0) {
+    echo '<table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Payment</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tbody>';
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
+    // Loop through each row of data
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<tr>
+                <td>' . $row['item_name'] . '</td>
+                <td>$' . $row['item_price'] . '</td>
+                <td>' . $row['payment_status'] . '</td>
+                <td><span class="status">' . $row['payment_status'] . '</span></td>
+              </tr>';
+    }
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
+    echo '</tbody></table>';
+} else {
+    echo "No transactions found";
+}
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
+// Close the database connection
+mysqli_close($conn);
+?>
 
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Advertisement</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
 
                 <!-- ================= New Customers ================ -->
@@ -471,51 +429,40 @@ $conn->close();
                     </div>
 
                     <table>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00 </span></h4>
-                            </td>
-                        </tr>
+<?php
+// Include database connection file
+include 'db.php';
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
+// Query to fetch recent login attempts with user details
+$sqlLoginAttempts = "SELECT l.login_time, u.FirstName, u.LastName, u.thumb 
+                    FROM login_attempts l
+                    JOIN user u ON l.email = u.Email
+                    ORDER BY l.login_time DESC LIMIT 5";
+$resultLoginAttempts = mysqli_query($conn, $sqlLoginAttempts);
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
+// Check if there are login attempts
+if (mysqli_num_rows($resultLoginAttempts) > 0) {
+    // Loop through each login attempt and display it
+    while ($row = mysqli_fetch_assoc($resultLoginAttempts)) {
+        echo '<tr>';
+        echo '<td width="60px">';
+        echo '<div class="imgBx"><img src="' . $row['thumb'] . '" alt=""></div>';
+        echo '</td>';
+        echo '<td>';
+        echo '<h4>' . $row['FirstName'] . ' ' . $row['LastName'] . '<br><span>' . date('Y-m-d H:i', strtotime($row['login_time'])) . '</span></h4>';
+        echo '</td>';
+        echo '</tr>';
+    }
+} else {
+    // If no login attempts found, display a message
+    echo '<tr><td colspan="2">No recent login attempts.</td></tr>';
+}
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
+// Close database connection
+mysqli_close($conn);
+?>
+</table>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>
