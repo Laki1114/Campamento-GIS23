@@ -596,24 +596,24 @@ function renderCalendar(year, month, type, checkInDate) {
         }
 
         function calculateDistance() {
-            const pickup = pickupInput.value;
-            const dropoff = dropoffInput.value;
+    const pickup = pickupInput.value
+    const dropoff = dropoffInput.value;
 
-            distanceService.getDistanceMatrix({
-                origins: [pickup],
-                destinations: [dropoff],
-                travelMode: 'DRIVING'
-            }, function(response, status) {
-                if (status === 'OK') {
-                    const distanceText = response.rows[0].elements[0].distance.text;
-                    const distanceValue = parseInt(distanceText.replace(/\D/g, ''));
-                    document.getElementById('distance').innerHTML = 'Distance: ' + distanceText;
-                    document.getElementById('distanceInput').value = distanceValue;
-                } else {
-                    alert('Error: ' + status);
-                }
-            });
+    distanceService.getDistanceMatrix({
+        origins: [pickup],
+        destinations: [dropoff],
+        travelMode: 'DRIVING'
+    }, function(response, status) {
+        if (status === 'OK') {
+            const distanceText = response.rows[0].elements[0].distance.text;
+            const distanceValue = parseFloat(response.rows[0].elements[0].distance.value / 1000).toFixed(2);
+            document.getElementById('distance').innerHTML = 'Distance: ' + distanceValue + ' km';
+            document.getElementById('distanceInput').value = distanceValue;
+        } else {
+            alert('Error: ' + status);
         }
+    });
+}
     </script>
 
 
