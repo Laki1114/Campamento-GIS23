@@ -254,7 +254,7 @@ if (!isset($_SESSION['customer'])) {
                 <h2>Check availability</h2><br>
                 <input type="hidden" name="id" value="<?php echo $driver_id; ?>">
                 <div class="row" id="checkIn">
-                    <label class="float-left label-width">Check-In</label>
+                    <label class="float-left label-width">Start Date</label>
                     <div class="input-container" id="calendarInputContainerCheckIn">
                         <input type="text" id="input-group-checkin" placeholder=" Check-In" name="checkInDate" required>
                         <button type="button" id="calendarIconCheckIn">&#128197;</button>
