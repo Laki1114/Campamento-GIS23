@@ -308,9 +308,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button type="button" id="calendarIconCheckIn">&#128197;</button>
                         <div class="calendar" id="calendarCheckIn" style="display: none;">
                             <div class="calendar-header">
-                                <button id="prevMonthBtnCheckIn">&lt;</button>
+                                <button type="button" id="prevMonthBtnCheckIn">&lt;</button>
                                 <h2 id="currentMonthCheckIn">Month Year</h2>
-                                <button id="nextMonthBtnCheckIn">&gt;</button>
+                                <button type="button" id="nextMonthBtnCheckIn">&gt;</button>
                             </div>
                             <div class="calendar-grid" id="calendarGridCheckIn"></div>
                         </div>
@@ -319,13 +319,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="row"  style="display: none;" id="checkInOut">
                     <label class="float-left label-width">End-Date</label>
                     <div class="input-container" id="calendarInputContainerCheckOut">
-                        <input type="text" id="input-group-checkout" placeholder=" Check-Out" name="checkOutDate">
+                        <input type="text" id="input-group-checkout" placeholder=" Check-Out" name="checkOutDate" required>
                         <button type="button" id="calendarIconCheckOut">&#128197;</button>
                         <div class="calendar" id="calendarCheckOut" style="display: none;">
                             <div class="calendar-header">
-                                <button id="prevMonthBtnCheckOut">&lt;</button>
+                                <button type="button" id="prevMonthBtnCheckOut">&lt;</button>
                                 <h2 id="currentMonthCheckOut">Month Year</h2>
-                                <button id="nextMonthBtnCheckOut">&gt;</button>
+                                <button type="button" id="nextMonthBtnCheckOut">&gt;</button>
                             </div>
                             <div class="calendar-grid" id="calendarGridCheckOut"></div>
                         </div>

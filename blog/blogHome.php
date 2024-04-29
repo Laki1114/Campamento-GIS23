@@ -166,9 +166,13 @@ body {
      
         <?php   
          
-         $sql_related = "SELECT * FROM blog where cat_id = '1'  order by rand() limit 3";
         
-         
+        
+         $sql_related = "SELECT b.*, u.firstName, u.lastName 
+        FROM blog b 
+        INNER JOIN user u ON b.UserID = u.UserID 
+        WHERE b.cat_id = '1'
+        order by rand() limit 3";
          
          $result_related = mysqli_query($conn, $sql_related);
           
@@ -177,6 +181,9 @@ body {
          ?>
            <div class="card">
         <h2><?php echo  $row["shortTitle"] ?></h2>
+        <div class="user-info">
+            By: <?php echo $row['firstName'] . ' ' . $row['lastName']; ?>
+        </div>
         <h5><?php echo  $row["postDate"] ?></h5>
         <div> <img src="uploads/<?php echo $row['Image1']; ?>" class="pic1"  style="height:200px;"></div>
         <br>   <a   href='single.php?id=<?php echo  $row["blogID"] ?>'><button class="btn">Read More</button></a><br>
@@ -214,7 +221,12 @@ body {
       <h1 style="color:white;">Glamping Sites</h1>&nbsp;
       <?php   
          
-         $sql_related = "SELECT * FROM blog where cat_id = '2'  order by rand() limit 3";
+         
+         $sql_related = "SELECT b.*, u.firstName, u.lastName 
+        FROM blog b 
+        INNER JOIN user u ON b.UserID = u.UserID 
+        WHERE b.cat_id = '2'
+        order by rand() limit 3";
         
          
          
@@ -225,6 +237,9 @@ body {
          ?>
            <div class="card">
         <h2><?php echo  $row["shortTitle"] ?></h2>
+        <div class="user-info">
+            By: <?php echo $row['firstName'] . ' ' . $row['lastName']; ?>
+        </div>
         <h5><?php echo  $row["postDate"] ?></h5>
         <div> <img src="uploads/<?php echo $row['Image1']; ?>" class="pic1"  style="height:200px;"></div>
         <br>  <a   href='single.php?id=<?php echo  $row["blogID"] ?>'><button class="btn">Read More</button></a><br>
@@ -245,7 +260,12 @@ body {
       <h1 style="color:white;">Travel  Sites   </h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <?php   
          
-         $sql_related = "SELECT * FROM blog where cat_id = '3'  order by rand() limit 3";
+         $sql_related = "SELECT b.*, u.firstName, u.lastName 
+         FROM blog b 
+         INNER JOIN user u ON b.UserID = u.UserID 
+         WHERE b.cat_id = '3'
+         order by rand() limit 3";
+         
         
          
          
@@ -256,6 +276,9 @@ body {
          ?>
            <div class="card">
         <h2><?php echo  $row["shortTitle"] ?></h2>
+        <div class="user-info">
+            By: <?php echo $row['firstName'] . ' ' . $row['lastName']; ?>
+        </div>
         <h5><?php echo  $row["postDate"] ?></h5>
         <div> <img src="uploads/<?php echo $row['Image1']; ?>" class="pic1"  style="height:200px;"></div>
         <br>  <a   href='single.php?id=<?php echo  $row["blogID"] ?>'><button class="btn">Read More</button></a><br>

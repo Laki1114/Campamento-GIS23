@@ -15,7 +15,21 @@
 </head>
 <body>
    
-<?php include 'header.php'; ?>
+
+<?php
+    session_start(); // Start the session
+
+    // Check if the user is logged in
+    $user_logged_in = isset($_SESSION['email']) || isset($_SESSION['customer']);
+
+    // Include the appropriate header file based on whether the user is logged in or not
+    if($user_logged_in) {
+        include 'headerIn.php';
+    } else {
+        include 'header.php';
+    }
+?>
+
 
 
 

@@ -69,21 +69,12 @@ while ($row = mysqli_fetch_assoc($result)){
         <label for="subject">Detailed Description4 </label><br>
         <textarea id="subject" name="LongDescription4"   placeholder="Write Your Description" style="height:400px;width:100%">
         <?php echo $LongDescription4?></textarea><br>
-<?php /*
+
         <label for="image">Upload Images(Max 6 Images)</label><br>
        <table>
         <tr>
         <td> 
-            <?php if(isset($row['Image1']) && !empty($row['Image1'])): ?>
-                                <img src="uploads/<?php echo $row['Image1']; ?>" alt="" height='150' width='150'><br>
-                                <a href="delproduImg.php?id=<?php echo $row['blogID'];?>">Delete Image</a><br>
-                            <?php else: ?>
-                                <div class="form-group">
-                                    <label for="productimage1">Product Image</label>
-                                    <input type="file" name="productimage1" id="productimage">
-                                    <p class="help-block">Only jpg/png are allowed.</p>
-                                </div>
-                            <?php endif; ?>
+           
                         </td>
 
                             <td>
@@ -153,7 +144,7 @@ while ($row = mysqli_fetch_assoc($result)){
                             <?php endif; ?></td>
                             </tr></table>
                             <input type="hidden" name="id" value="<?php echo $IdentityNo; ?>">
-*/?>
+
                             <input type="submit" name="submit" value="Submit">
     </div>
     

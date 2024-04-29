@@ -170,7 +170,10 @@ body {
 <?php 
 
 $catID = 1;
-$sql = "SELECT * FROM blog WHERE cat_id = '$catID' ";
+$sql = "SELECT b.*, u.firstName, u.lastName 
+        FROM blog b 
+        INNER JOIN user u ON b.UserID = u.UserID 
+        WHERE b.cat_id = '$catID'";
 //if(isset($_GET['id'])){
     //$catID = $_GET['id'];
    // $sql .= " WHERE cat_id = '$catID'";
@@ -190,7 +193,10 @@ $result = mysqli_query($conn, $sql);
          <div class="card">
 
                 <h3 class="title"><?php echo  $row["shortTitle"] ?></h3>
-
+              <!-- Display user first name and last name -->
+        <div class="user-info">
+            <p>By: <?php echo $row['firstName'] . ' ' . $row['lastName']; ?></p>
+        </div>
                 <div class="price"> <b> <?php echo  $row["postDate"] ?></b></div>
                  <!--   <div class="price"> <b> <?php //echo  $row["price"] ?></b></div> Add name profile later-->
 
