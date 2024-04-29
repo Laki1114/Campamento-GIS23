@@ -65,7 +65,79 @@ $adminData = array(
     <link rel="stylesheet" href="css/admin.css">
 </head>
 
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
 
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main  '
+    'footer';
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: #327028;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+
+
+
+.recentOrder .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  height:210px;
+  margin-bottom:20px;
+  
+}
+
+.recentOrder .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 4rem;
+  color: var(--green);
+}
+
+.recentOrder .card .cardName {
+  color: var(--black2);
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
+.recentOrder .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.recentOrder .card:hover {
+  background: var(--green);
+}
+.recentOrder .card:hover .numbers,
+.recentOrder .card:hover .cardName,
+.recentOrder .card:hover .iconBx {
+  color: var(--white);
+}
+
+
+
+
+</style>
 
 
 
@@ -122,74 +194,50 @@ $adminData = array(
                     <!-- Display Daily Views Chart -->
 
                     <canvas id="dailyLoginChart" width="100px" height="50px"></canvas>
-                    
-                </div>
-
-                <div class="recentOrders">
-                    
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Transactions</div>
-                    </div>
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
-                </div>
-                
-                
-
-            </div>
-
-
-
-            <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Booking Details</h2>
-                        
-                    </div>
-
-                    <!-- Display Daily Views Chart -->
-
-                    <canvas id="bookingChart" width="200px" height="100px"></canvas>
-                    
-                </div>
-
-                <div class="recentOrders">
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Transactions</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
-                
                  
                 </div>
-            </div>
-           
-            
-            <div class="cardBox">
                 
 
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Transactions</div>
-                    </div>
+                <div class= "recentOrder">
 
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
+                               <!--=================== transaction========================-->
+                               <?php
+// Include database connection file
+include 'db.php';
 
+// Query to fetch data from the rooms table
+$sql = "SELECT COUNT(*) AS transactionCount FROM transactions";
+$result = $conn->query($sql);
 
-<!--===================glamping reservation========================-->
+// Check if there is a result
+if ($result->num_rows > 0) {
+    // Fetch the row
+    $row = $result->fetch_assoc();
+    
+    // Get the number of fields
+    $transactionCount = $row['transactionCount'];
+
+    // Output HTML for the card
+    echo '<div class="card">';
+    echo '<div>';
+    echo '<div class="numbers">' . $transactionCount . '</div>';
+    echo '<div class="cardName">Transactions</div>';
+    echo '</div>';
+    echo '<div class="iconBx">';
+    echo '<ion-icon name="chatbubbles-outline"></ion-icon>';
+    echo '</div>';
+    echo '</div>';
+} else {
+    // If no result found
+    echo '<p>No fields found in the rooms table.</p>';
+}
+
+// Close database connection
+$conn->close();
+?>
+                
+
+                <!--===================glamping reservation========================-->
 <?php
 // Include database connection file
 include 'db.php';
@@ -224,32 +272,59 @@ if ($result->num_rows > 0) {
 // Close database connection
 $conn->close();
 ?>
+    
 
-
-
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">284</div>
-                        <div class="cardName">Reservation</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                    </div>
                 </div>
 
-                <div class="card">
-                    <div>
-                        <div class="numbers">$7,842</div>
-                        <div class="cardName">Earning</div>
+            
+                </div>
+
+            
+
+
+
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Booking Details</h2>
+                        
                     </div>
 
-                    <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                    <!-- Display Daily Views Chart -->
+
+                    <canvas id="bookingChart" width="200px" height="100px"></canvas>
+                    
+                </div>
+
+                <div class="recentOrder">
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Transactions</div>
                     </div>
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Transactions</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                
+                
+                 
                 </div>
             </div>
+           
+
+
 
 
 
