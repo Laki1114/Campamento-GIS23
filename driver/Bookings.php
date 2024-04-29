@@ -136,6 +136,35 @@ function getBookingsForDriver($driverId) {
         text-decoration: none;
         cursor: pointer;
     }
+    .details {
+  position: relative;
+  width: 90%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  margin-top: 60px;
+  /* margin-top: 10px; */
+}
+
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  min-height: 200px;
+  background: var(--white);
+  padding: 15px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.details table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details table thead td {
+  font-weight: 600;
+ 
+}
     </style>
 </head>
 
@@ -169,7 +198,7 @@ function getBookingsForDriver($driverId) {
            
 
             <!-- ================ Order Details List ================= -->
-            <div class="ad">
+           
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
@@ -182,7 +211,6 @@ function getBookingsForDriver($driverId) {
                         
                             <tr>
                                 <td>Name</td>
-                                <td>User ID</td>
                                 <td>Contact</td>
                                 <td>Date</td>
                                 <td>Time</td>
@@ -205,7 +233,6 @@ function getBookingsForDriver($driverId) {
                          
                         echo "<tr>";
                         echo "<td>" . $row['name'] . "</td>";
-                        echo "<td>" . $row['UserId'] . "</td>";
                         echo "<td>" . $row['contact'] . "</td>";
                         echo "<td>" . $row['booking_date'] . "</td>";
                         echo "<td>" . $row['booking_time'] . "</td>";

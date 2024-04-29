@@ -367,10 +367,9 @@ echo '</div>';
                 echo "<p style='font-size:17px;'>" . $row['name'] . "</p>";
                 echo "<br>";
                 echo "<p style='font-size:15px;'>" . $row['review'] . "</p>";
+                echo "<p style='font-size:13px;'>" . $row['review_timestamp'] . "</p>";
                 echo "<br>";
                 }
-            }else {
-                echo "<p style='font-size:15px;'>No reviews yet.</p>";
             }
         } else {
             echo "<p style='font-size:15px;'>No reviews yet.</p>";
