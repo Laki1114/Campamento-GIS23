@@ -39,7 +39,7 @@ if ($result) {
 ?>
 
 <html lang="en">
-<!-- Rest of your HTML code goes here -->
+
 
 
 

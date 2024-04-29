@@ -58,7 +58,7 @@ session_start();
                                 </select>
                             </div>
                             
-                            <label>__Tent-1 Details__</label><br><br>
+                            <label>_Tent-1 Details_</label><br><br>
                             <div class="form-group">
                                 <label for="room1_type">Tent 1 Type</label>
                                 <select class="form-control" id="room1_type" name="room1_type">
@@ -81,7 +81,7 @@ session_start();
                                 <input type="text" class="form-control" name="room1_price" id="room1_price" placeholder="Room 1 Price">
                             </div>
                             
-                            <label>__Tent-2 Details__</label><br><br>
+                            <label>_Tent-2 Details_</label><br><br>
                             <div class="form-group">
                                 <label for="room2_type">Tent 2 Type</label>
                                 <select class="form-control" id="room2_type" name="room2_type">
