@@ -3,7 +3,6 @@ require_once('tcpdf/tcpdf.php');
 include 'config.php';
 
 // Fetch guide's id from the session
-
 $guide_email = $_SESSION['email'];
 
 // Retrieve the guide's id from the guides table
@@ -30,8 +29,22 @@ while($row = $result->fetch_assoc()) {
 
 // Generate chart data
 $chart_data = "['Month', 'Bookings'],";
-for ($i = 1; $i <= 12; $i++) {
-    $chart_data .= "[$i, {$booking_counts[$i]}],";
+$month_names = [
+    1 => "January",
+    2 => "February",
+    3 => "March",
+    4 => "April",
+    5 => "May",
+    6 => "June",
+    7 => "July",
+    8 => "August",
+    9 => "September",
+    10 => "October",
+    11 => "November",
+    12 => "December"
+];
+foreach ($booking_counts as $month => $count) {
+    $chart_data .= "['{$month_names[$month]}', {$count}],";
 }
 
 // JSON data for the chart

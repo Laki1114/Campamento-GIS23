@@ -249,7 +249,7 @@ function getBookingsForDriver($driverId) {
                             echo "<button type='button' class='cancel-button' onclick='cancelBooking(" . $row['booking_id'] . ")'>Cancel</button>";
                             echo "</form>";
                         } elseif ($row['booking_status'] == 1) { // Confirmed
-                            echo "<button class='confirmed-button' id='confirm_button_" . $row['booking_id'] . "' onclick='markCompleted(" . $row['booking_id'] . ")'>Confirmed</button>";
+                            echo "<button class='confirmed-button' id='booking_" . $row['booking_id'] . "_button' onclick='markCompleted(" . $row['booking_id'] . ")'>Confirmed</button>";
                             echo "<button type='button' class='cancel-button' onclick='cancelBooking(" . $row['booking_id'] . ")'>Cancel</button>";
                         } elseif ($row['booking_status'] == 2) { // Completed
                             echo "<button class='completed-button' disabled>Completed</button>";
@@ -294,7 +294,6 @@ function acceptBooking(id) {
     });
 }
 }
-
 
 function markCompleted(id) {
     $.ajax({
