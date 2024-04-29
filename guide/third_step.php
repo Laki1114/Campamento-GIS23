@@ -1,7 +1,8 @@
 <?php
 // Include the database connection or any necessary configuration file
 include 'config.php';
-if (!isset($_SESSION['customer'])) {
+// Add this line to start the session
+if (!isset($_SESSION['email'])) {
     // If user is not logged in, return an error message
     $response = array('status' => 'error', 'message' => 'User is not logged in.');
     echo json_encode($response);
@@ -71,7 +72,7 @@ $con->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Booking</title>
     <link rel="stylesheet" href="glm_css_files/third_step.css">
     <link rel="stylesheet" type="text/css" href="glm_css_files/book.css" />
     <link rel="stylesheet" type="text/css" href="glm_css_files/form_deatails.css" />
@@ -226,7 +227,12 @@ $advancePayment = $final * 0.3;
 </div>
 
                 <div class="row button-row">
-                               <button type="submit" id="confirmButton">Confirm</button>
+                <!-- Add form tag here -->
+                <form id="bookingForm" method="post" action="insert_booking.php">
+                <button type="button" onClick="prevSection('discoun-section','shipping-section')">Previous</button>
+                <button type="submit" id="confirmButton">Confirm</button>
+                </form>
+                <!-- End of form tag -->
 </div>
 
 <script>

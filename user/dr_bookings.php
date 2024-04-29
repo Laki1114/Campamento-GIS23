@@ -228,7 +228,7 @@ textarea, select {
                     <div class="recentOrders">
                         <div class="cardHeader">
                             <h2>Bookings </h2>
-                            <a href="../home/home.php">home</a>
+                          
                             <a href="#" class="btn">View All</a>
                         </div>
                         <table>
@@ -285,10 +285,17 @@ textarea, select {
                                             }
 
                                             echo "</td>";
-                                            echo "<td><button class='view' onclick='showDetails( \"" . $ro['Vehicle_type'] . "\", \"" . $ro['Model'] . "\",\"" . $row['amount'] . "\",\"" . $row['advancepay'] . "\",\"" . $ro['AC'] . "\", \"" . $row['adults'] . "\", \"" . $row['children'] . "\", \"" . $row['info'] . "\", \"" . $row['created_at'] . "\", \"" . $row['booking_id'] . "\")'>View</button></td>";
+                                            echo "<td>";
+                                            echo "<button class='view' onclick='showDetails( \"" . $ro['Vehicle_type'] . "\", \"" . $ro['Model'] . "\",\"" . $row['amount'] . "\",\"" . $row['advancepay'] . "\",\"" . $ro['AC'] . "\", \"" . $row['adults'] . "\", \"" . $row['children'] . "\", \"" . $row['info'] . "\", \"" . $row['created_at'] . "\", \"" . $row['booking_id'] . "\")'>View</button>";
+                                            
+                                            echo "<div class='action'>";
                                             if ($row['booking_status'] == 2) {  
                                                 echo "<button class='view' onclick='showReviewForm(". $row['booking_id'] .")'>Review</button>";
-                                             }
+                                            }
+                                            echo "</div>";
+                                            
+                                            echo "</td>";
+                                            
                                             echo "</tr>";
                                         }
                                     } else {

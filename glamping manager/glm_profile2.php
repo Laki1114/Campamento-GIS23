@@ -1,3 +1,16 @@
+<?php
+// PHP code to generate Glamping Sites list
+session_start(); // Start the session
+
+// Check if the user is not logged in
+if (!isset($_SESSION['email'])) {
+    // If user is not logged in, return an error message in JSON format
+    $response = array('status' => 'error', 'message' => 'User is not logged in.');
+    echo json_encode($response);
+    exit(); // Stop script execution
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +29,6 @@
         .sidebar {
             width: 20%;
             background-color: #f0f0f0;
-            
         }
 
         .glamping-container {
@@ -44,11 +56,7 @@
 </head>
 <body>
     <div class="sidebar">
-   
-            
-            <?php include 'manager_sidebar.php'; ?>
-                    
-        
+        <?php include 'manager_sidebar.php'; ?>
     </div>
     <ul class="glamping-container">
         <?php
@@ -60,8 +68,21 @@
             die("Connection failed: " . mysqli_connect_error());
         }
 
+        $email = $_SESSION['email'];
+        $sqll = "SELECT glm_id FROM glamping_manager_registration WHERE email='$email'";
+        $result = mysqli_query($conn, $sqll);
+        if (mysqli_num_rows($result) > 0) {
+            // Loop through each row of data
+            while ($row = mysqli_fetch_assoc($result)) {
+                $id = $row['glm_id'];
+            }
+        } else {
+            // If no sites found, initialize $id variable
+            $id = 0;
+        }
+
         // Query to fetch glamping site details
-        $sql = "SELECT site_id, site_name FROM sites"; // Modify the query as per your table structure
+        $sql = "SELECT site_id, site_name FROM sites WHERE gl_id='$id'";
         $result = mysqli_query($conn, $sql);
 
         // Check if there are any rows returned

@@ -1,5 +1,5 @@
 <?php
-      require 'config.php';
+      require 'database/glm_link.php';
 
         if(!isset($_SESSION['email'])){
             header('location: ../login/login.php');
@@ -20,7 +20,7 @@
 // Sample function to get bookings related to a specific driver
 function getBookingsForDriver($driverId) {
     // Database connection
-    require 'config.php';
+    require 'database/glm_link.php';
     // SQL query to fetch bookings for the driver
     $sq = "SELECT * FROM bookings WHERE d_id = $driverId";
     // Execute query
@@ -47,7 +47,7 @@ function getBookingsForDriver($driverId) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Bookings</title>
+    <title>Site Booking Details</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="../css/Driver/admin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -173,7 +173,7 @@ function getBookingsForDriver($driverId) {
     <div class="container">
         <div class="navigation">
             
-        <?php include 'driver_sb.php'; ?>
+        <?php include 'manager_sidebar.php'; ?>
                 
         </div>
 

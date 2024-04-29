@@ -266,7 +266,7 @@ echo '</div>';
 
         echo    '<div class="des">';
         echo '<h1>Hello I am '. $row['firstname'] .', Travel with me!</h2>';
-        echo '<br><p>I speak: '. $row['languages'] .'  </p>';
+        echo '<br><p>Experience: '. $row['experience'] .'  </p>';
         echo '<br>';
         echo '<a href="first_step.php?id='.$row['d_id'].'" class="button">Book</a>';
         echo '<br>';

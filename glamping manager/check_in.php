@@ -1,11 +1,6 @@
-<?php 
-if(isset($_GET['id'])){
-  $siteID = $_GET['id'];
-
-
-
-}
-
+<?php
+// index.php
+$siteID = isset($_GET['id']) ? $_GET['id'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,76 +100,26 @@ tr:hover {
 <!-- Booking Form -->
 <div class="container">
   <h1>Tent Booking</h1>
-  <form id="bookingForm">
+  <form id="bookingForm" method="post" action="available_rooms.php?id=<?php echo $siteID; ?>">
     <label for="checkInDate">Check-in Date:</label>
-    <input type="date" id="checkInDate" name="checkInDate" required>
+    <input type="date" id="checkInDate" name="checkInDate" min="<?php echo date('Y-m-d'); ?>" required>
 
     <label for="checkOutDate">Check-out Date:</label>
-    <input type="date" id="checkOutDate" name="checkOutDate" required>
+    <input type="date" id="checkOutDate" name="checkOutDate" min="<?php echo date('Y-m-d'); ?>"  required>
 
     <button type="submit">Check Availability</button>
   </form>
 
   <!-- Available Rooms Display -->
-  <div id="availableRooms"></div>
+  <div id="availableRooms">
+    <?php
+      // If available rooms are posted, display them
+      if(isset($_POST['availableRooms'])) {
+        echo $_POST['availableRooms'];
+      }
+    ?>
+  </div>
 </div>
-
-<script>
-// JavaScript to handle form submission and fetch available rooms
-document.getElementById('bookingForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  var checkInDate = document.getElementById('checkInDate').value;
-  var checkOutDate = document.getElementById('checkOutDate').value;
-
-  // Fetch available rooms from the server
-  fetch('available_rooms.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ checkInDate: checkInDate, checkOutDate: checkOutDate })
-  })
-  .then(response => response.json())
-  .then(rooms => {
-    // Display the available rooms as a selectable row table
-    var tableHtml = "<table><thead><tr><th>Tent Type</th><th>Max No of Guests</th><th>Price</th></tr></thead><tbody>";
-    rooms.forEach(room => {
-      tableHtml += `<tr data-room-name1="${room.room1_type}" data-room-max-guests1="${room.max_guests_1}" data-room-price1="${room.room1_price}"><td>${room.room1_type}</td><td>${room.max_guests_1}</td><td>${room.room1_price}</td></tr>`;
-      tableHtml += `<tr data-room-name2="${room.room2_type}" data-room-max-guests2="${room.max_guests_2}" data-room-price2="${room.room2_price}"><td>${room.room2_type}</td><td>${room.max_guests_2}</td><td>${room.room2_price}</td></tr>`;
-    });
-    tableHtml += "</tbody></table>";
-    document.getElementById('availableRooms').innerHTML = tableHtml;
-
-    // Add click event listener to each row for selection and redirection
-    var rows = document.querySelectorAll('#availableRooms table tbody tr');
-    rows.forEach(row => {
-      row.addEventListener('click', function() {
-        // Deselect all other rows
-        rows.forEach(row => {
-          row.classList.remove('selected');
-        });
-        // Select this row
-        this.classList.add('selected');
-        
-        // Get room details from the selected row
-        var roomName = this.getAttribute('data-room-name');
-        var maxGuests = this.getAttribute('data-room-max-guests');
-        var roomPrice = this.getAttribute('data-room-price');
-        
-        // Redirect to another page with room details as URL parameters
-        var queryParams = new URLSearchParams();
-        queryParams.append('roomName', roomName);
-        queryParams.append('maxGuests', maxGuests);
-        queryParams.append('roomPrice', roomPrice);
-        queryParams.append('checkInDate', checkInDate);
-        queryParams.append('checkOutDate', checkOutDate);
-        window.location.href = 'customer_details_form.php?' + queryParams.toString();
-      });
-    });
-  })
-  .catch(error => console.error('Error:', error));
-});
-</script>
 
 </body>
 </html>
