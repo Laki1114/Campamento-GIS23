@@ -390,6 +390,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
            if (!empty($row['review'])) {
               echo "<p style='font-size:17px;'>" . $row['name'] . "</p>";
               echo "<p style='font-size:15px;'>" . $row['review'] . "</p>";
+              echo "<p style='font-size:13px;'>" . $row['review_timestamp'] . "</p>";
               echo "<br>";
           }
        }
