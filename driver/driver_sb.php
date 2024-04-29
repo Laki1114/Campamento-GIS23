@@ -67,7 +67,7 @@
                         <span class="title">Sign Out</span>
                     </a>
                 </li>
-
+<br><br>
                 <li>
                     <a href="../home/home.php">
                         <span class="icon">
