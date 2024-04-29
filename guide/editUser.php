@@ -1,7 +1,7 @@
 <?php require 'config.php';
 
 $email = $_SESSION['email'] ;
-$query  = mysqli_query($con, "SELECT * FROM driver WHERE email= '$email' ");
+$query  = mysqli_query($con, "SELECT * FROM guide WHERE email= '$email' ");
 
 $row = mysqli_fetch_array($query);
 if(isset($_POST['edit'])){
@@ -23,7 +23,7 @@ if(!preg_match('/^[0-9]{9}[vVxX]|[0-9]{12}$/',$update_nic)) {
     $message[] = "Invalid NIC format";
 } 
 
-   mysqli_query($con, "UPDATE driver SET firstname = '$update_fname', lastname = '$update_lname', phone = '$update_phone', nic = '$update_nic', address =  '$update_address' WHERE email = '$email'") or die(mysqli_error($con));
+   mysqli_query($con, "UPDATE guide SET firstname = '$update_fname', lastname = '$update_lname', phone = '$update_phone', nic = '$update_nic', address =  '$update_address' WHERE email = '$email'") or die(mysqli_error($con));
                 $message[] = 'Profile updated successfully';
 }
 ?>
@@ -31,7 +31,7 @@ if(!preg_match('/^[0-9]{9}[vVxX]|[0-9]{12}$/',$update_nic)) {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/Driver/registerUser.css">
+<link rel="stylesheet" href="../css/Guide/registerUser.css">
 <style>
        body{
     background-image: url("../resource/login.jpg");
@@ -51,7 +51,7 @@ if(!preg_match('/^[0-9]{9}[vVxX]|[0-9]{12}$/',$update_nic)) {
 <body>
 
 <?php
-      $select = mysqli_query($con, "SELECT * FROM driver WHERE email = '$email'") or die('query failed');
+      $select = mysqli_query($con, "SELECT * FROM guide WHERE email = '$email'") or die('query failed');
       if(mysqli_num_rows($select) > 0){
          $fetch = mysqli_fetch_assoc($select);
 

@@ -14,7 +14,7 @@ if(isset($_POST['changePassword'])){
     $confirmPassword = $_POST['psw-repeat'];
 
     // Fetch the current password from the database
-    $query  = mysqli_query($con, "SELECT * FROM driver WHERE email= '$email' ");
+    $query  = mysqli_query($con, "SELECT * FROM guide WHERE email= '$email' ");
     $row = mysqli_fetch_array($query);
     $currentPasswordDB = $row['password'];
 
