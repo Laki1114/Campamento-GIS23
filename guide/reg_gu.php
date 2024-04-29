@@ -120,6 +120,16 @@ foreach ($_FILES["experience"]["tmp_name"] as $key => $tmp_name) {
 body{
     background-image: url("../resource/login.jpg");
   }
+  .bg-img {
+    /* The image used */
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    min-height: 1620px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
 #expertise {
   width: 300px; /* Set the width of the select box */
   height: 130px; /* Set the height of the select box */
