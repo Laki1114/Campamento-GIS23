@@ -162,7 +162,7 @@ while ($row = mysqli_fetch_assoc($result)){
    </table> 
    <?php if(isset($thumb) && !empty($thumb)): ?>
     <img src="<?php echo $thumb; ?>" alt="" height='150' width='150'><br>
-    <a href="delSupplierimage.php?id=<?php echo $userID; ?>">Delete Image</a><br>
+    <a href="delManagerimage.php?id=<?php echo $userID; ?>">Delete Image</a><br>
 <?php else: ?>
     <div class="form-group">
         <label for="productimage">Product Image</label>

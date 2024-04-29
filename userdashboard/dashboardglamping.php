@@ -108,7 +108,7 @@ button:hover{
     }
 
     // SQL query to fetch data from the glmp_sites table
-    $sql = "SELECT * FROM glmp_sites";
+    $sql = "SELECT * FROM sites";
     $result = $conn->query($sql);
 
     // Display data

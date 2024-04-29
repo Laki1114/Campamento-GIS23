@@ -11,7 +11,6 @@
 
 </head>
 
-<script src="//code.tidio.co/1rbhbwkbw0jzaprhj345pjorejf4lq48.js" async></script>
 
 <body style="background-color: ;">
 

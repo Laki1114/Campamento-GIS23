@@ -27,6 +27,7 @@ if ($result) {
         $NIC = $row["NIC"];
         $email = $row["email"];
         $password = $row["password"];
+        $thumb = $row["thumb"];
         
     } else {
         // No rows found
@@ -76,7 +77,8 @@ if ($result) {
         <div >
             <div class="profile">
                 <div><!--class="container-image"-->
-                    <img src="<?php echo $thumb; ?>" alt="" height='150' width='150'>
+                   <!-- <img src="<?php echo $thumb; ?>" alt="" height='150' width='150'>-->
+                    <img src="uploads/amaya.jpg" alt="" height='150' width='150'>
                     <a href='editManager.php'>
                         <button class="btn">
                             <img src="../resource/assets/profile/edit.png" width="30px" height="30px">

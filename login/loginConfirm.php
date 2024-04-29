@@ -119,15 +119,15 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if ($_POST['psw'] == $row["Password"]) {
         if ($row["Status"] == '1') {
-            $_SESSION['SupplierId'] = $row['SupplierId'];
+            $_SESSION['Supplier'] = $row['SupplierId'];
             $_SESSION['email'] = $row["Email"];
 
 // Insert login attempt into the database
 insertLoginAttempt($email);
 
             //header("Location: ../supplier/profileSupplier.php?supplier=" . $_SESSION['supplier']);
-            header("Location: ../Supplier/orders.php?supplier=" . $_SESSION['email']);
-            //header("Location: ../Supplier/profileSupplier.php");
+            //header("Location: ../Supplier/orders.php?supplier=" . $_SESSION['email']);
+            header("Location: ../Supplier/profileSupplier.php");
             exit;
         } else {
             $_SESSION['error'] = "deactivated";

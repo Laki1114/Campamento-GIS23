@@ -39,14 +39,7 @@
                 </li>
 
                 <li>
-                    <a href="chat.php">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Messages</span>
-                    </a>
-                </li>
-
+ 
                 <li>
                     <a href="feedback.php">
                         <span class="icon">
@@ -74,7 +67,7 @@
                         <span class="title">Sign Out</span>
                     </a>
                 </li>
-
+<br><br>
                 <li>
                     <a href="../home/home.php">
                         <span class="icon">

@@ -27,6 +27,7 @@
 
 
 table {
+  background-color: White;
   margin-top: 0px;
   width: 100%; 
   border: none;
@@ -111,21 +112,8 @@ table.purchases tr.no-hover:hover {
   background-color: transparent !important;
 }
 
-table.purchases tr:hover {
-  background-color: #12a22cc5;
-}
 
-table.purchases .button {
-  background-color: #82c777c3;
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0px;
-  cursor: pointer;
-}
+
 
 table.purchases .button1 {
   font-size: 12px;

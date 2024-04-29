@@ -14,7 +14,7 @@ if(isset($_POST['changePassword'])){
     $confirmPassword = $_POST['psw-repeat'];
 
     // Fetch the current password from the database
-    $query  = mysqli_query($con, "SELECT * FROM driver WHERE email= '$email' ");
+    $query  = mysqli_query($con, "SELECT * FROM guide WHERE email= '$email' ");
     $row = mysqli_fetch_array($query);
     $currentPasswordDB = $row['password'];
 
@@ -43,8 +43,11 @@ if(isset($_POST['changePassword'])){
     <!-- Your HTML Head Content -->
     
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="registerUser.css">
+<link rel="stylesheet" href="../css/Guide/registerUser.css">
 <style>
+        body{
+    background-image: url("../resource/login.jpg");
+  }
     .bg-img {
     /* The image used */
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
