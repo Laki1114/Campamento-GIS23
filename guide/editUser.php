@@ -33,6 +33,9 @@ if(!preg_match('/^[0-9]{9}[vVxX]|[0-9]{12}$/',$update_nic)) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/Driver/registerUser.css">
 <style>
+       body{
+    background-image: url("../resource/login.jpg");
+  }
     .bg-img {
     /* The image used */
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));

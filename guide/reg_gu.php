@@ -117,6 +117,9 @@ foreach ($_FILES["experience"]["tmp_name"] as $key => $tmp_name) {
 
 <style>
 /* Style for select element */
+body{
+    background-image: url("../resource/login.jpg");
+  }
 #expertise {
   width: 300px; /* Set the width of the select box */
   height: 130px; /* Set the height of the select box */
