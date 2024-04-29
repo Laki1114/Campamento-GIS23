@@ -123,7 +123,7 @@ body{
   .bg-img {
     /* The image used */
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    min-height: 1620px;
+    min-height: 1700px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
