@@ -85,7 +85,7 @@ if(!preg_match('/^[0-9]{9}[vVxX]|[0-9]{12}$/',$update_nic)) {
     <input type="text" placeholder="Last Name" name="lastName" id="lastName" value="<?php  echo  $fetch['lastname']; ?>" ><br>
 
 <label for="nicNo"><b>NIC No </b></label><br>
- <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo  $fetch['nic'];?>">
+ <input type="text" placeholder="NIC No" name="nicNo" id="nicNo" value="<?php  echo  $fetch['nic'];?>" readonly>
 
 </td>
 
