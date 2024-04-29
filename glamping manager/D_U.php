@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+        // PHP code to generate Glamping Sites list
+        session_start(); // Start the session
+
+        // Check if the user is not logged in
+        if (!isset($_SESSION['email'])) {
+            // If user is not logged in, return an error message in JSON format
+            $response = array('status' => 'error', 'message' => 'User is not logged in.');
+            echo json_encode($response);
+            exit(); // Stop script execution
+        }
+
+?>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +28,7 @@
         .sidebar {
             width: 18.3%;
             background-color: #f0f0f0;
-            
+           
         }
 
         .glamping-container {
@@ -24,8 +37,6 @@
             padding: 0;
             border-collapse: collapse;
             width: 100%;
-
-            
         }
 
         .glamping-container li {
@@ -39,8 +50,6 @@
             background-color: #f0f0f0;
             border-radius: 15px;
         }
-
-       
 
         .glamping-container li:hover {
             background-color: #ddd;
@@ -81,26 +90,31 @@
 </head>
 <body>
 <div class="sidebar">
-   
-            
-   <?php include 'manager_sidebar.php'; ?>
-           
-
+    <?php include 'manager_sidebar.php'; ?>
 </div>
-    <div>
-        <h1>Delete / Update Sites</h1>
-        <ul class="glamping-container">
-            <?php
-            // PHP code to generate Glamping Sites list
-            // Connect to the database
-            $conn = mysqli_connect("localhost", "root", "", "campamento");
+<div>
+    <h1>Delete / Update Sites</h1>
+    <ul class="glamping-container">
+        <?php
+        // PHP code to generate Glamping Sites list
+        // Connect to the database
+        $conn = mysqli_connect("localhost", "root", "", "campamento");
 
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
 
-            // Query to fetch glamping site details
-            $sql = "SELECT site_id, site_name FROM sites"; // Modify the query as per your table structure
+        $email = $_SESSION['email'];
+
+        // Get manager ID using email
+        $sql_manager = "SELECT glm_id FROM glamping_manager_registration WHERE email='$email'";
+        $result_manager = mysqli_query($conn, $sql_manager);
+        if ($result_manager && mysqli_num_rows($result_manager) > 0) {
+            $row_manager = mysqli_fetch_assoc($result_manager);
+            $glm_id = $row_manager['glm_id'];
+
+            // Query to fetch glamping site details for the manager
+            $sql = "SELECT site_id, site_name FROM sites WHERE gl_id='$glm_id'";
             $result = mysqli_query($conn, $sql);
 
             // Check if there are any rows returned
@@ -123,13 +137,16 @@
                     echo "</li>";
                 }
             } else {
-                echo "No glamping sites found.";
+                echo "<li>No glamping sites found.</li>";
             }
+        } else {
+            echo "<li>No glamping sites found.</li>";
+        }
 
-            // Close database connection
-            mysqli_close($conn);
-            ?>
-        </ul>
-    </div>
+        // Close database connection
+        mysqli_close($conn);
+        ?>
+    </ul>
+</div>
 </body>
 </html>
