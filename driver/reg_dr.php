@@ -125,7 +125,7 @@ if(isset($_POST['regbtn'])){
   .bg-img {
     /* The image used */
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    min-height: 1600px;
+    min-height: 1400px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
