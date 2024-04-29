@@ -66,32 +66,6 @@ $adminData = array(
 </head>
 
 <style>
-.item1 { grid-area: header; }
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer; }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header'
-    'main  '
-    'footer';
-  gap: 10px;
-  
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: #327028;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-
-
-
 
 .recentOrder .card {
   position: relative;
@@ -104,6 +78,7 @@ $adminData = array(
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   height:210px;
   margin-bottom:20px;
+  
   
 }
 
@@ -471,51 +446,40 @@ $conn->close();
                     </div>
 
                     <table>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00 </span></h4>
-                            </td>
-                        </tr>
+<?php
+// Include database connection file
+include 'db.php';
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
+// Query to fetch recent login attempts with user details
+$sqlLoginAttempts = "SELECT l.login_time, u.FirstName, u.LastName, u.thumb 
+                    FROM login_attempts l
+                    JOIN user u ON l.email = u.Email
+                    ORDER BY l.login_time DESC";
+$resultLoginAttempts = mysqli_query($conn, $sqlLoginAttempts);
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
+// Check if there are login attempts
+if (mysqli_num_rows($resultLoginAttempts) > 0) {
+    // Loop through each login attempt and display it
+    while ($row = mysqli_fetch_assoc($resultLoginAttempts)) {
+        echo '<tr>';
+        echo '<td width="60px">';
+        echo '<div class="imgBx"><img src="' . $row['thumb'] . '" alt=""></div>';
+        echo '</td>';
+        echo '<td>';
+        echo '<h4>' . $row['FirstName'] . ' ' . $row['LastName'] . '<br><span>' . date('Y-m-d H:i', strtotime($row['login_time'])) . '</span></h4>';
+        echo '</td>';
+        echo '</tr>';
+    }
+} else {
+    // If no login attempts found, display a message
+    echo '<tr><td colspan="2">No recent login attempts.</td></tr>';
+}
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
+// Close database connection
+mysqli_close($conn);
+?>
+</table>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>Sri Lanka | 12:00</span></h4>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>

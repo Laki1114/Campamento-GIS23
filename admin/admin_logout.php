@@ -11,6 +11,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the login page
-header("location: ../login/login.php");
+header("location: ../home/home.php");
 exit; // Ensure script stops executing after redirection
 ?>
