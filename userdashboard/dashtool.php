@@ -81,76 +81,46 @@ button:hover{
 </style>
 <body>
 
-
-
 <div class="main">
+    <div class="w3-container">
+        <h1>Tools</h1>
+        <h3>You can find our Camping sites anywhere in the Sri Lanka:</h3>
+    </div>
 
-<div class="w3-container">
-    <h1>Tools</h1>
-    <h3>You can find our Camping sites anywhere in the Sri lanka:</h3>
-  </div>
+    <?php
+    // Include database connection file
+    include '../admin/db.php';
 
-<div class="grid">
+    // Query to fetch data from the products table
+    $sql = "SELECT * FROM products LIMIT 4";
+    $result = $conn->query($sql);
 
-<div class="imaged">
-   <img src="../resource/tool1.jpg">
-</div>
-<div class="title">
- <h1>Tools</h1>
-</div>
-<div class="des">
- <p>Packages here...</p>
-</div>
-</div>
+    // Check if there are any rows returned
+    if ($result->num_rows > 0) {
+        // Loop through each row of data
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="grid">';
+            echo '<div class="imaged">';
+            echo '<img src="../supplier/' . $row['thumb'] . '">';
+            echo '</div>';
+            echo '<div class="title">';
+            echo '<h1>' . $row['product_name'] . '</h1>';
+            echo '</div>';
+            echo '<div class="des">';
+            echo '<p>' . $row['product_description'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        // If no rows found
+        echo '<p>No products found.</p>';
+    }
 
+    // Close database connection
+    $conn->close();
+    ?>
 
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/tool1.jpg">
+    <a href="../user/index.php"><button class="button">See More....</button></a>
 </div>
-<div class="title">
- <h1>Tools</h1>
-</div>
-<div class="des">
- <p>Packages here...</p>
-</div>
-</div>
-
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/tool1.jpg">
-</div>
-<div class="title">
- <h1>Tools</h1>
-</div>
-<div class="des">
- <p>Packages here...</p>
-</div>
-</div>
-
-
-<div class="grid">
-
-<div class="imaged">
-   <img src="../resource/tool1.jpg">
-</div>
-<div class="title">
- <h1>Tools</h1>
-</div>
-<div class="des">
- <p>Packages here...</p>
-</div>
-</div>
-<!--cards -->
-
-
-
-<a href="../Amaya/tspage.php"><button class="button" > See More....</button></a>
-
-
-</div>
-</body>
+  </body>
 </html>
