@@ -94,3 +94,45 @@
 -->
 
   </form>
+  <?php /*
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Connect to your database (replace with your database credentials)
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "your_database";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Handle file uploads
+    $imageNames = array();
+    for ($i = 1; $i <= 6; $i++) {
+        $imageName = "image".$i;
+        $targetDir = "uploads/"; // Directory where images will be stored
+        $targetFile = $targetDir . basename($_FILES[$imageName]["name"]);
+        if (move_uploaded_file($_FILES[$imageName]["tmp_name"], $targetFile)) {
+            $imageNames[] = $targetFile; // Store image file names for database insertion
+        }
+    }
+
+    // Prepare data for database insertion
+    $imageNamesString = implode(',', $imageNames);
+
+    // Perform database update
+    $sql = "UPDATE your_table SET images = '$imageNamesString' WHERE id = 1"; // Assuming your table has a column named 'images'
+    if ($conn->query($sql) === TRUE) {
+        echo "Images updated successfully";
+    } else {
+        echo "Error updating images: " . $conn->error;
+    }
+
+    $conn->close();
+}*/
+?>
