@@ -222,7 +222,7 @@ textarea, select {
             <?php include 'userSidebar.php'; ?>
         <!-- ========================= Main ==================== -->
         <div class="main">
-        
+        <a href="../home/home.php">home</a>
         <div class="upper-section"><center>
         <div class="details">
                     <div class="recentOrders">

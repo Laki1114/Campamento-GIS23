@@ -11,10 +11,11 @@
 <div class="navigation">
             <ul>
                 <li>
-                    <a href="../home/home.php">
+                   
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
+                        <a href="../home/home.php">
                         <span  class="as"><img src="../resource/logo.png" alt="" width="150" height="70"></span>
                     </a>
                 </li>
