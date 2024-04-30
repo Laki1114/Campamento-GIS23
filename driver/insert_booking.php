@@ -32,7 +32,7 @@ if (
 
     if ($con->query($sql) === TRUE) {
         echo "Booking inserted successfully";
-        header("Location: ../guide/guide_.php")
+        header("Location: ")
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
