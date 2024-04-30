@@ -78,7 +78,7 @@ $thumb  = $row['thumb'];
                         $result2 = mysqli_query($conn, $sql2); 
                         $row2 = mysqli_fetch_assoc($result2);
                         ?> 
-                        Categories - <a href="index.php?id=<?php echo $cat_id ?>"><?php echo $row2["cat_name"] ?></a>   
+                 <!--       Categories - <a href="index.php?id=<?php echo $cat_id ?>"><?php echo $row2["cat_name"] ?></a> -->  
                     </div>
                 </div>
                 <a href='wishlist.php?id=<?php echo $product_id ?>'>
