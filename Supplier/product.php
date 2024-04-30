@@ -56,7 +56,7 @@ All Products
 				<thead>
 					<tr> 
 						<th>Product Name</th>
-						<th>Category Name</th>
+						<th>Category ID Type</th>
 						<th>Thumbnail</th>
 						<th>Action</th>
 					</tr>
