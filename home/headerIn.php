@@ -16,7 +16,7 @@
 
          <div class="flex2">
             <a href="searchpage.php" ><img src="../resource/search.png" alt="" width="25" height="25"></a>
-            <a href="profileUser.php">  <img src="../resource/profile.png" alt="" width="25" height="25"> </a>
+            <a href="../user/profileUser.php">  <img src="../resource/profile.png" alt="" width="25" height="25"> </a>
             <a href="../user/index.php">  <img src="../resource/cart.png" alt="" width="25" height="25"> </a>
             <a href="notification.php" ><img src="../resource/bell.png" alt="" width="25" height="25"></a>
          </div>
