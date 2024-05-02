@@ -242,7 +242,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
     </style>
     <!-- Add jQuery library -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOzD0GiBe1hD6t94YwNNUg-A5KaLkKAyE&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initMap" async defer></script>
  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
